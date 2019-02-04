@@ -1,0 +1,170 @@
+{
+  "astType": "object",
+  "kind": "object",
+  "name": "Form1",
+  "type": "TForm1",
+  "properties": [
+    {
+      "astType": "property",
+      "name": "Left",
+      "value": {
+        "astType": "integer",
+        "value": "192"
+      }
+    },
+    {
+      "astType": "property",
+      "name": "Font.Name",
+      "value": {
+        "astType": "string",
+        "value": "MS Sans Serif"
+      }
+    },
+    {
+      "astType": "property",
+      "name": "Font.Style",
+      "value": {
+        "astType": "qualifiedList",
+        "values": []
+      }
+    }
+  ],
+  "children": [
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "Image1",
+      "type": "TImage",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "Picture.Data",
+          "value": {
+            "astType": "hexString",
+            "value": "07544269746D617036550000424D365500000000000036000000280000005500000055000000010018000000000000550000C40E0000C40E0000000000000000"
+          }
+        }
+      ]
+    },
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "ListBox1",
+      "type": "TListBox",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "Items.Strings",
+          "value": {
+            "astType": "stringList",
+            "values": "this is string.\r\nand another one...and another one...now with apostrophe '\r\n"
+          }
+        }
+      ]
+    },
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "DBGrid1",
+      "type": "TDBGrid",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "Options",
+          "value": {
+            "astType": "qualifiedList",
+            "values": [
+              {
+                "astType": "qualified",
+                "value": "dgTitles"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgIndicator"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgColumnResize"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgColLines"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgRowLines"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgTabs"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgRowSelect"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgConfirmDelete"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgCancelOnExit"
+              }
+            ]
+          }
+        },
+        {
+          "astType": "property",
+          "name": "Columns",
+          "value": {
+            "astType": "itemList",
+            "values": [
+              {
+                "astType": "item",
+                "properties": [
+                  {
+                    "astType": "property",
+                    "name": "Expanded",
+                    "value": {
+                      "astType": "boolean",
+                      "value": false
+                    }
+                  },
+                  {
+                    "astType": "property",
+                    "name": "Visible",
+                    "value": {
+                      "astType": "boolean",
+                      "value": true
+                    }
+                  }
+                ]
+              },
+              {
+                "astType": "item",
+                "properties": [
+                  {
+                    "astType": "property",
+                    "name": "Expanded",
+                    "value": {
+                      "astType": "boolean",
+                      "value": false
+                    }
+                  },
+                  {
+                    "astType": "property",
+                    "name": "Visible",
+                    "value": {
+                      "astType": "boolean",
+                      "value": true
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

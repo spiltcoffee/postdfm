@@ -1,0 +1,40 @@
+{
+  "name": "@postdfm/dfm2ast",
+  "version": "1.0.0",
+  "description": "Convert Delphi Form files to an Abstract Syntax Tree",
+  "main": "dist/index.js",
+  "scripts": {
+    "nearleyc": "nearleyc ne/grammar.ne -o src/grammar.ts",
+    "compile": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spiltcoffee/postdfm.git",
+    "directory": "packages/@postdfm/dfm2ast"
+  },
+  "keywords": [
+    "dfm",
+    "ast",
+    "delphi",
+    "delphi form",
+    "process",
+    "ebnf",
+    "bnf",
+    "nearley"
+  ],
+  "author": "SpiltCoffee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spiltcoffee/postdfm/issues"
+  },
+  "homepage": "https://github.com/spiltcoffee/postdfm#readme",
+  "devDependencies": {
+    "@types/nearley": "^2.11.0",
+    "jest": "^24.0.0",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "nearley": "^2.16.0"
+  }
+}
