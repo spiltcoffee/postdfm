@@ -7,7 +7,13 @@
   "description": "Provides an API for easily transforming Delphi Forms",
   "name": "postdfm",
   "devDependencies": {
+    "cz-lerna-changelog": "^2.0.2",
     "lerna": "^3.13.1",
     "typescript": "^3.3.3333"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
   }
 }
