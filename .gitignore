@@ -81,5 +81,8 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-# Ignoring output from nearley
+# jest-junit (custom location)
+test-results/
+
+# nearley.js
 packages/@postdfm/dfm2ast/src/grammar.ts

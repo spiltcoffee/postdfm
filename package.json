@@ -8,7 +8,7 @@
   "name": "postdfm",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "test": "echo Hello world!"
+    "test": "lerna run test"
   },
   "devDependencies": {
     "cz-lerna-changelog": "^2.0.2",
