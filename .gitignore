@@ -82,7 +82,7 @@ typings/
 .dynamodb/
 
 # jest-junit (custom location)
-test-reports/
+test-results/
 
 # nearley.js
 packages/@postdfm/dfm2ast/src/grammar.ts

@@ -40,7 +40,7 @@
     "nearley": "^2.16.0"
   },
   "jest-junit": {
-    "outputDirectory": "../../../test-reports/@postdfm/dfm2ast",
+    "outputDirectory": "../../../test-results/@postdfm/dfm2ast",
     "outputName": "./report.xml"
   }
 }
