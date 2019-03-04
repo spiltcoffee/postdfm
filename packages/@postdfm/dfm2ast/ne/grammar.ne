@@ -1,5 +1,5 @@
 @preprocessor typescript
-@builtin "whitespace.ne"
+@include "./whitespace.ne"
 
 @{%
 

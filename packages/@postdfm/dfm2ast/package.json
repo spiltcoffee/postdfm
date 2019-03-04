@@ -4,8 +4,9 @@
   "description": "Convert Delphi Form files to an Abstract Syntax Tree",
   "main": "dist/index.js",
   "scripts": {
-    "nearleyc": "nearleyc ne/grammar.ne -o src/grammar.ts",
+    "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
     "compile": "tsc",
+    "pretest": "yarn compile",
     "test": "jest"
   },
   "repository": {
