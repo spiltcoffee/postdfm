@@ -19,6 +19,9 @@ jobs:
 
       - run: yarn test
 
+      - store_test_results:
+          path: test-results
+
       - save_cache:
           paths:
             - node_modules

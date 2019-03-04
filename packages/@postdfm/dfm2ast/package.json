@@ -33,9 +33,14 @@
   "devDependencies": {
     "@types/nearley": "^2.11.0",
     "jest": "^24.0.0",
+    "jest-junit": "^6.3.0",
     "typescript": "^3.3.3"
   },
   "dependencies": {
     "nearley": "^2.16.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "../../../test-reports/@postdfm/dfm2ast",
+    "outputName": "./report.xml"
   }
 }
