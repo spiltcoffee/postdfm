@@ -1,3 +1,13 @@
 module.exports = {
-  "reporters": ["default", "jest-junit"]
+  "reporters": [
+    "default",
+    [
+      "jest-junit",
+      {
+        suiteNameTemplate: "{filename}",
+        classNameTemplate: "{classname}",
+        titleTemplate: "{title}"
+      }
+    ]
+  ],
 };
