@@ -80,3 +80,6 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Ignoring output from nearley
+packages/@postdfm/dfm2ast/src/grammar.ts
