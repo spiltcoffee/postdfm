@@ -6,6 +6,10 @@
   ],
   "description": "Provides an API for easily transforming Delphi Forms",
   "name": "postdfm",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "test": "echo Hello world!"
+  },
   "devDependencies": {
     "cz-lerna-changelog": "^2.0.2",
     "lerna": "^3.13.1",
