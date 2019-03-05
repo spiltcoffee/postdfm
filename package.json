@@ -9,18 +9,33 @@
     "bootstrap": "lerna bootstrap",
     "compile": "lerna run compile",
     "pretest": "yarn compile",
-    "test": "jest"
+    "test": "jest",
+    "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}'"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^7.5.0",
+    "@commitlint/config-lerna-scopes": "^7.5.1",
+    "commitlint": "^7.5.2",
     "cz-lerna-changelog": "^2.0.2",
+    "husky": "^1.3.1",
     "jest": "^24.0.0",
     "jest-junit": "^6.3.0",
     "lerna": "^3.13.1",
+    "semantic-release": "^15.13.3",
+    "semantic-release-monorepo": "^6.1.1",
     "typescript": "^3.3.3333"
+  },
+  "release": {
+    "branch": "master"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
