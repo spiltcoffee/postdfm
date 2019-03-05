@@ -5,13 +5,16 @@
     "packages/postdfm"
   ],
   "description": "Provides an API for easily transforming Delphi Forms",
-  "name": "postdfm",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "test": "lerna run test"
+    "compile": "lerna run compile",
+    "pretest": "yarn compile",
+    "test": "jest"
   },
   "devDependencies": {
     "cz-lerna-changelog": "^2.0.2",
+    "jest": "^24.0.0",
+    "jest-junit": "^6.3.0",
     "lerna": "^3.13.1",
     "typescript": "^3.3.3333"
   },
