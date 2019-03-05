@@ -21,7 +21,7 @@
     "jest": "^24.0.0",
     "jest-junit": "^6.3.0",
     "lerna": "^3.13.1",
-    "semantic-release": "^15.13.3",
+    "semantic-release": "~15.9.0",
     "semantic-release-monorepo": "^6.1.1",
     "typescript": "^3.3.3333"
   },
