@@ -7,11 +7,6 @@
     "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
     "compile": "tsc"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spiltcoffee/postdfm.git",
-    "directory": "packages/@postdfm/dfm2ast"
-  },
   "author": "SpiltCoffee",
   "license": "MIT",
   "bugs": {
