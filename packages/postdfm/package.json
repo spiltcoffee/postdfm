@@ -3,11 +3,6 @@
   "version": "0.0.2",
   "description": "Provides an API for easily transforming Delphi Forms",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spiltcoffee/postdfm.git",
-    "directory": "packages/postdfm"
-  },
   "keywords": [
     "dfm",
     "ast",
