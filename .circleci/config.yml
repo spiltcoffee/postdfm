@@ -2,11 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.15
+      - image: circleci/node:latest
     working_directory: ~/repo
 
     steps:
       - checkout
+      - run: node --version
+      - run: npm --version
       - run: yarn --version
 
       - restore_cache:
