@@ -10,7 +10,7 @@
     "compile": "lerna run compile",
     "pretest": "yarn compile",
     "test": "jest",
-    "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}'"
+    "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}' --repositoryUrl ssh://git@github.com/spiltcoffee/postdfm.git"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^7.5.0",
@@ -26,8 +26,7 @@
     "typescript": "^3.3.3333"
   },
   "release": {
-    "branch": "master",
-    "repository": "ssh://git@github.com/spiltcoffee/postdfm.git"
+    "branch": "master"
   },
   "config": {
     "commitizen": {
