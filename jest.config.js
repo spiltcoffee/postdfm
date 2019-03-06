@@ -1,5 +1,5 @@
 module.exports = {
-  "reporters": [
+  reporters: [
     "default",
     [
       "jest-junit",
@@ -12,7 +12,5 @@ module.exports = {
       }
     ]
   ],
-  roots: [
-    "packages/"
-  ]
+  roots: ["packages/"]
 };

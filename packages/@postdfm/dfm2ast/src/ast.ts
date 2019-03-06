@@ -14,7 +14,7 @@ export enum ASTType {
 }
 
 class ASTNode {
-  astType: ASTType
+  astType: ASTType;
   constructor(astType: ASTType) {
     this.astType = astType;
   }
@@ -74,7 +74,7 @@ export class Item extends ASTNode {
 }
 
 class List<T> extends ASTNode {
-  values: T[]
+  values: T[];
 
   constructor(astType: ASTType, values: T[]) {
     super(astType);
@@ -102,7 +102,7 @@ export class ItemList extends List<Item> {
 
 export class Property extends ASTNode {
   name: string;
-  value: Value<any> | List<any>
+  value: Value<any> | List<any>;
 
   constructor(name: string, value: Value<any> | List<any>) {
     super(ASTType.Property);
@@ -125,7 +125,14 @@ export class FormObject extends ASTNode {
   properties: Property[];
   children: FormObject[];
 
-  constructor(kind: ObjectKind, name: string, type: string, order: number, properties?: Property[], children?: FormObject[]) {
+  constructor(
+    kind: ObjectKind,
+    name: string,
+    type: string,
+    order: number,
+    properties?: Property[],
+    children?: FormObject[]
+  ) {
     super(ASTType.Object);
     this.kind = kind;
     this.name = name;
