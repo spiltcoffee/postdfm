@@ -7,6 +7,8 @@ jobs:
 
     steps:
       - checkout
+      - run: node --version
+      - run: npm --version
       - run: yarn --version
 
       - restore_cache:
