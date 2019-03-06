@@ -10,6 +10,7 @@
     "compile": "lerna run compile",
     "pretest": "yarn compile",
     "test": "jest",
+    "lint": "prettier --write \"**/*.{js,json,ts}\"",
     "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}' --repositoryUrl ssh://git@github.com/spiltcoffee/postdfm.git"
   },
   "devDependencies": {
@@ -21,6 +22,8 @@
     "jest": "^24.0.0",
     "jest-junit": "^6.3.0",
     "lerna": "^3.13.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "semantic-release": "~15.9.0",
     "semantic-release-monorepo": "^6.1.1",
     "typescript": "^3.3.3333"
@@ -33,8 +36,15 @@
       "path": "./node_modules/cz-lerna-changelog"
     }
   },
+  "lint-staged": {
+    "*.{js,json,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "husky": {
     "hooks": {
+      "pre-commit": "npm test && lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
