@@ -26,7 +26,8 @@
     "typescript": "^3.3.3333"
   },
   "release": {
-    "branch": "master"
+    "branch": "master",
+    "repository": "ssh://git@github.com/spiltcoffee/postdfm.git"
   },
   "config": {
     "commitizen": {
