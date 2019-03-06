@@ -11,7 +11,9 @@ export function parse(dfm: string): AST.FormObject {
   }
 
   if (parser.results.length > 1) {
-    throw new Error(`Ambiguous Grammar: ${parser.results.length} Results Found`);
+    throw new Error(
+      `Ambiguous Grammar: ${parser.results.length} Results Found`
+    );
   }
 
   return parser.results[0];
