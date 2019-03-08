@@ -41,6 +41,17 @@ jobs:
 
       - run: yarn lint:check
 
+  format:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - run: yarn format:check
+
   compile:
     executor: node-executor
     steps:
@@ -96,9 +107,12 @@ workflows:
       - lint:
           requires:
             - bootstrap
-      - compile:
+      - format:
           requires:
             - lint
+      - compile:
+          requires:
+            - format
       - test:
           requires:
             - compile
