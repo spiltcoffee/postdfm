@@ -1,16 +1,20 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+executors:
+  node-executor:
     docker:
       - image: circleci/node:latest
     working_directory: ~/repo
 
+jobs:
+  bootstrap:
+    executor: node-executor
     steps:
-      - checkout
       - run: node --version
       - run: npm --version
       - run: yarn --version
 
+      - checkout
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "yarn.lock" }}
@@ -19,14 +23,85 @@ jobs:
       - run: yarn install --frozen-lockfile
       - run: yarn bootstrap
 
+      - save_cache:
+          paths:
+            - node_modules
+            - packages/postdfm/node_modules
+            - packages/@postdfm/dfm2ast/node_modules
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+  lint:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - run: yarn lint:check
+
+  compile:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - run: yarn compile
+
+      - persist_to_workspace:
+          root: packages
+          paths:
+            - ./postdfm/dist
+            - ./@postdfm/dfm2ast/dist
+  test:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - attach_workspace:
+          at: ~/repo/packages
+
       - run: yarn test
 
       - store_test_results:
           path: test-results
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
+  release:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - attach_workspace:
+          at: ~/repo/packages
 
       - run: yarn release
+
+workflows:
+  version: 2
+  ci:
+    jobs:
+      - bootstrap
+      - lint:
+          requires:
+            - bootstrap
+      - compile:
+          requires:
+            - lint
+      - test:
+          requires:
+            - compile
+      - release:
+          requires:
+            - test
