@@ -7,11 +7,9 @@
   "description": "Provides an API for easily transforming Delphi Forms",
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "lint": "prettier --ignore-path .gitignore \"**/*.{js,json,ts}\" --write",
     "compile": "lerna run compile",
-    "pretest": "yarn compile",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts}\"",
-    "lint": "yarn run prettier --write",
-    "test": "yarn run prettier --check && jest",
+    "test": "jest",
     "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}' --repositoryUrl ssh://git@github.com/spiltcoffee/postdfm.git"
   },
   "devDependencies": {
@@ -38,7 +36,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,ts}": [
+    "*.{js,json,ts,yml}": [
       "prettier --write",
       "git add"
     ]
