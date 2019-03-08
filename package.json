@@ -25,9 +25,14 @@
     "lerna": "^3.13.1",
     "lint-staged": "^8.1.5",
     "prettier": "^1.16.4",
-    "semantic-release": "~15.13.3",
+    "semantic-release": "~15.9.0",
     "semantic-release-monorepo": "^6.1.1",
     "typescript": "^3.3.3333"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "semantic-release"
+    ]
   },
   "release": {
     "branch": "master"
