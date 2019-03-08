@@ -29,6 +29,11 @@
     "semantic-release-monorepo": "^6.1.1",
     "typescript": "^3.3.3333"
   },
+  "greenkeeper": {
+    "ignore": [
+      "semantic-release"
+    ]
+  },
   "release": {
     "branch": "master"
   },
