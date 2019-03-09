@@ -49,6 +49,7 @@ jobs:
           paths:
             - ./postdfm/dist
             - ./@postdfm/dfm2ast/dist
+            - ./@postdfm/dfm2ast/src
 
   lint:
     executor: node-executor
