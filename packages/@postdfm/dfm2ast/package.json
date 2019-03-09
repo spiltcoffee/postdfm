@@ -18,7 +18,8 @@
     "nearley": "^2.16.0"
   },
   "files": [
-    "/dist"
+    "/dist",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
