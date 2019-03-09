@@ -12,11 +12,10 @@ module.exports = {
       }
     ]
   ],
-  collectCoverageFrom: [
-    "<rootDir>/packages/**/*.js",
-    "!**/coverage/**",
-    "!**/node_modules/**"
-  ],
+  transform: {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  collectCoverage: true,
   coverageReporters: ["lcov", "text"],
   coverageDirectory: "coverage",
   rootDir: "./"
