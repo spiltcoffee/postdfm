@@ -1,6 +1,6 @@
 import * as nearley from "nearley";
-import * as grammar from "./grammar";
 import * as AST from "./ast";
+import * as grammar from "./grammar";
 
 export function parse(dfm: string): AST.FormObject {
   const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));

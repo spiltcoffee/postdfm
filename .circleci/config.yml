@@ -30,17 +30,6 @@ jobs:
             - packages/@postdfm/dfm2ast/node_modules
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
-  lint:
-    executor: node-executor
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "yarn.lock" }}
-            - v1-dependencies-
-
-      - run: yarn lint:check
-
   compile:
     executor: node-executor
     steps:
@@ -57,6 +46,32 @@ jobs:
           paths:
             - ./postdfm/dist
             - ./@postdfm/dfm2ast/dist
+
+  lint:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - attach_workspace:
+          at: ~/repo/packages
+
+      - run: yarn lint:check
+
+  format:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "yarn.lock" }}
+            - v1-dependencies-
+
+      - run: yarn format:check
+
   test:
     executor: node-executor
     steps:
@@ -93,15 +108,18 @@ workflows:
   ci:
     jobs:
       - bootstrap
-      - lint:
+      - compile:
           requires:
             - bootstrap
-      - compile:
+      - lint:
+          requires:
+            - compile
+      - format:
           requires:
             - lint
       - test:
           requires:
-            - compile
+            - format
       - release:
           requires:
             - test
