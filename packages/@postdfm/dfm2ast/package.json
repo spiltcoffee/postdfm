@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "description": "Convert Delphi Form files to an Abstract Syntax Tree",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
     "compile": "tsc"
@@ -16,6 +17,9 @@
   "dependencies": {
     "nearley": "^2.16.0"
   },
+  "files": [
+    "/dist"
+  ],
   "publishConfig": {
     "access": "public"
   }
