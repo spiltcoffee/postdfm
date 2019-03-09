@@ -82,8 +82,9 @@ typings/
 # js
 dist/
 
-# jest-junit (custom location)
+# jest
 test-results/
+coverage-results/
 
 # nearley.js
 packages/@postdfm/dfm2ast/src/grammar.ts

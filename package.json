@@ -15,7 +15,7 @@
     "format:fix": "yarn prettier --write",
     "format:check": "yarn prettier --check",
     "compile": "lerna run compile",
-    "test": "jest",
+    "test": "jest --coverage",
     "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}-v\\${version}' --repositoryUrl ssh://git@github.com/spiltcoffee/postdfm.git"
   },
   "devDependencies": {

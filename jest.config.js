@@ -12,5 +12,7 @@ module.exports = {
       }
     ]
   ],
+  coverageReporters: ["json", "text"],
+  coverageDirectory: "coverage-results",
   roots: ["packages/"]
 };
