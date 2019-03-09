@@ -80,11 +80,10 @@ typings/
 .dynamodb/
 
 # js
-dist/
+dist
 
-# jest
-test-results/
-coverage-results/
+# jest-junit
+test-results
 
 # nearley.js
 packages/@postdfm/dfm2ast/src/grammar.ts

@@ -93,7 +93,7 @@ jobs:
           path: test-results
 
       - codecov/upload:
-          file: coverage-results/coverage-final.json
+          file: coverage/lcov.info
 
   release:
     executor: node-executor
