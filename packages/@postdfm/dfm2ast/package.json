@@ -15,5 +15,8 @@
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
     "nearley": "^2.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
