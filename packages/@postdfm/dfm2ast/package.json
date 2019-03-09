@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/dfm2ast",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Convert Delphi Form files to an Abstract Syntax Tree",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
