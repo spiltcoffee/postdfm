@@ -12,7 +12,12 @@ module.exports = {
       }
     ]
   ],
-  coverageReporters: ["json", "text"],
-  coverageDirectory: "coverage-results",
-  roots: ["packages/"]
+  collectCoverageFrom: [
+    "<rootDir>/packages/**/*.js",
+    "!**/coverage/**",
+    "!**/node_modules/**"
+  ],
+  coverageReporters: ["lcov", "text"],
+  coverageDirectory: "coverage",
+  rootDir: "./"
 };
