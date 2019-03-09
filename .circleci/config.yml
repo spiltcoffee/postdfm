@@ -117,15 +117,17 @@ workflows:
       - compile:
           requires:
             - bootstrap
+      - format:
+          requires:
+            - bootstrap
       - lint:
           requires:
             - compile
-      - format:
-          requires:
-            - lint
       - test:
           requires:
-            - format
+            - compile
       - release:
           requires:
+            - lint
+            - format
             - test
