@@ -1,6 +1,6 @@
 {
   "name": "postdfm",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Provides an API for easily transforming Delphi Forms",
   "main": "index.js",
   "keywords": [
