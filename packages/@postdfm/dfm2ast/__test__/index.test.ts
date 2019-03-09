@@ -1,6 +1,6 @@
-const dfm2ast = require("..");
-const fs = require("fs");
-const path = require("path");
+import * as fs from "fs";
+import * as path from "path";
+import * as dfm2ast from "../src";
 
 describe("dfm2ast", () => {
   test("converted AST matches expected AST", () => {
