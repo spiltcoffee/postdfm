@@ -1,11 +1,10 @@
 {
-  "name": "@postdfm/dfm2ast",
+  "name": "@postdfm/ast",
   "version": "1.0.0",
-  "description": "Convert Delphi Form files to an Abstract Syntax Tree",
+  "description": "Abstract Syntax Tree classes for postdfm",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
     "compile": "tsc"
   },
   "author": "SpiltCoffee",
@@ -14,10 +13,6 @@
     "url": "https://github.com/spiltcoffee/postdfm/issues"
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
-  "dependencies": {
-    "@postdfm/ast": "^1.0.0",
-    "nearley": "^2.16.0"
-  },
   "files": [
     "/dist",
     "README.md"

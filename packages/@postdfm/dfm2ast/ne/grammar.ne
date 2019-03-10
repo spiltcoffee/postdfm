@@ -3,7 +3,7 @@
 
 @{%
 
-import * as AST from "./ast";
+import * as AST from "@postdfm/ast";
 const keywords: string[] = ["true", "false", "object", "inherited", "inline", "end", "item"];
 
 %}

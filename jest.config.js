@@ -16,6 +16,7 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   collectCoverage: true,
+  collectCoverageFrom: ["**/*.ts", "!**/node_modules/**", "!**/dist/**"],
   coverageReporters: ["lcov", "text"],
   coverageDirectory: "coverage",
   rootDir: "./"
