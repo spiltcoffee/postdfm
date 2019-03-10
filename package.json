@@ -13,7 +13,7 @@
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\"",
     "lint:fix": "yarn eslint --fix && yarn tslint --fix",
     "lint:check": "yarn eslint && yarn tslint",
-    "format:fix": "yarn prettier --write",
+    "format:fix": "yarn prettier --write --list-different",
     "format:check": "yarn prettier --check",
     "compile": "lerna run compile",
     "test": "jest --coverage",
