@@ -6,7 +6,7 @@
   ],
   "description": "Provides an API for easily transforming Delphi Forms",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --force-local",
     "eslint": "eslint --ignore-path .gitignore \"**/*.js\"",
     "tslint": "tslint \"**/*.ts\"",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\"",

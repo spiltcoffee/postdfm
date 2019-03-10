@@ -15,7 +15,7 @@ export class FormObject extends ASTNode {
     kind: ObjectKind,
     name: string,
     type: string,
-    order: number,
+    order?: number,
     properties?: Property[],
     children?: FormObject[]
   ) {
@@ -24,16 +24,11 @@ export class FormObject extends ASTNode {
     this.name = name;
     this.type = type;
 
-    if (order) {
+    if (order != null) {
       this.order = order;
     }
 
-    if (properties) {
-      this.properties = properties;
-    }
-
-    if (children) {
-      this.children = children;
-    }
+    this.properties = properties || [];
+    this.children = children || [];
   }
 }
