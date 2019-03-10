@@ -25,14 +25,20 @@ module.exports = {
     [
       "@semantic-release/github",
       {
-        assets: [
-          {
-            path: path.resolve(tarballDir, "*.tgz"),
-            label: "Deployed Tarballs"
-          }
-        ]
+        assets: pkgs.map(({ name }) => ({
+          path: path.resolve(
+            tarballDir,
+            `${name.replace("@", "").replace("/", "-")}-*.tgz`
+          ),
+          label: name
+        }))
       }
     ],
-    "@semantic-release/git"
+    [
+      "@semantic-release/git",
+      {
+        assets: ["**/package.json"]
+      }
+    ]
   ]
 };
