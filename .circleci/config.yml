@@ -48,6 +48,7 @@ jobs:
           root: packages
           paths:
             - ./postdfm/dist
+            - ./@postdfm/ast/dist
             - ./@postdfm/dfm2ast/dist
             - ./@postdfm/dfm2ast/src
 
