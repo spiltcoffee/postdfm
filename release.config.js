@@ -37,7 +37,11 @@ module.exports = {
     [
       "@semantic-release/git",
       {
-        assets: ["**/package.json"]
+        assets: [
+          "packages/postdfm/package.json",
+          "packages/@postdfm/ast/package.json",
+          "packages/@postdfm/dfm2ast/package.json"
+        ]
       }
     ]
   ]
