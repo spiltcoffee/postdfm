@@ -6,6 +6,7 @@
   ],
   "description": "Provides an API for easily transforming Delphi Forms",
   "scripts": {
+    "ci": "yarn install --frozen-lockfile && yarn run bootstrap && yarn run compile && yarn run lint:check && yarn run format:check && yarn test",
     "list": "lerna ls --json",
     "bootstrap": "lerna bootstrap --force-local",
     "eslint": "eslint --ignore-path .gitignore \"**/*.js\"",
