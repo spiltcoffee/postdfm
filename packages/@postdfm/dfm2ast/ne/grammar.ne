@@ -34,7 +34,7 @@ property -> qualifiedName _ "=" _ value {% d => new AST.Property(d[0], d[4]) %}
 value -> boolean                 {% d => new AST.BooleanValue(d[0].toLowerCase() === "true") %}
        | integer                 {% d => new AST.IntegerValue(d[0]) %}
        | double                  {% d => new AST.DoubleValue(d[0]) %}
-       | string                  {% d => new AST.StringValue(d[0]) %}
+       | string                  {% d => new AST.StringValue(d[0].value) %}
        | qualifiedName           {% (d, _, reject) => {
                                     if (keywords.includes(d[0].toLowerCase())) {
                                       return reject;
@@ -54,9 +54,11 @@ value -> boolean                 {% d => new AST.BooleanValue(d[0].toLowerCase()
 commaValues -> value                     {% d => [d[0]] %}
              | commaValues _ "," _ value {% d => [].concat(d[0], d[4]) %}
 
-plusValues -> string                    {% d => d[0] %}
-            | plusValues _ "+" _ string {% d => d[0] + d[4] %} # plus implies string on sameline
-            | plusValues __ string      {% d => d[0] + "\r\n" + d[2] %} # space implies string on newline
+plusValues -> string                    {% d => d[0].value %}
+              # plus implies string on sameline
+            | plusValues _ "+" _ string {% d => d[0] + d[4].value %}
+              # space implies string on newline
+            | plusValues __ string      {% d => d[0] + "\r\n" + d[2].value %}
 
 hexValues -> hexString              {% d => d[0] %}
            | hexValues __ hexString {% d => d[0] + d[2] %}
@@ -69,24 +71,32 @@ name -> letter            {% id %}
       | name alphanumeric {% d => d[0] + d[1] %}
 
 typeName -> name                       {% d => ({ type: d[0] }) %}
-          | name _ "[" _ natural _ "]" {% d => ({ type: d[0], order: d[4] }) %} # what is the natural for?
+          | name _ "[" _ natural _ "]" {% d => ({ type: d[0], order: d[4] }) %}
 
 qualifiedName -> name          {% id %}
                | name "." name {% d => d[0] + "." + d[2] %}
 
 string -> singleString        {% id %}
-        | string singleString {% d => d[0] + d[1] %}
+          # two literals next to each other cause an apostrophe to appear
+        | string singleString {% d => {
+                                  const areBothLiterals = d[0].type === "literal" && d[1].type === "literal";
 
-singleString -> literalString {% id %}
-              | controlChar   {% id %}
+                                  return {
+                                    type: d[1].type,
+                                    value:
+                                      d[0].value +
+                                      (areBothLiterals ? "'" : "") +
+                                      d[1].value
+                                  }
+                              } %}
 
-literalString -> "'" quotedString "'" {% d => d[1] %}
+singleString -> controlChar   {% d => ({ type: "control", value: d[0] }) %}
+              | literalString {% d => ({ type: "literal", value: d[0] }) %}
 
-quotedString -> quotedStringChar              {% id %}
-              | quotedString quotedStringChar {% d => d[0] + d[1] %}
+literalString -> "'" quotedString "'"         {% d => d[1] %}
 
-quotedStringChar -> "''" {% () => "'" %} # escape single quote
-                  | [^'] {% id %}
+quotedString -> null                          {% () => "" %}
+              | quotedString [^'] {% d => d[0] + d[1] %}
 
 controlChar -> "#" natural {% d => String.fromCharCode(d[1]) %}
 
@@ -111,7 +121,6 @@ hexString -> hexDigit           {% id %}
 integer -> int {% id %}
          | hex {% id %}
 
-#todo: improve?
 double -> int "." natural          {% d => `${d[0]}.${d[2]}` %}
         | int "e"i int             {% d => `${d[0]}e${d[2]}` %}
         | int "." natural "e"i int {% d => `${d[0]}.${d[2]}e${d[4]}` %}

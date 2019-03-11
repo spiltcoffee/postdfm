@@ -61,7 +61,7 @@
           "name": "Items.Strings",
           "value": {
             "astType": "stringList",
-            "values": "this is string.\r\nand another one...and another one...now with apostrophe '\r\n"
+            "values": "this is string.\r\nand another one...and another one...now with apostrophe '\r\nhow fancy"
           }
         },
         {

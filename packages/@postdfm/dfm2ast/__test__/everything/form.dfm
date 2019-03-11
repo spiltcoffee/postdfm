@@ -14,7 +14,7 @@ object Form1: TForm1
       ( 'this is string.'
         'and another one...'
       + 'and another one...'
-      + 'now with apostrophe '''#13#10
+      + 'now with apostrophe '''#13#10'how fancy'
       )
     Items.MoreStrings = ()
   end
