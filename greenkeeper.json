@@ -3,6 +3,7 @@
     "default": {
       "packages": [
         "package.json",
+        "packages/@postdfm/ast/package.json",
         "packages/@postdfm/dfm2ast/package.json",
         "packages/postdfm/package.json"
       ]
