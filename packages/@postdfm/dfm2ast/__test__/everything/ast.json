@@ -1,0 +1,224 @@
+{
+  "astType": "object",
+  "kind": "object",
+  "name": "Form1",
+  "type": "TForm1",
+  "properties": [
+    {
+      "astType": "property",
+      "name": "Left",
+      "value": {
+        "astType": "integer",
+        "value": "192"
+      }
+    },
+    {
+      "astType": "property",
+      "name": "Font.Name",
+      "value": {
+        "astType": "string",
+        "value": "MS Sans Serif"
+      }
+    },
+    {
+      "astType": "property",
+      "name": "Font.Style",
+      "value": { "astType": "qualifiedList", "values": [] }
+    }
+  ],
+  "children": [
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "Image1",
+      "type": "TImage",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "Picture.Data",
+          "value": {
+            "astType": "hexString",
+            "value": "07544269746D617036550000424D365500000000000036000000280000005500000055000000010018000000000000550000C40E0000C40E0000000000000000"
+          }
+        },
+        {
+          "astType": "property",
+          "name": "Picture.MoreData",
+          "value": { "astType": "hexString", "value": "" }
+        }
+      ],
+      "children": []
+    },
+    {
+      "astType": "object",
+      "kind": "inherited",
+      "name": "ListBox1",
+      "type": "TListBox",
+      "order": "2",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "Items.Strings",
+          "value": {
+            "astType": "stringList",
+            "values": "this is string.\r\nand another one...and another one...now with apostrophe '\r\nhow fancy"
+          }
+        },
+        {
+          "astType": "property",
+          "name": "Items.MoreStrings",
+          "value": { "astType": "stringList", "values": [] }
+        }
+      ],
+      "children": []
+    },
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "DBGrid1",
+      "type": "TDBGrid",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "Options",
+          "value": {
+            "astType": "qualifiedList",
+            "values": [
+              { "astType": "qualified", "value": "dgTitles" },
+              { "astType": "qualified", "value": "dgIndicator" },
+              { "astType": "qualified", "value": "dgColumnResize" },
+              { "astType": "qualified", "value": "dgColLines" },
+              { "astType": "qualified", "value": "dgRowLines" },
+              { "astType": "qualified", "value": "dgTabs" },
+              { "astType": "qualified", "value": "dgRowSelect" },
+              {
+                "astType": "qualified",
+                "value": "dgConfirmDelete"
+              },
+              {
+                "astType": "qualified",
+                "value": "dgCancelOnExit"
+              }
+            ]
+          }
+        },
+        {
+          "astType": "property",
+          "name": "MoreOptions",
+          "value": {
+            "astType": "qualifiedList",
+            "values": []
+          }
+        },
+        {
+          "astType": "property",
+          "name": "Columns",
+          "value": {
+            "astType": "itemList",
+            "values": [
+              {
+                "astType": "item",
+                "properties": [
+                  {
+                    "astType": "property",
+                    "name": "Expanded",
+                    "value": {
+                      "astType": "boolean",
+                      "value": false
+                    }
+                  },
+                  {
+                    "astType": "property",
+                    "name": "Visible",
+                    "value": { "astType": "boolean", "value": true }
+                  }
+                ]
+              },
+              {
+                "astType": "item",
+                "properties": [
+                  {
+                    "astType": "property",
+                    "name": "Expanded",
+                    "value": { "astType": "boolean", "value": false }
+                  },
+                  {
+                    "astType": "property",
+                    "name": "Visible",
+                    "value": { "astType": "boolean", "value": true }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "astType": "property",
+          "name": "MoreColumns",
+          "value": { "astType": "itemList", "values": [] }
+        }
+      ],
+      "children": []
+    },
+    {
+      "astType": "object",
+      "kind": "inline",
+      "name": "Edit1",
+      "type": "TEdit",
+      "properties": [
+        {
+          "astType": "property",
+          "name": "MaxLength",
+          "value": { "astType": "double", "value": "6e20" }
+        },
+        {
+          "astType": "property",
+          "name": "MinLength",
+          "value": { "astType": "double", "value": "-20e1" }
+        },
+        {
+          "astType": "property",
+          "name": "SomeOtherLength",
+          "value": { "astType": "double", "value": "45.333e20" }
+        },
+        {
+          "astType": "property",
+          "name": "Color",
+          "value": { "astType": "integer", "value": "FF0000" }
+        }
+      ],
+      "children": []
+    },
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "SubForm",
+      "type": "TForm2",
+      "properties": [],
+      "children": [
+        {
+          "astType": "object",
+          "kind": "inline",
+          "name": "SubEdit",
+          "type": "TEdit",
+          "properties": [
+            {
+              "astType": "property",
+              "name": "Value",
+              "value": { "astType": "string", "value": "" }
+            }
+          ],
+          "children": []
+        }
+      ]
+    },
+    {
+      "astType": "object",
+      "kind": "object",
+      "name": "Nothing",
+      "type": "TNothing",
+      "properties": [],
+      "children": []
+    }
+  ]
+}
