@@ -111,6 +111,15 @@ jobs:
 
       - run: yarn release
 
+      - store_artifacts:
+          path: ~/repo/dist
+      - store_artifacts:
+          path: ~/repo/package.json
+      - store_artifacts:
+          path: ~/repo/packages/@postdfm/ast/package.json
+      - store_artifacts:
+          path: ~/repo/packages/@postdfm/dfm2ast/package.json
+
 workflows:
   version: 2
   ci:
