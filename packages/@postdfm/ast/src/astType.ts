@@ -10,5 +10,6 @@ export enum ASTType {
   QualifiedList = "qualifiedList",
   ItemList = "itemList",
   Property = "property",
-  Object = "object"
+  Object = "object",
+  Root = "root"
 }

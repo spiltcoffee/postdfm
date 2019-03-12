@@ -2,7 +2,7 @@ import * as AST from "@postdfm/ast";
 import * as nearley from "nearley";
 import * as grammar from "./grammar";
 
-export function parse(dfm: string): AST.FormObject {
+export function parse(dfm: string): AST.Root {
   const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
   parser.feed(dfm);
 

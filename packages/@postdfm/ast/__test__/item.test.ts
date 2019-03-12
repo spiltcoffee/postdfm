@@ -2,9 +2,9 @@ import * as AST from "../src";
 
 describe("creating Items", () => {
   test("empty Item", () => {
-    const node = new AST.Item([]);
+    const node = new AST.Item();
 
-    expect(node.properties.length).toBe(0);
+    expect(node.properties).toHaveLength(0);
   });
 
   test("Item", () => {
@@ -14,6 +14,6 @@ describe("creating Items", () => {
     );
     const node = new AST.Item([propertyNode]);
 
-    expect(node.properties).toContain(propertyNode);
+    expect(node.properties).toContainEqual(propertyNode);
   });
 });
