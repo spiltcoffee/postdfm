@@ -6,7 +6,7 @@ orbs:
 executors:
   node-executor:
     docker:
-      - image: circleci/node:11.10.1
+      - image: circleci/node:latest
     working_directory: ~/repo
 
 jobs:
