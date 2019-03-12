@@ -1,9 +1,19 @@
 import * as AST from "../src";
 
 describe("creating Values", () => {
+  test("empty StringValue", () => {
+    const node = new AST.StringValue();
+    expect(node.value).toBe("");
+  });
+
   test("StringValue", () => {
     const node = new AST.StringValue("hello world");
     expect(node.value).toBe("hello world");
+  });
+
+  test("empty HexStringValue", () => {
+    const node = new AST.HexStringValue();
+    expect(node.value).toBe("");
   });
 
   test("HexStringValue", () => {
@@ -11,14 +21,34 @@ describe("creating Values", () => {
     expect(node.value).toBe("FFFFFFFF");
   });
 
+  test("empty IntegerValue", () => {
+    const node = new AST.IntegerValue();
+    expect(node.value).toBe(0);
+  });
+
   test("IntegerValue", () => {
     const node = new AST.IntegerValue(1337);
     expect(node.value).toBe(1337);
   });
 
+  test("empty DoubleValue", () => {
+    const node = new AST.DoubleValue();
+
+    expect(node.value).toEqual({ integer: "0" });
+  });
+
   test("DoubleValue", () => {
-    const node = new AST.DoubleValue(420.69);
-    expect(node.value).toBe(420.69);
+    const node = new AST.DoubleValue({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+
+    expect(node.value).toEqual({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
   });
 
   test("BooleanValue", () => {

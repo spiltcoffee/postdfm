@@ -16,7 +16,12 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   collectCoverage: true,
-  collectCoverageFrom: ["**/*.ts", "!**/node_modules/**", "!**/dist/**"],
+  collectCoverageFrom: [
+    "**/*.ts",
+    "!**/node_modules/**",
+    "!**/dist/**",
+    "!packages/@postdfm/dfm2ast/src/grammar.ts"
+  ],
   coverageReporters: ["lcov", "text"],
   coverageDirectory: "coverage",
   rootDir: "./"

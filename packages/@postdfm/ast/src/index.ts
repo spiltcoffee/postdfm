@@ -1,6 +1,8 @@
 export { ASTType } from "./astType";
 export { ASTNode } from "./astNode";
 
+export { Keywords } from "./keywords";
+
 export { Value } from "./value/value";
 export { StringValue } from "./value/stringValue";
 export { HexStringValue } from "./value/hexStringValue";
@@ -20,4 +22,6 @@ export { Property } from "./property";
 
 export { ObjectKind } from "./objectKind";
 
-export { FormObject } from "./formObject";
+export { DObject } from "./object";
+
+export { Root } from "./root";
