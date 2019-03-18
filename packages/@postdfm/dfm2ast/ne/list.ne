@@ -35,16 +35,16 @@ itemValues -> itemValues _ item
   return [].concat(items, item);
 } %}
 
-qualifiedList -> "[" _ "]"
+identifierList -> "[" _ "]"
 {% ([_, beforeClose]) => {
-  const node = new AST.QualifiedList();
+  const node = new AST.IdentifierList();
   node.raws = { beforeClose };
   return node;
 } %}
 
-qualifiedList -> "[" _ commaValues _ "]"
+identifierList -> "[" _ commaValues _ "]"
 {% ([_, afterOpen, commaValues, beforeClose]) => {
-  const node = new AST.QualifiedList(commaValues);
+  const node = new AST.IdentifierList(commaValues);
   node.raws = { afterOpen, beforeClose };
   return node;
 } %}

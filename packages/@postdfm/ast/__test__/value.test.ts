@@ -56,8 +56,8 @@ describe("creating Values", () => {
     expect(node.value).toBe(true);
   });
 
-  test("QualifiedValue", () => {
-    const node = new AST.QualifiedValue("Font.Name");
-    expect(node.value).toBe("Font.Name");
+  test("IdentifierValue", () => {
+    const node = new AST.IdentifierValue("neIdentifier");
+    expect(node.value).toBe("neIdentifier");
   });
 });

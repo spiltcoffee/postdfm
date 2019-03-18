@@ -15,17 +15,17 @@ describe("creating Lists", () => {
     expect(node.values).toContainEqual(new AST.StringValue("world"));
   });
   test("empty QualifiedList", () => {
-    const node = new AST.QualifiedList();
+    const node = new AST.IdentifierList();
 
     expect(node.values).toHaveLength(0);
   });
   test("QualifiedList", () => {
-    const node = new AST.QualifiedList([
-      new AST.QualifiedValue("enHello"),
-      new AST.QualifiedValue("enWorld")
+    const node = new AST.IdentifierList([
+      new AST.IdentifierValue("enHello"),
+      new AST.IdentifierValue("enWorld")
     ]);
 
-    expect(node.values).toContainEqual(new AST.QualifiedValue("enWorld"));
+    expect(node.values).toContainEqual(new AST.IdentifierValue("enWorld"));
   });
   test("empty ItemList", () => {
     const node = new AST.ItemList();

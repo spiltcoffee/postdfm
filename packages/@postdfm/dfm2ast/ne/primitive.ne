@@ -1,13 +1,17 @@
-name -> letter
+identifer -> letter
+{% id %}
+identifer -> "_"
 {% id %}
 
-name -> name alphanumeric
+identifer -> identifer alphanumeric
+{% join %}
+identifer -> identifer "_"
 {% join %}
 
-qualifiedName -> name
+qualifiedName -> identifer
 {% id %}
 
-qualifiedName -> name "." name
+qualifiedName -> identifer "." identifer
 {% join %}
 
 string -> singleString

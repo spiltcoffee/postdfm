@@ -9,12 +9,12 @@ export { HexStringValue } from "./value/hexStringValue";
 export { IntegerValue } from "./value/integerValue";
 export { DoubleValue } from "./value/doubleValue";
 export { BooleanValue } from "./value/booleanValue";
-export { QualifiedValue } from "./value/qualifiedValue";
+export { IdentifierValue } from "./value/identifierValue";
 
 export { Item } from "./item";
 
 export { List } from "./list/list";
-export { QualifiedList } from "./list/qualifiedList";
+export { IdentifierList } from "./list/identifierList";
 export { StringList } from "./list/stringList";
 export { ItemList } from "./list/itemList";
 

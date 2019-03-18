@@ -19,7 +19,7 @@ object Form1: TForm1
     Items.MoreStrings = ()
   end
   object DBGrid1: TDBGrid
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    Options = [dgTitles, dg_Indicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
     MoreOptions = []
     Columns = <
       item
@@ -43,6 +43,6 @@ object Form1: TForm1
       Value = ''
     end
   end
-  object Nothing: TNothing
+  object Nothing: _TNothing
   end
 end
