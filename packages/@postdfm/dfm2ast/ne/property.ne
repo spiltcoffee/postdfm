@@ -7,7 +7,7 @@ properties -> properties _ property
   return [].concat(properties, property);
 } %}
 
-property -> qualifiedName _ "=" _ value
+property -> qualifiedIdentifier _ "=" _ value
 {% ([name, afterName, _, beforeValue, value]) => {
   const node = new AST.Property(name, value);
   node.raws = { afterName, beforeValue };

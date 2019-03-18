@@ -2,6 +2,7 @@ object Form1: TForm1
   Left = 192
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  Border.Bottom.Style = bdSolid
   object Image1: TImage
     Picture.Data = {
       07544269746D617036550000424D365500000000000036000000280000005500
