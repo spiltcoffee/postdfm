@@ -46,6 +46,19 @@
           "beforeValue": " ",
           "before": "\r\n  "
         }
+      },
+      {
+        "astType": "property",
+        "name": "Border.Bottom.Style",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "identifier",
+          "value": "bdSolid"
+        }
       }
     ],
     "children": [

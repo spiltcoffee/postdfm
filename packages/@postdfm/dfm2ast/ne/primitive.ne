@@ -8,10 +8,10 @@ identifer -> identifer alphanumeric
 identifer -> identifer "_"
 {% join %}
 
-qualifiedName -> identifer
+qualifiedIdentifier -> identifer
 {% id %}
 
-qualifiedName -> identifer "." identifer
+qualifiedIdentifier -> qualifiedIdentifier "." identifer
 {% join %}
 
 string -> singleString
