@@ -10,16 +10,16 @@ value -> double
 value -> string
 {% ([valueObject]) => new AST.StringValue(valueObject.value) %}
 
-value -> qualifiedName
+value -> identifer
 {% ([value], _, reject) => {
   if (AST.Keywords.includes(value.toLowerCase())) {
     return reject;
   }
 
-  return new AST.QualifiedValue(value);
+  return new AST.IdentifierValue(value);
 } %}
 
-value -> qualifiedList
+value -> identifierList
 {% id %}
 
 value -> stringList

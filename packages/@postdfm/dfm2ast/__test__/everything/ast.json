@@ -35,7 +35,7 @@
         "astType": "property",
         "name": "Font.Style",
         "value": {
-          "astType": "qualifiedList",
+          "astType": "identifierList",
           "values": [],
           "raws": {
             "beforeClose": ""
@@ -160,25 +160,25 @@
             "astType": "property",
             "name": "Options",
             "value": {
-              "astType": "qualifiedList",
+              "astType": "identifierList",
               "values": [
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgTitles",
                   "raws": {
                     "after": ""
                   }
                 },
                 {
-                  "astType": "qualified",
-                  "value": "dgIndicator",
+                  "astType": "identifier",
+                  "value": "dg_Indicator",
                   "raws": {
                     "before": " ",
                     "after": ""
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgColumnResize",
                   "raws": {
                     "before": " ",
@@ -186,7 +186,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgColLines",
                   "raws": {
                     "before": " ",
@@ -194,7 +194,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgRowLines",
                   "raws": {
                     "before": " ",
@@ -202,7 +202,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgTabs",
                   "raws": {
                     "before": " ",
@@ -210,7 +210,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgRowSelect",
                   "raws": {
                     "before": " ",
@@ -218,7 +218,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgConfirmDelete",
                   "raws": {
                     "before": " ",
@@ -226,7 +226,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgCancelOnExit",
                   "raws": {
                     "before": " "
@@ -247,7 +247,7 @@
             "astType": "property",
             "name": "MoreOptions",
             "value": {
-              "astType": "qualifiedList",
+              "astType": "identifierList",
               "values": [],
               "raws": {
                 "beforeClose": ""
@@ -500,7 +500,7 @@
         "astType": "object",
         "kind": "object",
         "name": "Nothing",
-        "type": "TNothing",
+        "type": "_TNothing",
         "properties": [],
         "children": [],
         "raws": {

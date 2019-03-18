@@ -33,10 +33,10 @@ objectKind -> "inline"i
 objectKind -> "object"i
 {% () => AST.ObjectKind.Object %}
 
-objectDef -> name
+objectDef -> identifer
 {% ([name]) => ({ name }) %}
 
-objectDef -> name _ ":" _ name
+objectDef -> identifer _ ":" _ identifer
 {% ([name, afterName, _, beforeType, type]) => ({
   name,
   type,
@@ -47,7 +47,7 @@ objectDef -> name _ ":" _ name
 }) %}
 
 #is this one valid?
-objectDef -> name _ "[" _ natural _ "]"
+objectDef -> identifer _ "[" _ natural _ "]"
 {% ([name, afterName, _, beforeOrder, order, afterOrder]) => ({
   name,
   order,
@@ -58,7 +58,7 @@ objectDef -> name _ "[" _ natural _ "]"
   }
 }) %}
 
-objectDef -> name _ ":" _ name  _ "[" _ natural _ "]"
+objectDef -> identifer _ ":" _ identifer  _ "[" _ natural _ "]"
 {% ([name, afterName, _, beforeType, type, afterType, __, beforeOrder, order, afterOrder]) => ({
   name,
   type,
