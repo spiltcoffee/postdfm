@@ -44,6 +44,11 @@ object Form1: TForm1
       255
       True)
   end
+  object Edit2: TEdit
+    Value =
+      'Some multi line ' +
+      'string'#13#10 +
+      #37'hello'#45'world'
   object SubForm: TForm2
     inline SubEdit: TEdit
       Value = ''
