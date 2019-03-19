@@ -5,6 +5,8 @@ export { Keywords } from "./keywords";
 
 export { Value } from "./value/value";
 export { StringValue } from "./value/stringValue";
+export { ControlString } from "./value/controlString";
+export { LiteralString } from "./value/literalString";
 export { HexStringValue } from "./value/hexStringValue";
 export { IntegerValue } from "./value/integerValue";
 export { DoubleValue } from "./value/doubleValue";
@@ -15,7 +17,7 @@ export { Item } from "./item";
 
 export { List } from "./list/list";
 export { IdentifierList } from "./list/identifierList";
-export { StringList } from "./list/stringList";
+export { VariantList } from "./list/variantList";
 export { ItemList } from "./list/itemList";
 
 export { Property } from "./property";

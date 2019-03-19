@@ -1,5 +1,7 @@
 export enum ASTType {
   String = "string",
+  ControlString = "controlString",
+  LiteralString = "literalString",
   HexString = "hexString",
   Integer = "integer",
   Double = "double",

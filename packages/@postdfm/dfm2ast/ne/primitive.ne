@@ -19,19 +19,35 @@ string -> singleString
 
 # two literals next to each other cause an apostrophe to appear
 string -> string singleString
-{% ([left, right]) => ({
-  isLiteral: right.isLiteral,
-  value:
-    left.value +
-    (left.isLiteral && right.isLiteral ? "'" : "") +
-    right.value
-}) %}
+{% ([values, value]) => {
+  const prevValue = values[values.length - 1];
+  const isLiteral = (
+    prevValue.astType === AST.ASTType.LiteralString &&
+    value.astType  === AST.ASTType.LiteralString
+  );
+
+  if (isLiteral) {
+    prevValue.value += "'" + value.value;
+    return values;
+  } else {
+    return [].concat(values, value)
+  }
+} %}
+
+stringSep -> _ "+" _
+{% join %}
+
+string -> string stringSep singleString
+{% ([values, before, value]) => {
+  value.raws = { ...(value.raws || {}), before };
+  return [].concat(values, value);
+} %}
 
 singleString -> controlChar
-{% ([value]) => ({ value }) %}
+{% ([value]) => new AST.ControlString(value) %}
 
 singleString -> literalString
-{% ([value]) => ({ isLiteral: true, value }) %}
+{% ([value]) => new AST.LiteralString(value) %}
 
 literalString -> "'" quotedString "'"
 {% ([_, value]) => value %}
