@@ -38,6 +38,11 @@ object Form1: TForm1
     MinLength = -20e1
     SomeOtherLength = 45.333e20
     Color = $FF0000
+    BackgroundColorStreamer = (
+      255
+      255
+      255
+      True)
   end
   object SubForm: TForm2
     inline SubEdit: TEdit
