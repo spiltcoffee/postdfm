@@ -9,16 +9,14 @@ commaValues -> commaValues _ "," _ value
   return [].concat(values, value);
 }%}
 
-plusValues -> string
-{% ([v]) => v.value %}
+variantValues -> value
+{% ([value]) => [value] %}
 
-# plus implies string on sameline
-plusValues -> plusValues _ "+" _ string
-{% ([left, _, __, ___, right]) => `${left}${right.value}` %}
-
-# space implies string on newline
-plusValues -> plusValues __ string
-{% ([left, _, right]) => `${left}\r\n${right.value}` %}
+variantValues -> variantValues __ value
+{% ([values, before, value]) => {
+  value.raws = { ...(values.raws || {}), before };
+  return [].concat(values, value);
+} %}
 
 hexValues -> hexString
 {% id %}
@@ -49,16 +47,16 @@ identifierList -> "[" _ commaValues _ "]"
   return node;
 } %}
 
-stringList -> "(" _ ")"
+variantList -> "(" _ ")"
 {% ([_, beforeClose]) => {
-  const node = new AST.StringList();
+  const node = new AST.VariantList();
   node.raws = { beforeClose };
   return node;
 } %}
 
-stringList -> "(" _ plusValues _ ")"
-{% ([_, afterOpen, plusValues, beforeClose]) => {
-  const node = new AST.StringList(plusValues);
+variantList -> "(" _ variantValues _ ")"
+{% ([_, afterOpen, variantValues, beforeClose]) => {
+  const node = new AST.VariantList(variantValues);
   node.raws = { afterOpen, beforeClose };
   return node;
 } %}

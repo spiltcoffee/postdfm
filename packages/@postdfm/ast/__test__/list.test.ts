@@ -2,17 +2,25 @@ import * as AST from "../src";
 
 describe("creating Lists", () => {
   test("empty StringList", () => {
-    const node = new AST.StringList();
+    const node = new AST.VariantList();
 
     expect(node.values).toHaveLength(0);
   });
-  test("StringList", () => {
-    const node = new AST.StringList([
-      new AST.StringValue("hello"),
-      new AST.StringValue("world")
+  test("VariantList", () => {
+    const node = new AST.VariantList([
+      new AST.StringValue([new AST.LiteralString("hello")]),
+      new AST.IntegerValue(255),
+      new AST.BooleanValue(true),
+      new AST.StringValue([new AST.LiteralString("world")])
     ]);
 
-    expect(node.values).toContainEqual(new AST.StringValue("world"));
+    expect(node.values).toContainEqual(
+      new AST.StringValue([new AST.LiteralString("world")])
+    );
+
+    expect(node.values).toContainEqual(new AST.IntegerValue(255));
+
+    expect(node.values).toContainEqual(new AST.BooleanValue(true));
   });
   test("empty QualifiedList", () => {
     const node = new AST.IdentifierList();
@@ -35,7 +43,10 @@ describe("creating Lists", () => {
   test("ItemList", () => {
     const itemNode1 = new AST.Item();
     const itemNode2 = new AST.Item([
-      new AST.Property("Font.Name", new AST.StringValue("sans-serif"))
+      new AST.Property(
+        "Font.Name",
+        new AST.StringValue([new AST.LiteralString("sans-serif")])
+      )
     ]);
     const node = new AST.ItemList([itemNode1, itemNode2]);
 

@@ -8,7 +8,7 @@ value -> double
 {% ([value]) => new AST.DoubleValue(value) %}
 
 value -> string
-{% ([valueObject]) => new AST.StringValue(valueObject.value) %}
+{% ([value]) => new AST.StringValue(value) %}
 
 value -> identifer
 {% ([value], _, reject) => {
@@ -22,7 +22,7 @@ value -> identifer
 value -> identifierList
 {% id %}
 
-value -> stringList
+value -> variantList
 {% id %}
 
 value -> hexStringList

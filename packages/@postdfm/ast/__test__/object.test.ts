@@ -26,7 +26,7 @@ describe("creating FormObjects", () => {
   test("FormObject with properties", () => {
     const propertyNode = new AST.Property(
       "Font.Name",
-      new AST.StringValue("sans-serif")
+      new AST.StringValue([new AST.LiteralString("sans-serif")])
     );
 
     const node = new AST.DObject(
@@ -68,7 +68,7 @@ describe("creating FormObjects", () => {
   test("FormObject with a bit of everything", () => {
     const propertyNode = new AST.Property(
       "Font.Name",
-      new AST.StringValue("sans-serif")
+      new AST.StringValue([new AST.LiteralString("sans-serif")])
     );
 
     const childNode = new AST.DObject(AST.ObjectKind.Object, "MyEdit", "TEdit");

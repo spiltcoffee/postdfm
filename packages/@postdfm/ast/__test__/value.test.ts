@@ -1,14 +1,38 @@
 import * as AST from "../src";
 
 describe("creating Values", () => {
+  test("empty ControlString", () => {
+    const node = new AST.ControlString();
+    expect(node.value).toEqual("");
+  });
+
+  test("ControlString", () => {
+    const node = new AST.ControlString();
+    expect(node.value).toEqual("");
+  });
+
+  test("empty LiteralString", () => {
+    const node = new AST.LiteralString();
+    expect(node.value).toEqual("");
+  });
+
+  test("LiteralString", () => {
+    const node = new AST.LiteralString();
+    expect(node.value).toEqual("");
+  });
+
   test("empty StringValue", () => {
     const node = new AST.StringValue();
-    expect(node.value).toBe("");
+    expect(node.value).toEqual([]);
   });
 
   test("StringValue", () => {
-    const node = new AST.StringValue("hello world");
-    expect(node.value).toBe("hello world");
+    const node = new AST.StringValue([
+      new AST.LiteralString("hello"),
+      new AST.ControlString("\r\n"),
+      new AST.LiteralString("world")
+    ]);
+    expect(node.value).toContainEqual(new AST.LiteralString("world"));
   });
 
   test("empty HexStringValue", () => {
