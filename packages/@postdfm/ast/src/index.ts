@@ -7,8 +7,9 @@ export { Value } from "./value/value";
 export { StringValue } from "./value/stringValue";
 export { ControlString } from "./value/controlString";
 export { LiteralString } from "./value/literalString";
-export { HexStringValue } from "./value/hexStringValue";
+export { BinaryStringValue } from "./value/binaryStringValue";
 export { IntegerValue } from "./value/integerValue";
+export { HexCodeValue } from "./value/hexCodeValue";
 export { DoubleValue } from "./value/doubleValue";
 export { BooleanValue } from "./value/booleanValue";
 export { IdentifierValue } from "./value/identifierValue";
@@ -16,6 +17,7 @@ export { IdentifierValue } from "./value/identifierValue";
 export { Item } from "./item";
 
 export { List } from "./list/list";
+export { BinaryStringList } from "./list/binaryStringList";
 export { IdentifierList } from "./list/identifierList";
 export { VariantList } from "./list/variantList";
 export { ItemList } from "./list/itemList";

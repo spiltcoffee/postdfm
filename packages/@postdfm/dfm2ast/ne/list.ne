@@ -18,11 +18,14 @@ variantValues -> variantValues __ value
   return [].concat(values, value);
 } %}
 
-hexValues -> hexString
-{% id %}
+binaryValues -> binaryString
+{% ([value]) => [value] %}
 
-hexValues -> hexValues __ hexString
-{% ([left, _, right]) => `${left}${right}` %}
+binaryValues -> binaryValues __ binaryString
+{% ([values, before, value]) => {
+  value.raws = { ...(value.raws || {}), before };
+  return [].concat(values, value);
+}%}
 
 itemValues -> item
 {% ([value]) => [value] %}
@@ -61,16 +64,16 @@ variantList -> "(" _ variantValues _ ")"
   return node;
 } %}
 
-hexStringList -> "{" _ "}"
+binaryStringList -> "{" _ "}"
 {% ([_, beforeClose]) => {
-  const node = new AST.HexStringValue();
+  const node = new AST.BinaryStringList();
   node.raws = { beforeClose };
   return node;
 } %}
 
-hexStringList -> "{" _ hexValues _ "}"
-{% ([_, afterOpen, hexValues, beforeClose]) => {
-  const node = new AST.HexStringValue(hexValues);
+binaryStringList -> "{" _ binaryValues _ "}"
+{% ([_, afterOpen, binaryValues, beforeClose]) => {
+  const node = new AST.BinaryStringList(binaryValues);
   node.raws = { afterOpen, beforeClose };
   return node;
 } %}

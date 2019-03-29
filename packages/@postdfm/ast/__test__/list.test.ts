@@ -1,11 +1,12 @@
 import * as AST from "../src";
 
 describe("creating Lists", () => {
-  test("empty StringList", () => {
+  test("empty VariantList", () => {
     const node = new AST.VariantList();
 
     expect(node.values).toHaveLength(0);
   });
+
   test("VariantList", () => {
     const node = new AST.VariantList([
       new AST.StringValue([new AST.LiteralString("hello")]),
@@ -22,11 +23,28 @@ describe("creating Lists", () => {
 
     expect(node.values).toContainEqual(new AST.BooleanValue(true));
   });
+
+  test("empty BinaryStringList", () => {
+    const node = new AST.BinaryStringList();
+
+    expect(node.values).toHaveLength(0);
+  });
+
+  test("BinaryStringList", () => {
+    const node = new AST.BinaryStringList([
+      new AST.BinaryStringValue("BADA55"),
+      new AST.BinaryStringValue("C0FFEE")
+    ]);
+
+    expect(node.values).toContainEqual(new AST.BinaryStringValue("C0FFEE"));
+  });
+
   test("empty QualifiedList", () => {
     const node = new AST.IdentifierList();
 
     expect(node.values).toHaveLength(0);
   });
+
   test("QualifiedList", () => {
     const node = new AST.IdentifierList([
       new AST.IdentifierValue("enHello"),
@@ -35,11 +53,13 @@ describe("creating Lists", () => {
 
     expect(node.values).toContainEqual(new AST.IdentifierValue("enWorld"));
   });
+
   test("empty ItemList", () => {
     const node = new AST.ItemList();
 
     expect(node.values).toHaveLength(0);
   });
+
   test("ItemList", () => {
     const itemNode1 = new AST.Item();
     const itemNode2 = new AST.Item([

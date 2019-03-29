@@ -58,42 +58,44 @@ quotedString -> null
 quotedString -> quotedString [^']
 {% join %}
 
-controlChar -> "#" natural
-{% ([charCode]) => String.fromCharCode(charCode) %}
+controlChar -> "#" decimal
+{% ([_, charCode]) => String.fromCharCode(charCode) %}
 
-digit -> [0-9]
+binaryString -> hexidecimal
+{% ([value]) => new AST.BinaryStringValue(value) %}
+
+hexCode -> "$" hexidecimal
+{% ([_, hexCode]) => hexCode %}
+
+hexidecimal -> hexDigit
 {% id %}
+hexidecimal -> hexidecimal hexDigit
+{% join %}
 
-letter -> [a-zA-Z]
-{% id %}
+hexDigit -> [0-9a-fA-F] {% id %}
 
-alphanumeric -> digit
+float -> integer "." decimal
+{% ([integer, _, fraction]) => ({ integer, fraction }) %}
+
+float -> integer "e"i integer
+{% ([integer, _, exponent]) => ({ integer, exponent }) %}
+
+float -> integer "." decimal "e"i integer
+{% ([integer, _, fraction, __, exponent]) => ({ integer, fraction, exponent }) %}
+
+decimal -> decimalDigit {% id %} | decimal decimalDigit {% join %}
+sign -> "+" {% id %} | "-" {% id %}
+integer -> sign decimal {% join %} | decimal {% id %}
+
+alphanumeric -> decimalDigit
 {% id %}
 alphanumeric -> letter
 {% id %}
 
-natural -> digit {% id %} | natural digit {% join %}
-sign -> "+" {% id %} | "-" {% id %}
-int -> sign natural {% join %} | natural {% id %}
+decimalDigit -> [0-9]
+{% id %}
 
-hexDigit -> [0-9a-fA-F] {% id %}
-
-hex -> "$" hexDigit
-{% ([hexDigit]) => hexDigit %}
-hex -> hex hexDigit
-{% join %}
-
-hexString -> hexDigit {% id %} | hexString hexDigit {% join %}
-
-integer -> int {% id %} | hex {% id %}
-
-double -> int "." natural
-{% ([integer, _, fraction]) => ({ integer, fraction }) %}
-
-double -> int "e"i int
-{% ([integer, _, exponent]) => ({ integer, exponent }) %}
-
-double -> int "." natural "e"i int
-{% ([integer, _, fraction, __, exponent]) => ({ integer, fraction, exponent }) %}
+letter -> [a-zA-Z]
+{% id %}
 
 boolean -> "true"i {% () => true %} | "false"i {% () => false %}
