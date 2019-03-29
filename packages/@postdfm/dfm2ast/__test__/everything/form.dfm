@@ -44,6 +44,11 @@ object Form1: TForm1
       255
       True)
   end
+  object MyContainer: TContainer
+    Cost = 32.5c
+    Multiplier = 12.5s
+    Date = 47000.1d
+  end
   object Edit2: TEdit
     Value =
       'Some multi line ' +

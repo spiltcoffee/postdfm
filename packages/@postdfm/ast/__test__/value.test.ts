@@ -85,6 +85,66 @@ describe("creating Values", () => {
     });
   });
 
+  test("empty SingleValue", () => {
+    const node = new AST.SingleValue();
+
+    expect(node.value).toEqual({ integer: "0" });
+  });
+
+  test("SingleValue", () => {
+    const node = new AST.SingleValue({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+
+    expect(node.value).toEqual({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+  });
+
+  test("empty CurrencyValue", () => {
+    const node = new AST.CurrencyValue();
+
+    expect(node.value).toEqual({ integer: "0" });
+  });
+
+  test("CurrencyValue", () => {
+    const node = new AST.CurrencyValue({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+
+    expect(node.value).toEqual({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+  });
+
+  test("empty DateTimeValue", () => {
+    const node = new AST.DateTimeValue();
+
+    expect(node.value).toEqual({ integer: "0" });
+  });
+
+  test("DateTimeValue", () => {
+    const node = new AST.DateTimeValue({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+
+    expect(node.value).toEqual({
+      exponent: "1337",
+      fraction: "000069",
+      integer: "420"
+    });
+  });
+
   test("BooleanValue", () => {
     const node = new AST.BooleanValue(true);
     expect(node.value).toBe(true);

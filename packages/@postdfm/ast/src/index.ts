@@ -11,6 +11,9 @@ export { BinaryStringValue } from "./value/binaryStringValue";
 export { IntegerValue } from "./value/integerValue";
 export { HexCodeValue } from "./value/hexCodeValue";
 export { DoubleValue } from "./value/doubleValue";
+export { SingleValue } from "./value/singleValue";
+export { CurrencyValue } from "./value/currencyValue";
+export { DateTimeValue } from "./value/dateTimeValue";
 export { BooleanValue } from "./value/booleanValue";
 export { IdentifierValue } from "./value/identifierValue";
 

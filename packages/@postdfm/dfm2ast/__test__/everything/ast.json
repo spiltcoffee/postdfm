@@ -571,6 +571,70 @@
       {
         "astType": "object",
         "kind": "object",
+        "name": "MyContainer",
+        "type": "TContainer",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Cost",
+            "value": {
+              "astType": "currency",
+              "value": {
+                "integer": "32",
+                "fraction": "5"
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Multiplier",
+            "value": {
+              "astType": "single",
+              "value": {
+                "integer": "12",
+                "fraction": "5"
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Date",
+            "value": {
+              "astType": "dateTime",
+              "value": {
+                "integer": "47000",
+                "fraction": "1"
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          }
+        ],
+        "children": [],
+        "raws": {
+          "afterName": "",
+          "beforeType": " ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeEnd": "\r\n  ",
+          "before": "\r\n  "
+        }
+      },
+      {
+        "astType": "object",
+        "kind": "object",
         "name": "Edit2",
         "type": "TEdit",
         "properties": [
