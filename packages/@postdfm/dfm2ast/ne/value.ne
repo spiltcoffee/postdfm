@@ -10,6 +10,15 @@ value -> hexCode
 value -> float
 {% ([value]) => new AST.DoubleValue(value) %}
 
+value -> float "s"
+{% ([value]) => new AST.SingleValue(value) %}
+
+value -> float "c"
+{% ([value]) => new AST.CurrencyValue(value) %}
+
+value -> float "d"
+{% ([value]) => new AST.DateTimeValue(value) %}
+
 value -> string
 {% ([value]) => new AST.StringValue(value) %}
 
