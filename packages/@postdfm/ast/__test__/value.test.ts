@@ -35,13 +35,23 @@ describe("creating Values", () => {
     expect(node.value).toContainEqual(new AST.LiteralString("world"));
   });
 
-  test("empty HexStringValue", () => {
-    const node = new AST.HexStringValue();
+  test("empty BinaryStringValue", () => {
+    const node = new AST.BinaryStringValue();
     expect(node.value).toBe("");
   });
 
-  test("HexStringValue", () => {
-    const node = new AST.HexStringValue("FFFFFFFF");
+  test("BinaryStringValue", () => {
+    const node = new AST.BinaryStringValue("FFFFFFFF");
+    expect(node.value).toBe("FFFFFFFF");
+  });
+
+  test("empty HexCodeValue", () => {
+    const node = new AST.HexCodeValue();
+    expect(node.value).toBe("");
+  });
+
+  test("HexCodeValue", () => {
+    const node = new AST.HexCodeValue("FFFFFFFF");
     expect(node.value).toBe("FFFFFFFF");
   });
 

@@ -47,7 +47,7 @@ objectDef -> identifer _ ":" _ identifer
 }) %}
 
 #is this one valid?
-objectDef -> identifer _ "[" _ natural _ "]"
+objectDef -> identifer _ "[" _ decimal _ "]"
 {% ([name, afterName, _, beforeOrder, order, afterOrder]) => ({
   name,
   order,
@@ -58,7 +58,7 @@ objectDef -> identifer _ "[" _ natural _ "]"
   }
 }) %}
 
-objectDef -> identifer _ ":" _ identifer  _ "[" _ natural _ "]"
+objectDef -> identifer _ ":" _ identifer  _ "[" _ decimal _ "]"
 {% ([name, afterName, _, beforeType, type, afterType, __, beforeOrder, order, afterOrder]) => ({
   name,
   type,

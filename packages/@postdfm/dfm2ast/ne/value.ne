@@ -4,7 +4,10 @@ value -> boolean
 value -> integer
 {% ([value]) => new AST.IntegerValue(value) %}
 
-value -> double
+value -> hexCode
+{% ([value]) => new AST.HexCodeValue(value) %}
+
+value -> float
 {% ([value]) => new AST.DoubleValue(value) %}
 
 value -> string
@@ -25,7 +28,7 @@ value -> identifierList
 value -> variantList
 {% id %}
 
-value -> hexStringList
+value -> binaryStringList
 {% id %}
 
 value -> itemList

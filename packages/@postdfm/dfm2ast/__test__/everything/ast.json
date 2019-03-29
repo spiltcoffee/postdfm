@@ -75,8 +75,20 @@
             "astType": "property",
             "name": "Picture.Data",
             "value": {
-              "astType": "hexString",
-              "value": "07544269746D617036550000424D365500000000000036000000280000005500000055000000010018000000000000550000C40E0000C40E0000000000000000",
+              "astType": "binaryStringList",
+              "values": [
+                {
+                  "astType": "binaryString",
+                  "value": "07544269746D617036550000424D365500000000000036000000280000005500"
+                },
+                {
+                  "astType": "binaryString",
+                  "value": "000055000000010018000000000000550000C40E0000C40E0000000000000000",
+                  "raws": {
+                    "before": "\r\n      "
+                  }
+                }
+              ],
               "raws": {
                 "afterOpen": "\r\n      ",
                 "beforeClose": "\r\n    "
@@ -91,8 +103,8 @@
             "astType": "property",
             "name": "Picture.MoreData",
             "value": {
-              "astType": "hexString",
-              "value": "",
+              "astType": "binaryStringList",
+              "values": [],
               "raws": {
                 "beforeClose": ""
               }
@@ -124,7 +136,7 @@
             "astType": "property",
             "name": "Items.Strings",
             "value": {
-              "astType": "stringList",
+              "astType": "variantList",
               "values": [
                 {
                   "astType": "string",
@@ -156,11 +168,11 @@
                     },
                     {
                       "astType": "controlString",
-                      "value": "\u0000"
+                      "value": "\r"
                     },
                     {
                       "astType": "controlString",
-                      "value": "\u0000"
+                      "value": "\n"
                     },
                     {
                       "astType": "literalString",
@@ -186,7 +198,7 @@
             "astType": "property",
             "name": "Items.MoreStrings",
             "value": {
-              "astType": "stringList",
+              "astType": "variantList",
               "values": [],
               "raws": {
                 "beforeClose": ""
@@ -493,8 +505,8 @@
             "astType": "property",
             "name": "Color",
             "value": {
-              "astType": "integer",
-              "value": "$F0000"
+              "astType": "hexCode",
+              "value": "FF0000"
             },
             "raws": {
               "afterName": " ",
@@ -506,7 +518,7 @@
             "astType": "property",
             "name": "BackgroundColorStreamer",
             "value": {
-              "astType": "stringList",
+              "astType": "variantList",
               "values": [
                 {
                   "astType": "integer",
@@ -581,15 +593,15 @@
                 },
                 {
                   "astType": "controlString",
-                  "value": "\u0000"
+                  "value": "\r"
                 },
                 {
                   "astType": "controlString",
-                  "value": "\u0000"
+                  "value": "\n"
                 },
                 {
                   "astType": "controlString",
-                  "value": "\u0000",
+                  "value": "%",
                   "raws": {
                     "before": " +\r\n      "
                   }
@@ -600,7 +612,7 @@
                 },
                 {
                   "astType": "controlString",
-                  "value": "\u0000"
+                  "value": "-"
                 },
                 {
                   "astType": "literalString",

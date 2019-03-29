@@ -4,6 +4,6 @@ import { List } from "./list";
 
 export class VariantList extends List<Value<any>> {
   constructor(values?: Array<Value<any>>) {
-    super(ASTType.StringList, values || []);
+    super(ASTType.VariantList, values || []);
   }
 }
