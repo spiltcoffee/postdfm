@@ -9,22 +9,23 @@ commaValues -> commaValues _ "," _ value
   return [].concat(values, value);
 }%}
 
-plusValues -> string
-{% ([v]) => v.value %}
+variantValues -> value
+{% ([value]) => [value] %}
 
-# plus implies string on sameline
-plusValues -> plusValues _ "+" _ string
-{% ([left, _, __, ___, right]) => `${left}${right.value}` %}
+variantValues -> variantValues __ value
+{% ([values, before, value]) => {
+  value.raws = { ...(values.raws || {}), before };
+  return [].concat(values, value);
+} %}
 
-# space implies string on newline
-plusValues -> plusValues __ string
-{% ([left, _, right]) => `${left}\r\n${right.value}` %}
+binaryValues -> binaryString
+{% ([value]) => [value] %}
 
-hexValues -> hexString
-{% id %}
-
-hexValues -> hexValues __ hexString
-{% ([left, _, right]) => `${left}${right}` %}
+binaryValues -> binaryValues __ binaryString
+{% ([values, before, value]) => {
+  value.raws = { ...(value.raws || {}), before };
+  return [].concat(values, value);
+}%}
 
 itemValues -> item
 {% ([value]) => [value] %}
@@ -35,44 +36,44 @@ itemValues -> itemValues _ item
   return [].concat(items, item);
 } %}
 
-qualifiedList -> "[" _ "]"
+identifierList -> "[" _ "]"
 {% ([_, beforeClose]) => {
-  const node = new AST.QualifiedList();
+  const node = new AST.IdentifierList();
   node.raws = { beforeClose };
   return node;
 } %}
 
-qualifiedList -> "[" _ commaValues _ "]"
+identifierList -> "[" _ commaValues _ "]"
 {% ([_, afterOpen, commaValues, beforeClose]) => {
-  const node = new AST.QualifiedList(commaValues);
+  const node = new AST.IdentifierList(commaValues);
   node.raws = { afterOpen, beforeClose };
   return node;
 } %}
 
-stringList -> "(" _ ")"
+variantList -> "(" _ ")"
 {% ([_, beforeClose]) => {
-  const node = new AST.StringList();
+  const node = new AST.VariantList();
   node.raws = { beforeClose };
   return node;
 } %}
 
-stringList -> "(" _ plusValues _ ")"
-{% ([_, afterOpen, plusValues, beforeClose]) => {
-  const node = new AST.StringList(plusValues);
+variantList -> "(" _ variantValues _ ")"
+{% ([_, afterOpen, variantValues, beforeClose]) => {
+  const node = new AST.VariantList(variantValues);
   node.raws = { afterOpen, beforeClose };
   return node;
 } %}
 
-hexStringList -> "{" _ "}"
+binaryStringList -> "{" _ "}"
 {% ([_, beforeClose]) => {
-  const node = new AST.HexStringValue();
+  const node = new AST.BinaryStringList();
   node.raws = { beforeClose };
   return node;
 } %}
 
-hexStringList -> "{" _ hexValues _ "}"
-{% ([_, afterOpen, hexValues, beforeClose]) => {
-  const node = new AST.HexStringValue(hexValues);
+binaryStringList -> "{" _ binaryValues _ "}"
+{% ([_, afterOpen, binaryValues, beforeClose]) => {
+  const node = new AST.BinaryStringList(binaryValues);
   node.raws = { afterOpen, beforeClose };
   return node;
 } %}

@@ -23,7 +23,10 @@
         "name": "Font.Name",
         "value": {
           "astType": "string",
-          "value": "MS Sans Serif"
+          "value": {
+            "astType": "literalString",
+            "value": "MS Sans Serif"
+          }
         },
         "raws": {
           "afterName": " ",
@@ -35,11 +38,24 @@
         "astType": "property",
         "name": "Font.Style",
         "value": {
-          "astType": "qualifiedList",
+          "astType": "identifierList",
           "values": [],
           "raws": {
             "beforeClose": ""
           }
+        },
+        "raws": {
+          "afterName": " ",
+          "beforeValue": " ",
+          "before": "\r\n  "
+        }
+      },
+      {
+        "astType": "property",
+        "name": "Border.Bottom.Style",
+        "value": {
+          "astType": "identifier",
+          "value": "bdSolid"
         },
         "raws": {
           "afterName": " ",
@@ -59,8 +75,20 @@
             "astType": "property",
             "name": "Picture.Data",
             "value": {
-              "astType": "hexString",
-              "value": "07544269746D617036550000424D365500000000000036000000280000005500000055000000010018000000000000550000C40E0000C40E0000000000000000",
+              "astType": "binaryStringList",
+              "values": [
+                {
+                  "astType": "binaryString",
+                  "value": "07544269746D617036550000424D365500000000000036000000280000005500"
+                },
+                {
+                  "astType": "binaryString",
+                  "value": "000055000000010018000000000000550000C40E0000C40E0000000000000000",
+                  "raws": {
+                    "before": "\r\n      "
+                  }
+                }
+              ],
               "raws": {
                 "afterOpen": "\r\n      ",
                 "beforeClose": "\r\n    "
@@ -75,8 +103,8 @@
             "astType": "property",
             "name": "Picture.MoreData",
             "value": {
-              "astType": "hexString",
-              "value": "",
+              "astType": "binaryStringList",
+              "values": [],
               "raws": {
                 "beforeClose": ""
               }
@@ -108,8 +136,54 @@
             "astType": "property",
             "name": "Items.Strings",
             "value": {
-              "astType": "stringList",
-              "values": "this is string.\r\nand another one...and another one...now with apostrophe '\u0000\u0000how fancy",
+              "astType": "variantList",
+              "values": [
+                {
+                  "astType": "string",
+                  "value": {
+                    "astType": "literalString",
+                    "value": "this is string."
+                  }
+                },
+                {
+                  "astType": "string",
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": "and another one..."
+                    },
+                    {
+                      "astType": "literalString",
+                      "value": "and another one...",
+                      "raws": {
+                        "before": "\r\n      + "
+                      }
+                    },
+                    {
+                      "astType": "literalString",
+                      "value": "now with apostrophe '",
+                      "raws": {
+                        "before": "\r\n      + "
+                      }
+                    },
+                    {
+                      "astType": "controlString",
+                      "value": "\r"
+                    },
+                    {
+                      "astType": "controlString",
+                      "value": "\n"
+                    },
+                    {
+                      "astType": "literalString",
+                      "value": "how fancy"
+                    }
+                  ],
+                  "raws": {
+                    "before": "\r\n        "
+                  }
+                }
+              ],
               "raws": {
                 "afterOpen": " ",
                 "beforeClose": "\r\n      "
@@ -124,7 +198,7 @@
             "astType": "property",
             "name": "Items.MoreStrings",
             "value": {
-              "astType": "stringList",
+              "astType": "variantList",
               "values": [],
               "raws": {
                 "beforeClose": ""
@@ -160,25 +234,25 @@
             "astType": "property",
             "name": "Options",
             "value": {
-              "astType": "qualifiedList",
+              "astType": "identifierList",
               "values": [
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgTitles",
                   "raws": {
                     "after": ""
                   }
                 },
                 {
-                  "astType": "qualified",
-                  "value": "dgIndicator",
+                  "astType": "identifier",
+                  "value": "dg_Indicator",
                   "raws": {
                     "before": " ",
                     "after": ""
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgColumnResize",
                   "raws": {
                     "before": " ",
@@ -186,7 +260,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgColLines",
                   "raws": {
                     "before": " ",
@@ -194,7 +268,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgRowLines",
                   "raws": {
                     "before": " ",
@@ -202,7 +276,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgTabs",
                   "raws": {
                     "before": " ",
@@ -210,7 +284,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgRowSelect",
                   "raws": {
                     "before": " ",
@@ -218,7 +292,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgConfirmDelete",
                   "raws": {
                     "before": " ",
@@ -226,7 +300,7 @@
                   }
                 },
                 {
-                  "astType": "qualified",
+                  "astType": "identifier",
                   "value": "dgCancelOnExit",
                   "raws": {
                     "before": " "
@@ -247,7 +321,7 @@
             "astType": "property",
             "name": "MoreOptions",
             "value": {
-              "astType": "qualifiedList",
+              "astType": "identifierList",
               "values": [],
               "raws": {
                 "beforeClose": ""
@@ -431,13 +505,188 @@
             "astType": "property",
             "name": "Color",
             "value": {
-              "astType": "integer",
-              "value": "$F0000"
+              "astType": "hexCode",
+              "value": "FF0000"
             },
             "raws": {
               "afterName": " ",
               "beforeValue": " ",
               "before": "\r\n    "
+            }
+          },
+          {
+            "astType": "property",
+            "name": "BackgroundColorStreamer",
+            "value": {
+              "astType": "variantList",
+              "values": [
+                {
+                  "astType": "integer",
+                  "value": "255"
+                },
+                {
+                  "astType": "integer",
+                  "value": "255",
+                  "raws": {
+                    "before": "\r\n      "
+                  }
+                },
+                {
+                  "astType": "integer",
+                  "value": "255",
+                  "raws": {
+                    "before": "\r\n      "
+                  }
+                },
+                {
+                  "astType": "boolean",
+                  "value": true,
+                  "raws": {
+                    "before": "\r\n      "
+                  }
+                }
+              ],
+              "raws": {
+                "afterOpen": "\r\n      ",
+                "beforeClose": ""
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          }
+        ],
+        "children": [],
+        "raws": {
+          "afterName": "",
+          "beforeType": " ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeEnd": "\r\n  ",
+          "before": "\r\n  "
+        }
+      },
+      {
+        "astType": "object",
+        "kind": "object",
+        "name": "MyContainer",
+        "type": "TContainer",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Cost",
+            "value": {
+              "astType": "currency",
+              "value": {
+                "integer": "32",
+                "fraction": "5"
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Multiplier",
+            "value": {
+              "astType": "single",
+              "value": {
+                "integer": "12",
+                "fraction": "5"
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Date",
+            "value": {
+              "astType": "dateTime",
+              "value": {
+                "integer": "47000",
+                "fraction": "1"
+              }
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          }
+        ],
+        "children": [],
+        "raws": {
+          "afterName": "",
+          "beforeType": " ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeEnd": "\r\n  ",
+          "before": "\r\n  "
+        }
+      },
+      {
+        "astType": "object",
+        "kind": "object",
+        "name": "Edit2",
+        "type": "TEdit",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Value",
+            "value": {
+              "astType": "string",
+              "value": [
+                {
+                  "astType": "literalString",
+                  "value": "Some multi line "
+                },
+                {
+                  "astType": "literalString",
+                  "value": "string",
+                  "raws": {
+                    "before": " +\r\n      "
+                  }
+                },
+                {
+                  "astType": "controlString",
+                  "value": "\r"
+                },
+                {
+                  "astType": "controlString",
+                  "value": "\n"
+                },
+                {
+                  "astType": "controlString",
+                  "value": "%",
+                  "raws": {
+                    "before": " +\r\n      "
+                  }
+                },
+                {
+                  "astType": "literalString",
+                  "value": "hello"
+                },
+                {
+                  "astType": "controlString",
+                  "value": "-"
+                },
+                {
+                  "astType": "literalString",
+                  "value": "world"
+                }
+              ]
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": "\r\n      "
             }
           }
         ],
@@ -469,7 +718,10 @@
                 "name": "Value",
                 "value": {
                   "astType": "string",
-                  "value": ""
+                  "value": {
+                    "astType": "literalString",
+                    "value": ""
+                  }
                 },
                 "raws": {
                   "afterName": " ",
@@ -500,7 +752,7 @@
         "astType": "object",
         "kind": "object",
         "name": "Nothing",
-        "type": "TNothing",
+        "type": "_TNothing",
         "properties": [],
         "children": [],
         "raws": {

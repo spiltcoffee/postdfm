@@ -2,6 +2,7 @@ object Form1: TForm1
   Left = 192
   Font.Name = 'MS Sans Serif'
   Font.Style = []
+  Border.Bottom.Style = bdSolid
   object Image1: TImage
     Picture.Data = {
       07544269746D617036550000424D365500000000000036000000280000005500
@@ -19,7 +20,7 @@ object Form1: TForm1
     Items.MoreStrings = ()
   end
   object DBGrid1: TDBGrid
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    Options = [dgTitles, dg_Indicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
     MoreOptions = []
     Columns = <
       item
@@ -37,12 +38,28 @@ object Form1: TForm1
     MinLength = -20e1
     SomeOtherLength = 45.333e20
     Color = $FF0000
+    BackgroundColorStreamer = (
+      255
+      255
+      255
+      True)
+  end
+  object MyContainer: TContainer
+    Cost = 32.5c
+    Multiplier = 12.5s
+    Date = 47000.1d
+  end
+  object Edit2: TEdit
+    Value =
+      'Some multi line ' +
+      'string'#13#10 +
+      #37'hello'#45'world'
   end
   object SubForm: TForm2
     inline SubEdit: TEdit
       Value = ''
     end
   end
-  object Nothing: TNothing
+  object Nothing: _TNothing
   end
 end

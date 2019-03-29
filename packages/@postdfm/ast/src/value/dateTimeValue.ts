@@ -2,8 +2,8 @@ import { ASTType } from "../astType";
 import { IFloat } from "./float";
 import { Value } from "./value";
 
-export class DoubleValue extends Value<IFloat> {
+export class DateTimeValue extends Value<IFloat> {
   constructor(value?: IFloat) {
-    super(ASTType.Double, value || { integer: "0" });
+    super(ASTType.DateTime, value || { integer: "0" });
   }
 }

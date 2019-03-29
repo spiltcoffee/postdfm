@@ -1,8 +1,8 @@
 import { ASTType } from "../astType";
 import { Value } from "./value";
 
-export class HexStringValue extends Value<string> {
+export class HexCodeValue extends Value<string> {
   constructor(value?: string) {
-    super(ASTType.HexString, value || "");
+    super(ASTType.HexCode, value || "");
   }
 }

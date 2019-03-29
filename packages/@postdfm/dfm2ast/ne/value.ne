@@ -4,28 +4,40 @@ value -> boolean
 value -> integer
 {% ([value]) => new AST.IntegerValue(value) %}
 
-value -> double
+value -> hexCode
+{% ([value]) => new AST.HexCodeValue(value) %}
+
+value -> float
 {% ([value]) => new AST.DoubleValue(value) %}
 
-value -> string
-{% ([valueObject]) => new AST.StringValue(valueObject.value) %}
+value -> float "s"
+{% ([value]) => new AST.SingleValue(value) %}
 
-value -> qualifiedName
+value -> float "c"
+{% ([value]) => new AST.CurrencyValue(value) %}
+
+value -> float "d"
+{% ([value]) => new AST.DateTimeValue(value) %}
+
+value -> string
+{% ([value]) => new AST.StringValue(value) %}
+
+value -> identifer
 {% ([value], _, reject) => {
   if (AST.Keywords.includes(value.toLowerCase())) {
     return reject;
   }
 
-  return new AST.QualifiedValue(value);
+  return new AST.IdentifierValue(value);
 } %}
 
-value -> qualifiedList
+value -> identifierList
 {% id %}
 
-value -> stringList
+value -> variantList
 {% id %}
 
-value -> hexStringList
+value -> binaryStringList
 {% id %}
 
 value -> itemList
