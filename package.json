@@ -50,7 +50,7 @@
     "tslint": "^5.13.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.3333",
-    "write-pkg": "^3.2.0"
+    "write-pkg": "^4.0.0"
   },
   "config": {
     "commitizen": {
