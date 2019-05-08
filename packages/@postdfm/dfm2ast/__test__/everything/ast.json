@@ -727,6 +727,19 @@
                   "afterName": " ",
                   "beforeValue": " "
                 }
+              },
+              {
+                "astType": "property",
+                "name": "EditType",
+                "value": {
+                  "astType": "identifier",
+                  "value": "TEdit.TypeEnum.PASSWORD"
+                },
+                "raws": {
+                  "afterName": " ",
+                  "before": "\r\n      ",
+                  "beforeValue": " "
+                }
               }
             ],
             "children": [],
