@@ -58,6 +58,7 @@ object Form1: TForm1
   object SubForm: TForm2
     inline SubEdit: TEdit
       Value = ''
+      EditType = TEdit.TypeEnum.PASSWORD
     end
   end
   object Nothing: _TNothing
