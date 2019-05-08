@@ -46,6 +46,7 @@ object Form1: TForm1
   end
   object MyContainer: TContainer
     Cost = 32.5c
+    MinCost = 0c
     Multiplier = 12.5s
     Date = 47000.1d
   end

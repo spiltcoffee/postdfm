@@ -591,6 +591,19 @@
           },
           {
             "astType": "property",
+            "name": "MinCost",
+            "value": {
+              "astType": "currency",
+              "value": "0"
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          },
+          {
+            "astType": "property",
             "name": "Multiplier",
             "value": {
               "astType": "single",
