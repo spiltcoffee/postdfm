@@ -15,7 +15,7 @@ qualifiedIdentifier -> qualifiedIdentifier "." identifer
 {% join %}
 
 string -> singleString
-{% id %}
+{% ([value]) => [value] %}
 
 # two literals next to each other cause an apostrophe to appear
 string -> string singleString
@@ -72,7 +72,13 @@ hexidecimal -> hexDigit
 hexidecimal -> hexidecimal hexDigit
 {% join %}
 
-hexDigit -> [0-9a-fA-F] {% id %}
+hexDigit -> [0-9a-fA-F]
+{% id %}
+
+number -> integer
+{% id %}
+number -> float
+{% id %}
 
 float -> integer "." decimal
 {% ([integer, _, fraction]) => ({ integer, fraction }) %}

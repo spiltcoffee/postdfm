@@ -23,10 +23,12 @@
         "name": "Font.Name",
         "value": {
           "astType": "string",
-          "value": {
-            "astType": "literalString",
-            "value": "MS Sans Serif"
-          }
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "MS Sans Serif"
+            }
+          ]
         },
         "raws": {
           "afterName": " ",
@@ -140,10 +142,12 @@
               "values": [
                 {
                   "astType": "string",
-                  "value": {
-                    "astType": "literalString",
-                    "value": "this is string."
-                  }
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": "this is string."
+                    }
+                  ]
                 },
                 {
                   "astType": "string",
@@ -591,6 +595,19 @@
           },
           {
             "astType": "property",
+            "name": "MinCost",
+            "value": {
+              "astType": "currency",
+              "value": "0"
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " ",
+              "before": "\r\n    "
+            }
+          },
+          {
+            "astType": "property",
             "name": "Multiplier",
             "value": {
               "astType": "single",
@@ -646,7 +663,7 @@
               "value": [
                 {
                   "astType": "literalString",
-                  "value": "Some multi line "
+                  "value": "Some 'multi' line "
                 },
                 {
                   "astType": "literalString",
@@ -718,13 +735,28 @@
                 "name": "Value",
                 "value": {
                   "astType": "string",
-                  "value": {
-                    "astType": "literalString",
-                    "value": ""
-                  }
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": ""
+                    }
+                  ]
                 },
                 "raws": {
                   "afterName": " ",
+                  "beforeValue": " "
+                }
+              },
+              {
+                "astType": "property",
+                "name": "EditType",
+                "value": {
+                  "astType": "identifier",
+                  "value": "TEdit.TypeEnum.PASSWORD"
+                },
+                "raws": {
+                  "afterName": " ",
+                  "before": "\r\n      ",
                   "beforeValue": " "
                 }
               }

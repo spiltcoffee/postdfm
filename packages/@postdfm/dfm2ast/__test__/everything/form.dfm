@@ -46,18 +46,20 @@ object Form1: TForm1
   end
   object MyContainer: TContainer
     Cost = 32.5c
+    MinCost = 0c
     Multiplier = 12.5s
     Date = 47000.1d
   end
   object Edit2: TEdit
     Value =
-      'Some multi line ' +
+      'Some ''multi'' line ' +
       'string'#13#10 +
       #37'hello'#45'world'
   end
   object SubForm: TForm2
     inline SubEdit: TEdit
       Value = ''
+      EditType = TEdit.TypeEnum.PASSWORD
     end
   end
   object Nothing: _TNothing
