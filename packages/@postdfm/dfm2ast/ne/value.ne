@@ -22,7 +22,7 @@ value -> number "d"
 value -> string
 {% ([value]) => new AST.StringValue(value) %}
 
-value -> identifer
+value -> qualifiedIdentifier
 {% ([value], _, reject) => {
   if (AST.Keywords.includes(value.toLowerCase())) {
     return reject;
