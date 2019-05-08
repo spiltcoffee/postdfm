@@ -23,10 +23,12 @@
         "name": "Font.Name",
         "value": {
           "astType": "string",
-          "value": {
-            "astType": "literalString",
-            "value": "MS Sans Serif"
-          }
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "MS Sans Serif"
+            }
+          ]
         },
         "raws": {
           "afterName": " ",
@@ -140,10 +142,12 @@
               "values": [
                 {
                   "astType": "string",
-                  "value": {
-                    "astType": "literalString",
-                    "value": "this is string."
-                  }
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": "this is string."
+                    }
+                  ]
                 },
                 {
                   "astType": "string",
@@ -659,7 +663,7 @@
               "value": [
                 {
                   "astType": "literalString",
-                  "value": "Some multi line "
+                  "value": "Some 'multi' line "
                 },
                 {
                   "astType": "literalString",
@@ -731,10 +735,12 @@
                 "name": "Value",
                 "value": {
                   "astType": "string",
-                  "value": {
-                    "astType": "literalString",
-                    "value": ""
-                  }
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": ""
+                    }
+                  ]
                 },
                 "raws": {
                   "afterName": " ",

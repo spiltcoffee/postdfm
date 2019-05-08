@@ -15,7 +15,7 @@ qualifiedIdentifier -> qualifiedIdentifier "." identifer
 {% join %}
 
 string -> singleString
-{% id %}
+{% ([value]) => [value] %}
 
 # two literals next to each other cause an apostrophe to appear
 string -> string singleString
