@@ -28,6 +28,8 @@ object Form1: TForm1
         Visible = True
       end
       item
+      end
+      item
         Expanded = False
         Visible = True
       end>
