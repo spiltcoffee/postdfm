@@ -20,3 +20,10 @@ item -> "item" _ properties _ "end"
   node.raws = { afterItem, beforeEnd };
   return node;
 }  %}
+
+item -> "item" _ "end"
+{% ([_, afterItem]) => {
+  const node = new AST.Item([]);
+  node.raws = { afterItem };
+  return node;
+} %}
