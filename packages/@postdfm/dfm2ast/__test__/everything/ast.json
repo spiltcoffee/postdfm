@@ -379,6 +379,14 @@
                 },
                 {
                   "astType": "item",
+                  "properties": [],
+                  "raws": {
+                    "afterItem": "\r\n      ",
+                    "before": "\r\n      "
+                  }
+                },
+                {
+                  "astType": "item",
                   "properties": [
                     {
                       "astType": "property",
