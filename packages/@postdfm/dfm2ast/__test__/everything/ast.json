@@ -606,7 +606,7 @@
             "name": "MinCost",
             "value": {
               "astType": "currency",
-              "value": "0"
+              "value": { "integer": "0" }
             },
             "raws": {
               "afterName": " ",
