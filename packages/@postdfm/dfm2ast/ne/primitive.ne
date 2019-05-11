@@ -76,7 +76,7 @@ hexDigit -> [0-9a-fA-F]
 {% id %}
 
 number -> integer
-{% id %}
+{% ([integer]) => ({ integer }) %}
 number -> float
 {% id %}
 
