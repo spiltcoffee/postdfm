@@ -1,0 +1,18 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "children": [],
+    "kind": "object",
+    "name": "Empty",
+    "properties": [],
+    "raws": {
+      "beforeEnd": "\r\n",
+      "beforeName": " "
+    }
+  },
+  "raws": {
+    "after": "",
+    "before": ""
+  }
+}

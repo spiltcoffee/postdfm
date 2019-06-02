@@ -21,3 +21,10 @@ root -> _ object _
   node.raws = { before, after };
   return node;
 } %}
+
+root -> _
+{% ([before]) => {
+  const node = new AST.Root();
+  node.raws = { before }
+  return node;
+} %}
