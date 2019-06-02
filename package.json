@@ -21,7 +21,7 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^7.5.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/git": "^7.0.8",
     "@semantic-release/npm": "^5.1.4",
