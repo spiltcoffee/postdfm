@@ -1,0 +1,320 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "children": [],
+    "kind": "object",
+    "name": "Form",
+    "properties": [
+      {
+        "astType": "property",
+        "name": "BooleanProperty",
+        "raws": {
+          "afterName": " ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "boolean",
+          "value": true
+        }
+      },
+      {
+        "astType": "property",
+        "name": "BooleanProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "boolean",
+          "value": false
+        }
+      },
+      {
+        "astType": "property",
+        "name": "IntegerProperty",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "integer",
+          "value": "123456"
+        }
+      },
+      {
+        "astType": "property",
+        "name": "IntegerProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "integer",
+          "value": "-123456"
+        }
+      },
+      {
+        "astType": "property",
+        "name": "FloatProperty",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "double",
+          "value": {
+            "fraction": "456",
+            "integer": "123"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "FloatProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "double",
+          "value": {
+            "fraction": "456",
+            "integer": "-123"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "FloatProperty3",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "double",
+          "value": {
+            "exponent": "456",
+            "integer": "123"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "FloatProperty4",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "double",
+          "value": {
+            "exponent": "456",
+            "integer": "-123"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "FloatProperty5",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "double",
+          "value": {
+            "exponent": "56",
+            "fraction": "34",
+            "integer": "12"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "FloatProperty6",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "double",
+          "value": {
+            "exponent": "56",
+            "fraction": "34",
+            "integer": "-12"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "SingleProperty",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "single",
+          "value": {
+            "integer": "2"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "SingleProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "single",
+          "value": {
+            "exponent": "5",
+            "fraction": "4",
+            "integer": "-2"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "DateTimeProperty",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "dateTime",
+          "value": {
+            "integer": "3"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "DateTimeProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "dateTime",
+          "value": {
+            "exponent": "5",
+            "fraction": "4",
+            "integer": "-2"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "CurrencyProperty",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "currency",
+          "value": {
+            "integer": "4"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "CurrencyProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "currency",
+          "value": {
+            "exponent": "5",
+            "fraction": "4",
+            "integer": "-2"
+          }
+        }
+      },
+      {
+        "astType": "property",
+        "name": "ColorProperty",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "hexCode",
+          "value": "7F7F7F"
+        }
+      },
+      {
+        "astType": "property",
+        "name": "QualifiedValue",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "identifier",
+          "value": "TEnum.enEnum"
+        }
+      },
+      {
+        "astType": "property",
+        "name": "Qualified.Property",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "boolean",
+          "value": true
+        }
+      },
+      {
+        "astType": "property",
+        "name": "Border.Bottom.Style",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "identifier",
+          "value": "bsSolid"
+        }
+      }
+    ],
+    "raws": {
+      "afterName": "",
+      "beforeEnd": "\r\n",
+      "beforeName": " ",
+      "beforeProperties": "\r\n  ",
+      "beforeType": " "
+    },
+    "type": "TForm"
+  },
+  "raws": {
+    "after": "",
+    "before": ""
+  }
+}
