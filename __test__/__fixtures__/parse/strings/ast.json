@@ -1,0 +1,164 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "children": [],
+    "kind": "object",
+    "name": "Form",
+    "properties": [
+      {
+        "astType": "property",
+        "name": "StringProperty",
+        "raws": {
+          "afterName": " ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": ""
+            }
+          ]
+        }
+      },
+      {
+        "astType": "property",
+        "name": "StringProperty2",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "Hello world!"
+            }
+          ]
+        }
+      },
+      {
+        "astType": "property",
+        "name": "StringProperty3",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "Hello'world!"
+            }
+          ]
+        }
+      },
+      {
+        "astType": "property",
+        "name": "StringProperty3",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "Hello"
+            },
+            {
+              "astType": "literalString",
+              "raws": {
+                "before": " + "
+              },
+              "value": "world!"
+            }
+          ]
+        }
+      },
+      {
+        "astType": "property",
+        "name": "StringProperty4",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "Hello"
+            },
+            {
+              "astType": "controlString",
+              "value": "\r"
+            },
+            {
+              "astType": "controlString",
+              "value": "\n"
+            },
+            {
+              "astType": "literalString",
+              "value": "world!"
+            }
+          ]
+        }
+      },
+      {
+        "astType": "property",
+        "name": "StringProperty5",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "Hello'"
+            },
+            {
+              "astType": "controlString",
+              "value": "\r"
+            },
+            {
+              "astType": "controlString",
+              "value": "\n"
+            },
+            {
+              "astType": "literalString",
+              "raws": {
+                "before": " + "
+              },
+              "value": "world!"
+            }
+          ]
+        }
+      }
+    ],
+    "raws": {
+      "afterName": "",
+      "beforeEnd": "\r\n",
+      "beforeName": " ",
+      "beforeProperties": "\r\n  ",
+      "beforeType": " "
+    },
+    "type": "TForm"
+  },
+  "raws": {
+    "after": "",
+    "before": ""
+  }
+}

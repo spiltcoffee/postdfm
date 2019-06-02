@@ -1,0 +1,261 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "children": [
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "name": "Edit1",
+        "properties": [],
+        "raws": {
+          "afterName": "",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeType": " "
+        },
+        "type": "TEdit"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "inline",
+        "name": "Edit2",
+        "properties": [],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeType": " "
+        },
+        "type": "TEdit"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "inherited",
+        "name": "Edit3",
+        "properties": [],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeType": " "
+        },
+        "type": "TEdit"
+      },
+      {
+        "astType": "object",
+        "children": [
+          {
+            "astType": "object",
+            "children": [
+              {
+                "astType": "object",
+                "children": [
+                  {
+                    "astType": "object",
+                    "children": [
+                      {
+                        "astType": "object",
+                        "children": [
+                          {
+                            "astType": "object",
+                            "children": [
+                              {
+                                "astType": "object",
+                                "children": [
+                                  {
+                                    "astType": "object",
+                                    "children": [
+                                      {
+                                        "astType": "object",
+                                        "children": [
+                                          {
+                                            "astType": "object",
+                                            "children": [
+                                              {
+                                                "astType": "object",
+                                                "children": [],
+                                                "kind": "object",
+                                                "name": "DeepTree10",
+                                                "properties": [],
+                                                "raws": {
+                                                  "afterName": "",
+                                                  "beforeEnd": "\r\n                      ",
+                                                  "beforeName": " ",
+                                                  "beforeType": " "
+                                                },
+                                                "type": "TComponent"
+                                              }
+                                            ],
+                                            "kind": "object",
+                                            "name": "DeepTree9",
+                                            "properties": [],
+                                            "raws": {
+                                              "afterName": "",
+                                              "beforeChildren": "\r\n                      ",
+                                              "beforeEnd": "\r\n                    ",
+                                              "beforeName": " ",
+                                              "beforeType": " "
+                                            },
+                                            "type": "TComponent"
+                                          }
+                                        ],
+                                        "kind": "object",
+                                        "name": "DeepTree8",
+                                        "properties": [],
+                                        "raws": {
+                                          "afterName": "",
+                                          "beforeChildren": "\r\n                    ",
+                                          "beforeEnd": "\r\n                  ",
+                                          "beforeName": " ",
+                                          "beforeType": " "
+                                        },
+                                        "type": "TComponent"
+                                      }
+                                    ],
+                                    "kind": "object",
+                                    "name": "DeepTree7",
+                                    "properties": [],
+                                    "raws": {
+                                      "afterName": "",
+                                      "beforeChildren": "\r\n                  ",
+                                      "beforeEnd": "\r\n                ",
+                                      "beforeName": " ",
+                                      "beforeType": " "
+                                    },
+                                    "type": "TComponent"
+                                  }
+                                ],
+                                "kind": "object",
+                                "name": "DeepTree6",
+                                "properties": [],
+                                "raws": {
+                                  "afterName": "",
+                                  "beforeChildren": "\r\n                ",
+                                  "beforeEnd": "\r\n              ",
+                                  "beforeName": " ",
+                                  "beforeType": " "
+                                },
+                                "type": "TComponent"
+                              }
+                            ],
+                            "kind": "object",
+                            "name": "DeepTree5",
+                            "properties": [],
+                            "raws": {
+                              "afterName": "",
+                              "beforeChildren": "\r\n              ",
+                              "beforeEnd": "\r\n            ",
+                              "beforeName": " ",
+                              "beforeType": " "
+                            },
+                            "type": "TComponent"
+                          }
+                        ],
+                        "kind": "object",
+                        "name": "DeepTree4",
+                        "properties": [],
+                        "raws": {
+                          "afterName": "",
+                          "beforeChildren": "\r\n            ",
+                          "beforeEnd": "\r\n          ",
+                          "beforeName": " ",
+                          "beforeType": " "
+                        },
+                        "type": "TComponent"
+                      }
+                    ],
+                    "kind": "object",
+                    "name": "DeepTree3",
+                    "properties": [],
+                    "raws": {
+                      "afterName": "",
+                      "beforeChildren": "\r\n          ",
+                      "beforeEnd": "\r\n        ",
+                      "beforeName": " ",
+                      "beforeType": " "
+                    },
+                    "type": "TComponent"
+                  }
+                ],
+                "kind": "object",
+                "name": "DeepTree2",
+                "properties": [],
+                "raws": {
+                  "afterName": "",
+                  "beforeChildren": "\r\n        ",
+                  "beforeEnd": "\r\n      ",
+                  "beforeName": " ",
+                  "beforeType": " "
+                },
+                "type": "TComponent"
+              }
+            ],
+            "kind": "object",
+            "name": "DeepTree1",
+            "properties": [],
+            "raws": {
+              "afterName": "",
+              "beforeChildren": "\r\n      ",
+              "beforeEnd": "\r\n    ",
+              "beforeName": " ",
+              "beforeType": " "
+            },
+            "type": "TComponent"
+          }
+        ],
+        "kind": "object",
+        "name": "_Under_Score",
+        "properties": [],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeChildren": "\r\n    ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeType": " "
+        },
+        "type": "_TUnder_Score"
+      }
+    ],
+    "kind": "object",
+    "name": "BasicForm",
+    "properties": [
+      {
+        "astType": "property",
+        "name": "Caption",
+        "raws": {
+          "afterName": " ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "Basic Form"
+            }
+          ]
+        }
+      }
+    ],
+    "raws": {
+      "afterName": "",
+      "beforeChildren": "\r\n  ",
+      "beforeEnd": "\r\n",
+      "beforeName": " ",
+      "beforeProperties": "\r\n  ",
+      "beforeType": " "
+    },
+    "type": "TForm"
+  },
+  "raws": {
+    "after": "",
+    "before": ""
+  }
+}

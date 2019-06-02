@@ -1,0 +1,2 @@
+object Empty: TEmpty
+end

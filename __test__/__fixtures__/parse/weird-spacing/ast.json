@@ -1,0 +1,822 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "children": [
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "name": "Image1",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Picture.Data",
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "binaryStringList",
+              "raws": {
+                "afterOpen": "\r\n\r\n      ",
+                "beforeClose": "\r\n    "
+              },
+              "values": [
+                {
+                  "astType": "binaryString",
+                  "value": "07544269746D617036550000424D365500000000000036000000280000005500"
+                },
+                {
+                  "astType": "binaryString",
+                  "raws": {
+                    "before": "\r\n\r\n      "
+                  },
+                  "value": "000055000000010018000000000000550000C40E0000C40E0000000000000000"
+                }
+              ]
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Picture.MoreData",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "binaryStringList",
+              "raws": {
+                "beforeClose": ""
+              },
+              "values": []
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeType": " "
+        },
+        "type": "TImage"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "inherited",
+        "name": "ListBox1",
+        "order": "2",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Items.Strings",
+            "raws": {
+              "afterName": " ",
+              "beforeValue": "\r\n      "
+            },
+            "value": {
+              "astType": "variantList",
+              "raws": {
+                "afterOpen": " ",
+                "beforeClose": "\r\n      "
+              },
+              "values": [
+                {
+                  "astType": "string",
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": "this is string."
+                    }
+                  ]
+                },
+                {
+                  "astType": "string",
+                  "raws": {
+                    "before": " "
+                  },
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": "and another one..."
+                    },
+                    {
+                      "astType": "literalString",
+                      "raws": {
+                        "before": "      + "
+                      },
+                      "value": "and another one..."
+                    },
+                    {
+                      "astType": "literalString",
+                      "raws": {
+                        "before": "+ "
+                      },
+                      "value": "now with apostrophe '"
+                    },
+                    {
+                      "astType": "controlString",
+                      "value": "\r"
+                    },
+                    {
+                      "astType": "controlString",
+                      "value": "\n"
+                    },
+                    {
+                      "astType": "literalString",
+                      "value": "how fancy"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Items.MoreStrings",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "variantList",
+              "raws": {
+                "beforeClose": ""
+              },
+              "values": []
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "afterOrder": "",
+          "afterType": " ",
+          "before": "\r\n\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeOrder": "",
+          "beforeProperties": "\r\n\r\n                         ",
+          "beforeType": " "
+        },
+        "type": "TListBox"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "name": "DBGrid1",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Options",
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "identifierList",
+              "raws": {
+                "afterOpen": "",
+                "beforeClose": ""
+              },
+              "values": [
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": ""
+                  },
+                  "value": "dgTitles"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": " "
+                  },
+                  "value": "dg_Indicator"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": ""
+                  },
+                  "value": "dgColumnResize"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": ""
+                  },
+                  "value": "dgColLines"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": ""
+                  },
+                  "value": "dgRowLines"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": " "
+                  },
+                  "value": "dgTabs"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": " "
+                  },
+                  "value": "dgRowSelect"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "after": "",
+                    "before": " "
+                  },
+                  "value": "dgConfirmDelete"
+                },
+                {
+                  "astType": "identifier",
+                  "raws": {
+                    "before": " "
+                  },
+                  "value": "dgCancelOnExit"
+                }
+              ]
+            }
+          },
+          {
+            "astType": "property",
+            "name": "MoreOptions",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "identifierList",
+              "raws": {
+                "beforeClose": "\r\n\r\n\r\n    "
+              },
+              "values": []
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Columns",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "itemList",
+              "raws": {
+                "afterOpen": "\r\n      ",
+                "beforeClose": ""
+              },
+              "values": [
+                {
+                  "astType": "item",
+                  "properties": [
+                    {
+                      "astType": "property",
+                      "name": "Expanded",
+                      "raws": {
+                        "afterName": " ",
+                        "beforeValue": " "
+                      },
+                      "value": {
+                        "astType": "boolean",
+                        "value": false
+                      }
+                    },
+                    {
+                      "astType": "property",
+                      "name": "Visible",
+                      "raws": {
+                        "afterName": " ",
+                        "before": "\r\n        ",
+                        "beforeValue": " "
+                      },
+                      "value": {
+                        "astType": "boolean",
+                        "value": true
+                      }
+                    }
+                  ],
+                  "raws": {
+                    "afterItem": "\r\n        ",
+                    "beforeEnd": "\r\n      "
+                  }
+                },
+                {
+                  "astType": "item",
+                  "properties": [],
+                  "raws": {
+                    "afterItem": "\r\n      ",
+                    "before": "\r\n      "
+                  }
+                },
+                {
+                  "astType": "item",
+                  "properties": [
+                    {
+                      "astType": "property",
+                      "name": "Expanded",
+                      "raws": {
+                        "afterName": " ",
+                        "beforeValue": " "
+                      },
+                      "value": {
+                        "astType": "boolean",
+                        "value": false
+                      }
+                    },
+                    {
+                      "astType": "property",
+                      "name": "Visible",
+                      "raws": {
+                        "afterName": " ",
+                        "before": "\r\n        ",
+                        "beforeValue": " "
+                      },
+                      "value": {
+                        "astType": "boolean",
+                        "value": true
+                      }
+                    }
+                  ],
+                  "raws": {
+                    "afterItem": "\r\n        ",
+                    "before": "\r\n      ",
+                    "beforeEnd": "\r\n      "
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "astType": "property",
+            "name": "MoreColumns",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "itemList",
+              "raws": {
+                "beforeClose": ""
+              },
+              "values": []
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeType": " "
+        },
+        "type": "TDBGrid"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "inline",
+        "name": "Edit1",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "MaxLength",
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "double",
+              "value": {
+                "exponent": "20",
+                "integer": "6"
+              }
+            }
+          },
+          {
+            "astType": "property",
+            "name": "MinLength",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "double",
+              "value": {
+                "exponent": "1",
+                "integer": "-20"
+              }
+            }
+          },
+          {
+            "astType": "property",
+            "name": "SomeOtherLength",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "double",
+              "value": {
+                "exponent": "20",
+                "fraction": "333",
+                "integer": "45"
+              }
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Color",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n\r\n    ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "hexCode",
+              "value": "FF0000"
+            }
+          },
+          {
+            "astType": "property",
+            "name": "BackgroundColorStreamer",
+            "raws": {
+              "afterName": " ",
+              "before": "\r\n\r\n\r\n\r\n\r\n\r\n\r\n                                                                                                                                                                                                                          ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "variantList",
+              "raws": {
+                "afterOpen": "\r\n      ",
+                "beforeClose": " "
+              },
+              "values": [
+                {
+                  "astType": "integer",
+                  "value": "255"
+                },
+                {
+                  "astType": "integer",
+                  "raws": {
+                    "before": " "
+                  },
+                  "value": "255"
+                },
+                {
+                  "astType": "integer",
+                  "raws": {
+                    "before": " "
+                  },
+                  "value": "255"
+                },
+                {
+                  "astType": "boolean",
+                  "raws": {
+                    "before": " "
+                  },
+                  "value": true
+                }
+              ]
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeType": " "
+        },
+        "type": "TEdit"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "name": "MyContainer",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Cost",
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "currency",
+              "value": {
+                "fraction": "5",
+                "integer": "32"
+              }
+            }
+          },
+          {
+            "astType": "property",
+            "name": "MinCost",
+            "raws": {
+              "afterName": " ",
+              "before": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "currency",
+              "value": {
+                "integer": "0"
+              }
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Multiplier",
+            "raws": {
+              "afterName": " ",
+              "before": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "single",
+              "value": {
+                "fraction": "5",
+                "integer": "12"
+              }
+            }
+          },
+          {
+            "astType": "property",
+            "name": "Date",
+            "raws": {
+              "afterName": " ",
+              "before": " ",
+              "beforeValue": " "
+            },
+            "value": {
+              "astType": "dateTime",
+              "value": {
+                "fraction": "1",
+                "integer": "47000"
+              }
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeEnd": " ",
+          "beforeName": " ",
+          "beforeProperties": " ",
+          "beforeType": " "
+        },
+        "type": "TContainer"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "name": "Edit2",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "Value",
+            "raws": {
+              "afterName": " ",
+              "beforeValue": "\r\n      "
+            },
+            "value": {
+              "astType": "string",
+              "value": [
+                {
+                  "astType": "literalString",
+                  "value": "Some 'multi' line "
+                },
+                {
+                  "astType": "literalString",
+                  "raws": {
+                    "before": " +\r\n      "
+                  },
+                  "value": "string"
+                },
+                {
+                  "astType": "controlString",
+                  "value": "\r"
+                },
+                {
+                  "astType": "controlString",
+                  "value": "\n"
+                },
+                {
+                  "astType": "controlString",
+                  "raws": {
+                    "before": " +\r\n      "
+                  },
+                  "value": "%"
+                },
+                {
+                  "astType": "literalString",
+                  "value": "hello"
+                },
+                {
+                  "astType": "controlString",
+                  "value": "-"
+                },
+                {
+                  "astType": "literalString",
+                  "value": "world"
+                }
+              ]
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n\r\n\r\n    ",
+          "beforeType": " "
+        },
+        "type": "TEdit"
+      },
+      {
+        "astType": "object",
+        "children": [
+          {
+            "astType": "object",
+            "children": [],
+            "kind": "inline",
+            "name": "SubEdit",
+            "properties": [
+              {
+                "astType": "property",
+                "name": "Value",
+                "raws": {
+                  "afterName": " ",
+                  "beforeValue": " "
+                },
+                "value": {
+                  "astType": "string",
+                  "value": [
+                    {
+                      "astType": "literalString",
+                      "value": ""
+                    }
+                  ]
+                }
+              },
+              {
+                "astType": "property",
+                "name": "EditType",
+                "raws": {
+                  "afterName": " ",
+                  "before": "\r\n",
+                  "beforeValue": " "
+                },
+                "value": {
+                  "astType": "identifier",
+                  "value": "TEdit.TypeEnum.PASSWORD"
+                }
+              }
+            ],
+            "raws": {
+              "afterName": "",
+              "beforeEnd": "\r\n",
+              "beforeName": " ",
+              "beforeProperties": "\r\n",
+              "beforeType": " "
+            },
+            "type": "TEdit"
+          }
+        ],
+        "kind": "object",
+        "name": "SubForm",
+        "properties": [],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n",
+          "beforeChildren": "\r\n",
+          "beforeEnd": "\r\n",
+          "beforeName": " ",
+          "beforeType": " "
+        },
+        "type": "TForm2"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "name": "Nothing",
+        "properties": [],
+        "raws": {
+          "afterName": "",
+          "before": "\r\n",
+          "beforeEnd": "\r\n",
+          "beforeName": " ",
+          "beforeType": " "
+        },
+        "type": "_TNothing"
+      }
+    ],
+    "kind": "object",
+    "name": "Form1",
+    "properties": [
+      {
+        "astType": "property",
+        "name": "Left",
+        "raws": {
+          "afterName": " ",
+          "beforeValue": "\r\n\r\n\r\n\r\n         "
+        },
+        "value": {
+          "astType": "integer",
+          "value": "192"
+        }
+      },
+      {
+        "astType": "property",
+        "name": "Font.Name",
+        "raws": {
+          "afterName": " ",
+          "before": "\r\n  ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "MS Sans Serif"
+            }
+          ]
+        }
+      },
+      {
+        "astType": "property",
+        "name": "Font.Style",
+        "raws": {
+          "afterName": " ",
+          "before": " ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "identifierList",
+          "raws": {
+            "beforeClose": ""
+          },
+          "values": []
+        }
+      },
+      {
+        "astType": "property",
+        "name": "Border.Bottom.Style",
+        "raws": {
+          "afterName": " ",
+          "before": "   ",
+          "beforeValue": " "
+        },
+        "value": {
+          "astType": "identifier",
+          "value": "bdSolid"
+        }
+      }
+    ],
+    "raws": {
+      "afterName": "",
+      "beforeChildren": "   ",
+      "beforeEnd": "\r\n",
+      "beforeName": "\r\n\r\n\r\n\r\n  ",
+      "beforeProperties": "\r\n  ",
+      "beforeType": " "
+    },
+    "type": "TForm1"
+  },
+  "raws": {
+    "after": "\r\n",
+    "before": ""
+  }
+}
