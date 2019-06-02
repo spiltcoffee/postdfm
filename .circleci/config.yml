@@ -49,6 +49,7 @@ jobs:
           paths:
             - ./postdfm/dist
             - ./@postdfm/ast/dist
+            - ./@postdfm/ast2dfm/dist
             - ./@postdfm/dfm2ast/dist
             - ./@postdfm/dfm2ast/src
 
@@ -117,6 +118,8 @@ jobs:
           path: ~/repo/package.json
       - store_artifacts:
           path: ~/repo/packages/@postdfm/ast/package.json
+      - store_artifacts:
+          path: ~/repo/packages/@postdfm/ast2dfm/package.json
       - store_artifacts:
           path: ~/repo/packages/@postdfm/dfm2ast/package.json
 
