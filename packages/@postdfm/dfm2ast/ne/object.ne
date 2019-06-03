@@ -1,25 +1,25 @@
-object -> objectKind _ objectDef _ "end"i
+object -> objectKind _ objectDef __ "end"i
 {% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order);
   node.raws = { ...(defRaws || {}), beforeName, beforeEnd };
   return node;
 } %}
 
-object -> objectKind _ objectDef _ properties _ "end"i
+object -> objectKind _ objectDef _ properties __ "end"i
 {% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeProperties, properties, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order, properties)
   node.raws = { ...(defRaws || {}), beforeName, beforeProperties, beforeEnd };
   return node;
 } %}
 
-object -> objectKind _ objectDef _ objects _ "end"i
+object -> objectKind _ objectDef _ objects __ "end"i
 {% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeChildren, children, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order, undefined, children);
   node.raws = { ...(defRaws || {}), beforeName, beforeChildren, beforeEnd };
   return node;
 } %}
 
-object -> objectKind _ objectDef _ properties _ objects _ "end"i
+object -> objectKind _ objectDef _ properties _ objects __ "end"i
 {% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeProperties, properties, beforeChildren, children, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order, properties, children);
   node.raws = { ...(defRaws || {}), beforeName, beforeProperties, beforeChildren, beforeEnd };
@@ -75,7 +75,7 @@ objectDef -> identifer _ ":" _ identifer  _ "[" _ decimal _ "]"
 objects -> object
 {% objects => objects %}
 
-objects -> objects _ object
+objects -> objects __ object
 {% ([objects, before, object]) => {
   object.raws = {
     ...(object.raws || {}),
