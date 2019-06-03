@@ -1,0 +1,67 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "kind": "object",
+    "name": "Outer",
+    "type": "TOuter",
+    "properties": [],
+    "children": [
+      {
+        "astType": "object",
+        "kind": "object",
+        "name": "Problem",
+        "type": "TProblem",
+        "properties": [
+          {
+            "astType": "property",
+            "name": "ProblemProperty",
+            "value": {
+              "astType": "identifier",
+              "value": "ErrorEnd"
+            },
+            "raws": {
+              "afterName": " ",
+              "beforeValue": " "
+            }
+          }
+        ],
+        "children": [
+          {
+            "astType": "object",
+            "kind": "object",
+            "name": "Inner",
+            "type": "TInner",
+            "properties": [],
+            "children": [],
+            "raws": {
+              "afterName": "",
+              "beforeType": " ",
+              "beforeName": " ",
+              "beforeEnd": "\r\n    "
+            }
+          }
+        ],
+        "raws": {
+          "afterName": "",
+          "beforeType": " ",
+          "beforeName": " ",
+          "beforeProperties": "\r\n    ",
+          "beforeChildren": "\r\n    ",
+          "beforeEnd": "\r\n  "
+        }
+      }
+    ],
+    "raws": {
+      "afterName": "",
+      "beforeType": " ",
+      "beforeName": " ",
+      "beforeChildren": "\r\n  ",
+      "beforeEnd": "\r\n"
+    }
+  },
+  "raws": {
+    "before": "",
+    "after": ""
+  }
+}
