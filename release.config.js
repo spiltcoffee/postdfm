@@ -1,7 +1,7 @@
 const path = require("path");
 const execa = require("execa");
 
-const pkgs = JSON.parse(execa.shellSync("yarn run -s list").stdout);
+const pkgs = JSON.parse(execa.commandSync("yarn run -s list").stdout);
 
 const tarballDir = path.resolve(__dirname, "dist");
 
