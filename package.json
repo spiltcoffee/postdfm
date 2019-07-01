@@ -40,7 +40,7 @@
     "jest": "^24.4.0",
     "jest-junit": "^6.3.0",
     "lerna": "^3.13.1",
-    "lint-staged": "^8.1.5",
+    "lint-staged": "^9.0.0",
     "nearley": "^2.16.0",
     "prettier": "^1.16.4",
     "read-pkg": "^5.0.0",
