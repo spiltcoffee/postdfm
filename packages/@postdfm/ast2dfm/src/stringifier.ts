@@ -9,8 +9,6 @@ export default class Stringifier {
         return this.printControlString(ast as AST.ControlString);
       case AST.ASTType.LiteralString:
         return this.printLiteralString(ast as AST.LiteralString);
-      // case AST.ASTType.BinaryString:
-      //   return this.printBinaryString(ast as AST.BinaryStringValue);
       case AST.ASTType.Integer:
         return this.printInteger(ast as AST.IntegerValue);
       case AST.ASTType.HexCode:
@@ -27,8 +25,6 @@ export default class Stringifier {
         return this.printBoolean(ast as AST.BooleanValue);
       case AST.ASTType.Identifier:
         return this.printIdentifier(ast as AST.IdentifierValue);
-      // case AST.ASTType.Item:
-      //   return this.printItem(ast as AST.Item);
       case AST.ASTType.VariantList:
         return this.printVariantList(ast as AST.VariantList);
       case AST.ASTType.BinaryStringList:
@@ -37,10 +33,6 @@ export default class Stringifier {
         return this.printIdentifierList(ast as AST.IdentifierList);
       case AST.ASTType.ItemList:
         return this.printItemList(ast as AST.ItemList);
-      // case AST.ASTType.Property:
-      //   return this.printProperty(ast as AST.Property);
-      // case AST.ASTType.Object:
-      //   return this.printObject(ast as AST.DObject);
       case AST.ASTType.Root:
         return this.printRoot(ast as AST.Root);
       default:
