@@ -98,6 +98,25 @@ jobs:
       - codecov/upload:
           file: coverage/lcov.info
 
+  docs:
+    executor: node-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
+
+      - attach_workspace:
+          at: ~/repo/packages
+
+      - run: yarn docs
+
+      - persist_to_workspace:
+          root: docs
+          paths:
+            - ./*
+
   release:
     executor: node-executor
     steps:
@@ -109,6 +128,9 @@ jobs:
 
       - attach_workspace:
           at: ~/repo/packages
+
+      - attach_workspace:
+          at: ~/repo/docs
 
       - run: yarn release
 
@@ -140,8 +162,12 @@ workflows:
       - test:
           requires:
             - compile
+      - docs:
+          requires:
+            - compile
       - release:
           requires:
             - lint
             - format
             - test
+            - docs
