@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "compile": "tsc --listEmittedFiles"
+    "compile": "tsc --listEmittedFiles",
+    "docs": "typedoc"
   },
   "author": "SpiltCoffee",
   "license": "MIT",

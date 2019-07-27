@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
-    "compile": "tsc --listEmittedFiles"
+    "compile": "tsc --listEmittedFiles",
+    "docs": "typedoc"
   },
   "author": "SpiltCoffee",
   "license": "MIT",
