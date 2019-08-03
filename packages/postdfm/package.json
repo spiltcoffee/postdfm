@@ -1,9 +1,13 @@
 {
   "name": "postdfm",
-  "version": "1.0.0",
-  "private": true,
+  "version": "4.1.3",
   "description": "Provides an API for easily transforming Delphi Forms",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc --listEmittedFiles",
+    "docs": "typedoc"
+  },
   "keywords": [
     "dfm",
     "ast",
@@ -20,5 +24,16 @@
   "bugs": {
     "url": "https://github.com/spiltcoffee/postdfm/issues"
   },
-  "homepage": "https://github.com/spiltcoffee/postdfm#readme"
+  "homepage": "https://github.com/spiltcoffee/postdfm#readme",
+  "dependencies": {
+    "@postdfm/ast2dfm": "^4.1.3",
+    "@postdfm/dfm2ast": "^4.1.3"
+  },
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

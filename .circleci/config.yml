@@ -139,6 +139,8 @@ jobs:
       - store_artifacts:
           path: ~/repo/package.json
       - store_artifacts:
+          path: ~/repo/packages/postdfm/package.json
+      - store_artifacts:
           path: ~/repo/packages/@postdfm/ast/package.json
       - store_artifacts:
           path: ~/repo/packages/@postdfm/ast2dfm/package.json
