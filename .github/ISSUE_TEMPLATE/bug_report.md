@@ -1,40 +1,25 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ""
-labels: ""
+title: "[Bug] "
+labels: "bug"
 assignees: ""
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+### What versions am I using of...
 
-**To Reproduce**
-Steps to reproduce the behavior:
+- `nodejs`: x.x.x
+- `npm`/`yarn`: x.x.x
+- `postdfm`: x.x.x
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### What did I do?
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### What was I expecting?
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+### What happened instead?
 
-**Desktop (please complete the following information):**
+### What do I think is the problem?
 
-- OS: [e.g. iOS]
-- Browser [e.g. chrome, safari]
-- Version [e.g. 22]
+### Am I willing to make a pull request with failing tests to help speed up the fix?
 
-**Smartphone (please complete the following information):**
-
-- Device: [e.g. iPhone6]
-- OS: [e.g. iOS8.1]
-- Browser [e.g. stock browser, safari]
-- Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+### Am I willing to make a pull request with the fix as well?
