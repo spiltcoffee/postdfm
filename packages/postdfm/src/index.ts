@@ -1,6 +1,6 @@
 import * as AST from "@postdfm/ast";
-import * as ast2dfm from "@postdfm/ast2dfm";
-import * as dfm2ast from "@postdfm/dfm2ast";
+import stringify from "@postdfm/ast2dfm";
+import parse from "@postdfm/dfm2ast";
 
 interface IInternalRunnerOptions {
   parser: IParser;
@@ -58,8 +58,8 @@ export class Runner {
 
 export default function postdfm(options?: IRunnerOptions): Runner {
   const internalOptions: IInternalRunnerOptions = {
-    parser: dfm2ast.parse,
-    stringifier: ast2dfm.stringify,
+    parser: parse,
+    stringifier: stringify,
     transformers: []
   };
 

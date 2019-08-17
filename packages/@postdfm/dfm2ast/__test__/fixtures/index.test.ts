@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import * as path from "path";
-import * as dfm2ast from "../../src";
+import parse from "../../src";
 
 const rootFixturesDir = path.join("__test__", "__fixtures__");
 const parseFixturesDir = path.join(rootFixturesDir, "parse");
@@ -14,9 +14,7 @@ describe("dfm2ast", () => {
 
       test(fixture, () => {
         expect(
-          JSON.parse(
-            JSON.stringify(dfm2ast.parse(fs.readFileSync(formFile, "ascii")))
-          )
+          JSON.parse(JSON.stringify(parse(fs.readFileSync(formFile, "ascii"))))
         ).toEqual(JSON.parse(fs.readFileSync(astFile, "utf8")));
       });
     });

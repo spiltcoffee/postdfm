@@ -1,13 +1,13 @@
-import * as ast2dfm from "@postdfm/ast2dfm";
-import * as dfm2ast from "@postdfm/dfm2ast";
+import stringify from "@postdfm/ast2dfm";
+import parse from "@postdfm/dfm2ast";
 import * as path from "path";
 import postdfm, { ITransformer } from "../../src";
 
 describe("postdfm", () => {
   describe("options", () => {
     test("valid (normal)", () => {
-      const parser = dfm2ast.parse;
-      const stringifier = ast2dfm.stringify;
+      const parser = parse;
+      const stringifier = stringify;
       const transformers: ITransformer[] = [ast => ast];
 
       postdfm();
@@ -21,8 +21,8 @@ describe("postdfm", () => {
     });
 
     test("valid (using strings)", () => {
-      const parser = path.join(__dirname, "parser.js");
-      const stringifier = path.join(__dirname, "stringifier.js");
+      const parser = "@postdfm/dfm2ast";
+      const stringifier = "@postdfm/ast2dfm";
       const transformers = [path.join(__dirname, "transformer.js")];
 
       postdfm();

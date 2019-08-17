@@ -2,7 +2,7 @@ import { Root } from "@postdfm/ast";
 import { Grammar, Parser } from "nearley";
 import * as grammar from "./grammar";
 
-export function parse(dfm: string): Root {
+function parse(dfm: string): Root {
   const parser = new Parser(Grammar.fromCompiled(grammar));
   parser.feed(dfm);
 
@@ -18,3 +18,6 @@ export function parse(dfm: string): Root {
 
   return parser.results[0];
 }
+
+export default parse;
+export { parse };
