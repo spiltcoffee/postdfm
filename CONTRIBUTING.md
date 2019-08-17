@@ -10,16 +10,16 @@ This document outlines the ways you can contribute to this project, what your de
 
 If you encounter a bug while using `postdfm`, please feel free to raise an issue detailing the bug. Please create the bug report by answering the following questions:
 
-* What versions am I using of...
-** `nodejs`
-** `npm`/`yarn`
-** `postdfm`
-* What did I do?
-* What was I expecting?
-* What happened instead?
-* What do I think is the problem?
-* Am I willing to make a pull request with failing tests to help speed up the fix?
-* Am I willing to make a pull request with the fix as well?
+- What versions am I using of...
+  ** `nodejs`
+  ** `npm`/`yarn`
+  \*\* `postdfm`
+- What did I do?
+- What was I expecting?
+- What happened instead?
+- What do I think is the problem?
+- Am I willing to make a pull request with failing tests to help speed up the fix?
+- Am I willing to make a pull request with the fix as well?
 
 ### Feature Requests
 
@@ -38,6 +38,7 @@ Please avoid raising a pull request to change code without first raising an issu
 ## Development Setup
 
 You will need the following software to help develop this project:
+
 1. `git`
 2. `nodejs >= 7.6.0`
 3. `npm`
@@ -68,6 +69,7 @@ $ yarn ci
 We use `prettier` for formatting and `tslint` and `eslint` for linting. The linting and formatting are separated into two steps.
 
 To see the linting and formatting issues, run:
+
 ```bash
 ~/postdfm (master)
 $ yarn lint:check
@@ -75,6 +77,7 @@ $ yarn format:check
 ```
 
 To have as many issues as possible fixed by the tools, run:
+
 ```bash
 ~/postdfm (master)
 $ yarn lint:fix
@@ -95,6 +98,7 @@ $ yarn compile
 ### Testing
 
 `postdfm` uses Jest to run and report coverage of all tests in the project. Run:
+
 ```bash
 ~/postdfm (master)
 $ yarn test
@@ -103,6 +107,7 @@ $ yarn test
 ### Documentation
 
 Besides the README.md files for each project, `postdfm` uses TypeDoc to produce basic API documentation (viewable online athttp://spiltcoffee.com).
+
 ```bash
 ~/postdfm (master)
 $ yarn doc
@@ -111,6 +116,7 @@ $ yarn doc
 ### Releasing
 
 The release step is performed automatically by the CI. You can run the command, but it won't do anything.
+
 ```bash
 ~/postdfm (master)
 $ yarn release
