@@ -1,6 +1,6 @@
 import * as AST from "@postdfm/ast";
-import stringify from "@postdfm/ast2dfm";
-import parse from "@postdfm/dfm2ast";
+import { stringify } from "@postdfm/ast2dfm";
+import { parse } from "@postdfm/dfm2ast";
 
 interface IInternalRunnerOptions {
   parser: IParser;
