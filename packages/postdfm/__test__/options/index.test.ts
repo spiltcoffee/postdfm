@@ -1,5 +1,5 @@
-import stringify from "@postdfm/ast2dfm";
-import parse from "@postdfm/dfm2ast";
+import { stringify } from "@postdfm/ast2dfm";
+import { parse } from "@postdfm/dfm2ast";
 import * as path from "path";
 import postdfm, { ITransformer } from "../../src";
 
