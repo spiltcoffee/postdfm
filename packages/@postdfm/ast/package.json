@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "compile": "tsc --listEmittedFiles",
-    "docs": "typedoc"
+    "docs": "typedoc --options typedoc.config.js"
   },
   "author": "SpiltCoffee",
   "license": "MIT",
