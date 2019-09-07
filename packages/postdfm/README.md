@@ -4,9 +4,9 @@
 >
 > Inspired by the excellent PostCSS tool, motivated by my rage at the Delphi IDE.
 
-![npm: @postdfm/dfm2ast](https://img.shields.io/npm/v/@postdfm/dfm2ast.svg?label=npm%3A%20%40postdfm%2Fdfm2ast)
-![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/master.svg)
-![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/master.svg)
+[![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npmjs.com/package/postdfm)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/master.svg)](https://circleci.com)
+[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/master.svg)](https://codecov.io)
 [![Greenkeeper](https://badges.greenkeeper.io/spiltcoffee/postdfm.svg)](https://greenkeeper.io/)
 
 ## Table of Contents
@@ -69,35 +69,35 @@ const postdfm = require("postdfm");
 const runner = postdfm();
 ```
 
-#### `postdfm(options?: IRunnerOptions)`
+#### `postdfm(options?: RunnerOptions)`
 
-Create a `Runner` instance using `IRunnerOptions`
+Create a `Runner` instance using `RunnerOptions`
 
-#### `runner.process(dfm: string, processingOptions: IProcessingOptions): Promise<string>`
+#### `runner.process(dfm: string, processingOptions: ProcessingOptions): Promise<string>`
 
 Process a file through the runner asynchronously.
 
-#### `runner.processSync(dfm: string, processingOptions: IProcessingOptions): string`
+#### `runner.processSync(dfm: string, processingOptions: ProcessingOptions): string`
 
 Process a file through the runner synchronously.
 
-### `IRunnerOptions`
+### `RunnerOptions`
 
 Options to pass to an instance of `Runner`.
 
-#### `options.transformers: ITransformer[]`
+#### `options.transformers: Transformer[]`
 
 Array of transformations to perform on AST.
 
-#### `options.parser: IParser = "@postdfm/dfm2ast"`
+#### `options.parser: Parser = "@postdfm/dfm2ast"`
 
 Parser to use, defaults to `@postdfm/dfm2ast`.
 
-#### `options.stringifier: IStringifier = "@postdfm/ast2dfm"`
+#### `options.stringifier: Stringifier = "@postdfm/ast2dfm"`
 
 Stringifier to use, defaults to `@postdfm/ast2dfm`.
 
-### `ITransformer`
+### `Transformer`
 
 A function that takes an AST, transforms it, and returns it.
 
@@ -105,7 +105,7 @@ A function that takes an AST, transforms it, and returns it.
 (ast: AST.Root): AST.Root
 ```
 
-### `IParser`
+### `Parser`
 
 A function that takes a string, parses it, and returns an AST.
 
@@ -113,7 +113,7 @@ A function that takes a string, parses it, and returns an AST.
 (dfm: string): AST.Root
 ```
 
-### `IStringifier`
+### `Stringifier`
 
 A function that takes an AST, stringifies it, and returns a string.
 
@@ -121,7 +121,7 @@ A function that takes an AST, stringifies it, and returns a string.
 (ast: AST.Root): string
 ```
 
-### `IProcessingOptions`
+### `ProcessingOptions`
 
 #### `processingOptions.from`
 
@@ -135,7 +135,7 @@ You can find the generated `typedoc` documentation [here](https://spiltcoffee.co
 
 Bug reports and feature requests are greatly appreciated, as are pull requests.
 
-Please see the [Contributing Guide](https://github.com/spiltcoffee/postdfm/blob/master/CONTRIBUTING.md) for instructions on how to contribute to this project.
+Please see the [Contributing Guide](https://github.com/spiltcoffee/postdfm/blob/master/.github/CONTRIBUTING.md) for instructions on how to contribute to this project.
 
 ## License
 
