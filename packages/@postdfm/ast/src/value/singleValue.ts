@@ -1,9 +1,9 @@
 import { ASTType } from "../astType";
-import { IFloat } from "./float";
+import { Float } from "./float";
 import { Value } from "./value";
 
-export class SingleValue extends Value<IFloat> {
-  constructor(value?: IFloat) {
+export class SingleValue extends Value<Float> {
+  constructor(value?: Float) {
     super(ASTType.Single, value || { integer: "0" });
   }
 }

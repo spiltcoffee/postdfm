@@ -12,7 +12,9 @@ function parse(dfm: string): Root {
 
   if (parser.results.length > 1) {
     throw new Error(
-      `Ambiguous Grammar: ${parser.results.length} Results Found`
+      `Ambiguous Grammar: ${parser.results.length} Results Found\n\n` +
+        "  This probably isn't your fault. Please consider raising an " +
+        "issue with a reproducable case at github.com/spiltcoffee/postdfm"
     );
   }
 

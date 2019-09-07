@@ -1,13 +1,18 @@
 import { ASTNode } from "./astNode";
+import { ASTRaws } from "./astRaws";
 import { ASTType } from "./astType";
-import { List } from "./list/list";
-import { Value } from "./value/value";
+import { AnyList } from "./list/anyList";
+import { VariantValue } from "./value/variantValue";
 
-export class Property extends ASTNode {
+interface PropertyRaws extends ASTRaws {
+  afterName?: string;
+  beforeValue?: string;
+}
+export class Property extends ASTNode<PropertyRaws> {
   public name: string;
-  public value: Value<any> | List<any>;
+  public value: VariantValue | AnyList;
 
-  constructor(name: string, value: Value<any> | List<any>) {
+  constructor(name: string, value: VariantValue | AnyList) {
     super(ASTType.Property);
     this.name = name;
     this.value = value;

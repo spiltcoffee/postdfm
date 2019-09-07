@@ -9,13 +9,12 @@
     "ci": "yarn install --frozen-lockfile && yarn run bootstrap && yarn run compile && yarn run lint:check && yarn run format:check && yarn test && yarn docs",
     "list": "lerna ls --json",
     "bootstrap": "lerna bootstrap --force-local",
-    "eslint": "eslint --ignore-path .gitignore \"**/*.js\"",
-    "tslint": "tslint \"**/*.ts\"",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\"",
-    "lint:fix": "yarn eslint --fix && yarn tslint --fix",
-    "lint:check": "yarn eslint && yarn tslint",
-    "format:fix": "yarn prettier --write --list-different",
-    "format:check": "yarn prettier --check",
+    "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts}\"",
+    "lint:fix": "yarn lint --fix",
+    "lint:check": "yarn lint",
+    "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\"",
+    "format:fix": "yarn format --write --list-different",
+    "format:check": "yarn format --check",
     "compile": "lerna run compile",
     "test": "jest --coverage",
     "docs": "lerna run docs",
@@ -30,6 +29,8 @@
     "@types/jest": "^24.0.11",
     "@types/nearley": "^2.11.0",
     "@types/node": "^12.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
     "commitlint": "^8.0.0",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.3.0",
@@ -47,8 +48,6 @@
     "read-pkg": "^5.0.0",
     "semantic-release": "^15.13.3",
     "ts-jest": "^24.0.0",
-    "tslint": "^5.13.1",
-    "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.15.0",
     "typescript": "^3.3.3333",
     "write-pkg": "^4.0.0"
@@ -64,13 +63,8 @@
       "prettier --ignore-path .gitignore --write",
       "git add"
     ],
-    "*.js": [
+    "*.{js,ts}": [
       "eslint --ignore-path .gitignore",
-      "prettier --ignore-path .gitignore --write",
-      "git add"
-    ],
-    "*.ts": [
-      "tslint",
       "prettier --ignore-path .gitignore --write",
       "git add"
     ]

@@ -1,9 +1,22 @@
 import { ASTNode } from "./astNode";
+import { ASTRaws } from "./astRaws";
 import { ASTType } from "./astType";
 import { ObjectKind } from "./objectKind";
 import { Property } from "./property";
 
-export class DObject extends ASTNode {
+interface ObjectRaws extends ASTRaws {
+  beforeName?: string;
+  afterName?: string;
+  beforeType?: string;
+  afterType?: string;
+  beforeOrder?: string;
+  afterOrder?: string;
+  beforeProperties?: string;
+  beforeChildren?: string;
+  beforeEnd?: string;
+}
+
+export class DObject extends ASTNode<ObjectRaws> {
   public kind: ObjectKind;
   public name: string;
   public type: string;

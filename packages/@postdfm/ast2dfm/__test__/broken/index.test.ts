@@ -9,8 +9,6 @@ describe("dfm2ast", () => {
       fs.readFileSync(path.join(__dirname, "ast.json"), "utf8")
     ) as AST.Root;
 
-    expect(() => stringify(ast)).toThrowError(
-      "Cannot stringify astType unknown"
-    );
+    expect(() => stringify(ast)).toThrow("Cannot stringify astType unknown");
   });
 });

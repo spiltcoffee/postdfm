@@ -1,9 +1,9 @@
 import { ASTType } from "../astType";
-import { Value } from "../value/value";
+import { VariantValue } from "../value/variantValue";
 import { List } from "./list";
 
-export class VariantList extends List<Value<any>> {
-  constructor(values?: Array<Value<any>>) {
+export class VariantList extends List<VariantValue> {
+  constructor(values?: Array<VariantValue>) {
     super(ASTType.VariantList, values || []);
   }
 }

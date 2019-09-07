@@ -2,36 +2,39 @@ import * as AST from "@postdfm/ast";
 import { stringify } from "@postdfm/ast2dfm";
 import { parse } from "@postdfm/dfm2ast";
 
-interface IInternalRunnerOptions {
-  parser: IParser;
-  stringifier: IStringifier;
-  transformers: ITransformer[];
+interface InternalRunnerOptions {
+  parser: Parser;
+  stringifier: Stringifier;
+  transformers: Transformer[];
 }
 
-export interface IRunnerOptions {
-  parser?: IParser | string;
-  stringifier?: IStringifier | string;
-  transformers?: Array<ITransformer | string>;
+export interface RunnerOptions {
+  parser?: Parser | string;
+  stringifier?: Stringifier | string;
+  transformers?: Array<Transformer | string>;
 }
 
-export type IParser = (dfm: string) => AST.Root;
+export type Parser = (dfm: string) => AST.Root;
 
-export type ITransformer = (ast: AST.Root) => AST.Root;
+export type Transformer = (ast: AST.Root) => AST.Root;
 
-export type IStringifier = (ast: AST.Root) => string;
+export type Stringifier = (ast: AST.Root) => string;
 
-export interface IProcessingOptions {
+export interface ProcessingOptions {
   from?: string;
 }
 
 export class Runner {
-  private options: IInternalRunnerOptions;
+  private options: InternalRunnerOptions;
 
-  constructor(options: IInternalRunnerOptions) {
+  constructor(options: InternalRunnerOptions) {
     this.options = options;
   }
 
-  public processSync(dfm: string, processingOptions?: IProcessingOptions) {
+  public processSync(
+    dfm: string,
+    processingOptions?: ProcessingOptions
+  ): string {
     let ast: AST.Root;
     try {
       ast = this.options.parser(dfm);
@@ -43,21 +46,34 @@ export class Runner {
       }
     }
 
+    if (!ast) {
+      throw new Error(
+        "Somehow, `ast` is null??\n\n" +
+          "  This probably isn't your fault. Please consider raising an " +
+          "issue with a reproducable case at github.com/spiltcoffee/postdfm"
+      );
+    }
+
     const transformed = this.options.transformers.reduce(
       (currAst, transformer) => transformer(currAst),
-      ast!
+      ast
     );
 
     return this.options.stringifier(transformed);
   }
 
-  public async process(dfm: string, processingOptions?: IProcessingOptions) {
-    return this.processSync(dfm, processingOptions);
+  public async process(
+    dfm: string,
+    processingOptions?: ProcessingOptions
+  ): Promise<string> {
+    return new Promise((resolve): void =>
+      resolve(this.processSync(dfm, processingOptions))
+    );
   }
 }
 
-export default function postdfm(options?: IRunnerOptions): Runner {
-  const internalOptions: IInternalRunnerOptions = {
+export default function postdfm(options?: RunnerOptions): Runner {
+  const internalOptions: InternalRunnerOptions = {
     parser: parse,
     stringifier: stringify,
     transformers: []
@@ -92,7 +108,7 @@ export default function postdfm(options?: IRunnerOptions): Runner {
       }
 
       options.transformers.forEach(transformer => {
-        let internalTransformer: ITransformer;
+        let internalTransformer: Transformer;
         if (typeof transformer === "string") {
           internalTransformer = require(transformer);
         } else if (typeof transformer === "function") {
