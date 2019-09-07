@@ -276,6 +276,6 @@ export default class Stringifier {
   }
 
   private raws<R extends AST.ASTRaws>(obj: AST.ASTNode<R>): R {
-    return (obj.raws || {}) as R;
+    return obj.raws || {};
   }
 }

@@ -62,7 +62,9 @@ export class Runner {
     dfm: string,
     processingOptions?: ProcessingOptions
   ): Promise<string> {
-    return this.processSync(dfm, processingOptions);
+    return new Promise((resolve): void =>
+      resolve(this.processSync(dfm, processingOptions))
+    );
   }
 }
 
