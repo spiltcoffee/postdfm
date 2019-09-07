@@ -7,7 +7,7 @@
   "scripts": {
     "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
     "compile": "tsc --listEmittedFiles",
-    "docs": "typedoc"
+    "docs": "typedoc --options typedoc.config.js"
   },
   "author": "SpiltCoffee",
   "license": "MIT",
