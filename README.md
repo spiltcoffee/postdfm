@@ -4,17 +4,26 @@
 >
 > Inspired by the excellent PostCSS tool, motivated by my rage at the Delphi IDE.
 
-![npm: @postdfm/dfm2ast](https://img.shields.io/npm/v/@postdfm/dfm2ast.svg?label=npm%3A%20%40postdfm%2Fdfm2ast)
-![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/master.svg)
-![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/master.svg)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/master.svg)](https://circleci.com)
+[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/master.svg)](https://codecov.io)
 [![Greenkeeper](https://badges.greenkeeper.io/spiltcoffee/postdfm.svg)](https://greenkeeper.io/)
 
 ## Table of Contents
 
+- [Packages](#packages)
 - [Installation](#installation)
 - [Example Usage](#example-usage)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Packages
+
+| Package                                          | Version                                                                                                               |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| [`postdfm`](/packages/postdfm)                   | [![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npmjs.com/package/postdfm)                   |
+| [`@postdfm/ast`](/packages/@postdfm/ast)         | [![npm](https://img.shields.io/npm/v/@postdfm/ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast)         |
+| [`@postdfm/ast2dfm`](/packages/@postdfm/ast2dfm) | [![npm](https://img.shields.io/npm/v/@postdfm/ast2dfm.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast2dfm) |
+| [`@postdfm/dfm2ast`](/packages/@postdfm/dfm2ast) | [![npm](https://img.shields.io/npm/v/@postdfm/dfm2ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/dfm2ast) |
 
 ## Installation
 
@@ -57,13 +66,13 @@ const transDfm = runner.processSync(dfm, {
 fs.writeFileSync("trans.dfm", transDfm);
 ```
 
-See the [`postdfm` README.md](https://github.com/spiltcoffee/postdfm/blob/master/packages/postdfm/README.md) for more information.
+See the [`postdfm`](packages/postdfm) package for more information.
 
 ## Contributing
 
 Bug reports and feature requests are greatly appreciated, as are pull requests.
 
-Please see the [Contributing Guide](https://github.com/spiltcoffee/postdfm/blob/master/CONTRIBUTING.md) for instructions on how to contribute to this project.
+Please see the [Contributing Guide](/.github/CONTRIBUTING.md) for instructions on how to contribute to this project.
 
 ## License
 
