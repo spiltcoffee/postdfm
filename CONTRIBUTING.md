@@ -66,7 +66,7 @@ $ yarn ci
 
 ### Formatting and Linting
 
-We use `prettier` for formatting and `tslint` and `eslint` for linting. The linting and formatting are separated into two steps.
+We use `prettier` for formatting and `eslint` with `typescript-eslint` for linting. The linting and formatting are separated into two steps.
 
 To see the linting and formatting issues, run:
 
