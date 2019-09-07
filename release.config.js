@@ -1,7 +1,11 @@
 const path = require("path");
 const execa = require("execa");
 
-const pkgs = JSON.parse(execa.commandSync("yarn run -s list").stdout);
+const pkgs = Object.entries(
+  JSON.parse(
+    JSON.parse(execa.commandSync("yarn workspaces info --json").stdout).data
+  )
+).map(([name, { location }]) => ({ name, location }));
 
 const tarballDir = path.resolve(__dirname, "dist");
 
@@ -11,10 +15,7 @@ module.exports = {
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    [
-      "./release/dependency",
-      { pkgs: pkgs.map(({ name, location }) => ({ name, location })) }
-    ],
+    ["./release/dependency", { pkgs }],
     ...pkgs.map(({ location: pkgRoot }) => [
       "@semantic-release/npm",
       {

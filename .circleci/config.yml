@@ -10,7 +10,7 @@ executors:
     working_directory: ~/repo
 
 jobs:
-  bootstrap:
+  install:
     executor: node-executor
     steps:
       - run: node --version
@@ -23,8 +23,7 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
             - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn bootstrap
+      - run: yarn --frozen-lockfile
 
       - save_cache:
           paths:
@@ -151,13 +150,13 @@ workflows:
   version: 2
   ci:
     jobs:
-      - bootstrap
+      - install
       - compile:
           requires:
-            - bootstrap
+            - install
       - format:
           requires:
-            - bootstrap
+            - install
       - lint:
           requires:
             - compile
