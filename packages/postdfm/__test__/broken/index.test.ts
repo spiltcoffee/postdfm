@@ -9,13 +9,13 @@ describe("postdfm", () => {
       const dfm = fs.readFileSync(file, "ascii");
 
       test("without `from`", () => {
-        expect(() => postdfm().processSync(dfm)).toThrowError(
+        expect(() => postdfm().processSync(dfm)).toThrow(
           /Unexpected End Of Input/
         );
       });
 
       test("with `from`", () => {
-        expect(() => postdfm().processSync(dfm, { from: file })).toThrowError(
+        expect(() => postdfm().processSync(dfm, { from: file })).toThrow(
           /unexpectedEnd.dfm: Unexpected End Of Input/
         );
       });
@@ -26,13 +26,13 @@ describe("postdfm", () => {
       const dfm = fs.readFileSync(file, "ascii");
 
       test("without `from`", () => {
-        expect(() => postdfm().processSync(dfm)).toThrowError(
+        expect(() => postdfm().processSync(dfm)).toThrow(
           /invalid syntax at line 3 col 1/
         );
       });
 
       test("with `from`", () => {
-        expect(() => postdfm().processSync(dfm, { from: file })).toThrowError(
+        expect(() => postdfm().processSync(dfm, { from: file })).toThrow(
           /invalidProperty.dfm: invalid syntax at line 3 col 1/
         );
       });

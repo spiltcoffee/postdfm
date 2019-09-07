@@ -1,15 +1,20 @@
 import * as fs from "fs";
 import * as path from "path";
 import postdfm from "../../src";
+import { Root } from "@postdfm/ast";
 
 const rootFixturesDir = path.resolve("__test__", "__fixtures__");
 const parseFixturesDir = path.join(rootFixturesDir, "parse");
 const transformFixturesDir = path.join(rootFixturesDir, "transform");
 
+function noopTransform(ast: Root): Root {
+  return ast;
+}
+
 describe("postdfm", () => {
   describe("parse fixtures", () => {
     const runner = postdfm({
-      transformers: [ast => ast]
+      transformers: [noopTransform]
     });
 
     const fixtures = fs.readdirSync(parseFixturesDir);
@@ -19,7 +24,7 @@ describe("postdfm", () => {
         "ascii"
       );
 
-      describe(fixture, () => {
+      describe(`${fixture}`, () => {
         test("sync", () => {
           expect(runner.processSync(cisForm)).toEqual(cisForm);
         });
@@ -49,7 +54,7 @@ describe("postdfm", () => {
 
       const runner = postdfm({ transformers });
 
-      describe(fixture, () => {
+      describe(`${fixture}`, () => {
         test("sync", () => {
           expect(runner.processSync(cisForm)).toEqual(transForm);
         });

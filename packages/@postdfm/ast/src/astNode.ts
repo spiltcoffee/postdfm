@@ -1,10 +1,10 @@
 import { ASTType } from "./astType";
+import { ASTRaws } from "./astRaws";
 
-export class ASTNode {
+export class ASTNode<R extends ASTRaws = ASTRaws> {
   public astType: ASTType;
 
-  // define?
-  public raws: any;
+  public raws: R;
   constructor(astType: ASTType) {
     this.astType = astType;
   }

@@ -1,4 +1,4 @@
-export interface IFloat {
+export interface Float {
   integer: string;
   fraction?: string;
   exponent?: string;

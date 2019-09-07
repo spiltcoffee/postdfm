@@ -1,4 +1,5 @@
 export { ASTType } from "./astType";
+export { ASTRaws } from "./astRaws";
 export { ASTNode } from "./astNode";
 
 export { Keywords } from "./keywords";

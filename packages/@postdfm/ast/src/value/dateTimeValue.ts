@@ -1,9 +1,9 @@
 import { ASTType } from "../astType";
-import { IFloat } from "./float";
+import { Float } from "./float";
 import { Value } from "./value";
 
-export class DateTimeValue extends Value<IFloat> {
-  constructor(value?: IFloat) {
+export class DateTimeValue extends Value<Float> {
+  constructor(value?: Float) {
     super(ASTType.DateTime, value || { integer: "0" });
   }
 }
