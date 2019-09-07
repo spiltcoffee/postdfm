@@ -47,7 +47,11 @@ export class Runner {
     }
 
     if (!ast) {
-      throw new Error("Somehow, `ast` is null??");
+      throw new Error(
+        "Somehow, `ast` is null??\n\n" +
+          "  This probably isn't your fault. Please consider raising an " +
+          "issue with a reproducable case at github.com/spiltcoffee/postdfm"
+      );
     }
 
     const transformed = this.options.transformers.reduce(
