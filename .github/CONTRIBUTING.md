@@ -46,13 +46,13 @@ You will need the following software to help develop this project:
 
 ## Development Workflow
 
-### Bootstrap
+### Install
 
 Before running any commands, you'll likely have to run the following:
 
 ```bash
 ~/postdfm (master)
-$ yarn bootstrap
+$ yarn install
 ```
 
 ### Everything at once
@@ -106,11 +106,11 @@ $ yarn test
 
 ### Documentation
 
-Besides the README.md files for each project, `postdfm` uses TypeDoc to produce basic API documentation (viewable online athttp://spiltcoffee.com).
+Besides the README.md files for each project, `postdfm` uses TypeDoc to produce basic API documentation (viewable online at http://spiltcoffee.com).
 
 ```bash
 ~/postdfm (master)
-$ yarn doc
+$ yarn docs
 ```
 
 ### Releasing
