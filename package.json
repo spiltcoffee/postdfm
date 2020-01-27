@@ -57,13 +57,11 @@
   "files": [],
   "lint-staged": {
     "*.{json,yml,md}": [
-      "prettier --ignore-path .gitignore --write",
-      "git add"
+      "prettier --ignore-path .gitignore --write"
     ],
     "*.{js,ts}": [
       "eslint --ignore-path .gitignore",
-      "prettier --ignore-path .gitignore --write",
-      "git add"
+      "prettier --ignore-path .gitignore --write"
     ]
   },
   "husky": {
