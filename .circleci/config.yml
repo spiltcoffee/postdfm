@@ -21,7 +21,6 @@ jobs:
       - restore_cache:
           keys:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
 
       - run: yarn --frozen-lockfile
 
@@ -30,7 +29,7 @@ jobs:
             - node_modules
             - packages/postdfm/node_modules
             - packages/@postdfm/dfm2ast/node_modules
-          key: node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
+          key: node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
   compile:
     executor: node-executor
@@ -39,7 +38,6 @@ jobs:
       - restore_cache:
           keys:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
 
       - run: yarn compile
 
@@ -58,8 +56,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
       - attach_workspace:
           at: ~/repo/packages
@@ -72,8 +69,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
       - run: yarn format:check
 
@@ -83,8 +79,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
       - attach_workspace:
           at: ~/repo/packages
@@ -103,8 +98,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
       - attach_workspace:
           at: ~/repo/packages
@@ -122,8 +116,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-{{ checksum "yarn.lock" }}
-            - node-{{ .Environment.CACHE_VERSION }}-depdendencies-
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
       - attach_workspace:
           at: ~/repo/packages
