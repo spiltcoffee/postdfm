@@ -43,7 +43,7 @@
     "nearley": "^2.16.0",
     "prettier": "^1.16.4",
     "read-pkg": "^5.0.0",
-    "semantic-release": "^16.0.0",
+    "semantic-release": "^17.0.1",
     "ts-jest": "^24.0.0",
     "typedoc": "^0.16.0",
     "typescript": "^3.3.3333",
