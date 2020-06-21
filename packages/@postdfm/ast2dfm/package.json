@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/ast2dfm",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "Convert DFM Abstract Syntax Trees to a Delphi Form file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
-    "@postdfm/ast": "^5.0.0"
+    "@postdfm/ast": "^5.0.1"
   },
   "files": [
     "/dist",
