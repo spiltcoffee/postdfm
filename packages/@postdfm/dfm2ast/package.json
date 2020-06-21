@@ -17,7 +17,7 @@
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
     "@postdfm/ast": "^4.2.4",
-    "nearley": "^2.16.0"
+    "nearley": "^2.19.4"
   },
   "files": [
     "/dist",

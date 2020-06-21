@@ -27,13 +27,13 @@ describe("postdfm", () => {
 
       test("without `from`", () => {
         expect(() => postdfm().processSync(dfm)).toThrow(
-          /invalid syntax at line 3 col 1/
+          /Syntax error at line 3 col 1/
         );
       });
 
       test("with `from`", () => {
         expect(() => postdfm().processSync(dfm, { from: file })).toThrow(
-          /invalidProperty.dfm: invalid syntax at line 3 col 1/
+          /invalidProperty.dfm: Syntax error at line 3 col 1/
         );
       });
     });
