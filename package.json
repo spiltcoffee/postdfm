@@ -16,7 +16,9 @@
     "compile": "yarn workspaces run compile",
     "test": "jest --coverage",
     "docs": "yarn workspaces run docs",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.0.0",
@@ -29,7 +31,7 @@
     "@types/node": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
-    "commitlint": "^8.0.0",
+    "commitlint": "^9.0.1",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.0.0",
@@ -72,5 +74,9 @@
   },
   "engines": {
     "node": ">=8.3.0"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.346.0"
   }
 }
