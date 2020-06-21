@@ -3,7 +3,7 @@ const execa = require("execa");
 
 const pkgs = Object.entries(
   JSON.parse(
-    JSON.parse(execa.commandSync("yarn workspaces info --json").stdout).data
+    JSON.parse(execa.commandSync("yarn --json workspaces info").stdout).data
   )
 ).map(([name, { location }]) => ({ name, location }));
 

@@ -1,6 +1,6 @@
 import { Root } from "@postdfm/ast";
 import { Grammar, Parser } from "nearley";
-import * as grammar from "./grammar";
+import grammar from "./grammar";
 
 function parse(dfm: string): Root {
   const parser = new Parser(Grammar.fromCompiled(grammar));

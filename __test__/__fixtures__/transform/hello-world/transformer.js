@@ -1,5 +1,8 @@
 function gatherObjects(object) {
-  return [].concat(object, object.children.map(child => gatherObjects(child)));
+  return [].concat(
+    object,
+    object.children.map(child => gatherObjects(child))
+  );
 }
 
 function gatherProperties(object) {
