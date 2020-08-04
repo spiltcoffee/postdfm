@@ -49,7 +49,7 @@ const cisDfm = fs.readFileSync(
   "ascii"
 );
 
-const runner = postcss({
+const runner = postdfm({
   transformers: [
     function(ast) {
       //transform and return the ast
