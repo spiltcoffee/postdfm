@@ -1,22 +1,25 @@
 import * as AST from "@postdfm/ast";
+import { Plugin, Tapable } from "@postdfm/tapable";
 import { stringify } from "@postdfm/ast2dfm";
 import { parse } from "@postdfm/dfm2ast";
 
 interface InternalRunnerOptions {
   parser: Parser;
   stringifier: Stringifier;
-  transformers: Transformer[];
+  plugins: Plugin[];
+}
+
+interface ReferencedPlugin {
+  new (): Plugin;
 }
 
 export interface RunnerOptions {
   parser?: Parser | string;
   stringifier?: Stringifier | string;
-  transformers?: Array<Transformer | string>;
+  plugins?: Array<Plugin | typeof Plugin | string>;
 }
 
 export type Parser = (dfm: string) => AST.Root;
-
-export type Transformer = (ast: AST.Root) => AST.Root;
 
 export type Stringifier = (ast: AST.Root) => string;
 
@@ -26,9 +29,12 @@ export interface ProcessingOptions {
 
 export class Runner {
   private options: InternalRunnerOptions;
+  private tapable: Tapable;
 
   constructor(options: InternalRunnerOptions) {
     this.options = options;
+
+    this.tapable = new Tapable(this.options.plugins);
   }
 
   public processSync(
@@ -54,10 +60,7 @@ export class Runner {
       );
     }
 
-    const transformed = this.options.transformers.reduce(
-      (currAst, transformer) => transformer(currAst),
-      ast
-    );
+    const transformed = this.tapable.process(ast);
 
     return this.options.stringifier(transformed);
   }
@@ -76,7 +79,7 @@ export default function postdfm(options?: RunnerOptions): Runner {
   const internalOptions: InternalRunnerOptions = {
     parser: parse,
     stringifier: stringify,
-    transformers: []
+    plugins: []
   };
 
   if (options) {
@@ -100,26 +103,28 @@ export default function postdfm(options?: RunnerOptions): Runner {
       }
     }
 
-    if (options.transformers) {
-      if (!Array.isArray(options.transformers)) {
+    if (options.plugins) {
+      if (!Array.isArray(options.plugins)) {
         throw new Error(
-          "transformers must be an array of strings and/or functions"
+          "plugins must be an array of strings, functions and/or objects"
         );
       }
 
-      options.transformers.forEach(transformer => {
-        let internalTransformer: Transformer;
-        if (typeof transformer === "string") {
-          internalTransformer = require(transformer);
-        } else if (typeof transformer === "function") {
-          internalTransformer = transformer;
+      options.plugins.forEach((plugin) => {
+        let internalPlugin: Plugin;
+        if (typeof plugin === "string") {
+          internalPlugin = new (require(plugin) as ReferencedPlugin)();
+        } else if (typeof plugin === "function") {
+          internalPlugin = new (plugin as ReferencedPlugin)();
+        } else if (typeof plugin === "object") {
+          internalPlugin = plugin;
         } else {
           throw new Error(
-            "transformers must be an array of strings and/or functions"
+            "plugins must be an array of strings, functions and/or objects"
           );
         }
 
-        internalOptions.transformers.push(internalTransformer);
+        internalOptions.plugins.push(internalPlugin);
       });
     }
   }

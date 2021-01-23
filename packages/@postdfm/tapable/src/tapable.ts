@@ -2,6 +2,7 @@ import * as AST from "@postdfm/ast";
 import { AnyList } from "@postdfm/ast/dist/list/anyList";
 import { VariantValue } from "@postdfm/ast/dist/value/variantValue";
 import { StringValuePart } from "@postdfm/ast/dist/value/stringValuePart";
+import { Plugin } from "./plugin";
 import * as tapable from "tapable";
 
 type Hooks = {
@@ -11,7 +12,7 @@ type Hooks = {
 export class Tapable {
   hooks: Hooks;
 
-  constructor() {
+  constructor(plugins: Plugin[]) {
     this.hooks = Object.values(AST.ASTType).reduce(
       (obj: Partial<Hooks>, astType: AST.ASTType) => {
         return {
@@ -21,6 +22,8 @@ export class Tapable {
       },
       {}
     ) as Hooks;
+
+    plugins.forEach((plugin) => plugin.install(this));
   }
 
   process(ast: AST.ASTNode): AST.ASTNode {
@@ -68,7 +71,7 @@ export class Tapable {
 
   private tapString(ast: AST.StringValue): AST.StringValue {
     ast = this.hooks[AST.ASTType.String].call(ast) as AST.StringValue;
-    ast.value = ast.value.map(str => this.tap(str) as StringValuePart);
+    ast.value = ast.value.map((str) => this.tap(str) as StringValuePart);
     return ast;
   }
 
@@ -120,13 +123,15 @@ export class Tapable {
 
   private tapItem(ast: AST.Item): AST.Item {
     ast = this.hooks[AST.ASTType.Item].call(ast) as AST.Item;
-    ast.properties = ast.properties.map(property => this.tapProperty(property));
+    ast.properties = ast.properties.map((property) =>
+      this.tapProperty(property)
+    );
     return ast;
   }
 
   private tapVariantList(ast: AST.VariantList): AST.VariantList {
     ast = this.hooks[AST.ASTType.VariantList].call(ast) as AST.VariantList;
-    ast.values = ast.values.map(variant => this.tap(variant) as VariantValue);
+    ast.values = ast.values.map((variant) => this.tap(variant) as VariantValue);
     return ast;
   }
 
@@ -134,7 +139,7 @@ export class Tapable {
     ast = this.hooks[AST.ASTType.BinaryString].call(
       ast
     ) as AST.BinaryStringList;
-    ast.values = ast.values.map(binaryString =>
+    ast.values = ast.values.map((binaryString) =>
       this.tapBinaryString(binaryString)
     );
     return ast;
@@ -144,13 +149,13 @@ export class Tapable {
     ast = this.hooks[AST.ASTType.IdentifierList].call(
       ast
     ) as AST.IdentifierList;
-    ast.values = ast.values.map(identifier => this.tapIdentifier(identifier));
+    ast.values = ast.values.map((identifier) => this.tapIdentifier(identifier));
     return ast;
   }
 
   private tapItemList(ast: AST.ItemList): AST.ItemList {
     ast = this.hooks[AST.ASTType.ItemList].call(ast) as AST.ItemList;
-    ast.values = ast.values.map(item => this.tapItem(item));
+    ast.values = ast.values.map((item) => this.tapItem(item));
     return ast;
   }
 
@@ -162,8 +167,10 @@ export class Tapable {
 
   private tapObject(ast: AST.DObject): AST.DObject {
     ast = this.hooks[AST.ASTType.Object].call(ast) as AST.DObject;
-    ast.properties = ast.properties.map(property => this.tapProperty(property));
-    ast.children = ast.children.map(child => this.tapObject(child));
+    ast.properties = ast.properties.map((property) =>
+      this.tapProperty(property)
+    );
+    ast.children = ast.children.map((child) => this.tapObject(child));
     return ast;
   }
 
