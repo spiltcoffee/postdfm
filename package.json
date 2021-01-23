@@ -6,6 +6,7 @@
   ],
   "description": "Provides an API for easily transforming Delphi Forms",
   "scripts": {
+    "postinstall": "husky install",
     "ci": "yarn --frozen-lockfile && yarn run compile && yarn run lint:check && yarn run format:check && yarn test && yarn docs",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts}\"",
     "lint:fix": "yarn lint --fix",
@@ -38,7 +39,7 @@
     "eslint-plugin-jest": "^23.0.0",
     "eslint-plugin-node": "^11.0.0",
     "execa": "^4.0.0",
-    "husky": "^5.0.0",
+    "husky": "^5.0.6",
     "jest": "^26.0.0",
     "jest-junit": "^10.0.0",
     "lint-staged": "^10.0.3",
@@ -65,12 +66,6 @@
       "eslint --ignore-path .gitignore",
       "prettier --ignore-path .gitignore --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "engines": {
     "node": ">=8.3.0"
