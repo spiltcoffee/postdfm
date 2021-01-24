@@ -8,6 +8,7 @@ module.exports = function getConfig(enableTypeChecking) {
         tryExtensions: [".js", ".ts", ".json", ".node"],
       },
     },
+    ignorePatterns: [".eslintrc.js"],
     parserOptions: {
       project: "./tsconfig.json",
     },

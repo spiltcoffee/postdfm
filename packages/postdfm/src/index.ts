@@ -40,7 +40,11 @@ export class Runner {
       ast = this.options.parser(dfm);
     } catch (error) {
       if (processingOptions && processingOptions.from) {
-        throw new Error(`Error in ${processingOptions.from}: ${error.message}`);
+        throw new Error(
+          `Error in ${processingOptions.from}: ${
+            (<{ message: string }>error).message
+          }`
+        );
       } else {
         throw error;
       }
@@ -82,7 +86,8 @@ export default function postdfm(options?: RunnerOptions): Runner {
   if (options) {
     if (options.parser) {
       if (typeof options.parser === "string") {
-        internalOptions.parser = require(options.parser);
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        internalOptions.parser = require(options.parser) as Parser;
       } else if (typeof options.parser === "function") {
         internalOptions.parser = options.parser;
       } else {
@@ -92,7 +97,8 @@ export default function postdfm(options?: RunnerOptions): Runner {
 
     if (options.stringifier) {
       if (typeof options.stringifier === "string") {
-        internalOptions.stringifier = require(options.stringifier);
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        internalOptions.stringifier = require(options.stringifier) as Stringifier;
       } else if (typeof options.stringifier === "function") {
         internalOptions.stringifier = options.stringifier;
       } else {
@@ -110,7 +116,8 @@ export default function postdfm(options?: RunnerOptions): Runner {
       options.transformers.forEach((transformer) => {
         let internalTransformer: Transformer;
         if (typeof transformer === "string") {
-          internalTransformer = require(transformer);
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          internalTransformer = require(transformer) as Transformer;
         } else if (typeof transformer === "function") {
           internalTransformer = transformer;
         } else {

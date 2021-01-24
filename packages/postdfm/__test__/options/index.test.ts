@@ -15,14 +15,17 @@ describe("postdfm", () => {
       const stringifier = stringify;
       const transformers: Transformer[] = [noopTransformer];
 
-      postdfm();
-      postdfm({ parser });
-      postdfm({ stringifier });
-      postdfm({ transformers });
-      postdfm({ parser, stringifier });
-      postdfm({ parser, transformers });
-      postdfm({ stringifier, transformers });
-      postdfm({ parser, stringifier, transformers });
+      expect(() => postdfm()).not.toThrow();
+      expect(() => postdfm()).not.toThrow();
+      expect(() => postdfm({ parser })).not.toThrow();
+      expect(() => postdfm({ stringifier })).not.toThrow();
+      expect(() => postdfm({ transformers })).not.toThrow();
+      expect(() => postdfm({ parser, stringifier })).not.toThrow();
+      expect(() => postdfm({ parser, transformers })).not.toThrow();
+      expect(() => postdfm({ stringifier, transformers })).not.toThrow();
+      expect(() =>
+        postdfm({ parser, stringifier, transformers })
+      ).not.toThrow();
     });
 
     test("valid (using strings)", () => {
@@ -30,14 +33,15 @@ describe("postdfm", () => {
       const stringifier = "@postdfm/ast2dfm";
       const transformers = [path.join(__dirname, "transformer.js")];
 
-      postdfm();
-      postdfm({ parser });
-      postdfm({ stringifier });
-      postdfm({ transformers });
-      postdfm({ parser, stringifier });
-      postdfm({ parser, transformers });
-      postdfm({ stringifier, transformers });
-      postdfm({ parser, stringifier, transformers });
+      expect(() => postdfm({ parser })).not.toThrow();
+      expect(() => postdfm({ stringifier })).not.toThrow();
+      expect(() => postdfm({ transformers })).not.toThrow();
+      expect(() => postdfm({ parser, stringifier })).not.toThrow();
+      expect(() => postdfm({ parser, transformers })).not.toThrow();
+      expect(() => postdfm({ stringifier, transformers })).not.toThrow();
+      expect(() =>
+        postdfm({ parser, stringifier, transformers })
+      ).not.toThrow();
     });
 
     test("invalid", () => {

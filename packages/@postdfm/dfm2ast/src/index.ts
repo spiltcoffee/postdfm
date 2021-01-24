@@ -18,7 +18,7 @@ function parse(dfm: string): Root {
     );
   }
 
-  return parser.results[0];
+  return parser.results[0] as Root;
 }
 
 export default parse;

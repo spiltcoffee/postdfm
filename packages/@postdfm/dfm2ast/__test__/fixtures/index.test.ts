@@ -12,7 +12,7 @@ describe("dfm2ast", () => {
       const formFile = path.join(parseFixturesDir, fixture, "form.dfm");
       const astFile = path.join(parseFixturesDir, fixture, "ast.json");
 
-      test(fixture, () => {
+      test(`${fixture}`, () => {
         expect(
           JSON.parse(JSON.stringify(parse(fs.readFileSync(formFile, "ascii"))))
         ).toEqual(JSON.parse(fs.readFileSync(astFile, "utf8")));
