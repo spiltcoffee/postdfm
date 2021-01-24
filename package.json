@@ -44,7 +44,7 @@
     "jest-junit": "^10.0.0",
     "lint-staged": "^10.0.3",
     "nearley": "^2.16.0",
-    "prettier": "^1.16.4",
+    "prettier": "^2.2.1",
     "read-pkg": "^5.0.0",
     "semantic-release": "^17.3.1",
     "ts-jest": "^26.4.4",
