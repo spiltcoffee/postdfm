@@ -1,7 +1,7 @@
 function gatherObjects(object) {
   return [].concat(
     object,
-    object.children.map(child => gatherObjects(child))
+    object.children.map((child) => gatherObjects(child))
   );
 }
 
@@ -14,15 +14,12 @@ function gatherProperties(object) {
 }
 
 function visitProperties(object, callback) {
-  gatherProperties(object).forEach(property => callback(property));
+  gatherProperties(object).forEach((property) => callback(property));
 }
 
-module.exports = ast => {
-  visitProperties(ast.child, property => {
-    property.name = property.name
-      .split("")
-      .reverse()
-      .join("");
+module.exports = (ast) => {
+  visitProperties(ast.child, (property) => {
+    property.name = property.name.split("").reverse().join("");
   });
 
   return ast;

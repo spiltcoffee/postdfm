@@ -12,7 +12,7 @@ describe("creating Lists", () => {
       new AST.StringValue([new AST.LiteralString("hello")]),
       new AST.IntegerValue(255),
       new AST.BooleanValue(true),
-      new AST.StringValue([new AST.LiteralString("world")])
+      new AST.StringValue([new AST.LiteralString("world")]),
     ]);
 
     expect(node.values).toContainEqual(
@@ -33,7 +33,7 @@ describe("creating Lists", () => {
   test("BinaryStringList", () => {
     const node = new AST.BinaryStringList([
       new AST.BinaryStringValue("BADA55"),
-      new AST.BinaryStringValue("C0FFEE")
+      new AST.BinaryStringValue("C0FFEE"),
     ]);
 
     expect(node.values).toContainEqual(new AST.BinaryStringValue("C0FFEE"));
@@ -48,7 +48,7 @@ describe("creating Lists", () => {
   test("QualifiedList", () => {
     const node = new AST.IdentifierList([
       new AST.IdentifierValue("enHello"),
-      new AST.IdentifierValue("enWorld")
+      new AST.IdentifierValue("enWorld"),
     ]);
 
     expect(node.values).toContainEqual(new AST.IdentifierValue("enWorld"));
@@ -66,7 +66,7 @@ describe("creating Lists", () => {
       new AST.Property(
         "Font.Name",
         new AST.StringValue([new AST.LiteralString("sans-serif")])
-      )
+      ),
     ]);
     const node = new AST.ItemList([itemNode1, itemNode2]);
 

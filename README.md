@@ -51,16 +51,16 @@ const cisDfm = fs.readFileSync(
 
 const runner = postdfm({
   transformers: [
-    function(ast) {
+    function (ast) {
       //transform and return the ast
       return transformedAst;
-    }
-  ]
+    },
+  ],
 });
 
 const transDfm = runner.processSync(dfm, {
   //filename used for reporting errors
-  from: "cis.dfm"
+  from: "cis.dfm",
 });
 
 fs.writeFileSync("trans.dfm", transDfm);

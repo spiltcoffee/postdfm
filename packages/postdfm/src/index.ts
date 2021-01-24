@@ -76,7 +76,7 @@ export default function postdfm(options?: RunnerOptions): Runner {
   const internalOptions: InternalRunnerOptions = {
     parser: parse,
     stringifier: stringify,
-    transformers: []
+    transformers: [],
   };
 
   if (options) {
@@ -107,7 +107,7 @@ export default function postdfm(options?: RunnerOptions): Runner {
         );
       }
 
-      options.transformers.forEach(transformer => {
+      options.transformers.forEach((transformer) => {
         let internalTransformer: Transformer;
         if (typeof transformer === "string") {
           internalTransformer = require(transformer);

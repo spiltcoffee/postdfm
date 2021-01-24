@@ -14,11 +14,11 @@ function noopTransform(ast: Root): Root {
 describe("postdfm", () => {
   describe("parse fixtures", () => {
     const runner = postdfm({
-      transformers: [noopTransform]
+      transformers: [noopTransform],
     });
 
     const fixtures = fs.readdirSync(parseFixturesDir);
-    fixtures.forEach(fixture => {
+    fixtures.forEach((fixture) => {
       const cisForm = fs.readFileSync(
         path.join(parseFixturesDir, fixture, "form.dfm"),
         "ascii"
@@ -32,7 +32,7 @@ describe("postdfm", () => {
         test("async", () => {
           return runner
             .process(cisForm)
-            .then(dfm => expect(dfm).toEqual(cisForm));
+            .then((dfm) => expect(dfm).toEqual(cisForm));
         });
       });
     });
@@ -40,7 +40,7 @@ describe("postdfm", () => {
 
   describe("transform fixtures", () => {
     const fixtures = fs.readdirSync(transformFixturesDir);
-    fixtures.forEach(fixture => {
+    fixtures.forEach((fixture) => {
       const fixtureDir = path.join(transformFixturesDir, fixture);
       const cisForm = fs.readFileSync(
         path.join(fixtureDir, "cis.dfm"),
@@ -62,7 +62,7 @@ describe("postdfm", () => {
         test("async", () => {
           return runner
             .process(cisForm)
-            .then(dfm => expect(dfm).toEqual(transForm));
+            .then((dfm) => expect(dfm).toEqual(transForm));
         });
       });
     });

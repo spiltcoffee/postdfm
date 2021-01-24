@@ -8,21 +8,21 @@ module.exports = {
         classNameTemplate: "[{classname}]",
         titleTemplate: "{title}",
         outputDirectory: "test-results/jest",
-        outputName: "./report.xml"
-      }
-    ]
+        outputName: "./report.xml",
+      },
+    ],
   ],
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
   },
   collectCoverage: true,
   collectCoverageFrom: [
     "**/*.ts",
     "!**/node_modules/**",
     "!**/dist/**",
-    "!packages/@postdfm/dfm2ast/src/grammar.ts"
+    "!packages/@postdfm/dfm2ast/src/grammar.ts",
   ],
   coverageReporters: ["lcov", "text"],
   coverageDirectory: "coverage",
-  rootDir: "./"
+  rootDir: "./",
 };

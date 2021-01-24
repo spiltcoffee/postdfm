@@ -1,1 +1,1 @@
-module.exports = ast => ast;
+module.exports = (ast) => ast;
