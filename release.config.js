@@ -10,7 +10,7 @@ const pkgs = Object.entries(
 const tarballDir = path.resolve(__dirname, "dist");
 
 module.exports = {
-  branch: "master",
+  branch: "main",
   repositoryUrl: "ssh://git@github.com/spiltcoffee/postdfm.git",
   plugins: [
     "@semantic-release/commit-analyzer",
