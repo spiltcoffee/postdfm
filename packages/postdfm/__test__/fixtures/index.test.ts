@@ -1,20 +1,22 @@
 import * as fs from "fs";
 import * as path from "path";
 import postdfm from "../../src";
-import { Root } from "@postdfm/ast";
+import { Plugin } from "@postdfm/plugin";
 
 const rootFixturesDir = path.resolve("__test__", "__fixtures__");
 const parseFixturesDir = path.join(rootFixturesDir, "parse");
 const transformFixturesDir = path.join(rootFixturesDir, "transform");
 
-function noopTransform(ast: Root): Root {
-  return ast;
+class NoopPlugin extends Plugin {
+  install(): void {
+    // do nothing
+  }
 }
 
 describe("postdfm", () => {
   describe("parse fixtures", () => {
     const runner = postdfm({
-      transformers: [noopTransform],
+      plugins: [NoopPlugin],
     });
 
     const fixtures = fs.readdirSync(parseFixturesDir);
@@ -50,9 +52,9 @@ describe("postdfm", () => {
         path.join(fixtureDir, "trans.dfm"),
         "ascii"
       );
-      const transformers = [require(path.join(fixtureDir, "transformer.js"))];
+      const plugins = [require(path.join(fixtureDir, "plugin.js"))];
 
-      const runner = postdfm({ transformers });
+      const runner = postdfm({ plugins });
 
       describe(`${fixture}`, () => {
         test("sync", () => {
