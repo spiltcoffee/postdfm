@@ -68,9 +68,9 @@ export class Runner {
       );
     }
 
-    const transformed = this.transformer.transform(ast);
+    this.transformer.transform(ast);
 
-    return this.options.stringifier(transformed);
+    return this.options.stringifier(ast);
   }
 
   public async process(
