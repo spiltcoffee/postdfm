@@ -10,6 +10,7 @@ function parse(dfm: string): Root {
     throw new Error("Unexpected End Of Input");
   }
 
+  /* istanbul ignore next */
   if (parser.results.length > 1) {
     throw new Error(
       `Ambiguous Grammar: ${parser.results.length} Results Found\n\n` +
