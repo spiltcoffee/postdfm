@@ -32,8 +32,10 @@ describe("transform", () => {
 
       const transformer = new Transformer(plugins);
 
+      transformer.transform(cisAst);
+
       test(`${fixture}`, () => {
-        expect(transformer.transform(cisAst)).toEqual(transAst);
+        expect(cisAst).toEqual(transAst);
       });
     });
   });
