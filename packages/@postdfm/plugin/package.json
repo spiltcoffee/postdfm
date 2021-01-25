@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/plugin",
-  "version": "6.0.0-beta.2",
+  "version": "6.0.0-beta.3",
   "description": "Provides structure and utilities for making plugins that can modify a postdfm AST.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
-    "@postdfm/ast": "^6.0.0-beta.2",
+    "@postdfm/ast": "^6.0.0-beta.3",
     "tapable": "^2.2.0"
   },
   "files": [
