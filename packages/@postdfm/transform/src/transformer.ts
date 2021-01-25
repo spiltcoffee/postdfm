@@ -55,6 +55,7 @@ export class Transformer {
   private transformString(ast: AST.StringValue): AST.StringValue {
     ast = this.hooks[AST.ASTType.String].call(ast);
     ast.value = ast.value.map((str) => this.transform(str) as StringValuePart);
+    ast = this.hooks.after[AST.ASTType.String].call(ast);
     return ast;
   }
 
@@ -109,6 +110,7 @@ export class Transformer {
     ast.properties = ast.properties.map((property) =>
       this.transformProperty(property)
     );
+    ast = this.hooks.after[AST.ASTType.Item].call(ast);
     return ast;
   }
 
@@ -117,6 +119,7 @@ export class Transformer {
     ast.values = ast.values.map(
       (variant) => this.transform(variant) as VariantValue
     );
+    ast = this.hooks.after[AST.ASTType.VariantList].call(ast);
     return ast;
   }
 
@@ -127,6 +130,7 @@ export class Transformer {
     ast.values = ast.values.map((binaryString) =>
       this.transformBinaryString(binaryString)
     );
+    ast = this.hooks.after[AST.ASTType.BinaryStringList].call(ast);
     return ast;
   }
 
@@ -135,18 +139,21 @@ export class Transformer {
     ast.values = ast.values.map((identifier) =>
       this.transformIdentifier(identifier)
     );
+    ast = this.hooks.after[AST.ASTType.IdentifierList].call(ast);
     return ast;
   }
 
   private transformItemList(ast: AST.ItemList): AST.ItemList {
     ast = this.hooks[AST.ASTType.ItemList].call(ast);
     ast.values = ast.values.map((item) => this.transformItem(item));
+    ast = this.hooks.after[AST.ASTType.ItemList].call(ast);
     return ast;
   }
 
   private transformProperty(ast: AST.Property): AST.Property {
     ast = this.hooks[AST.ASTType.Property].call(ast);
     ast.value = this.transform(ast.value) as VariantValue | AnyList;
+    ast = this.hooks.after[AST.ASTType.Property].call(ast);
     return ast;
   }
 
@@ -156,6 +163,7 @@ export class Transformer {
       this.transformProperty(property)
     );
     ast.children = ast.children.map((child) => this.transformObject(child));
+    ast = this.hooks.after[AST.ASTType.Object].call(ast);
     return ast;
   }
 
@@ -164,6 +172,7 @@ export class Transformer {
     if (ast.child) {
       ast.child = this.transformObject(ast.child);
     }
+    ast = this.hooks.after[AST.ASTType.Root].call(ast);
     return ast;
   }
 }
