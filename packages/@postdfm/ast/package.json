@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/ast",
-  "version": "6.0.0-beta.1",
+  "version": "6.0.0-beta.2",
   "description": "Abstract Syntax Tree classes for postdfm",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
