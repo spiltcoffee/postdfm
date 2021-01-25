@@ -1,3 +1,3 @@
 module.exports = require("../../../typedoc")({
-  out: "@postdfm/ast"
+  out: "@postdfm/ast",
 });

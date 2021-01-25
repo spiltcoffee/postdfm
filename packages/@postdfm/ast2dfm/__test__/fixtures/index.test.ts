@@ -9,11 +9,11 @@ const parseFixturesDir = path.join(rootFixturesDir, "parse");
 describe("dfm2ast", () => {
   describe("fixtures", () => {
     const fixtures = fs.readdirSync(parseFixturesDir);
-    fixtures.forEach(fixture => {
+    fixtures.forEach((fixture) => {
       const astFile = path.join(parseFixturesDir, fixture, "ast.json");
       const formFile = path.join(parseFixturesDir, fixture, "form.dfm");
 
-      test(fixture, () => {
+      test(`${fixture}`, () => {
         expect(
           stringify(JSON.parse(fs.readFileSync(astFile, "utf8")) as AST.Root)
         ).toEqual(fs.readFileSync(formFile, "ascii"));

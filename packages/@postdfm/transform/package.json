@@ -1,0 +1,31 @@
+{
+  "name": "@postdfm/transform",
+  "version": "5.0.6",
+  "description": "Iterates a Delphi Form Abstract Syntax Tree, allowing modification via Hooks",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc --listEmittedFiles",
+    "docs": "typedoc --options typedoc.config.js"
+  },
+  "author": "SpiltCoffee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spiltcoffee/postdfm/issues"
+  },
+  "homepage": "https://github.com/spiltcoffee/postdfm#readme",
+  "dependencies": {
+    "@postdfm/ast": "^5.0.6",
+    "@postdfm/plugin": "^5.0.6"
+  },
+  "files": [
+    "/dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

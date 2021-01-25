@@ -3,7 +3,7 @@ import * as AST from "../src";
 describe("creating Properties", () => {
   test("Property with Value", () => {
     const valueNode = new AST.StringValue([
-      new AST.LiteralString("sans-serif")
+      new AST.LiteralString("sans-serif"),
     ]);
     const node = new AST.Property("Font.Name", valueNode);
 
@@ -14,7 +14,7 @@ describe("creating Properties", () => {
   test("Property with List", () => {
     const listNode = new AST.VariantList([
       new AST.StringValue([new AST.LiteralString("Verdana")]),
-      new AST.StringValue([new AST.LiteralString("sans-serif")])
+      new AST.StringValue([new AST.LiteralString("sans-serif")]),
     ]);
     const node = new AST.Property("Font.Name", listNode);
 

@@ -18,6 +18,9 @@
     "/dist",
     "README.md"
   ],
+  "engines": {
+    "node": ">=8.3.0"
+  },
   "publishConfig": {
     "access": "public"
   }

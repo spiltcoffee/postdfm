@@ -1,0 +1,37 @@
+{
+  "astType": "root",
+  "child": {
+    "astType": "object",
+    "kind": "object",
+    "name": "Test",
+    "properties": [
+      {
+        "astType": "property",
+        "name": "olleH",
+        "value": {
+          "astType": "string",
+          "value": [
+            {
+              "astType": "literalString",
+              "value": "World"
+            }
+          ]
+        },
+        "raws": {
+          "afterName": " ",
+          "beforeValue": " "
+        }
+      }
+    ],
+    "children": [],
+    "raws": {
+      "beforeName": " ",
+      "beforeProperties": "\r\n  ",
+      "beforeEnd": "\r\n"
+    }
+  },
+  "raws": {
+    "before": "",
+    "after": "\r\n"
+  }
+}
