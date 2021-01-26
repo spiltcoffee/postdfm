@@ -12,7 +12,7 @@
         "raws": {
           "afterName": "",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
+          "beforeDef": " ",
           "beforeType": " "
         },
         "type": "TEdit"
@@ -27,7 +27,7 @@
           "afterName": "",
           "before": "\r\n  ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
+          "beforeDef": " ",
           "beforeType": " "
         },
         "type": "TEdit"
@@ -42,10 +42,22 @@
           "afterName": "",
           "before": "\r\n  ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
+          "beforeDef": " ",
           "beforeType": " "
         },
         "type": "TEdit"
+      },
+      {
+        "astType": "object",
+        "children": [],
+        "kind": "object",
+        "type": "TNameless",
+        "properties": [],
+        "raws": {
+          "before": "\r\n  ",
+          "beforeEnd": "\r\n  ",
+          "beforeDef": " "
+        }
       },
       {
         "astType": "object",
@@ -86,7 +98,7 @@
                                                 "raws": {
                                                   "afterName": "",
                                                   "beforeEnd": "\r\n                      ",
-                                                  "beforeName": " ",
+                                                  "beforeDef": " ",
                                                   "beforeType": " "
                                                 },
                                                 "type": "TComponent"
@@ -99,7 +111,7 @@
                                               "afterName": "",
                                               "beforeChildren": "\r\n                      ",
                                               "beforeEnd": "\r\n                    ",
-                                              "beforeName": " ",
+                                              "beforeDef": " ",
                                               "beforeType": " "
                                             },
                                             "type": "TComponent"
@@ -112,7 +124,7 @@
                                           "afterName": "",
                                           "beforeChildren": "\r\n                    ",
                                           "beforeEnd": "\r\n                  ",
-                                          "beforeName": " ",
+                                          "beforeDef": " ",
                                           "beforeType": " "
                                         },
                                         "type": "TComponent"
@@ -125,7 +137,7 @@
                                       "afterName": "",
                                       "beforeChildren": "\r\n                  ",
                                       "beforeEnd": "\r\n                ",
-                                      "beforeName": " ",
+                                      "beforeDef": " ",
                                       "beforeType": " "
                                     },
                                     "type": "TComponent"
@@ -138,7 +150,7 @@
                                   "afterName": "",
                                   "beforeChildren": "\r\n                ",
                                   "beforeEnd": "\r\n              ",
-                                  "beforeName": " ",
+                                  "beforeDef": " ",
                                   "beforeType": " "
                                 },
                                 "type": "TComponent"
@@ -151,7 +163,7 @@
                               "afterName": "",
                               "beforeChildren": "\r\n              ",
                               "beforeEnd": "\r\n            ",
-                              "beforeName": " ",
+                              "beforeDef": " ",
                               "beforeType": " "
                             },
                             "type": "TComponent"
@@ -164,7 +176,7 @@
                           "afterName": "",
                           "beforeChildren": "\r\n            ",
                           "beforeEnd": "\r\n          ",
-                          "beforeName": " ",
+                          "beforeDef": " ",
                           "beforeType": " "
                         },
                         "type": "TComponent"
@@ -177,7 +189,7 @@
                       "afterName": "",
                       "beforeChildren": "\r\n          ",
                       "beforeEnd": "\r\n        ",
-                      "beforeName": " ",
+                      "beforeDef": " ",
                       "beforeType": " "
                     },
                     "type": "TComponent"
@@ -190,7 +202,7 @@
                   "afterName": "",
                   "beforeChildren": "\r\n        ",
                   "beforeEnd": "\r\n      ",
-                  "beforeName": " ",
+                  "beforeDef": " ",
                   "beforeType": " "
                 },
                 "type": "TComponent"
@@ -203,7 +215,7 @@
               "afterName": "",
               "beforeChildren": "\r\n      ",
               "beforeEnd": "\r\n    ",
-              "beforeName": " ",
+              "beforeDef": " ",
               "beforeType": " "
             },
             "type": "TComponent"
@@ -217,7 +229,7 @@
           "before": "\r\n  ",
           "beforeChildren": "\r\n    ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
+          "beforeDef": " ",
           "beforeType": " "
         },
         "type": "_TUnder_Score"
@@ -248,7 +260,7 @@
       "afterName": "",
       "beforeChildren": "\r\n  ",
       "beforeEnd": "\r\n",
-      "beforeName": " ",
+      "beforeDef": " ",
       "beforeProperties": "\r\n  ",
       "beforeType": " "
     },

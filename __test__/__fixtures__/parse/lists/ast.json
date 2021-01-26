@@ -415,7 +415,7 @@
     "raws": {
       "afterName": "",
       "beforeEnd": "\r\n",
-      "beforeName": " ",
+      "beforeDef": " ",
       "beforeProperties": "\r\n  ",
       "beforeType": " "
     },
