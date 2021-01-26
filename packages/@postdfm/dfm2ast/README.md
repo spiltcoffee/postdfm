@@ -1,8 +1,8 @@
 # @postdfm/dfm2ast
 
-> Sub-package for [`postdfm`](https://github.com/spiltcoffee/postdfm).
+> Sub-package for [`postdfm`](https://www.npmjs.com/package/postdfm).
 >
-> Provides functionality for parsing DFMs into the structures provided by `@postdfm/ast`.
+> Provides functionality for parsing DFMs into the structures provided by [`@postdfm/ast`](https://www.npmjs.com/package/@postdfm/ast).
 
 [![npm](https://img.shields.io/npm/v/@postdfm/dfm2ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/dfm2ast)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
@@ -17,7 +17,7 @@
 
 ## Documentation
 
-See [`postdfm`](https://github.com/spiltcoffee/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/dfm2ast/).
+See [`postdfm`](https://www.npmjs.com/package/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/dfm2ast/).
 
 ## Contributing
 

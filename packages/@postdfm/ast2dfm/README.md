@@ -1,8 +1,8 @@
 # @postdfm/ast2dfm
 
-> Sub-package for [`postdfm`](https://github.com/spiltcoffee/postdfm).
+> Sub-package for [`postdfm`](https://www.npmjs.com/package/postdfm).
 >
-> Provides functionality for turning the structure provided by `@postdfm/ast` into a string.
+> Provides functionality for turning the structure provided by [`@postdfm/ast`](https://www.npmjs.com/package/@postdfm/ast) into a string/DFM.
 
 [![npm](https://img.shields.io/npm/v/@postdfm/ast2dfm.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast2dfm)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
@@ -17,7 +17,7 @@
 
 ## Documentation
 
-See [`postdfm`](https://github.com/spiltcoffee/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/ast2dfm/).
+See [`postdfm`](https://www.npmjs.com/package/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/ast2dfm/).
 
 ## Contributing
 

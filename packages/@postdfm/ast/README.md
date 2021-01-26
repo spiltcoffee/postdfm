@@ -1,8 +1,8 @@
 # @postdfm/ast
 
-> Sub-package for [`postdfm`](https://github.com/spiltcoffee/postdfm).
+> Sub-package for [`postdfm`](https://www.npmjs.com/package/postdfm).
 >
-> Provides the AST structures used by `postdfm`.
+> Provides Abstract Syntax Tree structures for representing the contents of a Delphi Form File.
 
 [![npm](https://img.shields.io/npm/v/@postdfm/ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
@@ -17,7 +17,7 @@
 
 ## Documentation
 
-See [`postdfm`](https://github.com/spiltcoffee/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/ast/).
+See [`postdfm`](https://www.npmjs.com/package/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/ast/).
 
 ## Contributing
 
