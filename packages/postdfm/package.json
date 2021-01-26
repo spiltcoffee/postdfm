@@ -1,6 +1,6 @@
 {
   "name": "postdfm",
-  "version": "6.0.0-beta.3",
+  "version": "6.0.0-beta.4",
   "description": "Provides an API for easily transforming Delphi Forms",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
-    "@postdfm/ast2dfm": "^6.0.0-beta.3",
-    "@postdfm/dfm2ast": "^6.0.0-beta.3",
-    "@postdfm/plugin": "^6.0.0-beta.3",
-    "@postdfm/transform": "^6.0.0-beta.3"
+    "@postdfm/ast2dfm": "^6.0.0-beta.4",
+    "@postdfm/dfm2ast": "^6.0.0-beta.4",
+    "@postdfm/plugin": "^6.0.0-beta.4",
+    "@postdfm/transform": "^6.0.0-beta.4"
   },
   "files": [
     "dist/",
