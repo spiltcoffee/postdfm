@@ -6,7 +6,7 @@ const rootFixturesDir = path.join("__test__", "__fixtures__");
 const parseFixturesDir = path.join(rootFixturesDir, "parse");
 
 describe("dfm2ast", () => {
-  describe("fixtures", () => {
+  describe("parse fixtures", () => {
     const fixtures = fs.readdirSync(parseFixturesDir);
     fixtures.forEach((fixture) => {
       const formFile = path.join(parseFixturesDir, fixture, "form.dfm");

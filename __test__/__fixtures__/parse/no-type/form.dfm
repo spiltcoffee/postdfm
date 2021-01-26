@@ -1,2 +1,2 @@
-object Empty
+object TEmpty
 end

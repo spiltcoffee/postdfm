@@ -5,7 +5,7 @@ import { ObjectKind } from "./objectKind";
 import { Property } from "./property";
 
 interface ObjectRaws extends ASTRaws {
-  beforeName?: string;
+  beforeDef?: string;
   afterName?: string;
   beforeType?: string;
   afterType?: string;

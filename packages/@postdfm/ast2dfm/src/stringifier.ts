@@ -229,12 +229,13 @@ export default class Stringifier {
     return this.print(
       raws.before,
       ast.kind,
-      raws.beforeName,
+      raws.beforeDef,
       ast.name,
       raws.afterName,
-      ast.type
-        ? this.print(":", raws.beforeType, ast.type, raws.afterType)
-        : "",
+      ast.name ? ":" : "",
+      raws.beforeType,
+      ast.type,
+      raws.afterType,
       ast.order !== undefined
         ? this.print(
             "[",

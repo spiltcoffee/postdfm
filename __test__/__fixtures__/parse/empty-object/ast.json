@@ -9,7 +9,7 @@
     "raws": {
       "afterName": "",
       "beforeEnd": "\r\n",
-      "beforeName": " ",
+      "beforeDef": " ",
       "beforeType": " "
     },
     "type": "TEmpty"

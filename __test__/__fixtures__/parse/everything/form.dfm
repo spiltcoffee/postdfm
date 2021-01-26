@@ -66,4 +66,6 @@ object Form1: TForm1
   end
   object Nothing: _TNothing
   end
+  object TNameless
+  end
 end

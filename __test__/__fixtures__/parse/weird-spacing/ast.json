@@ -56,8 +56,8 @@
         ],
         "raws": {
           "afterName": "",
+          "beforeDef": " ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
           "beforeProperties": "\r\n    ",
           "beforeType": " "
         },
@@ -156,8 +156,8 @@
           "afterOrder": "",
           "afterType": " ",
           "before": "\r\n\r\n  ",
+          "beforeDef": " ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
           "beforeOrder": "",
           "beforeProperties": "\r\n\r\n                         ",
           "beforeType": " "
@@ -388,8 +388,8 @@
         "raws": {
           "afterName": "",
           "before": "\r\n  ",
+          "beforeDef": " ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
           "beforeProperties": "\r\n    ",
           "beforeType": " "
         },
@@ -509,8 +509,8 @@
         "raws": {
           "afterName": "",
           "before": "\r\n  ",
+          "beforeDef": " ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
           "beforeProperties": "\r\n    ",
           "beforeType": " "
         },
@@ -588,8 +588,8 @@
         "raws": {
           "afterName": "",
           "before": "\r\n  ",
+          "beforeDef": " ",
           "beforeEnd": " ",
-          "beforeName": " ",
           "beforeProperties": " ",
           "beforeType": " "
         },
@@ -656,8 +656,8 @@
         "raws": {
           "afterName": "",
           "before": "\r\n  ",
+          "beforeDef": " ",
           "beforeEnd": "\r\n  ",
-          "beforeName": " ",
           "beforeProperties": "\r\n\r\n\r\n    ",
           "beforeType": " "
         },
@@ -705,8 +705,8 @@
             ],
             "raws": {
               "afterName": "",
+              "beforeDef": " ",
               "beforeEnd": "\r\n",
-              "beforeName": " ",
               "beforeProperties": "\r\n",
               "beforeType": " "
             },
@@ -720,8 +720,8 @@
           "afterName": "",
           "before": "\r\n",
           "beforeChildren": "\r\n",
+          "beforeDef": " ",
           "beforeEnd": "\r\n",
-          "beforeName": " ",
           "beforeType": " "
         },
         "type": "TForm2"
@@ -735,8 +735,8 @@
         "raws": {
           "afterName": "",
           "before": "\r\n",
+          "beforeDef": " ",
           "beforeEnd": "\r\n",
-          "beforeName": " ",
           "beforeType": " "
         },
         "type": "_TNothing"
@@ -808,8 +808,8 @@
     "raws": {
       "afterName": "",
       "beforeChildren": "   ",
+      "beforeDef": "\r\n\r\n\r\n\r\n  ",
       "beforeEnd": "\r\n",
-      "beforeName": "\r\n\r\n\r\n\r\n  ",
       "beforeProperties": "\r\n  ",
       "beforeType": " "
     },
