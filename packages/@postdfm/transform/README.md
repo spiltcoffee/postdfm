@@ -1,8 +1,8 @@
 # @postdfm/transform
 
-> Sub-package for [`postdfm`](https://github.com/spiltcoffee/postdfm).
+> Sub-package for [`postdfm`](https://www.npmjs.com/package/postdfm).
 >
-> Provides functionality for iterating a `@postdfm/ast` Abstract Syntax Tree via Hooks (using Webpack's Tapable package).
+> Provides functionality for iterating the structure provided by [`@postdfm/ast`](https://www.npmjs.com/package/@postdfm/ast) via ([Webpack Tapable](https://www.npmjs.com/package/tapable)) Hooks.
 
 [![npm](https://img.shields.io/npm/v/@postdfm/transform.svg?label=npm)](https://www.npmjs.com/package/@postdfm/transform)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
@@ -17,7 +17,7 @@
 
 ## Documentation
 
-See [`postdfm`](https://github.com/spiltcoffee/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/transform/).
+See [`postdfm`](https://www.npmjs.com/package/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/transform/).
 
 ## Contributing
 

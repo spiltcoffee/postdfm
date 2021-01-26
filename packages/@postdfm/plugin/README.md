@@ -1,8 +1,8 @@
 # @postdfm/plugin
 
-> Sub-package for [`postdfm`](https://github.com/spiltcoffee/postdfm).
+> Sub-package for [`postdfm`](https://www.npmjs.com/package/postdfm).
 >
-> Provides structure and utilities for making plugins that can modify a `@postdfm/ast` Abstract Syntax Tree.
+> Provides structure and utilities for making plugins that can modify the structure provided by [`@postdfm/ast`](https://www.npmjs.com/package/@postdfm/ast).
 
 [![npm](https://img.shields.io/npm/v/@postdfm/plugin.svg?label=npm)](https://www.npmjs.com/package/@postdfm/plugin)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
@@ -55,7 +55,7 @@ class SomePlugin extends Plugin {
 
 ## Documentation
 
-See [`postdfm`](https://github.com/spiltcoffee/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/plugin/).
+See [`postdfm`](https://www.npmjs.com/package/postdfm) for more information, or the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/@postdfm/plugin/).
 
 ## Contributing
 
