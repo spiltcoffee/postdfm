@@ -44,7 +44,7 @@ export default class Stringifier {
     const raws = this.raws(ast);
     return this.print(
       raws.before,
-      ast.value.map(str => this.stringify(str)).join(""),
+      ast.value.map((str) => this.stringify(str)).join(""),
       raws.after
     );
   }
@@ -148,7 +148,7 @@ export default class Stringifier {
       raws.before,
       "item",
       raws.afterItem,
-      ast.properties.map(property => this.printProperty(property)).join(""),
+      ast.properties.map((property) => this.printProperty(property)).join(""),
       raws.beforeEnd,
       "end",
       raws.after
@@ -161,7 +161,7 @@ export default class Stringifier {
       raws.before,
       "(",
       raws.afterOpen,
-      ast.values.map(variant => this.stringify(variant)).join(""),
+      ast.values.map((variant) => this.stringify(variant)).join(""),
       raws.beforeClose,
       ")",
       raws.after
@@ -175,7 +175,7 @@ export default class Stringifier {
       "{",
       raws.afterOpen,
       ast.values
-        .map(binaryString => this.printBinaryString(binaryString))
+        .map((binaryString) => this.printBinaryString(binaryString))
         .join(""),
       raws.beforeClose,
       "}",
@@ -189,7 +189,9 @@ export default class Stringifier {
       raws.before,
       "[",
       raws.afterOpen,
-      ast.values.map(identifier => this.printIdentifier(identifier)).join(","),
+      ast.values
+        .map((identifier) => this.printIdentifier(identifier))
+        .join(","),
       raws.beforeClose,
       "]",
       raws.after
@@ -202,7 +204,7 @@ export default class Stringifier {
       raws.before,
       "<",
       raws.afterOpen,
-      ast.values.map(item => this.printItem(item)).join(""),
+      ast.values.map((item) => this.printItem(item)).join(""),
       raws.beforeClose,
       ">",
       raws.after
@@ -227,12 +229,13 @@ export default class Stringifier {
     return this.print(
       raws.before,
       ast.kind,
-      raws.beforeName,
+      raws.beforeDef,
       ast.name,
       raws.afterName,
-      ast.type
-        ? this.print(":", raws.beforeType, ast.type, raws.afterType)
-        : "",
+      ast.name ? ":" : "",
+      raws.beforeType,
+      ast.type,
+      raws.afterType,
       ast.order !== undefined
         ? this.print(
             "[",
@@ -246,14 +249,14 @@ export default class Stringifier {
         ? this.print(
             raws.beforeProperties,
             ast.properties
-              .map(property => this.printProperty(property))
+              .map((property) => this.printProperty(property))
               .join("")
           )
         : "",
       ast.children && ast.children.length
         ? this.print(
             raws.beforeChildren,
-            ast.children.map(child => this.printObject(child)).join("")
+            ast.children.map((child) => this.printObject(child)).join("")
           )
         : "",
       raws.beforeEnd,
@@ -272,7 +275,7 @@ export default class Stringifier {
   }
 
   private print(...values: (string | undefined)[]): string {
-    return values.filter(v => !!v).join("");
+    return values.filter((v) => !!v).join("");
   }
 
   private raws<R extends AST.ASTRaws>(obj: AST.ASTNode<R>): R {

@@ -17,8 +17,6 @@ describe("creating FormObjects", () => {
     const node = new AST.Root(objectNode);
 
     expect(node.child).toBeDefined();
-    if (node.child) {
-      expect(node.child.kind).toBe(AST.ObjectKind.Inherited);
-    }
+    expect(node.child?.kind).toBe(AST.ObjectKind.Inherited);
   });
 });

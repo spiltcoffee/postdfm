@@ -1,0 +1,31 @@
+{
+  "name": "@postdfm/plugin",
+  "version": "6.0.0-beta.5",
+  "description": "Provides structure and utilities for making plugins that can modify a postdfm AST.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "compile": "tsc --listEmittedFiles",
+    "docs": "typedoc --options typedoc.config.js"
+  },
+  "author": "SpiltCoffee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spiltcoffee/postdfm/issues"
+  },
+  "homepage": "https://github.com/spiltcoffee/postdfm#readme",
+  "dependencies": {
+    "@postdfm/ast": "^6.0.0-beta.5",
+    "tapable": "^2.2.0"
+  },
+  "files": [
+    "/dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

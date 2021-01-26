@@ -1,28 +1,28 @@
 object -> objectKind _ objectDef __ "end"i
-{% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeEnd]) => {
+{% ([kind, beforeDef, { name, type, order, raws: defRaws }, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order);
-  node.raws = { ...(defRaws || {}), beforeName, beforeEnd };
+  node.raws = { ...(defRaws || {}), beforeDef, beforeEnd };
   return node;
 } %}
 
 object -> objectKind _ objectDef _ properties __ "end"i
-{% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeProperties, properties, beforeEnd]) => {
+{% ([kind, beforeDef, { name, type, order, raws: defRaws }, beforeProperties, properties, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order, properties)
-  node.raws = { ...(defRaws || {}), beforeName, beforeProperties, beforeEnd };
+  node.raws = { ...(defRaws || {}), beforeDef, beforeProperties, beforeEnd };
   return node;
 } %}
 
 object -> objectKind _ objectDef _ objects __ "end"i
-{% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeChildren, children, beforeEnd]) => {
+{% ([kind, beforeDef, { name, type, order, raws: defRaws }, beforeChildren, children, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order, undefined, children);
-  node.raws = { ...(defRaws || {}), beforeName, beforeChildren, beforeEnd };
+  node.raws = { ...(defRaws || {}), beforeDef, beforeChildren, beforeEnd };
   return node;
 } %}
 
 object -> objectKind _ objectDef _ properties _ objects __ "end"i
-{% ([kind, beforeName, { name, type, order, raws: defRaws }, beforeProperties, properties, beforeChildren, children, beforeEnd]) => {
+{% ([kind, beforeDef, { name, type, order, raws: defRaws }, beforeProperties, properties, beforeChildren, children, beforeEnd]) => {
   const node = new AST.DObject(kind, name, type, order, properties, children);
-  node.raws = { ...(defRaws || {}), beforeName, beforeProperties, beforeChildren, beforeEnd };
+  node.raws = { ...(defRaws || {}), beforeDef, beforeProperties, beforeChildren, beforeEnd };
   return node;
 } %}
 
@@ -34,7 +34,7 @@ objectKind -> "object"i
 {% () => AST.ObjectKind.Object %}
 
 objectDef -> identifer
-{% ([name]) => ({ name }) %}
+{% ([type]) => ({ type }) %}
 
 objectDef -> identifer _ ":" _ identifer
 {% ([name, afterName, _, beforeType, type]) => ({
@@ -48,11 +48,11 @@ objectDef -> identifer _ ":" _ identifer
 
 #is this one valid?
 objectDef -> identifer _ "[" _ decimal _ "]"
-{% ([name, afterName, _, beforeOrder, order, afterOrder]) => ({
-  name,
+{% ([type, afterType, _, beforeOrder, order, afterOrder]) => ({
+  type,
   order,
   raws: {
-    afterName,
+    afterType,
     beforeOrder,
     afterOrder
   }
@@ -81,5 +81,5 @@ objects -> objects __ object
     ...(object.raws || {}),
     before
   };
-  return [].concat(objects, object);
+  return objects.concat(object);
 } %}

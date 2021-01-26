@@ -5,5 +5,5 @@ export const Keywords = [
   "inherited",
   "inline",
   "end",
-  "item"
+  "item",
 ];

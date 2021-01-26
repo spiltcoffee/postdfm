@@ -4,11 +4,11 @@
     "astType": "object",
     "children": [],
     "kind": "object",
-    "name": "Empty",
+    "type": "TEmpty",
     "properties": [],
     "raws": {
       "beforeEnd": "\r\n",
-      "beforeName": " "
+      "beforeDef": " "
     }
   },
   "raws": {

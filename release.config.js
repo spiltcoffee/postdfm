@@ -10,7 +10,7 @@ const pkgs = Object.entries(
 const tarballDir = path.resolve(__dirname, "dist");
 
 module.exports = {
-  branch: "master",
+  branches: ["main", { name: "beta", prerelease: true }],
   repositoryUrl: "ssh://git@github.com/spiltcoffee/postdfm.git",
   plugins: [
     "@semantic-release/commit-analyzer",
@@ -20,8 +20,8 @@ module.exports = {
       "@semantic-release/npm",
       {
         pkgRoot,
-        tarballDir
-      }
+        tarballDir,
+      },
     ]),
     [
       "@semantic-release/github",
@@ -31,17 +31,17 @@ module.exports = {
             tarballDir,
             `${name.replace("@", "").replace("/", "-")}-*.tgz`
           ),
-          label: name
-        }))
-      }
+          label: name,
+        })),
+      },
     ],
     [
       "@semantic-release/git",
       {
         assets: [
-          ["packages/**/package.json", "!**/node_modules/**/package.json"]
-        ]
-      }
-    ]
-  ]
+          ["packages/**/package.json", "!**/node_modules/**/package.json"],
+        ],
+      },
+    ],
+  ],
 };

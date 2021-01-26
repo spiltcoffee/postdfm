@@ -1,22 +1,26 @@
 import * as AST from "@postdfm/ast";
+import { Plugin } from "@postdfm/plugin";
 import { stringify } from "@postdfm/ast2dfm";
+import { Transformer } from "@postdfm/transform";
 import { parse } from "@postdfm/dfm2ast";
 
 interface InternalRunnerOptions {
   parser: Parser;
   stringifier: Stringifier;
-  transformers: Transformer[];
+  plugins: Plugin[];
+}
+
+interface ReferencedPlugin {
+  new (): Plugin;
 }
 
 export interface RunnerOptions {
   parser?: Parser | string;
   stringifier?: Stringifier | string;
-  transformers?: Array<Transformer | string>;
+  plugins?: Array<Plugin | typeof Plugin | string>;
 }
 
 export type Parser = (dfm: string) => AST.Root;
-
-export type Transformer = (ast: AST.Root) => AST.Root;
 
 export type Stringifier = (ast: AST.Root) => string;
 
@@ -26,9 +30,12 @@ export interface ProcessingOptions {
 
 export class Runner {
   private options: InternalRunnerOptions;
+  private transformer: Transformer;
 
   constructor(options: InternalRunnerOptions) {
     this.options = options;
+
+    this.transformer = new Transformer(this.options.plugins);
   }
 
   public processSync(
@@ -40,26 +47,30 @@ export class Runner {
       ast = this.options.parser(dfm);
     } catch (error) {
       if (processingOptions && processingOptions.from) {
-        throw new Error(`Error in ${processingOptions.from}: ${error.message}`);
+        throw new Error(
+          `Error in ${processingOptions.from}: ${
+            (<{ message: string }>error).message
+          }`
+        );
       } else {
         throw error;
       }
     }
 
+    /* istanbul ignore next */
     if (!ast) {
       throw new Error(
-        "Somehow, `ast` is null??\n\n" +
+        `Somehow, \`ast\` is falsy?? (type: ${typeof ast}, value: ${
+          ast as string
+        })\n\n` +
           "  This probably isn't your fault. Please consider raising an " +
           "issue with a reproducable case at github.com/spiltcoffee/postdfm"
       );
     }
 
-    const transformed = this.options.transformers.reduce(
-      (currAst, transformer) => transformer(currAst),
-      ast
-    );
+    this.transformer.transform(ast);
 
-    return this.options.stringifier(transformed);
+    return this.options.stringifier(ast);
   }
 
   public async process(
@@ -76,13 +87,14 @@ export default function postdfm(options?: RunnerOptions): Runner {
   const internalOptions: InternalRunnerOptions = {
     parser: parse,
     stringifier: stringify,
-    transformers: []
+    plugins: [],
   };
 
   if (options) {
     if (options.parser) {
       if (typeof options.parser === "string") {
-        internalOptions.parser = require(options.parser);
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        internalOptions.parser = require(options.parser) as Parser;
       } else if (typeof options.parser === "function") {
         internalOptions.parser = options.parser;
       } else {
@@ -92,7 +104,8 @@ export default function postdfm(options?: RunnerOptions): Runner {
 
     if (options.stringifier) {
       if (typeof options.stringifier === "string") {
-        internalOptions.stringifier = require(options.stringifier);
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        internalOptions.stringifier = require(options.stringifier) as Stringifier;
       } else if (typeof options.stringifier === "function") {
         internalOptions.stringifier = options.stringifier;
       } else {
@@ -100,26 +113,29 @@ export default function postdfm(options?: RunnerOptions): Runner {
       }
     }
 
-    if (options.transformers) {
-      if (!Array.isArray(options.transformers)) {
+    if (options.plugins) {
+      if (!Array.isArray(options.plugins)) {
         throw new Error(
-          "transformers must be an array of strings and/or functions"
+          "plugins must be an array of strings, functions and/or objects"
         );
       }
 
-      options.transformers.forEach(transformer => {
-        let internalTransformer: Transformer;
-        if (typeof transformer === "string") {
-          internalTransformer = require(transformer);
-        } else if (typeof transformer === "function") {
-          internalTransformer = transformer;
+      options.plugins.forEach((plugin) => {
+        let internalPlugin: Plugin;
+        if (typeof plugin === "string") {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
+          internalPlugin = new (require(plugin) as ReferencedPlugin)();
+        } else if (typeof plugin === "function") {
+          internalPlugin = new (plugin as ReferencedPlugin)();
+        } else if (typeof plugin === "object") {
+          internalPlugin = plugin;
         } else {
           throw new Error(
-            "transformers must be an array of strings and/or functions"
+            "plugins must be an array of strings, functions and/or objects"
           );
         }
 
-        internalOptions.transformers.push(internalTransformer);
+        internalOptions.plugins.push(internalPlugin);
       });
     }
   }

@@ -150,8 +150,8 @@
     ],
     "raws": {
       "afterName": "",
+      "beforeDef": " ",
       "beforeEnd": "\r\n",
-      "beforeName": " ",
       "beforeProperties": "\r\n  ",
       "beforeType": " "
     },

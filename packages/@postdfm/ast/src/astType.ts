@@ -18,5 +18,5 @@ export enum ASTType {
   ItemList = "itemList",
   Property = "property",
   Object = "object",
-  Root = "root"
+  Root = "root",
 }

@@ -51,7 +51,7 @@ You will need the following software to help develop this project:
 Before running any commands, you'll likely have to run the following:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn install
 ```
 
@@ -60,7 +60,7 @@ $ yarn install
 In order to see all of the operations that would be run in the Continuous Integration, run:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn ci
 ```
 
@@ -71,7 +71,7 @@ We use `prettier` for formatting and `eslint` with `typescript-eslint` for linti
 To see the linting and formatting issues, run:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn lint:check
 $ yarn format:check
 ```
@@ -79,7 +79,7 @@ $ yarn format:check
 To have as many issues as possible fixed by the tools, run:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn lint:fix
 $ yarn format:fix
 ```
@@ -91,7 +91,7 @@ Make sure to run `format:fix` last, as that's what the CI will perform. If there
 `postdfm` uses TypeScript and Nearley.js, so some compilation is required. Run:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn compile
 ```
 
@@ -100,7 +100,7 @@ $ yarn compile
 `postdfm` uses Jest to run and report coverage of all tests in the project. Run:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn test
 ```
 
@@ -109,7 +109,7 @@ $ yarn test
 Besides the README.md files for each project, `postdfm` uses TypeDoc to produce basic API documentation (viewable online at http://spiltcoffee.com).
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn docs
 ```
 
@@ -118,7 +118,7 @@ $ yarn docs
 The release step is performed automatically by the CI. You can run the command, but it won't do anything.
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ yarn release
 ```
 
@@ -135,7 +135,7 @@ When making a commit, your code in the commit will be automatically linted, form
 You should try to fix whatever problems are occurring, but if you can't (like you're trying to add failing tests), please commit using the following:
 
 ```bash
-~/postdfm (master)
+~/postdfm (main)
 $ git commit --no-verify
 ```
 

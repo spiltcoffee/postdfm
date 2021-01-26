@@ -30,7 +30,7 @@ describe("creating Values", () => {
     const node = new AST.StringValue([
       new AST.LiteralString("hello"),
       new AST.ControlString("\r\n"),
-      new AST.LiteralString("world")
+      new AST.LiteralString("world"),
     ]);
     expect(node.value).toContainEqual(new AST.LiteralString("world"));
   });
@@ -75,13 +75,13 @@ describe("creating Values", () => {
     const node = new AST.DoubleValue({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
 
     expect(node.value).toEqual({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
   });
 
@@ -95,13 +95,13 @@ describe("creating Values", () => {
     const node = new AST.SingleValue({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
 
     expect(node.value).toEqual({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
   });
 
@@ -115,13 +115,13 @@ describe("creating Values", () => {
     const node = new AST.CurrencyValue({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
 
     expect(node.value).toEqual({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
   });
 
@@ -135,13 +135,13 @@ describe("creating Values", () => {
     const node = new AST.DateTimeValue({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
 
     expect(node.value).toEqual({
       exponent: "1337",
       fraction: "000069",
-      integer: "420"
+      integer: "420",
     });
   });
 

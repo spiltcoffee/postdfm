@@ -30,7 +30,7 @@ string -> string singleString
     prevValue.value += "'" + value.value;
     return values;
   } else {
-    return [].concat(values, value)
+    return values.concat(value)
   }
 } %}
 
@@ -40,7 +40,7 @@ stringSep -> _ "+" _
 string -> string stringSep singleString
 {% ([values, before, value]) => {
   value.raws = { ...(value.raws || {}), before };
-  return [].concat(values, value);
+  return values.concat(value);
 } %}
 
 singleString -> controlChar

@@ -37,7 +37,7 @@
             "raws": {
               "afterName": "",
               "beforeType": " ",
-              "beforeName": " ",
+              "beforeDef": " ",
               "beforeEnd": "\r\n    "
             }
           }
@@ -45,7 +45,7 @@
         "raws": {
           "afterName": "",
           "beforeType": " ",
-          "beforeName": " ",
+          "beforeDef": " ",
           "beforeProperties": "\r\n    ",
           "beforeChildren": "\r\n    ",
           "beforeEnd": "\r\n  "
@@ -55,7 +55,7 @@
     "raws": {
       "afterName": "",
       "beforeType": " ",
-      "beforeName": " ",
+      "beforeDef": " ",
       "beforeChildren": "\r\n  ",
       "beforeEnd": "\r\n"
     }

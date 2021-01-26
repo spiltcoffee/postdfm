@@ -6,7 +6,7 @@ commaValues -> commaValues _ "," _ value
   const prevValue = values[values.length - 1];
   prevValue.raws = { ...(prevValue.raws || {}), after };
   value.raws = { ...(value.raws || {}), before };
-  return [].concat(values, value);
+  return values.concat(value);
 }%}
 
 variantValues -> value
@@ -15,7 +15,7 @@ variantValues -> value
 variantValues -> variantValues __ value
 {% ([values, before, value]) => {
   value.raws = { ...(values.raws || {}), before };
-  return [].concat(values, value);
+  return values.concat(value);
 } %}
 
 binaryValues -> binaryString
@@ -24,7 +24,7 @@ binaryValues -> binaryString
 binaryValues -> binaryValues __ binaryString
 {% ([values, before, value]) => {
   value.raws = { ...(value.raws || {}), before };
-  return [].concat(values, value);
+  return values.concat(value);
 }%}
 
 itemValues -> item
@@ -33,7 +33,7 @@ itemValues -> item
 itemValues -> itemValues _ item
 {% ([items, before, item]) => {
   item.raws = { ...(item.raws || {}), before };
-  return [].concat(items, item);
+  return items.concat(item);
 } %}
 
 identifierList -> "[" _ "]"

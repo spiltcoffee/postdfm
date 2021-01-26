@@ -6,6 +6,8 @@ object BasicForm: TForm
   end
   inherited Edit3: TEdit
   end
+  object TNameless
+  end
   object _Under_Score: _TUnder_Score
     object DeepTree1: TComponent
       object DeepTree2: TComponent
