@@ -81,5 +81,5 @@ objects -> objects __ object
     ...(object.raws || {}),
     before
   };
-  return [].concat(objects, object);
+  return objects.concat(object);
 } %}

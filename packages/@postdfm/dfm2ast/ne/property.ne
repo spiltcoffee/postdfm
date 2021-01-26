@@ -1,10 +1,10 @@
 properties -> property
-{% properties => properties %}
+{% ([property]) => [property] %}
 
 properties -> properties _ property
 {% ([properties, before, property]) => {
   property.raws = { ...(property.raws || {}), before };
-  return [].concat(properties, property);
+  return properties.concat(property);
 } %}
 
 property -> qualifiedIdentifier _ "=" _ value
