@@ -14,6 +14,7 @@
 - [Installation](#installation)
 - [Example Usage](#example-usage)
 - [Reference](#reference)
+- [Documentation](#documentation)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -35,6 +36,29 @@ $ yarn add postdfm
 const fs = require("fs");
 const postdfm = require("postdfm");
 
+// if implementing your own plugin, otherwise import plugins
+const { Plugin } = require("@postdfm/plugin");
+
+class SomePlugin extends Plugin {
+  install(hooks) {
+    hooks.string.tap(ast => {
+      // manipulate AST here
+    }
+
+    // all AST types can be manipulated, see AST.ASTTypes
+
+    // also available:
+    // - "after" hook for certain types
+    hooks.after.object.tap(ast => {
+      // manipulate AST here
+    })
+    // - "all" hook for everything - excludes "after" hooks
+    hooks.all.tap(ast => {
+      // manipulate AST here
+    })
+  }
+}
+
 const cisDfm = fs.readFileSync(
   "cis.dfm",
   //.dfm files tend to be ascii instead of utf8
@@ -42,7 +66,7 @@ const cisDfm = fs.readFileSync(
 );
 
 const runner = postdfm({
-  transformers: [new Plugin()],
+  transformers: [new SomePlugin()],
 });
 
 const transDfm = runner.processSync(dfm, {
@@ -92,13 +116,11 @@ Parser to use, defaults to `@postdfm/dfm2ast`.
 
 Stringifier to use, defaults to `@postdfm/ast2dfm`.
 
-### `Transformer`
+### `Plugin`
 
-A function that takes an AST, transforms it, and returns it.
+A class that extends the `@postdfm/plugin` Plugin, extending the `install()` method.
 
-```js
-(ast: AST.Root): AST.Root
-```
+See [`@postdfm/plugin`](https://github.com/spiltcoffee/postdfm/blob/main/packages/%40postdfm/plugin/README.md) for more information.
 
 ### `Parser`
 
@@ -122,7 +144,7 @@ A function that takes an AST, stringifies it, and returns a string.
 
 The file which is being processed. Used when throwing syntax errors.
 
-## Generated Documentation
+## Documentation
 
 You can find the generated `typedoc` documentation [here](https://spiltcoffee.com/docs/postdfm/).
 
