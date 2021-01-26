@@ -5,8 +5,8 @@
 > Inspired by the excellent PostCSS tool, motivated by my rage at the Delphi IDE.
 
 [![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npmjs.com/package/postdfm)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/master.svg)](https://circleci.com)
-[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/master.svg)](https://codecov.io)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
+[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=packages/postdfm/package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=packages/postdfm/package.json)
 
 ## Table of Contents
@@ -42,12 +42,7 @@ const cisDfm = fs.readFileSync(
 );
 
 const runner = postdfm({
-  transformers: [
-    function (ast) {
-      //transform and return the ast
-      return transformedAst;
-    },
-  ],
+  transformers: [new Plugin()],
 });
 
 const transDfm = runner.processSync(dfm, {
@@ -85,7 +80,7 @@ Process a file through the runner synchronously.
 
 Options to pass to an instance of `Runner`.
 
-#### `options.transformers: Transformer[]`
+#### `options.plugins: Plugin[]`
 
 Array of transformations to perform on AST.
 
@@ -135,7 +130,7 @@ You can find the generated `typedoc` documentation [here](https://spiltcoffee.co
 
 Bug reports and feature requests are greatly appreciated, as are pull requests.
 
-Please see the [Contributing Guide](https://github.com/spiltcoffee/postdfm/blob/master/.github/CONTRIBUTING.md) for instructions on how to contribute to this project.
+Please see the [Contributing Guide](https://github.com/spiltcoffee/postdfm/blob/main/.github/CONTRIBUTING.md) for instructions on how to contribute to this project.
 
 ## License
 

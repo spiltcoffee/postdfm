@@ -4,8 +4,8 @@
 >
 > Inspired by the excellent PostCSS tool, motivated by my rage at the Delphi IDE.
 
-[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/master.svg)](https://circleci.com)
-[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/master.svg)](https://codecov.io)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
+[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=package.json)
 
 ## Table of Contents
@@ -18,12 +18,14 @@
 
 ## Packages
 
-| Package                                          | Version                                                                                                               |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| [`postdfm`](/packages/postdfm)                   | [![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npmjs.com/package/postdfm)                   |
-| [`@postdfm/ast`](/packages/@postdfm/ast)         | [![npm](https://img.shields.io/npm/v/@postdfm/ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast)         |
-| [`@postdfm/ast2dfm`](/packages/@postdfm/ast2dfm) | [![npm](https://img.shields.io/npm/v/@postdfm/ast2dfm.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast2dfm) |
-| [`@postdfm/dfm2ast`](/packages/@postdfm/dfm2ast) | [![npm](https://img.shields.io/npm/v/@postdfm/dfm2ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/dfm2ast) |
+| Package                                              | Version                                                                                                                   |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| [`postdfm`](/packages/postdfm)                       | [![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npmjs.com/package/postdfm)                       |
+| [`@postdfm/ast`](/packages/@postdfm/ast)             | [![npm](https://img.shields.io/npm/v/@postdfm/ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast)             |
+| [`@postdfm/ast2dfm`](/packages/@postdfm/ast2dfm)     | [![npm](https://img.shields.io/npm/v/@postdfm/ast2dfm.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast2dfm)     |
+| [`@postdfm/dfm2ast`](/packages/@postdfm/dfm2ast)     | [![npm](https://img.shields.io/npm/v/@postdfm/dfm2ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/dfm2ast)     |
+| [`@postdfm/plugin`](/packages/@postdfm/plugin)       | [![npm](https://img.shields.io/npm/v/@postdfm/plugin.svg?label=npm)](https://www.npmjs.com/package/@postdfm/plugin)       |
+| [`@postdfm/transform`](/packages/@postdfm/transform) | [![npm](https://img.shields.io/npm/v/@postdfm/transform.svg?label=npm)](https://www.npmjs.com/package/@postdfm/transform) |
 
 ## Installation
 
@@ -50,12 +52,7 @@ const cisDfm = fs.readFileSync(
 );
 
 const runner = postdfm({
-  transformers: [
-    function (ast) {
-      //transform and return the ast
-      return transformedAst;
-    },
-  ],
+  transformers: [new Plugin()],
 });
 
 const transDfm = runner.processSync(dfm, {
