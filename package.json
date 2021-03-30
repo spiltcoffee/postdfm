@@ -45,7 +45,7 @@
     "lint-staged": "^10.0.3",
     "nearley": "^2.16.0",
     "prettier": "^2.2.1",
-    "read-pkg": "^5.0.0",
+    "read-pkg": "^6.0.0",
     "semantic-release": "^17.3.8",
     "ts-jest": "^26.4.4",
     "typedoc": "^0.20.24",
