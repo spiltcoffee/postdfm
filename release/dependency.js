@@ -1,9 +1,11 @@
-const readPkg = require("read-pkg");
-const writePkg = require("write-pkg");
+const path = require("path");
+const fs = require("fs");
 
 async function prepare(pluginConfig, { nextRelease: { version }, logger }) {
   for (const pkg of pluginConfig.pkgs) {
-    const pkgJson = await readPkg({ cwd: pkg.location, normalize: false });
+    const pkgJsonPath = path.join(pkg.location, "package.json");
+
+    const pkgJson = JSON.parse(fs.readFileSync(pkgJsonPath));
 
     let found = false;
 
@@ -28,7 +30,10 @@ async function prepare(pluginConfig, { nextRelease: { version }, logger }) {
       logger.log(`${pkg.name}: No dependencies to update`);
     }
 
-    await writePkg(pkg.location, pkgJson, { normalize: false });
+    await fs.writeFileSync(
+      pkgJsonPath,
+      JSON.stringify(pkgJson, null, 2) + "\n"
+    );
   }
 }
 
