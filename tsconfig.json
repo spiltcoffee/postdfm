@@ -3,7 +3,6 @@
     "target": "esnext",
     "declaration": true,
     "moduleResolution": "node",
-    "lib": ["es2015", "es2016.array.include"],
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -13,7 +12,7 @@
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "alwaysStrict": true,
-    "module": "commonjs",
+    "module": "esnext",
     "typeRoots": ["node_modules/@types"]
   }
 }
