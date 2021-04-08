@@ -14,6 +14,12 @@ interface ReferencedPlugin {
   new (): Plugin;
 }
 
+export interface RunnerOptionsSync {
+  parser?: Parser;
+  stringifier?: Stringifier;
+  plugins?: Array<Plugin | typeof Plugin>;
+}
+
 export interface RunnerOptions {
   parser?: Parser | string;
   stringifier?: Stringifier | string;
@@ -83,7 +89,7 @@ export class Runner {
   }
 }
 
-export default function postdfm(options?: RunnerOptions): Runner {
+export function postdfmSync(options?: RunnerOptionsSync): Runner {
   const internalOptions: InternalRunnerOptions = {
     parser: parse,
     stringifier: stringify,
@@ -92,46 +98,41 @@ export default function postdfm(options?: RunnerOptions): Runner {
 
   if (options) {
     if (options.parser) {
-      if (typeof options.parser === "string") {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        internalOptions.parser = require(options.parser) as Parser;
-      } else if (typeof options.parser === "function") {
+      if (typeof options.parser === "function") {
         internalOptions.parser = options.parser;
       } else {
-        throw new Error("parser must be a string or a function");
+        throw new Error(
+          "parser must be a function, or (only if async) a string"
+        );
       }
     }
 
     if (options.stringifier) {
-      if (typeof options.stringifier === "string") {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        internalOptions.stringifier = require(options.stringifier) as Stringifier;
-      } else if (typeof options.stringifier === "function") {
+      if (typeof options.stringifier === "function") {
         internalOptions.stringifier = options.stringifier;
       } else {
-        throw new Error("stringifier must be a string or a function");
+        throw new Error(
+          "stringifier must be a function, or (only if async) a string"
+        );
       }
     }
 
     if (options.plugins) {
       if (!Array.isArray(options.plugins)) {
         throw new Error(
-          "plugins must be an array of strings, functions and/or objects"
+          "plugins must be an array of functions/objects, or (only if async) strings"
         );
       }
 
       options.plugins.forEach((plugin) => {
         let internalPlugin: Plugin;
-        if (typeof plugin === "string") {
-          // eslint-disable-next-line @typescript-eslint/no-var-requires
-          internalPlugin = new (require(plugin) as ReferencedPlugin)();
-        } else if (typeof plugin === "function") {
+        if (typeof plugin === "function") {
           internalPlugin = new (plugin as ReferencedPlugin)();
         } else if (typeof plugin === "object") {
           internalPlugin = plugin;
         } else {
           throw new Error(
-            "plugins must be an array of strings, functions and/or objects"
+            "plugins must be an array of functions/objects, or (only if async) strings"
           );
         }
 
@@ -141,4 +142,55 @@ export default function postdfm(options?: RunnerOptions): Runner {
   }
 
   return new Runner(internalOptions);
+}
+
+export async function postdfm(options?: RunnerOptions): Promise<Runner> {
+  const syncOptions: RunnerOptionsSync = {
+    parser: undefined,
+    stringifier: undefined,
+    plugins: [],
+  };
+
+  if (options) {
+    if (options.parser) {
+      if (typeof options.parser === "string") {
+        syncOptions.parser = (<{ default: Parser }>(
+          await import(options.parser)
+        )).default;
+      } else {
+        syncOptions.parser = options.parser;
+      }
+    }
+
+    if (options.stringifier) {
+      if (typeof options.stringifier === "string") {
+        syncOptions.stringifier = (<{ default: Stringifier }>(
+          await import(options.stringifier)
+        )).default;
+      } else {
+        syncOptions.stringifier = options.stringifier;
+      }
+    }
+
+    if (options.plugins) {
+      if (Array.isArray(options.plugins)) {
+        for (const plugin of options.plugins) {
+          let syncPlugin;
+          if (typeof plugin === "string") {
+            syncPlugin = new (<{ default: ReferencedPlugin }>(
+              await import(plugin)
+            )).default();
+          } else {
+            syncPlugin = plugin;
+          }
+
+          syncOptions.plugins?.push(syncPlugin);
+        }
+      } else {
+        syncOptions.plugins = options.plugins;
+      }
+    }
+  }
+
+  return postdfmSync(syncOptions);
 }

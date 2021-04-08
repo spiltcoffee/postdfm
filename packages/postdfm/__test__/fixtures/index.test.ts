@@ -1,11 +1,17 @@
-import * as fs from "fs";
-import * as path from "path";
-import postdfm from "../../src";
+import fs from "fs";
+import { fileURLToPath } from "url";
 import { Plugin } from "@postdfm/plugin";
+import { postdfm, postdfmSync } from "../../src";
 
-const rootFixturesDir = path.resolve("__test__", "__fixtures__");
-const parseFixturesDir = path.join(rootFixturesDir, "parse");
-const transformFixturesDir = path.join(rootFixturesDir, "transform");
+const parseFixturesPath = new URL(
+  "../../../../__test__/__fixtures__/parse/",
+  import.meta.url
+);
+
+const transformFixturesPath = new URL(
+  "../../../../__test__/__fixtures__/transform/",
+  import.meta.url
+);
 
 class NoopPlugin extends Plugin {
   install(): void {
@@ -15,56 +21,70 @@ class NoopPlugin extends Plugin {
 
 describe("postdfm", () => {
   describe("parse fixtures", () => {
-    const runner = postdfm({
-      plugins: [NoopPlugin],
-    });
-
-    const fixtures = fs.readdirSync(parseFixturesDir);
+    const fixtures = fs.readdirSync(parseFixturesPath);
     fixtures.forEach((fixture) => {
+      const fixturePath = new URL(`./${fixture}/`, parseFixturesPath);
       const cisForm = fs.readFileSync(
-        path.join(parseFixturesDir, fixture, "form.dfm"),
+        new URL("./form.dfm", fixturePath),
         "ascii"
       );
 
       describe(`${fixture}`, () => {
         test("sync", () => {
-          expect(runner.processSync(cisForm)).toEqual(cisForm);
+          const runner = postdfmSync({ plugins: [NoopPlugin] });
+
+          const dfm = runner.processSync(cisForm);
+
+          expect(dfm).toEqual(cisForm);
         });
 
-        test("async", () => {
-          return runner
-            .process(cisForm)
-            .then((dfm) => expect(dfm).toEqual(cisForm));
+        test("async", async () => {
+          const runner = await postdfm({ plugins: [NoopPlugin] });
+
+          const dfm = await runner.process(cisForm);
+
+          expect(dfm).toEqual(cisForm);
         });
       });
     });
   });
 
   describe("transform fixtures", () => {
-    const fixtures = fs.readdirSync(transformFixturesDir);
+    const fixtures = fs.readdirSync(transformFixturesPath);
     fixtures.forEach((fixture) => {
-      const fixtureDir = path.join(transformFixturesDir, fixture);
+      const fixturePath = new URL(`./${fixture}/`, transformFixturesPath);
       const cisForm = fs.readFileSync(
-        path.join(fixtureDir, "cis.dfm"),
+        new URL("./cis.dfm", fixturePath),
         "ascii"
       );
       const transForm = fs.readFileSync(
-        path.join(fixtureDir, "trans.dfm"),
+        new URL("./trans.dfm", fixturePath),
         "ascii"
       );
-      const plugins = [require(path.join(fixtureDir, "plugin.js"))];
 
-      const runner = postdfm({ plugins });
+      const pluginFile = fileURLToPath(new URL("./plugin.js", fixturePath));
 
       describe(`${fixture}`, () => {
-        test("sync", () => {
-          expect(runner.processSync(cisForm)).toEqual(transForm);
+        test("sync", async () => {
+          const plugins = [
+            (<{ default: Plugin }>await import(pluginFile)).default,
+          ];
+
+          const runner = postdfmSync({ plugins });
+
+          const dfm = runner.processSync(cisForm);
+
+          expect(dfm).toEqual(transForm);
         });
 
-        test("async", () => {
-          return runner
-            .process(cisForm)
-            .then((dfm) => expect(dfm).toEqual(transForm));
+        test("async", async () => {
+          const plugins = [pluginFile];
+
+          const runner = await postdfm({ plugins });
+
+          const dfm = await runner.process(cisForm);
+
+          expect(dfm).toEqual(transForm);
         });
       });
     });

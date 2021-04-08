@@ -4,9 +4,10 @@
   "description": "Abstract Syntax Tree classes for postdfm",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "compile": "tsc --listEmittedFiles",
-    "docs": "typedoc --options typedoc.config.js"
+    "docs": "typedoc --options typedoc.config.cjs"
   },
   "author": "SpiltCoffee",
   "license": "MIT",

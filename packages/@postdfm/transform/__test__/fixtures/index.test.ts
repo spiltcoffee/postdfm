@@ -1,11 +1,14 @@
-import * as fs from "fs";
-import * as path from "path";
-import * as AST from "@postdfm/ast";
+import fs from "fs";
+import { fileURLToPath } from "url";
+
+import { ASTNode } from "@postdfm/ast";
 import { Plugin } from "@postdfm/plugin";
 import { Transformer } from "../../src";
 
-const rootFixturesDir = path.resolve("__test__", "__fixtures__");
-const transformFixturesDir = path.join(rootFixturesDir, "transform");
+const transformFixturesPath = new URL(
+  "../../../../../__test__/__fixtures__/transform/",
+  import.meta.url
+);
 
 interface ReferencedPlugin {
   new (): Plugin;
@@ -13,28 +16,29 @@ interface ReferencedPlugin {
 
 describe("transform", () => {
   describe("transform fixtures", () => {
-    const fixtures = fs.readdirSync(transformFixturesDir);
+    const fixtures = fs.readdirSync(transformFixturesPath);
     fixtures.forEach((fixture) => {
-      const fixtureDir = path.join(transformFixturesDir, fixture);
+      test(`${fixture}`, async () => {
+        const fixturePath = new URL(`./${fixture}/`, transformFixturesPath);
 
-      const cisAst = JSON.parse(
-        fs.readFileSync(path.join(fixtureDir, "cis.json"), "utf-8")
-      ) as AST.ASTNode;
+        const cisAst = JSON.parse(
+          fs.readFileSync(new URL("./cis.json", fixturePath), "utf-8")
+        ) as ASTNode;
 
-      const transAst = JSON.parse(
-        fs.readFileSync(path.join(fixtureDir, "trans.json"), "utf-8")
-      ) as AST.ASTNode;
+        const transAst = JSON.parse(
+          fs.readFileSync(new URL("./trans.json", fixturePath), "utf-8")
+        ) as ASTNode;
 
-      const plugins = [
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        new (require(path.join(fixtureDir, "plugin.js")) as ReferencedPlugin)(),
-      ];
+        const plugins = [
+          new (<{ default: ReferencedPlugin }>(
+            await import(fileURLToPath(new URL("./plugin.js", fixturePath)))
+          )).default(),
+        ];
 
-      const transformer = new Transformer(plugins);
+        const transformer = new Transformer(plugins);
 
-      transformer.transform(cisAst);
+        transformer.transform(cisAst);
 
-      test(`${fixture}`, () => {
         expect(cisAst).toEqual(transAst);
       });
     });

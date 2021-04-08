@@ -1,2 +1,2 @@
-const { parse } = require("@postdfm/dfm2ast");
-module.exports = parse;
+import { parse } from "@postdfm/dfm2ast";
+export default parse;

@@ -1,7 +1,7 @@
-const { Plugin } = require("@postdfm/plugin");
+import { Plugin } from "@postdfm/plugin";
 
-module.exports = class NoopPlugin extends Plugin {
+export default class NoopPlugin extends Plugin {
   install() {
     // do nothing
   }
-};
+}

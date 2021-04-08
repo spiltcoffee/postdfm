@@ -1,7 +1,13 @@
+import { fileURLToPath } from "url";
+
 import { stringify } from "@postdfm/ast2dfm";
 import { parse } from "@postdfm/dfm2ast";
-import * as path from "path";
-import postdfm, { RunnerOptions } from "../../src";
+import {
+  postdfm,
+  postdfmSync,
+  RunnerOptions,
+  RunnerOptionsSync,
+} from "../../src";
 import { Plugin } from "@postdfm/plugin";
 
 class NoopPlugin extends Plugin {
@@ -12,7 +18,7 @@ class NoopPlugin extends Plugin {
 
 describe("postdfm", () => {
   describe("options", () => {
-    test("valid (normal)", () => {
+    test("valid (normal)", async () => {
       const parser = parse;
       const stringifier = stringify;
       const plugins: Array<Plugin | typeof Plugin> = [
@@ -20,52 +26,101 @@ describe("postdfm", () => {
         new NoopPlugin(),
       ];
 
-      expect(() => postdfm()).not.toThrow();
-      expect(() => postdfm({})).not.toThrow();
-      expect(() => postdfm({ parser })).not.toThrow();
-      expect(() => postdfm({ stringifier })).not.toThrow();
-      expect(() => postdfm({ plugins })).not.toThrow();
-      expect(() => postdfm({ parser, stringifier })).not.toThrow();
-      expect(() => postdfm({ parser, plugins })).not.toThrow();
-      expect(() => postdfm({ stringifier, plugins })).not.toThrow();
-      expect(() => postdfm({ parser, stringifier, plugins })).not.toThrow();
+      await expect(postdfm()).resolves.not.toThrow();
+      expect(() => postdfmSync()).not.toThrow();
+
+      await expect(postdfm({})).resolves.not.toThrow();
+      expect(() => postdfmSync({})).not.toThrow();
+
+      await expect(postdfm({ parser })).resolves.not.toThrow();
+      expect(() => postdfmSync({ parser })).not.toThrow();
+
+      await expect(postdfm({ stringifier })).resolves.not.toThrow();
+      expect(() => postdfmSync({ stringifier })).not.toThrow();
+
+      await expect(postdfm({ plugins })).resolves.not.toThrow();
+      expect(() => postdfmSync({ plugins })).not.toThrow();
+
+      await expect(postdfm({ parser, stringifier })).resolves.not.toThrow();
+      expect(() => postdfmSync({ parser, stringifier })).not.toThrow();
+
+      await expect(postdfm({ parser, plugins })).resolves.not.toThrow();
+      expect(() => postdfmSync({ parser, plugins })).not.toThrow();
+
+      await expect(postdfm({ stringifier, plugins })).resolves.not.toThrow();
+      expect(() => postdfmSync({ stringifier, plugins })).not.toThrow();
+
+      await expect(
+        postdfm({ parser, stringifier, plugins })
+      ).resolves.not.toThrow();
+      expect(() => postdfmSync({ parser, stringifier, plugins })).not.toThrow();
     });
 
-    test("valid (using strings)", () => {
+    test("valid (using strings)", async () => {
       const parser = "@postdfm/dfm2ast";
       const stringifier = "@postdfm/ast2dfm";
-      const plugins = [path.join(__dirname, "plugin.js")];
+      const plugins = [fileURLToPath(new URL("./plugin.js", import.meta.url))];
 
-      expect(() => postdfm({ parser })).not.toThrow();
-      expect(() => postdfm({ stringifier })).not.toThrow();
-      expect(() => postdfm({ plugins })).not.toThrow();
-      expect(() => postdfm({ parser, stringifier })).not.toThrow();
-      expect(() => postdfm({ parser, plugins })).not.toThrow();
-      expect(() => postdfm({ stringifier, plugins })).not.toThrow();
-      expect(() => postdfm({ parser, stringifier, plugins })).not.toThrow();
+      await expect(postdfm({ parser })).resolves.not.toThrow();
+      await expect(postdfm({ stringifier })).resolves.not.toThrow();
+      await expect(postdfm({ plugins })).resolves.not.toThrow();
+      await expect(postdfm({ parser, stringifier })).resolves.not.toThrow();
+      await expect(postdfm({ parser, plugins })).resolves.not.toThrow();
+      await expect(postdfm({ stringifier, plugins })).resolves.not.toThrow();
+      await expect(
+        postdfm({ parser, stringifier, plugins })
+      ).resolves.not.toThrow();
     });
 
-    test("invalid", () => {
+    test("invalid", async () => {
       const parser = true;
+      const parserSync = "hello";
       const stringifier = 5;
-      const plugin1 = {};
+      const stringifierSync = "world";
+      const plugin1 = 5;
       const plugin2 = [5];
+      const pluginSync = [NoopPlugin, "hello", "world"];
 
-      expect(() => postdfm(({ parser } as unknown) as RunnerOptions)).toThrow(
-        /parser must be a string or a function/
+      await expect(
+        postdfm(({ parser } as unknown) as RunnerOptions)
+      ).rejects.toThrow(
+        /parser must be a function, or \(only if async\) a string/
       );
+
       expect(() =>
+        postdfmSync(({ parser: parserSync } as unknown) as RunnerOptionsSync)
+      ).toThrow(/parser must be a function, or \(only if async\) a string/);
+
+      await expect(
         postdfm(({ stringifier } as unknown) as RunnerOptions)
-      ).toThrow(/stringifier must be a string or a function/);
-      expect(() =>
-        postdfm(({ plugins: plugin1 } as unknown) as RunnerOptions)
-      ).toThrow(
-        /plugins must be an array of strings, functions and\/or objects/
+      ).rejects.toThrow(
+        /stringifier must be a function, or \(only if async\) a string/
       );
+
       expect(() =>
-        postdfm(({ plugins: plugin2 } as unknown) as RunnerOptions)
+        postdfmSync(({
+          stringifier: stringifierSync,
+        } as unknown) as RunnerOptionsSync)
       ).toThrow(
-        /plugins must be an array of strings, functions and\/or objects/
+        /stringifier must be a function, or \(only if async\) a string/
+      );
+
+      await expect(
+        postdfm(({ plugins: plugin1 } as unknown) as RunnerOptions)
+      ).rejects.toThrow(
+        /plugins must be an array of functions\/objects, or \(only if async\) strings/
+      );
+
+      await expect(
+        postdfm(({ plugins: plugin2 } as unknown) as RunnerOptions)
+      ).rejects.toThrow(
+        /plugins must be an array of functions\/objects, or \(only if async\) strings/
+      );
+
+      expect(() =>
+        postdfmSync(({ plugins: pluginSync } as unknown) as RunnerOptionsSync)
+      ).toThrow(
+        /plugins must be an array of functions\/objects, or \(only if async\) strings/
       );
     });
   });
