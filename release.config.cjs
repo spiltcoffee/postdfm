@@ -15,13 +15,13 @@ module.exports = {
   plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    ["./release/dependency", { pkgs }],
+    ["./release/dependency.cjs", { pkgs }],
     ...pkgs.map(({ location: pkgRoot }) => [
       "@semantic-release/npm",
       {
         pkgRoot,
-        tarballDir,
-      },
+        tarballDir
+      }
     ]),
     [
       "@semantic-release/github",
@@ -31,17 +31,17 @@ module.exports = {
             tarballDir,
             `${name.replace("@", "").replace("/", "-")}-*.tgz`
           ),
-          label: name,
-        })),
-      },
+          label: name
+        }))
+      }
     ],
     [
       "@semantic-release/git",
       {
         assets: [
-          ["packages/**/package.json", "!**/node_modules/**/package.json"],
-        ],
-      },
-    ],
-  ],
+          ["packages/**/package.json", "!**/node_modules/**/package.json"]
+        ]
+      }
+    ]
+  ]
 };

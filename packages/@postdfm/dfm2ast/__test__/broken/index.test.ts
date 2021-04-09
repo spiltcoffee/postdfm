@@ -1,10 +1,13 @@
-import * as fs from "fs";
-import * as path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 import parse from "../../src";
 
 describe("dfm2ast", () => {
   test("broken DFM throws error", () => {
-    const dfm = fs.readFileSync(path.join(__dirname, "form.dfm"), "ascii");
+    const dfm = fs.readFileSync(
+      fileURLToPath(new URL("./form.dfm", import.meta.url)),
+      "ascii"
+    );
 
     expect(() => parse(dfm)).toThrow("Unexpected End Of Input");
   });

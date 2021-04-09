@@ -1,5 +1,12 @@
 import { Root } from "@postdfm/ast";
-import { Grammar, Parser } from "nearley";
+
+// nearley isn't a proper ESM module here (not even CommonJS - it's UMD)
+import * as nearleyPkg from "nearley";
+import type { Parser as ParserType, Grammar as GrammarType } from "nearley";
+const { Parser, Grammar } = (<
+  { default: { Parser: typeof ParserType; Grammar: typeof GrammarType } }
+>(<unknown>nearleyPkg)).default;
+
 import grammar from "./grammar";
 
 function parse(dfm: string): Root {

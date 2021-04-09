@@ -4,9 +4,10 @@
   "description": "Provides an API for easily transforming Delphi Forms",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "compile": "tsc --listEmittedFiles",
-    "docs": "typedoc --options typedoc.config.js"
+    "docs": "typedoc --options typedoc.config.cjs"
   },
   "keywords": [
     "dfm",
@@ -36,7 +37,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=12.0.0"
   },
   "publishConfig": {
     "access": "public"

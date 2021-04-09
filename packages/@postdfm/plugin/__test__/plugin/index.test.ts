@@ -1,5 +1,6 @@
 import * as AST from "@postdfm/ast";
 import { Plugin, Hooks } from "../../src";
+import { jest } from "@jest/globals";
 
 class TapAllPlugin extends Plugin {
   hookCallback: () => void;

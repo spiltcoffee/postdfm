@@ -1,2 +1,2 @@
-const { stringify } = require("@postdfm/ast2dfm");
-module.exports = stringify;
+import { stringify } from "@postdfm/ast2dfm";
+export default stringify;

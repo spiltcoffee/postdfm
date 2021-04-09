@@ -1,11 +1,11 @@
-// eslint-disable-next-line node/no-extraneous-require
-const { Plugin } = require("@postdfm/plugin");
+// eslint-disable-next-line node/no-extraneous-import
+import { Plugin } from "@postdfm/plugin";
 
 function reverseString(str) {
   return str.split("").reverse().join("");
 }
 
-module.exports = class ReverseEverythingPlugin extends Plugin {
+export default class ReverseEverythingPlugin extends Plugin {
   PLUGIN_NAME = "ReverseEverythingPlugin";
 
   hookCallback;
@@ -134,4 +134,4 @@ module.exports = class ReverseEverythingPlugin extends Plugin {
       // nothing to reverse here
     });
   }
-};
+}
