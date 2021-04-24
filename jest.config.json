@@ -13,6 +13,7 @@
     ]
   ],
   "preset": "ts-jest/presets/default-esm",
+  "extensionsToTreatAsEsm": [".ts"],
   "globals": {
     "ts-jest": {
       "useESM": true
@@ -21,13 +22,9 @@
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
+  "resolver": "<rootDir>/test/resolver.cjs",
   "collectCoverage": true,
-  "collectCoverageFrom": [
-    "**/*.ts",
-    "!**/node_modules/**",
-    "!**/dist/**",
-    "!packages/@postdfm/dfm2ast/src/grammar.ts"
-  ],
+  "collectCoverageFrom": ["**/dist/**/*.js", "!**/node_modules/**"],
   "coverageReporters": ["lcov", "text"],
   "coverageDirectory": "coverage",
   "rootDir": "./"

@@ -1,14 +1,12 @@
-import fs from "fs";
-import { fileURLToPath } from "url";
-import { postdfmSync } from "../../src";
+import { readFileSync } from "fs";
+
+import { postdfmSync } from "postdfm";
 
 describe("postdfm", () => {
   describe("broken DFMs throw errors", () => {
     describe("unexpected end", () => {
-      const file = fileURLToPath(
-        new URL("./unexpectedEnd.dfm", import.meta.url)
-      );
-      const dfm = fs.readFileSync(file, "ascii");
+      const file = new URL("./unexpectedEnd.dfm", import.meta.url);
+      const dfm = readFileSync(file, "ascii");
 
       test("without `from`", () => {
         expect(() => postdfmSync().processSync(dfm)).toThrow(
@@ -17,17 +15,15 @@ describe("postdfm", () => {
       });
 
       test("with `from`", () => {
-        expect(() => postdfmSync().processSync(dfm, { from: file })).toThrow(
-          /unexpectedEnd.dfm: Unexpected End Of Input/
-        );
+        expect(() =>
+          postdfmSync().processSync(dfm, { from: file.toString() })
+        ).toThrow(/unexpectedEnd.dfm: Unexpected End Of Input/);
       });
     });
 
     describe("invalid property", () => {
-      const file = fileURLToPath(
-        new URL("./invalidProperty.dfm", import.meta.url)
-      );
-      const dfm = fs.readFileSync(file, "ascii");
+      const file = new URL("./invalidProperty.dfm", import.meta.url);
+      const dfm = readFileSync(file, "ascii");
 
       test("without `from`", () => {
         expect(() => postdfmSync().processSync(dfm)).toThrow(
@@ -36,9 +32,9 @@ describe("postdfm", () => {
       });
 
       test("with `from`", () => {
-        expect(() => postdfmSync().processSync(dfm, { from: file })).toThrow(
-          /invalidProperty.dfm: Syntax error at line 3 col 1/
-        );
+        expect(() =>
+          postdfmSync().processSync(dfm, { from: file.toString() })
+        ).toThrow(/invalidProperty.dfm: Syntax error at line 3 col 1/);
       });
     });
   });

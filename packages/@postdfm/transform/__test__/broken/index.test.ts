@@ -1,5 +1,5 @@
 import { ASTNode, ASTType } from "@postdfm/ast";
-import { Transformer } from "../../src";
+import { Transformer } from "@postdfm/transform";
 
 describe("transform", () => {
   test("broken AST throws error", () => {

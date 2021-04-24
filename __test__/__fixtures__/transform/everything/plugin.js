@@ -1,4 +1,3 @@
-// eslint-disable-next-line node/no-extraneous-import
 import { Plugin } from "@postdfm/plugin";
 
 function reverseString(str) {
@@ -126,7 +125,7 @@ export default class ReverseEverythingPlugin extends Plugin {
 
     hooks.object.tap(this.PLUGIN_NAME, (ast) => {
       this.hookCallback();
-      ast.name = reverseString(ast.name);
+      ast.name && (ast.name = reverseString(ast.name));
     });
 
     hooks.root.tap(this.PLUGIN_NAME, () => {

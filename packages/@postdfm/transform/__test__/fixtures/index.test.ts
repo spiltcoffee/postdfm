@@ -1,9 +1,9 @@
-import fs from "fs";
+import { readdirSync, readFileSync } from "fs";
 import { fileURLToPath } from "url";
 
 import { ASTNode } from "@postdfm/ast";
 import { Plugin } from "@postdfm/plugin";
-import { Transformer } from "../../src";
+import { Transformer } from "@postdfm/transform";
 
 const transformFixturesPath = new URL(
   "../../../../../__test__/__fixtures__/transform/",
@@ -16,17 +16,17 @@ interface ReferencedPlugin {
 
 describe("transform", () => {
   describe("transform fixtures", () => {
-    const fixtures = fs.readdirSync(transformFixturesPath);
+    const fixtures = readdirSync(transformFixturesPath);
     fixtures.forEach((fixture) => {
       test(`${fixture}`, async () => {
         const fixturePath = new URL(`./${fixture}/`, transformFixturesPath);
 
         const cisAst = JSON.parse(
-          fs.readFileSync(new URL("./cis.json", fixturePath), "utf-8")
+          readFileSync(new URL("./cis.json", fixturePath), "utf-8")
         ) as ASTNode;
 
         const transAst = JSON.parse(
-          fs.readFileSync(new URL("./trans.json", fixturePath), "utf-8")
+          readFileSync(new URL("./trans.json", fixturePath), "utf-8")
         ) as ASTNode;
 
         const plugins = [

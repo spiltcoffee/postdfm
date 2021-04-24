@@ -1,7 +1,8 @@
-import fs from "fs";
+import { readFileSync, readdirSync } from "fs";
 import { fileURLToPath } from "url";
+
 import { Plugin } from "@postdfm/plugin";
-import { postdfm, postdfmSync } from "../../src";
+import { postdfm, postdfmSync } from "postdfm";
 
 const parseFixturesPath = new URL(
   "../../../../__test__/__fixtures__/parse/",
@@ -21,13 +22,10 @@ class NoopPlugin extends Plugin {
 
 describe("postdfm", () => {
   describe("parse fixtures", () => {
-    const fixtures = fs.readdirSync(parseFixturesPath);
+    const fixtures = readdirSync(parseFixturesPath);
     fixtures.forEach((fixture) => {
       const fixturePath = new URL(`./${fixture}/`, parseFixturesPath);
-      const cisForm = fs.readFileSync(
-        new URL("./form.dfm", fixturePath),
-        "ascii"
-      );
+      const cisForm = readFileSync(new URL("./form.dfm", fixturePath), "ascii");
 
       describe(`${fixture}`, () => {
         test("sync", () => {
@@ -50,14 +48,11 @@ describe("postdfm", () => {
   });
 
   describe("transform fixtures", () => {
-    const fixtures = fs.readdirSync(transformFixturesPath);
+    const fixtures = readdirSync(transformFixturesPath);
     fixtures.forEach((fixture) => {
       const fixturePath = new URL(`./${fixture}/`, transformFixturesPath);
-      const cisForm = fs.readFileSync(
-        new URL("./cis.dfm", fixturePath),
-        "ascii"
-      );
-      const transForm = fs.readFileSync(
+      const cisForm = readFileSync(new URL("./cis.dfm", fixturePath), "ascii");
+      const transForm = readFileSync(
         new URL("./trans.dfm", fixturePath),
         "ascii"
       );

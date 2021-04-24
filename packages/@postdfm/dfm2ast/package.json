@@ -2,9 +2,18 @@
   "name": "@postdfm/dfm2ast",
   "version": "7.0.0",
   "description": "Convert Delphi Form files to an Abstract Syntax Tree",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
     "compile": "tsc --listEmittedFiles",

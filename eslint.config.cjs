@@ -4,7 +4,14 @@ module.exports = function getConfig(enableTypeChecking) {
     plugins: ["@typescript-eslint"],
     settings: {
       node: {
-        allowModules: ["@postdfm/ast2dfm", "@postdfm/ast", "@postdfm/dfm2ast"],
+        allowModules: [
+          "postdfm",
+          "@postdfm/ast",
+          "@postdfm/ast2dfm",
+          "@postdfm/dfm2ast",
+          "@postdfm/plugin",
+          "@postdfm/transform"
+        ],
         tryExtensions: [".js", ".cjs", ".ts", ".json", ".node"]
       }
     },

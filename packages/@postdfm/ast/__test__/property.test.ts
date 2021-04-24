@@ -1,4 +1,4 @@
-import * as AST from "../src";
+import * as AST from "@postdfm/ast";
 
 describe("creating Properties", () => {
   test("Property with Value", () => {

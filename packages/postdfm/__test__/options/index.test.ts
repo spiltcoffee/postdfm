@@ -2,13 +2,13 @@ import { fileURLToPath } from "url";
 
 import { stringify } from "@postdfm/ast2dfm";
 import { parse } from "@postdfm/dfm2ast";
+import { Plugin } from "@postdfm/plugin";
 import {
   postdfm,
   postdfmSync,
   RunnerOptions,
   RunnerOptionsSync,
-} from "../../src";
-import { Plugin } from "@postdfm/plugin";
+} from "postdfm";
 
 class NoopPlugin extends Plugin {
   install(): void {

@@ -1,5 +1,5 @@
-import * as AST from "@postdfm/ast";
-import { Plugin, Hooks } from "../../src";
+import { ASTType } from "@postdfm/ast";
+import { Plugin, Hooks } from "@postdfm/plugin";
 import { jest } from "@jest/globals";
 
 class TapAllPlugin extends Plugin {
@@ -25,10 +25,10 @@ describe("plugin", () => {
 
     plugin.install(hooks);
 
-    Object.values(AST.ASTType).forEach((astType) => {
+    Object.values(ASTType).forEach((astType) => {
       hooks[astType].call(undefined as never);
     });
 
-    expect(hookCallback).toHaveBeenCalledTimes(Object.keys(AST.ASTType).length);
+    expect(hookCallback).toHaveBeenCalledTimes(Object.keys(ASTType).length);
   });
 });

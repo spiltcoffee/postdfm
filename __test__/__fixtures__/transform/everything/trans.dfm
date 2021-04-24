@@ -66,4 +66,8 @@ object 1mroF: TForm1
   end
   object gnihtoN: _TNothing
   end
+  object TNameless
+  end
+  object TNameless [2]
+  end
 end

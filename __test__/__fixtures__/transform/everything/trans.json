@@ -802,6 +802,35 @@
           "beforeEnd": "\r\n  ",
           "before": "\r\n  "
         }
+      },
+      {
+        "astType": "object",
+        "kind": "object",
+        "type": "TNameless",
+        "properties": [],
+        "children": [],
+        "raws": {
+          "afterName": "",
+          "beforeType": " ",
+          "beforeDef": " ",
+          "beforeEnd": "\r\n  ",
+          "before": "\r\n  "
+        }
+      },
+      {
+        "astType": "object",
+        "kind": "object",
+        "type": "TNameless",
+        "order": "2",
+        "properties": [],
+        "children": [],
+        "raws": {
+          "afterName": "",
+          "beforeType": " ",
+          "beforeDef": " ",
+          "beforeEnd": "\r\n  ",
+          "before": "\r\n  "
+        }
       }
     ],
     "raws": {
