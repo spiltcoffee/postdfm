@@ -84,9 +84,6 @@ dist
 
 results/
 
-# nearley.js
-packages/@postdfm/dfm2ast/src/grammar.ts
-
 #local npm configuration
 .npmrc
 

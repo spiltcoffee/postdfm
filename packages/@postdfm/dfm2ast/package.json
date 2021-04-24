@@ -15,8 +15,9 @@
     }
   },
   "scripts": {
-    "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts",
+    "precompile": "nearleyc ne/grammar.ne -o src/grammar.ts && prettier src/grammar.ts --write",
     "compile": "tsc --listEmittedFiles",
+    "compile:map": "yarn compile --inlineSourceMap --inlineSources",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage --verbose",
     "docs": "typedoc --options typedoc.config.cjs"
   },

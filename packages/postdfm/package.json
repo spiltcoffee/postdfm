@@ -15,7 +15,8 @@
   },
   "scripts": {
     "compile": "tsc --listEmittedFiles",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage --verbose",
+    "compile:map": "yarn compile --inlineSourceMap --inlineSources",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage --verbose --maxWorkers=3",
     "docs": "typedoc --options typedoc.config.cjs"
   },
   "keywords": [

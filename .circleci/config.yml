@@ -7,7 +7,7 @@ executors:
   node-executor:
     docker:
       - image: circleci/node:latest
-    working_directory: ~/repo
+    working_directory: ~/workspace
 
 jobs:
   install:
@@ -17,32 +17,83 @@ jobs:
       - run: npm --version
       - run: yarn --version
 
-      - checkout
+      - checkout:
+          path: postdfm
+
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
-      - run: yarn --frozen-lockfile
+      - run:
+          command: yarn --frozen-lockfile && yarn changed
+          working_directory: postdfm
 
       - save_cache:
           paths:
-            - node_modules
+            - postdfm/node_modules
             # for nearleyc
-            - packages/@postdfm/dfm2ast/node_modules
-          key: node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - postdfm/packages/@postdfm/dfm2ast/node_modules
+          key: node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
+
+  install-with-sourcemaps:
+    executor: node-executor
+    steps:
+      - checkout:
+          path: postdfm
+      - restore_cache:
+          keys:
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
+
+      - run: mv postdfm postdfm-with-sourcemaps
+
+      - save_cache:
+          paths:
+            - postdfm-with-sourcemaps/node_modules
+            # for nearleyc
+            - postdfm-with-sourcemaps/packages/@postdfm/dfm2ast/node_modules
+          key: node-{{ .Environment.CACHE_VERSION }}-dependencies-with-sourcemaps-{{ checksum "postdfm-with-sourcemaps/yarn.lock" }}
 
   compile:
     executor: node-executor
     steps:
-      - checkout
+      - checkout:
+          path: postdfm
+
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
-      - run: yarn compile
+      - run:
+          command: yarn compile && yarn changed
+          working_directory: postdfm
 
       - persist_to_workspace:
-          root: packages
+          root: postdfm/packages
+          paths:
+            - ./postdfm/dist
+            - ./@postdfm/ast/dist
+            - ./@postdfm/ast2dfm/dist
+            - ./@postdfm/dfm2ast/dist
+            - ./@postdfm/dfm2ast/src
+            - ./@postdfm/plugin/dist
+            - ./@postdfm/transform/dist
+
+  compile-with-sourcemaps:
+    executor: node-executor
+    steps:
+      - checkout:
+          path: postdfm-with-sourcemaps
+
+      - restore_cache:
+          keys:
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-with-sourcemaps-{{ checksum "postdfm-with-sourcemaps/yarn.lock" }}
+
+      - run:
+          command: yarn compile:map && yarn changed
+          working_directory: postdfm-with-sourcemaps
+
+      - persist_to_workspace:
+          root: postdfm-with-sourcemaps/packages
           paths:
             - ./postdfm/dist
             - ./@postdfm/ast/dist
@@ -55,99 +106,113 @@ jobs:
   lint:
     executor: node-executor
     steps:
-      - checkout
+      - checkout:
+          path: postdfm
+
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - attach_workspace:
-          at: ~/repo/packages
+          at: postdfm/packages
 
-      - run: yarn lint:check
+      - run:
+          command: yarn lint && yarn changed
+          working_directory: postdfm
 
   format:
     executor: node-executor
     steps:
-      - checkout
+      - checkout:
+          path: postdfm
+
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
-      - run: yarn format:check
+      - run:
+          command: yarn format && yarn changed
+          working_directory: postdfm
 
   test:
     executor: node-executor
     steps:
-      - checkout
+      - checkout:
+          path: postdfm-with-sourcemaps
+
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-with-sourcemaps-{{ checksum "postdfm-with-sourcemaps/yarn.lock" }}
 
       - attach_workspace:
-          at: ~/repo/packages
+          at: postdfm-with-sourcemaps/packages
 
-      - run: yarn test
+      - run:
+          command: yarn test
+          working_directory: postdfm-with-sourcemaps
+
+      - run:
+          command: yarn changed
+          working_directory: postdfm-with-sourcemaps
 
       - store_test_results:
-          path: ~/repo/packages/postdfm/results
+          path: postdfm-with-sourcemaps/packages/postdfm/results
 
       - codecov/upload:
           flags: "postdfm"
-          file: ~/repo/packages/postdfm/results/lcov/coverage.info
+          file: postdfm-with-sourcemaps/packages/postdfm/results/lcov/coverage.info
 
       - store_test_results:
-          path: ~/repo/packages/@postdfm/ast/results
+          path: postdfm-with-sourcemaps/packages/@postdfm/ast/results
 
       - codecov/upload:
           flags: "@postdfm/ast"
-          file: ~/repo/packages/@postdfm/ast/results/lcov/coverage.info
+          file: postdfm-with-sourcemaps/packages/@postdfm/ast/results/lcov/coverage.info
 
       - store_test_results:
-          path: ~/repo/packages/@postdfm/ast2dfm/results
+          path: postdfm-with-sourcemaps/packages/@postdfm/ast2dfm/results
 
       - codecov/upload:
           flags: "@postdfm/ast2dfm"
-          file: ~/repo/packages/@postdfm/ast2dfm/results/lcov/coverage.info
+          file: postdfm-with-sourcemaps/packages/@postdfm/ast2dfm/results/lcov/coverage.info
 
       - store_test_results:
-          path: ~/repo/packages/@postdfm/dfm2ast/results
+          path: postdfm-with-sourcemaps/packages/@postdfm/dfm2ast/results
 
       - codecov/upload:
           flags: "@postdfm/dfm2ast"
-          file: ~/repo/packages/@postdfm/dfm2ast/results/lcov/coverage.info
+          file: postdfm-with-sourcemaps/packages/@postdfm/dfm2ast/results/lcov/coverage.info
 
       - store_test_results:
-          path: ~/repo/packages/@postdfm/plugin/results
+          path: postdfm-with-sourcemaps/packages/@postdfm/plugin/results
 
       - codecov/upload:
           flags: "@postdfm/plugin"
-          file: ~/repo/packages/@postdfm/plugin/results/lcov/coverage.info
+          file: postdfm-with-sourcemaps/packages/@postdfm/plugin/results/lcov/coverage.info
 
       - store_test_results:
-          path: ~/repo/packages/@postdfm/transform/results
+          path: postdfm-with-sourcemaps/packages/@postdfm/transform/results
 
       - codecov/upload:
           flags: "@postdfm/transform"
-          file: ~/repo/packages/@postdfm/transform/results/lcov/coverage.info
+          file: postdfm-with-sourcemaps/packages/@postdfm/transform/results/lcov/coverage.info
 
   docs:
     executor: node-executor
     steps:
-      - checkout
+      - checkout:
+          path: postdfm
+
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - attach_workspace:
-          at: ~/repo/packages
+          at: postdfm/packages
 
-      - run: yarn docs
-
-      # currently not used for anything
-      # - persist_to_workspace:
-      #     root: docs
-      #     paths:
-      #       - ./*
+      - run:
+          command: yarn docs && yarn changed
+          working_directory: postdfm
 
   release:
     executor: node-executor
@@ -155,42 +220,46 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
+            - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - attach_workspace:
-          at: ~/repo/packages
+          at: postdfm/packages
 
-      # currently not used for anything
-      # - attach_workspace:
-      #     at: ~/repo/docs
-
-      - run: yarn release
+      - run:
+          command: yarn release
+          working_directory: postdfm
 
       - store_artifacts:
-          path: ~/repo/dist
+          path: postdfm/dist
       - store_artifacts:
-          path: ~/repo/package.json
+          path: postdfm/package.json
       - store_artifacts:
-          path: ~/repo/packages/postdfm/package.json
+          path: postdfm/packages/postdfm/package.json
       - store_artifacts:
-          path: ~/repo/packages/@postdfm/ast/package.json
+          path: postdfm/packages/@postdfm/ast/package.json
       - store_artifacts:
-          path: ~/repo/packages/@postdfm/ast2dfm/package.json
+          path: postdfm/packages/@postdfm/ast2dfm/package.json
       - store_artifacts:
-          path: ~/repo/packages/@postdfm/dfm2ast/package.json
+          path: postdfm/packages/@postdfm/dfm2ast/package.json
       - store_artifacts:
           path: ~/repo/packages/@postdfm/plugin/package.json
       - store_artifacts:
-          path: ~/repo/packages/@postdfm/transform/package.json
+          path: postdfm/packages/@postdfm/transform/package.json
 
 workflows:
   version: 2
   ci:
     jobs:
       - install
+      - install-with-sourcemaps:
+          requires:
+            - install
       - compile:
           requires:
             - install
+      - compile-with-sourcemaps:
+          requires:
+            - install-with-sourcemaps
       - format:
           requires:
             - install
@@ -199,7 +268,7 @@ workflows:
             - compile
       - test:
           requires:
-            - compile
+            - compile-with-sourcemaps
       - docs:
           requires:
             - compile
@@ -209,3 +278,8 @@ workflows:
             - format
             - test
             - docs
+          filters:
+            branches:
+              only:
+                - master
+                - beta
