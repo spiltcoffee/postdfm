@@ -6,7 +6,7 @@ import { Plugin } from "@postdfm/plugin";
 import { Transformer } from "@postdfm/transform";
 
 const transformFixturesPath = new URL(
-  "../../../../../__test__/__fixtures__/transform/",
+  "../../../../../test/fixtures/transform/",
   import.meta.url
 );
 

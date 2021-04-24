@@ -27,7 +27,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-            - packages/postdfm/node_modules
+            # for nearleyc
             - packages/@postdfm/dfm2ast/node_modules
           key: node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "yarn.lock" }}
 
@@ -89,10 +89,46 @@ jobs:
       - run: yarn test
 
       - store_test_results:
-          path: test-results
+          path: ~/repo/packages/postdfm/results
 
       - codecov/upload:
-          file: coverage/lcov.info
+          flags: "postdfm"
+          file: ~/repo/packages/postdfm/results/lcov/coverage.info
+
+      - store_test_results:
+          path: ~/repo/packages/@postdfm/ast/results
+
+      - codecov/upload:
+          flags: "@postdfm/ast"
+          file: ~/repo/packages/@postdfm/ast/results/lcov/coverage.info
+
+      - store_test_results:
+          path: ~/repo/packages/@postdfm/ast2dfm/results
+
+      - codecov/upload:
+          flags: "@postdfm/ast2dfm"
+          file: ~/repo/packages/@postdfm/ast2dfm/results/lcov/coverage.info
+
+      - store_test_results:
+          path: ~/repo/packages/@postdfm/dfm2ast/results
+
+      - codecov/upload:
+          flags: "@postdfm/dfm2ast"
+          file: ~/repo/packages/@postdfm/dfm2ast/results/lcov/coverage.info
+
+      - store_test_results:
+          path: ~/repo/packages/@postdfm/plugin/results
+
+      - codecov/upload:
+          flags: "@postdfm/plugin"
+          file: ~/repo/packages/@postdfm/plugin/results/lcov/coverage.info
+
+      - store_test_results:
+          path: ~/repo/packages/@postdfm/transform/results
+
+      - codecov/upload:
+          flags: "@postdfm/transform"
+          file: ~/repo/packages/@postdfm/transform/results/lcov/coverage.info
 
   docs:
     executor: node-executor
@@ -107,10 +143,11 @@ jobs:
 
       - run: yarn docs
 
-      - persist_to_workspace:
-          root: docs
-          paths:
-            - ./*
+      # currently not used for anything
+      # - persist_to_workspace:
+      #     root: docs
+      #     paths:
+      #       - ./*
 
   release:
     executor: node-executor
@@ -123,8 +160,9 @@ jobs:
       - attach_workspace:
           at: ~/repo/packages
 
-      - attach_workspace:
-          at: ~/repo/docs
+      # currently not used for anything
+      # - attach_workspace:
+      #     at: ~/repo/docs
 
       - run: yarn release
 

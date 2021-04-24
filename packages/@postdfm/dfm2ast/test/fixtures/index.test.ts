@@ -4,7 +4,7 @@ import { ASTNode } from "@postdfm/ast";
 import { parse } from "@postdfm/dfm2ast";
 
 const parseFixturesPath = new URL(
-  "../../../../../__test__/__fixtures__/parse/",
+  "../../../../../test/fixtures/parse/",
   import.meta.url
 );
 

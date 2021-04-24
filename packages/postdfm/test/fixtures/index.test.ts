@@ -5,12 +5,12 @@ import { Plugin } from "@postdfm/plugin";
 import { postdfm, postdfmSync } from "postdfm";
 
 const parseFixturesPath = new URL(
-  "../../../../__test__/__fixtures__/parse/",
+  "../../../../test/fixtures/parse/",
   import.meta.url
 );
 
 const transformFixturesPath = new URL(
-  "../../../../__test__/__fixtures__/transform/",
+  "../../../../test/fixtures/transform/",
   import.meta.url
 );
 

@@ -16,7 +16,7 @@
     "format:fix": "yarn format --write --list-different",
     "format:check": "yarn format --check",
     "compile": "yarn workspaces run compile",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage --verbose --maxWorkers=16",
+    "test": "yarn workspaces run test",
     "docs": "yarn workspaces run docs",
     "release": "semantic-release",
     "snyk-protect": "snyk protect",

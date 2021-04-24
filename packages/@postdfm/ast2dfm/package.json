@@ -16,6 +16,7 @@
   },
   "scripts": {
     "compile": "tsc --listEmittedFiles",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage --verbose",
     "docs": "typedoc --options typedoc.config.cjs"
   },
   "author": "SpiltCoffee",
