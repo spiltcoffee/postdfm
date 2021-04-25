@@ -1,4 +1,1 @@
-module.exports = require("../../../typedoc.config.cjs")({
-  entryPoints: ["src/index.ts"],
-  out: "@postdfm/dfm2ast"
-});
+module.exports = require("../../../typedoc.config.cjs")("@postdfm/dfm2ast");

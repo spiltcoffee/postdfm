@@ -1,4 +1,4 @@
-import * as AST from "@postdfm/ast";
+import { Root } from "@postdfm/ast";
 import { Plugin } from "@postdfm/plugin";
 import { stringify } from "@postdfm/ast2dfm";
 import { Transformer } from "@postdfm/transform";
@@ -26,9 +26,9 @@ export interface RunnerOptions {
   plugins?: Array<Plugin | typeof Plugin | string>;
 }
 
-export type Parser = (dfm: string) => AST.Root;
+export type Parser = (dfm: string) => Root;
 
-export type Stringifier = (ast: AST.Root) => string;
+export type Stringifier = (ast: Root) => string;
 
 export interface ProcessingOptions {
   from?: string;
@@ -48,7 +48,7 @@ export class Runner {
     dfm: string,
     processingOptions?: ProcessingOptions
   ): string {
-    let ast: AST.Root;
+    let ast: Root;
     try {
       ast = this.options.parser(dfm);
     } catch (error) {

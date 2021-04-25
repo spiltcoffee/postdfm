@@ -2,11 +2,22 @@
   "name": "@postdfm/plugin",
   "version": "7.0.0",
   "description": "Provides structure and utilities for making plugins that can modify a postdfm AST.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "compile": "tsc --listEmittedFiles",
+    "compile:map": "yarn compile --inlineSourceMap --inlineSources",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage --verbose",
     "docs": "typedoc --options typedoc.config.cjs"
   },
   "author": "SpiltCoffee",
@@ -20,7 +31,7 @@
     "tapable": "^2.2.0"
   },
   "devDependencies": {
-    "@jest/globals": "^27.0.0-next.7"
+    "@jest/globals": "^27.0.0-next.8"
   },
   "files": [
     "/dist",

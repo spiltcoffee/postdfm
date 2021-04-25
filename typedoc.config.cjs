@@ -1,13 +1,9 @@
 const path = require("path");
 
-module.exports = (options) =>
-  Object.assign(
-    {
-      excludePrivate: true,
-      theme: "minimal",
-    },
-    options,
-    {
-      out: path.resolve(__dirname, "docs", options.out),
-    }
-  );
+module.exports = (projectName) =>
+  Object.assign({
+    excludePrivate: true,
+    theme: "minimal",
+    entryPoints: ["src/index.ts"],
+    out: path.resolve(__dirname, "docs", projectName)
+  });
