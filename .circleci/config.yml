@@ -68,15 +68,15 @@ jobs:
           working_directory: postdfm
 
       - persist_to_workspace:
-          root: postdfm/packages
+          root: .
           paths:
-            - ./postdfm/dist
-            - ./@postdfm/ast/dist
-            - ./@postdfm/ast2dfm/dist
-            - ./@postdfm/dfm2ast/dist
-            - ./@postdfm/dfm2ast/src
-            - ./@postdfm/plugin/dist
-            - ./@postdfm/transform/dist
+            - postdfm/packages/postdfm/dist
+            - postdfm/packages/@postdfm/ast/dist
+            - postdfm/packages/@postdfm/ast2dfm/dist
+            - postdfm/packages/@postdfm/dfm2ast/dist
+            - postdfm/packages/@postdfm/dfm2ast/src
+            - postdfm/packages/@postdfm/plugin/dist
+            - postdfm/packages/@postdfm/transform/dist
 
   compile-with-sourcemaps:
     executor: node-executor
@@ -93,15 +93,15 @@ jobs:
           working_directory: postdfm-with-sourcemaps
 
       - persist_to_workspace:
-          root: postdfm-with-sourcemaps/packages
+          root: .
           paths:
-            - ./postdfm/dist
-            - ./@postdfm/ast/dist
-            - ./@postdfm/ast2dfm/dist
-            - ./@postdfm/dfm2ast/dist
-            - ./@postdfm/dfm2ast/src
-            - ./@postdfm/plugin/dist
-            - ./@postdfm/transform/dist
+            - postdfm-with-sourcemaps/packages/postdfm/dist
+            - postdfm-with-sourcemaps/packages/@postdfm/ast/dist
+            - postdfm-with-sourcemaps/packages/@postdfm/ast2dfm/dist
+            - postdfm-with-sourcemaps/packages/@postdfm/dfm2ast/dist
+            - postdfm-with-sourcemaps/packages/@postdfm/dfm2ast/src
+            - postdfm-with-sourcemaps/packages/@postdfm/plugin/dist
+            - postdfm-with-sourcemaps/packages/@postdfm/transform/dist
 
   lint:
     executor: node-executor
@@ -114,7 +114,7 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - attach_workspace:
-          at: postdfm/packages
+          at: .
 
       - run:
           command: yarn lint && yarn changed
@@ -145,7 +145,7 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-with-sourcemaps-{{ checksum "postdfm-with-sourcemaps/yarn.lock" }}
 
       - attach_workspace:
-          at: postdfm-with-sourcemaps/packages
+          at: .
 
       - run:
           command: yarn test
@@ -208,7 +208,7 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - attach_workspace:
-          at: postdfm/packages
+          at: .
 
       - run:
           command: yarn docs && yarn changed
@@ -223,7 +223,7 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - attach_workspace:
-          at: postdfm/packages
+          at: .
 
       - run:
           command: yarn release
