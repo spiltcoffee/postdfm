@@ -68,4 +68,6 @@ object Form1: TForm1
   end
   object TNameless
   end
+  object TNameless [2]
+  end
 end
