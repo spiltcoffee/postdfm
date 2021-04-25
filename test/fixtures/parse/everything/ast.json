@@ -814,6 +814,22 @@
           "beforeEnd": "\r\n  ",
           "before": "\r\n  "
         }
+      },
+      {
+        "astType": "object",
+        "kind": "object",
+        "type": "TNameless",
+        "order": "2",
+        "properties": [],
+        "children": [],
+        "raws": {
+          "beforeDef": " ",
+          "beforeEnd": "\r\n  ",
+          "afterType": " ",
+          "beforeOrder": "",
+          "afterOrder": "",
+          "before": "\r\n  "
+        }
       }
     ],
     "raws": {
