@@ -217,7 +217,9 @@ jobs:
   release:
     executor: node-executor
     steps:
-      - checkout
+      - checkout:
+          path: postdfm
+
       - restore_cache:
           keys:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
