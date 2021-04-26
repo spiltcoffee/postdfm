@@ -1,1 +1,1 @@
-export { Transformer } from "./transformer";
+export { Transformer } from "@postdfm/transform/transformer";

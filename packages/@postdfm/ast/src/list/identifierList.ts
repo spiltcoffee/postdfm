@@ -1,6 +1,6 @@
-import { ASTType } from "../astType";
-import { IdentifierValue } from "../value/identifierValue";
-import { List } from "./list";
+import { ASTType } from "@postdfm/ast/astType";
+import { IdentifierValue } from "@postdfm/ast/value/identifierValue";
+import { List } from "@postdfm/ast/list/list";
 
 export class IdentifierList extends List<IdentifierValue> {
   constructor(values?: IdentifierValue[]) {

@@ -7,7 +7,7 @@ const { Parser, Grammar } = (<
   { default: { Parser: typeof ParserType; Grammar: typeof GrammarType } }
 >(<unknown>nearleyPkg)).default;
 
-import grammar from "./grammar";
+import grammar from "@postdfm/dfm2ast/grammar";
 
 function parse(dfm: string): Root {
   const parser = new Parser(Grammar.fromCompiled(grammar));

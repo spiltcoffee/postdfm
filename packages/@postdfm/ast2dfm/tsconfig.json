@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "paths": {
-      "*": ["./src/*"]
+      "@postdfm/ast2dfm/*": ["./src/*"]
     }
   },
   "include": ["src/**/*"]

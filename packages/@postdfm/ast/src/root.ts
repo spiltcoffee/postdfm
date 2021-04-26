@@ -1,6 +1,6 @@
-import { ASTNode } from "./astNode";
-import { ASTType } from "./astType";
-import { DObject } from "./object";
+import { ASTNode } from "@postdfm/ast/astNode";
+import { ASTType } from "@postdfm/ast/astType";
+import { DObject } from "@postdfm/ast/object";
 
 export class Root extends ASTNode {
   public child?: DObject;

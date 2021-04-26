@@ -1,5 +1,5 @@
 import { Root } from "@postdfm/ast";
-import Stringifier from "./stringifier";
+import Stringifier from "@postdfm/ast2dfm/stringifier";
 
 function stringify(ast: Root): string {
   const stringifier = new Stringifier();

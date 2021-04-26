@@ -1,8 +1,8 @@
-import { ASTNode } from "./astNode";
-import { ASTRaws } from "./astRaws";
-import { ASTType } from "./astType";
-import { ObjectKind } from "./objectKind";
-import { Property } from "./property";
+import { ASTNode } from "@postdfm/ast/astNode";
+import { ASTRaws } from "@postdfm/ast/astRaws";
+import { ASTType } from "@postdfm/ast/astType";
+import { ObjectKind } from "@postdfm/ast/objectKind";
+import { Property } from "@postdfm/ast/property";
 
 interface ObjectRaws extends ASTRaws {
   beforeDef?: string;

@@ -1,6 +1,6 @@
-import { ASTType } from "../astType";
-import { VariantValue } from "../value/variantValue";
-import { List } from "./list";
+import { ASTType } from "@postdfm/ast/astType";
+import { VariantValue } from "@postdfm/ast/value/variantValue";
+import { List } from "@postdfm/ast/list/list";
 
 export class VariantList extends List<VariantValue> {
   constructor(values?: Array<VariantValue>) {
