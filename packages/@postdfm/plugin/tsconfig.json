@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "outDir": "dist",
     "paths": {
-      "*": ["./src/*"]
+      "@postdfm/plugin/*": ["./src/*"]
     }
   },
   "include": ["src/**/*"]

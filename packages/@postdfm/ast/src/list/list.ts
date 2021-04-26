@@ -1,6 +1,6 @@
-import { ASTNode } from "../astNode";
-import { ASTRaws } from "../astRaws";
-import { ASTType } from "../astType";
+import { ASTNode } from "@postdfm/ast/astNode";
+import { ASTRaws } from "@postdfm/ast/astRaws";
+import { ASTType } from "@postdfm/ast/astType";
 
 interface ListRaws extends ASTRaws {
   afterOpen?: string;

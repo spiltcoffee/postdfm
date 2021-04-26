@@ -1,5 +1,5 @@
-import { ASTNode } from "../astNode";
-import { ASTType } from "../astType";
+import { ASTNode } from "@postdfm/ast/astNode";
+import { ASTType } from "@postdfm/ast/astType";
 
 export class Value<T> extends ASTNode {
   public value: T;

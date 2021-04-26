@@ -1,8 +1,8 @@
-import { ASTNode } from "./astNode";
-import { ASTRaws } from "./astRaws";
-import { ASTType } from "./astType";
-import { AnyList } from "./list/anyList";
-import { VariantValue } from "./value/variantValue";
+import { ASTNode } from "@postdfm/ast/astNode";
+import { ASTRaws } from "@postdfm/ast/astRaws";
+import { ASTType } from "@postdfm/ast/astType";
+import { AnyList } from "@postdfm/ast/list/anyList";
+import { VariantValue } from "@postdfm/ast/value/variantValue";
 
 interface PropertyRaws extends ASTRaws {
   afterName?: string;

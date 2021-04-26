@@ -1,35 +1,35 @@
-export { ASTType } from "./astType";
-export { ASTRaws } from "./astRaws";
-export { ASTNode } from "./astNode";
+export { ASTType } from "@postdfm/ast/astType";
+export { ASTRaws } from "@postdfm/ast/astRaws";
+export { ASTNode } from "@postdfm/ast/astNode";
 
-export { Keywords } from "./keywords";
+export { Keywords } from "@postdfm/ast/keywords";
 
-export { Value } from "./value/value";
-export { StringValue } from "./value/stringValue";
-export { ControlString } from "./value/controlString";
-export { LiteralString } from "./value/literalString";
-export { BinaryStringValue } from "./value/binaryStringValue";
-export { IntegerValue } from "./value/integerValue";
-export { HexCodeValue } from "./value/hexCodeValue";
-export { DoubleValue } from "./value/doubleValue";
-export { SingleValue } from "./value/singleValue";
-export { CurrencyValue } from "./value/currencyValue";
-export { DateTimeValue } from "./value/dateTimeValue";
-export { BooleanValue } from "./value/booleanValue";
-export { IdentifierValue } from "./value/identifierValue";
+export { Value } from "@postdfm/ast/value/value";
+export { StringValue } from "@postdfm/ast/value/stringValue";
+export { ControlString } from "@postdfm/ast/value/controlString";
+export { LiteralString } from "@postdfm/ast/value/literalString";
+export { BinaryStringValue } from "@postdfm/ast/value/binaryStringValue";
+export { IntegerValue } from "@postdfm/ast/value/integerValue";
+export { HexCodeValue } from "@postdfm/ast/value/hexCodeValue";
+export { DoubleValue } from "@postdfm/ast/value/doubleValue";
+export { SingleValue } from "@postdfm/ast/value/singleValue";
+export { CurrencyValue } from "@postdfm/ast/value/currencyValue";
+export { DateTimeValue } from "@postdfm/ast/value/dateTimeValue";
+export { BooleanValue } from "@postdfm/ast/value/booleanValue";
+export { IdentifierValue } from "@postdfm/ast/value/identifierValue";
 
-export { Item } from "./item";
+export { Item } from "@postdfm/ast/item";
 
-export { List } from "./list/list";
-export { BinaryStringList } from "./list/binaryStringList";
-export { IdentifierList } from "./list/identifierList";
-export { VariantList } from "./list/variantList";
-export { ItemList } from "./list/itemList";
+export { List } from "@postdfm/ast/list/list";
+export { BinaryStringList } from "@postdfm/ast/list/binaryStringList";
+export { IdentifierList } from "@postdfm/ast/list/identifierList";
+export { VariantList } from "@postdfm/ast/list/variantList";
+export { ItemList } from "@postdfm/ast/list/itemList";
 
-export { Property } from "./property";
+export { Property } from "@postdfm/ast/property";
 
-export { ObjectKind } from "./objectKind";
+export { ObjectKind } from "@postdfm/ast/objectKind";
 
-export { DObject } from "./object";
+export { DObject } from "@postdfm/ast/object";
 
-export { Root } from "./root";
+export { Root } from "@postdfm/ast/root";

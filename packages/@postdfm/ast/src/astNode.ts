@@ -1,5 +1,5 @@
-import { ASTType } from "./astType";
-import { ASTRaws } from "./astRaws";
+import { ASTType } from "@postdfm/ast/astType";
+import { ASTRaws } from "@postdfm/ast/astRaws";
 
 export class ASTNode<R extends ASTRaws = ASTRaws> {
   public astType: ASTType;
