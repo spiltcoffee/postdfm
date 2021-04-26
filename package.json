@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "husky install",
     "changed": "git add . && git diff-index --quiet HEAD || (git reset --quiet && echo \"Error: changed files\" && git status --porcelain && exit 1)",
-    "ci": "yarn --frozen-lockfile && yarn run compile:map && yarn run lint:check && yarn run format:check && yarn test && yarn docs && yarn changed",
+    "ci": "yarn --frozen-lockfile && yarn run compile:map && yarn run lint && yarn run format && yarn test && yarn docs && yarn changed",
     "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts}\" --fix",
     "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\" --write --list-different",
     "compile": "yarn workspaces run compile",
