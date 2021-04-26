@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/plugin",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Provides structure and utilities for making plugins that can modify a postdfm AST.",
   "type": "module",
   "exports": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
-    "@postdfm/ast": "^7.0.1",
+    "@postdfm/ast": "^7.0.2",
     "tapable": "^2.2.0"
   },
   "devDependencies": {

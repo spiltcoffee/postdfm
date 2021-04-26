@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/ast",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "Abstract Syntax Tree classes for postdfm",
   "type": "module",
   "exports": {
