@@ -1,24 +1,25 @@
 {
+  "name": "postdfm-root",
   "private": true,
-  "workspaces": [
-    "packages/@postdfm/*",
-    "packages/postdfm"
-  ],
   "description": "Provides an API for easily transforming Delphi Forms",
   "type": "module",
   "scripts": {
-    "postinstall": "husky install",
+    "foreach": "yarn workspaces foreach --verbose --parallel --no-private",
     "changed": "git add . && git diff-index --quiet HEAD || (git reset --quiet && echo \"Error: changed files\" && git status --porcelain && exit 1)",
-    "ci": "yarn --frozen-lockfile && yarn run compile:map && yarn run lint && yarn run format && yarn test && yarn docs && yarn changed",
-    "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts}\" --fix",
-    "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\" --write --list-different",
-    "compile": "yarn workspaces run compile",
-    "compile:map": "yarn workspaces run compile:map",
-    "test": "yarn workspaces run test",
-    "docs": "yarn workspaces run docs",
+    "ci": "yarn --immutable && yarn generate && yarn compile:map && yarn lint && yarn format && yarn test && yarn docs && yarn changed",
+    "generate": "yarn foreach --topological run generate",
+    "compile": "yarn foreach --topological run compile",
+    "compile:map": "yarn foreach --topological run compile:map",
+    "lint": "yarn constraints && eslint --ignore-path .gitignore \"**/*.{js,ts}\" --fix",
+    "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\" --write",
+    "test": "yarn foreach run test",
+    "docs": "yarn foreach run docs",
     "release": "semantic-release",
-    "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
+    "postinstall": "husky install",
+    "prepare": "snyk protect"
+  },
+  "dependencies": {
+    "snyk": "^1.465.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
@@ -33,7 +34,6 @@
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "commitlint": "^12.0.1",
-    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.0.2",
     "enhanced-resolve": "^5.8.0",
     "eslint": "^7.18.0",
@@ -45,19 +45,26 @@
     "jest": "^27.0.0-next.8",
     "jest-junit": "^10.0.0",
     "lint-staged": "^10.0.3",
-    "nearley": "^2.16.0",
     "prettier": "^2.2.1",
     "semantic-release": "^17.4.0",
     "ts-jest": "^27.0.0-next.11",
     "typedoc": "^0.20.36",
     "typescript": "^4.2.4"
   },
+  "workspaces": [
+    "packages/@postdfm/*",
+    "packages/postdfm"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [],
+  "snyk": true,
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "files": [],
   "lint-staged": {
     "*.{json,yml,md}": [
       "prettier --ignore-path .gitignore --write"
@@ -66,12 +73,5 @@
       "eslint --ignore-path .gitignore",
       "prettier --ignore-path .gitignore --write"
     ]
-  },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "snyk": true,
-  "dependencies": {
-    "snyk": "^1.465.0"
   }
 }
