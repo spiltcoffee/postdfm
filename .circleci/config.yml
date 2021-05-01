@@ -15,24 +15,34 @@ jobs:
     steps:
       - run: node --version
       - run: npm --version
-      - run: yarn --version
+      - run:
+          name: yarn (v1) --version
+          command: yarn --version
 
       - checkout:
           path: postdfm
+
+      - run:
+          name: yarn (v2) --version
+          command: yarn --version
+          working_directory: postdfm
 
       - restore_cache:
           keys:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - run:
-          command: yarn --frozen-lockfile && yarn changed
+          command: yarn --immutable
+          working_directory: postdfm
+
+      - run:
+          command: yarn changed
           working_directory: postdfm
 
       - save_cache:
           paths:
             - postdfm/node_modules
-            # for nearleyc
-            - postdfm/packages/@postdfm/dfm2ast/node_modules
+            - postdfm/.yarn
           key: node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
   install-with-sourcemaps:
@@ -49,8 +59,7 @@ jobs:
       - save_cache:
           paths:
             - postdfm-with-sourcemaps/node_modules
-            # for nearleyc
-            - postdfm-with-sourcemaps/packages/@postdfm/dfm2ast/node_modules
+            - postdfm-with-sourcemaps/.yarn
           key: node-{{ .Environment.CACHE_VERSION }}-dependencies-with-sourcemaps-{{ checksum "postdfm-with-sourcemaps/yarn.lock" }}
 
   compile:
@@ -64,7 +73,15 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - run:
-          command: yarn compile && yarn changed
+          command: yarn generate
+          working_directory: postdfm
+
+      - run:
+          command: yarn compile
+          working_directory: postdfm
+
+      - run:
+          command: yarn changed
           working_directory: postdfm
 
       - persist_to_workspace:
@@ -89,7 +106,15 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-with-sourcemaps-{{ checksum "postdfm-with-sourcemaps/yarn.lock" }}
 
       - run:
-          command: yarn compile:map && yarn changed
+          command: yarn generate
+          working_directory: postdfm-with-sourcemaps
+
+      - run:
+          command: yarn compile:map
+          working_directory: postdfm-with-sourcemaps
+
+      - run:
+          command: yarn changed
           working_directory: postdfm-with-sourcemaps
 
       - persist_to_workspace:
@@ -117,7 +142,11 @@ jobs:
           at: .
 
       - run:
-          command: yarn lint && yarn changed
+          command: yarn lint
+          working_directory: postdfm
+
+      - run:
+          command: yarn changed
           working_directory: postdfm
 
   format:
@@ -131,7 +160,11 @@ jobs:
             - node-{{ .Environment.CACHE_VERSION }}-dependencies-{{ checksum "postdfm/yarn.lock" }}
 
       - run:
-          command: yarn format && yarn changed
+          command: yarn format
+          working_directory: postdfm
+
+      - run:
+          command: yarn changed
           working_directory: postdfm
 
   test:
@@ -149,10 +182,6 @@ jobs:
 
       - run:
           command: yarn test
-          working_directory: postdfm-with-sourcemaps
-
-      - run:
-          command: yarn changed
           working_directory: postdfm-with-sourcemaps
 
       - store_test_results:
@@ -197,6 +226,10 @@ jobs:
           flags: "@postdfm/transform"
           file: postdfm-with-sourcemaps/packages/@postdfm/transform/results/lcov/coverage.info
 
+      - run:
+          command: yarn changed
+          working_directory: postdfm-with-sourcemaps
+
   docs:
     executor: node-executor
     steps:
@@ -211,7 +244,11 @@ jobs:
           at: .
 
       - run:
-          command: yarn docs && yarn changed
+          command: yarn docs
+          working_directory: postdfm
+
+      - run:
+          command: yarn changed
           working_directory: postdfm
 
   release:
@@ -233,44 +270,46 @@ jobs:
 
       - store_artifacts:
           path: postdfm/dist
+
       - store_artifacts:
           path: postdfm/package.json
+
       - store_artifacts:
           path: postdfm/packages/postdfm/package.json
+
       - store_artifacts:
           path: postdfm/packages/@postdfm/ast/package.json
+
       - store_artifacts:
           path: postdfm/packages/@postdfm/ast2dfm/package.json
+
       - store_artifacts:
           path: postdfm/packages/@postdfm/dfm2ast/package.json
+
       - store_artifacts:
           path: ~/repo/packages/@postdfm/plugin/package.json
+
       - store_artifacts:
           path: postdfm/packages/@postdfm/transform/package.json
 
+      - run:
+          command: yarn changed
+          working_directory: postdfm
+
 workflows:
   version: 2
-  ci:
+  continuous-integration:
     jobs:
       - install
-      - install-with-sourcemaps:
-          requires:
-            - install
       - compile:
           requires:
             - install
-      - compile-with-sourcemaps:
-          requires:
-            - install-with-sourcemaps
       - format:
           requires:
             - install
       - lint:
           requires:
             - compile
-      - test:
-          requires:
-            - compile-with-sourcemaps
       - docs:
           requires:
             - compile
@@ -278,10 +317,21 @@ workflows:
           requires:
             - lint
             - format
-            - test
             - docs
           filters:
             branches:
               only:
                 - main
                 - beta
+  continous-testing:
+    jobs:
+      - install
+      - install-with-sourcemaps:
+          requires:
+            - install
+      - compile-with-sourcemaps:
+          requires:
+            - install-with-sourcemaps
+      - test:
+          requires:
+            - compile-with-sourcemaps
