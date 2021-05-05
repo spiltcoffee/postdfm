@@ -1,11 +1,11 @@
 const path = require("path");
 const execa = require("execa");
 
-const pkgs = Object.entries(
-  JSON.parse(
-    JSON.parse(execa.commandSync("yarn --json workspaces info").stdout).data
-  )
-).map(([name, { location }]) => ({ name, location }));
+const pkgs = execa
+  .commandSync("yarn workspaces list --json")
+  .stdout.split(/[\r\n]+/)
+  .map(JSON.parse)
+  .filter(({ location }) => location !== ".");
 
 const tarballDir = path.resolve(__dirname, "dist");
 

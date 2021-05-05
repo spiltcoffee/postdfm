@@ -1,1 +1,1 @@
-module.exports = require("../../../test/jest-preset.cjs")("@postdfm/ast");
+module.exports = require("../../../test/jest-preset.cjs");

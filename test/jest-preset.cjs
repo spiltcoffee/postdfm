@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = (projectName) => ({
+module.exports = {
   extensionsToTreatAsEsm: [".ts"],
   globals: {
     "ts-jest": {
@@ -34,4 +34,4 @@ module.exports = (projectName) => ({
       }
     ]
   ]
-});
+};
