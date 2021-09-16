@@ -43,7 +43,7 @@
     "execa": "^4.0.0",
     "husky": "^5.0.6",
     "jest": "^27.0.0",
-    "jest-junit": "^10.0.0",
+    "jest-junit": "^11.0.1",
     "lint-staged": "^10.0.3",
     "nearley": "^2.16.0",
     "prettier": "^2.2.1",
