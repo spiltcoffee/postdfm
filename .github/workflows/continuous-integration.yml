@@ -36,8 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # tests do not currently succeed on node 12,
-        #   perhaps a sign the engine needs to be updated
         node-version: [14, 16]
     steps:
       - uses: actions/checkout@v2
