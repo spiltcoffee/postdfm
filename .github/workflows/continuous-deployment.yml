@@ -1,5 +1,7 @@
 name: Continuous Deployment
 
+concurrency: npm
+
 on:
   workflow_run:
     workflows: ["Continuous Integration"]
@@ -10,6 +12,10 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/postdfm
+
     steps:
       - uses: actions/checkout@v2
 
@@ -20,6 +26,9 @@ jobs:
           node-version: 16
           cache: yarn
 
-      # todo: figure out security implications behind ${{ secrets.NPM_TOKEN }}, then implement
-      # todo: disable circleci before deploying this action
-      - run: echo "hello world"
+      - run: yarn install --immutable
+      - run: yarn generate
+      - run: yarn compile
+      - run: yarn release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
