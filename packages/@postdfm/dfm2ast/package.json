@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/dfm2ast",
-  "version": "7.0.6",
+  "version": "7.0.7",
   "description": "Convert Delphi Form files to an Abstract Syntax Tree",
   "type": "module",
   "exports": {
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
-    "@postdfm/ast": "^7.0.6",
+    "@postdfm/ast": "^7.0.7",
     "nearley": "^2.19.4"
   },
   "files": [
