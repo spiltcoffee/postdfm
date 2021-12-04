@@ -1,0 +1,25 @@
+name: Continuous Deployment
+
+on:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    branches: [main, beta]
+    types:
+      - completed
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+        # unlike with ci, we only want the latest version to deploy with
+      - name: setup node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: yarn
+
+      # todo: figure out security implications behind ${{ secrets.NPM_TOKEN }}, then implement
+      # todo: disable circleci before deploying this action
+      - run: echo "hello world"
