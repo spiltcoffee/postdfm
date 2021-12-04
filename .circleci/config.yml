@@ -313,16 +313,17 @@ workflows:
       - docs:
           requires:
             - compile
-      - release:
-          requires:
-            - lint
-            - format
-            - docs
-          filters:
-            branches:
-              only:
-                - main
-                - beta
+    # disabled as github actions is replacing circleci in this repo
+    #   - release:
+    #       requires:
+    #         - lint
+    #         - format
+    #         - docs
+    #       filters:
+    #         branches:
+    #           only:
+    #             - main
+    #             - beta
   continous-testing:
     jobs:
       - install
