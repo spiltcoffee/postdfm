@@ -1,0 +1,103 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main, beta]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sans-sourcemaps:
+    name: sans sourcemaps
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # only need 16 here as none of the steps below test the actual output
+      - name: setup node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn format
+      - run: yarn compile
+      - run: yarn lint
+      - run: yarn docs
+
+      - name: check git is clean
+        run: 'git add . && git diff-index --quiet HEAD || (git reset --quiet && echo "Error: changed files" && git status --porcelain && exit 1)'
+
+  with-sourcemaps:
+    name: with sourcemaps (node ${{ matrix.node-version}})
+    needs: sans-sourcemaps
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # tests do not currently succeed on node 12,
+        #   perhaps a sign the engine needs to be updated
+        node-version: [14, 16]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn compile:map
+      - run: yarn test
+
+      - name: check git is clean
+        run: 'git add . && git diff-index --quiet HEAD || (git reset --quiet && echo "Error: changed files" && git status --porcelain && exit 1)'
+
+      - name: upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test results
+          path: |
+            packages/postdfm/results/jest/report.xml
+            packages/@postdfm/ast/results/jest/report.xml
+            packages/@postdfm/ast2dfm/results/jest/report.xml
+            packages/@postdfm/dfm2ast/results/jest/report.xml
+            packages/@postdfm/plugin/results/jest/report.xml
+            packages/@postdfm/transform/results/jest/report.xml
+
+      - name: upload postdfm code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          flags: postdfm
+          file: packages/postdfm/results/lcov/coverage.info
+
+      - name: upload @postdfm/ast code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          flags: "@postdfm/ast"
+          file: packages/@postdfm/ast/results/lcov/coverage.info
+
+      - name: upload @postdfm/ast2dfm code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          flags: "@postdfm/ast2dfm"
+          file: packages/@postdfm/ast2dfm/results/lcov/coverage.info
+
+      - name: upload @postdfm/dfm2ast code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          flags: "@postdfm/dfm2ast"
+          file: packages/@postdfm/dfm2ast/results/lcov/coverage.info
+
+      - name: upload @postdfm/plugin code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          flags: "@postdfm/plugin"
+          file: packages/@postdfm/plugin/results/lcov/coverage.info
+
+      - name: upload @postdfm/transform code coverage
+        uses: codecov/codecov-action@v2
+        with:
+          flags: "@postdfm/transform"
+          file: packages/@postdfm/transform/results/lcov/coverage.info
