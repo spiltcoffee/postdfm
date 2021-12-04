@@ -20,8 +20,9 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn format
+      - run: yarn generate
       - run: yarn compile
       - run: yarn lint
       - run: yarn docs
@@ -47,7 +48,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
+      - run: yarn generate
       - run: yarn compile:map
       - run: yarn test
 

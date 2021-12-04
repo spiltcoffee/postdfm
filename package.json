@@ -1,63 +1,66 @@
 {
+  "name": "postdfm-root",
   "private": true,
+  "description": "Provides an API for easily transforming Delphi Forms",
+  "type": "module",
+  "scripts": {
+    "foreach": "yarn workspaces foreach --verbose --parallel --no-private",
+    "changed": "git add . && git diff-index --quiet HEAD || (git reset --quiet && echo \"Error: changed files\" && git status --porcelain && exit 1)",
+    "ci": "yarn --immutable && yarn generate && yarn compile:map && yarn lint && yarn format && yarn test && yarn docs && yarn changed",
+    "generate": "yarn foreach --topological run generate",
+    "compile": "yarn foreach --topological run compile",
+    "compile:map": "yarn foreach --topological run compile:map",
+    "lint": "yarn constraints && eslint --ignore-path .gitignore \"**/*.{js,ts}\" --fix",
+    "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\" --write",
+    "test": "yarn foreach run test",
+    "docs": "yarn foreach run docs",
+    "release": "semantic-release",
+    "postinstall": "husky install",
+    "prepare": "snyk protect"
+  },
+  "dependencies": {
+    "snyk": "^1.783.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/npm": "^7.1.3",
+    "@semantic-release/release-notes-generator": "^9.0.3",
+    "@types/jest": "^27.0.3",
+    "@types/nearley": "^2.11.2",
+    "@types/node": "^13.13.52",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "commitlint": "^12.1.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "enhanced-resolve": "^5.8.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-jest": "^24.7.0",
+    "eslint-plugin-node": "^11.1.0",
+    "execa": "^4.1.0",
+    "husky": "^5.2.0",
+    "jest": "^27.4.3",
+    "jest-junit": "^13.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.5.0",
+    "semantic-release": "^17.4.7",
+    "ts-jest": "^27.0.7",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.2"
+  },
   "workspaces": [
     "packages/@postdfm/*",
     "packages/postdfm"
   ],
-  "description": "Provides an API for easily transforming Delphi Forms",
-  "type": "module",
-  "scripts": {
-    "postinstall": "husky install",
-    "changed": "git add . && git diff-index --quiet HEAD || (git reset --quiet && echo \"Error: changed files\" && git status --porcelain && exit 1)",
-    "ci": "yarn --frozen-lockfile && yarn run compile:map && yarn run lint && yarn run format && yarn test && yarn docs && yarn changed",
-    "lint": "eslint --ignore-path .gitignore \"**/*.{js,ts}\" --fix",
-    "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\" --write --list-different",
-    "compile": "yarn workspaces run compile",
-    "compile:map": "yarn workspaces run compile:map",
-    "test": "yarn workspaces run test",
-    "docs": "yarn workspaces run docs",
-    "release": "semantic-release",
-    "snyk-protect": "snyk protect",
-    "prepare": "yarn run snyk-protect"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.13.16",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/npm": "^7.1.0",
-    "@semantic-release/release-notes-generator": "^9.0.0",
-    "@types/jest": "^26.0.22",
-    "@types/nearley": "^2.11.0",
-    "@types/node": "^13.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.14.0",
-    "@typescript-eslint/parser": "^4.14.0",
-    "commitlint": "^12.0.1",
-    "cross-env": "^7.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "enhanced-resolve": "^5.8.0",
-    "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-jest": "^24.1.3",
-    "eslint-plugin-node": "^11.1.0",
-    "execa": "^4.0.0",
-    "husky": "^5.0.6",
-    "jest": "^27.0.0",
-    "jest-junit": "^13.0.0",
-    "lint-staged": "^10.0.3",
-    "nearley": "^2.16.0",
-    "prettier": "^2.2.1",
-    "semantic-release": "^17.4.0",
-    "ts-jest": "^27.0.2",
-    "typedoc": "^0.20.36",
-    "typescript": "^4.2.4"
-  },
+  "files": [],
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "files": [],
   "lint-staged": {
     "*.{json,yml,md}": [
       "prettier --ignore-path .gitignore --write"
@@ -71,7 +74,5 @@
     "node": ">=12.0.0"
   },
   "snyk": true,
-  "dependencies": {
-    "snyk": "^1.685.0"
-  }
+  "packageManager": "yarn@3.1.1"
 }

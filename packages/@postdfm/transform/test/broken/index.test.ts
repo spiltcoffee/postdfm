@@ -3,10 +3,10 @@ import { Transformer } from "@postdfm/transform";
 
 describe("transform", () => {
   test("broken AST throws error", () => {
-    const ast = ({
+    const ast = {
       raws: {},
       astType: "broken",
-    } as unknown) as ASTNode;
+    } as unknown as ASTNode;
 
     const transformer = new Transformer([]);
 
