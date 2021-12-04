@@ -2,6 +2,12 @@ name: Continuous Deployment
 
 concurrency: npm
 
+permissions:
+  contents: write
+  deployments: read
+  issues: write
+  pull-requests: write
+
 on:
   workflow_run:
     workflows: ["Continuous Integration"]
