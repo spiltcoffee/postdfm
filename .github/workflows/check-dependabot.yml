@@ -1,0 +1,12 @@
+# this workflow doesn't have access to secrets/read-write token
+name: Dependabot NPM PR Check
+on:
+  push:
+    branches: [dependabot/npm_and_yarn/**]
+
+jobs:
+  check-dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - run: echo "PR created by Dependabot"
