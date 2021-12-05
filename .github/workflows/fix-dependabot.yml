@@ -13,6 +13,7 @@ env:
 jobs:
   fix-dependabot:
     runs-on: ubuntu-latest
+    environment: dependabot
     if: github.actor == 'dependabot[bot]'
 
     steps:
