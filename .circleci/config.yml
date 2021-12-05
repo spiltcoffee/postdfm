@@ -313,18 +313,27 @@ workflows:
       - docs:
           requires:
             - compile
-    # disabled as github actions is replacing circleci in this repo
-    #   - release:
-    #       requires:
-    #         - lint
-    #         - format
-    #         - docs
-    #       filters:
-    #         branches:
-    #           only:
-    #             - main
-    #             - beta
+      - hold:
+          type: approval
+          filters:
+            branches:
+              only:
+                - main
+                - beta
+      - release:
+          requires:
+            - lint
+            - format
+            - docs
+            - hold
+          filters:
+            branches:
+              only:
+                - main
+                - beta
   continous-testing:
+    # disabling workflow as tests are not working on circleci
+    when: false
     jobs:
       - install
       - install-with-sourcemaps:
