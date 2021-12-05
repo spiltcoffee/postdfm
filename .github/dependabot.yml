@@ -8,12 +8,12 @@ updates:
       - "spiltcoffee"
     commit-message:
       prefix: "GitHub Actions"
-  - package-ecosystem: "yarn"
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
     assignees:
       - "spiltcoffee"
     commit-message:
-      prefix: "Yarn"
-      prefix-development: "Yarn dev"
+      prefix: "NPM"
+      prefix-development: "NPM dev"
