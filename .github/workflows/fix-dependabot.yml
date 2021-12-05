@@ -13,13 +13,12 @@ env:
 jobs:
   fix-dependabot:
     runs-on: ubuntu-latest
-    environment: dependabot
     if: github.actor == 'dependabot[bot]'
 
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.FIX_DEPENDABOT_PAT }}
           fetch-depth: 2
 
       - name: setup node.js 16
