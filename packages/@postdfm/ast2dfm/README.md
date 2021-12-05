@@ -5,7 +5,8 @@
 > Provides functionality for turning the structure provided by [`@postdfm/ast`](https://www.npmjs.com/package/@postdfm/ast) into a string/DFM.
 
 [![npm](https://img.shields.io/npm/v/@postdfm/ast2dfm.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast2dfm)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
+![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg)
+![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg)
 [![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=packages/@postdfm/ast2dfm/package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=packages/@postdfm/ast2dfm/package.json)
 

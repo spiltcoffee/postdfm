@@ -4,8 +4,9 @@
 >
 > Inspired by the excellent PostCSS tool, motivated by my rage at the Delphi IDE.
 
-[![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npmjs.com/package/postdfm)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
+![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)
+![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg)
+![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg)
 [![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=packages/postdfm/package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=packages/postdfm/package.json)
 
@@ -33,11 +34,11 @@ $ yarn add postdfm
 ## Example Usage
 
 ```js
-const fs = require("fs");
-const postdfm = require("postdfm");
+import fs from "fs";
+import postdfm from "postdfm";
 
-// if implementing your own plugin, otherwise import plugins
-const { Plugin } = require("@postdfm/plugin");
+// only if implementing your own plugin
+import { Plugin } from "@postdfm/plugin";
 
 class SomePlugin extends Plugin {
   install(hooks) {
@@ -84,7 +85,8 @@ fs.writeFileSync("trans.dfm", transDfm);
 Create a runner by calling the `postdfm` function.
 
 ```js
-const postdfm = require("postdfm");
+import postdfm from "postdfm";
+
 const runner = postdfm();
 ```
 

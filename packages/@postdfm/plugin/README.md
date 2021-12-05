@@ -5,7 +5,8 @@
 > Provides structure and utilities for making plugins that can modify the structure provided by [`@postdfm/ast`](https://www.npmjs.com/package/@postdfm/ast).
 
 [![npm](https://img.shields.io/npm/v/@postdfm/plugin.svg?label=npm)](https://www.npmjs.com/package/@postdfm/plugin)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
+![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg)
+![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg)
 [![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
 [![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=packages/@postdfm/plugin/package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=packages/@postdfm/plugin/package.json)
 
@@ -30,7 +31,7 @@ $ yarn add @postdfm/plugin
 ## Example Usage
 
 ```js
-const { Plugin } = require("@postdfm/plugin");
+import { Plugin } from "@postdfm/plugin";
 
 class SomePlugin extends Plugin {
   install(hooks) {
