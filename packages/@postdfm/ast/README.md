@@ -5,9 +5,10 @@
 > Provides Abstract Syntax Tree structures for representing the contents of a Delphi Form File.
 
 [![npm](https://img.shields.io/npm/v/@postdfm/ast.svg?label=npm)](https://www.npmjs.com/package/@postdfm/ast)
-[![CircleCI branch](https://img.shields.io/circleci/project/github/spiltcoffee/postdfm/main.svg)](https://circleci.com)
+![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg)
+![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg)
 [![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
-[![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=packages/@postdfm/ast/package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=packages/@postdfm/ast/package.json)
+![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)
 
 ## Table of Contents
 
