@@ -21,7 +21,6 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 2
-          persist-credentials: false
 
       - name: setup node.js 16
         uses: actions/setup-node@v2
