@@ -7,7 +7,9 @@ on:
     types:
       - completed
 
-concurrency: npm
+concurrency:
+  group: npm
+  cancel-in-progress: true
 
 permissions:
   contents: write
