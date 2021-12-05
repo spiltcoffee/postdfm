@@ -36,8 +36,7 @@ module.exports = function getConfig(enableTypeChecking) {
           "plugin:@typescript-eslint/recommended",
           enableTypeChecking &&
             "plugin:@typescript-eslint/recommended-requiring-type-checking",
-          "prettier",
-          "prettier/@typescript-eslint"
+          "prettier"
         ].filter((v) => !!v),
         rules: {
           "node/no-unsupported-features/es-syntax": [
