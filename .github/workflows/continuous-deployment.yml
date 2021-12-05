@@ -1,5 +1,12 @@
 name: Continuous Deployment
 
+on:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    branches: [main, beta]
+    types:
+      - completed
+
 concurrency: npm
 
 permissions:
@@ -8,12 +15,8 @@ permissions:
   issues: write
   pull-requests: write
 
-on:
-  workflow_run:
-    workflows: ["Continuous Integration"]
-    branches: [main, beta]
-    types:
-      - completed
+env:
+  HUSKY: 0
 
 jobs:
   release:
