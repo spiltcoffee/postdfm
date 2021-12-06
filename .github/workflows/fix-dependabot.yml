@@ -35,7 +35,7 @@ jobs:
       - name: if package.json was not changed, update yarn.lock
         run: git diff --name-only HEAD^ HEAD | grep -q 'package.json' || yarn up --mode=update-lockfile $(git log -1 --pretty=%s | awk '${ print $3 }')
       - name: git discard package.json
-        run: git checkout HEAD -- package.json
+        run: git checkout HEAD -- package.json **/package.json
       - name: yarn install
         run: yarn install --no-immutable --mode=update-lockfile
       - name: yarn dedupe
