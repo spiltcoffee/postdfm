@@ -1,7 +1,7 @@
 const enhancedResolve = require("enhanced-resolve");
 const resolve = enhancedResolve.create.sync({
   conditionNames: ["import", "node", "default"],
-  extensions: [".ts", ".js"]
+  extensions: [".ts", ".js"],
 });
 
 module.exports = function testResolve(request, options) {

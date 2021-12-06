@@ -5,5 +5,5 @@ module.exports = (projectName) =>
     excludePrivate: true,
     theme: "default",
     entryPoints: ["src/index.ts"],
-    out: path.resolve(__dirname, "docs", projectName)
+    out: path.resolve(__dirname, "docs", projectName),
   });
