@@ -1,9 +1,12 @@
 const path = require("path");
-const execa = require("execa");
+const { spawnSync } = require("child_process");
 
-const pkgs = execa
-  .commandSync("yarn workspaces list --json")
+const pkgs = spawnSync("yarn", ["workspaces", "list", "--json"], {
+  shell: true,
+  encoding: "utf-8",
+})
   .stdout.split(/[\r\n]+/)
+  .filter(Boolean)
   .map(JSON.parse)
   .filter(({ location }) => location !== ".");
 
@@ -20,8 +23,8 @@ module.exports = {
       "@semantic-release/npm",
       {
         pkgRoot,
-        tarballDir
-      }
+        tarballDir,
+      },
     ]),
     [
       "@semantic-release/github",
@@ -31,17 +34,17 @@ module.exports = {
             tarballDir,
             `${name.replace("@", "").replace("/", "-")}-*.tgz`
           ),
-          label: name
-        }))
-      }
+          label: name,
+        })),
+      },
     ],
     [
       "@semantic-release/git",
       {
         assets: [
-          ["packages/**/package.json", "!**/node_modules/**/package.json"]
-        ]
-      }
-    ]
-  ]
+          ["packages/**/package.json", "!**/node_modules/**/package.json"],
+        ],
+      },
+    ],
+  ],
 };
