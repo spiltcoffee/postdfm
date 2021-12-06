@@ -1,0 +1,16 @@
+pull_request_rules:
+  - name: merge dependabot pull request
+    conditions:
+      - author=dependabot[bot]
+      - -merged
+      - -closed
+      - -locked
+      - -conflict
+      - "check-success=with sourcemaps (node 14)"
+      - "check-success=with sourcemaps (node 16)"
+      - check-success=codecov/patch
+      - check-success=codecov/project
+      - check-success=CodeQL
+    actions:
+      merge:
+        method: merge
