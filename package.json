@@ -10,8 +10,8 @@
     "generate": "yarn foreach --topological run generate",
     "compile": "yarn foreach --topological run compile",
     "compile:map": "yarn foreach --topological run compile:map",
-    "lint": "yarn constraints && eslint --ignore-path .gitignore \"**/*.{js,ts}\" --fix",
-    "format": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,yml,md}\" --write",
+    "lint": "yarn constraints && eslint --ignore-path .gitignore \"**/*.{js,cjs,ts}\" --ignore-pattern \".yarn/**/*\" --fix",
+    "format": "prettier --ignore-path .gitignore \"**/*.{js,cjs,json,ts,yml,md}\" \"!.yarn/**/*\" --write",
     "test": "yarn foreach run test",
     "docs": "yarn foreach run docs",
     "release": "semantic-release",
@@ -64,8 +64,8 @@
     "*.{json,yml,md}": [
       "prettier --ignore-path .gitignore --write"
     ],
-    "*.{js,ts}": [
-      "eslint --ignore-path .gitignore",
+    "*.{js,cjs,ts}": [
+      "eslint --ignore-path .gitignore --ignore-pattern \".yarn/**/*\" --fix",
       "prettier --ignore-path .gitignore --write"
     ]
   },

@@ -10,24 +10,23 @@ module.exports = function getConfig(enableTypeChecking) {
           "@postdfm/ast2dfm",
           "@postdfm/dfm2ast",
           "@postdfm/plugin",
-          "@postdfm/transform"
+          "@postdfm/transform",
         ],
-        tryExtensions: [".js", ".cjs", ".ts", ".json", ".node"]
-      }
-    },
-    parserOptions: {
-      extraFileExtensions: [".cjs"],
-      project: "./tsconfig.json"
+        tryExtensions: [".js", ".cjs", ".ts", ".json", ".node"],
+      },
     },
     extends: [
       "eslint:recommended",
       "plugin:node/recommended",
       "plugin:jest/recommended",
-      "prettier"
+      "prettier",
     ],
     overrides: [
       {
         files: ["*.ts"],
+        parserOptions: {
+          project: "./tsconfig.json",
+        },
         extends: [
           "eslint:recommended",
           "plugin:node/recommended",
@@ -36,17 +35,17 @@ module.exports = function getConfig(enableTypeChecking) {
           "plugin:@typescript-eslint/recommended",
           enableTypeChecking &&
             "plugin:@typescript-eslint/recommended-requiring-type-checking",
-          "prettier"
+          "prettier",
         ].filter((v) => !!v),
         rules: {
           "node/no-unsupported-features/es-syntax": [
             "error",
             {
-              ignores: ["modules", "dynamicImport"]
-            }
-          ]
-        }
-      }
-    ]
+              ignores: ["modules", "dynamicImport"],
+            },
+          ],
+        },
+      },
+    ],
   };
 };

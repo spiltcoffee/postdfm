@@ -4,11 +4,11 @@ module.exports = {
   extensionsToTreatAsEsm: [".ts"],
   globals: {
     "ts-jest": {
-      useESM: true
-    }
+      useESM: true,
+    },
   },
   transform: {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest",
   },
   resolver: path.resolve(__dirname, "resolver.cjs"),
   collectCoverage: true,
@@ -16,9 +16,9 @@ module.exports = {
   coverageReporters: [
     [
       "lcovonly",
-      { file: "coverage.info", projectRoot: path.resolve(__dirname, "..") }
+      { file: "coverage.info", projectRoot: path.resolve(__dirname, "..") },
     ],
-    "text"
+    "text",
   ],
   coverageDirectory: "results/lcov",
   reporters: [
@@ -30,8 +30,8 @@ module.exports = {
         classNameTemplate: "[{classname}]",
         titleTemplate: "{title}",
         outputName: "./report.xml",
-        outputDirectory: "results/jest"
-      }
-    ]
-  ]
+        outputDirectory: "results/jest",
+      },
+    ],
+  ],
 };
