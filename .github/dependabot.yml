@@ -7,7 +7,7 @@ updates:
     assignees:
       - "spiltcoffee"
     commit-message:
-      prefix: "build(github-actions)"
+      prefix: "build(actions)"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
