@@ -430,12 +430,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "@commitlint/config-conventional@npm:11.0.0"
+"@commitlint/config-conventional@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "@commitlint/config-conventional@npm:15.0.0"
   dependencies:
     conventional-changelog-conventionalcommits: ^4.3.1
-  checksum: ccd348c48fbaf16da227ef207b9ecc80487e8c794c9579359b338d165f41300f5406746231594ead5aedeef4c1a5b4e51987109451f91643b91c8b492d873543
+  checksum: d3602c1f04fca771dd7b81285338c4a4421912d4361f8074430386fce829bf707eec3599feacefed2938732e67a709c53bde7a34e7fb7583ef369ade27f0002d
   languageName: node
   linkType: hard
 
@@ -7419,7 +7419,7 @@ __metadata:
   resolution: "postdfm-root@workspace:."
   dependencies:
     "@babel/core": ^7.16.0
-    "@commitlint/config-conventional": ^11.0.0
+    "@commitlint/config-conventional": ^15.0.0
     "@semantic-release/commit-analyzer": ^8.0.1
     "@semantic-release/git": ^9.0.1
     "@semantic-release/npm": ^7.1.3
