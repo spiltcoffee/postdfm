@@ -1226,11 +1226,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@postdfm/ast2dfm@^8.0.0, @postdfm/ast2dfm@workspace:packages/@postdfm/ast2dfm":
+"@postdfm/ast2dfm@^8.0.1, @postdfm/ast2dfm@workspace:packages/@postdfm/ast2dfm":
   version: 0.0.0-use.local
   resolution: "@postdfm/ast2dfm@workspace:packages/@postdfm/ast2dfm"
   dependencies:
-    "@postdfm/ast": ^8.0.0
+    "@postdfm/ast": ^8.0.1
     cross-env: ^7.0.3
     jest: ^27.4.3
     typedoc: ^0.22.10
@@ -1238,7 +1238,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/ast@^8.0.0, @postdfm/ast@workspace:packages/@postdfm/ast":
+"@postdfm/ast@^8.0.1, @postdfm/ast@workspace:packages/@postdfm/ast":
   version: 0.0.0-use.local
   resolution: "@postdfm/ast@workspace:packages/@postdfm/ast"
   dependencies:
@@ -1249,11 +1249,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/dfm2ast@^8.0.0, @postdfm/dfm2ast@workspace:packages/@postdfm/dfm2ast":
+"@postdfm/dfm2ast@^8.0.1, @postdfm/dfm2ast@workspace:packages/@postdfm/dfm2ast":
   version: 0.0.0-use.local
   resolution: "@postdfm/dfm2ast@workspace:packages/@postdfm/dfm2ast"
   dependencies:
-    "@postdfm/ast": ^8.0.0
+    "@postdfm/ast": ^8.0.1
     cross-env: ^7.0.3
     jest: ^27.4.3
     nearley: ^2.20.1
@@ -1263,12 +1263,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/plugin@^8.0.0, @postdfm/plugin@workspace:packages/@postdfm/plugin":
+"@postdfm/plugin@^8.0.1, @postdfm/plugin@workspace:packages/@postdfm/plugin":
   version: 0.0.0-use.local
   resolution: "@postdfm/plugin@workspace:packages/@postdfm/plugin"
   dependencies:
     "@jest/globals": ^27.4.2
-    "@postdfm/ast": ^8.0.0
+    "@postdfm/ast": ^8.0.1
     cross-env: ^7.0.3
     jest: ^27.4.3
     tapable: ^2.2.1
@@ -1277,12 +1277,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/transform@^8.0.0, @postdfm/transform@workspace:packages/@postdfm/transform":
+"@postdfm/transform@^8.0.1, @postdfm/transform@workspace:packages/@postdfm/transform":
   version: 0.0.0-use.local
   resolution: "@postdfm/transform@workspace:packages/@postdfm/transform"
   dependencies:
-    "@postdfm/ast": ^8.0.0
-    "@postdfm/plugin": ^8.0.0
+    "@postdfm/ast": ^8.0.1
+    "@postdfm/plugin": ^8.0.1
     cross-env: ^7.0.3
     jest: ^27.4.3
     typedoc: ^0.22.10
@@ -7351,10 +7351,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "postdfm@workspace:packages/postdfm"
   dependencies:
-    "@postdfm/ast2dfm": ^8.0.0
-    "@postdfm/dfm2ast": ^8.0.0
-    "@postdfm/plugin": ^8.0.0
-    "@postdfm/transform": ^8.0.0
+    "@postdfm/ast2dfm": ^8.0.1
+    "@postdfm/dfm2ast": ^8.0.1
+    "@postdfm/plugin": ^8.0.1
+    "@postdfm/transform": ^8.0.1
     cross-env: ^7.0.3
     jest: ^27.4.3
     typedoc: ^0.22.10
