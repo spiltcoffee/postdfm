@@ -26,6 +26,7 @@ module.exports = {
         tarballDir,
       },
     ]),
+    "./release/yarnlock.cjs",
     [
       "@semantic-release/github",
       {
