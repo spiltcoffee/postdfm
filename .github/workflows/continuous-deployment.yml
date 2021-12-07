@@ -9,7 +9,6 @@ on:
 
 concurrency:
   group: npm
-  cancel-in-progress: true
 
 permissions:
   contents: write
