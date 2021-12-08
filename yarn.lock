@@ -7340,7 +7340,7 @@ __metadata:
     lint-staged: ^12.1.2
     prettier: ^2.5.1
     semantic-release: ^18.0.1
-    snyk: ^1.785.0
+    snyk: ^1.786.0
     ts-jest: ^27.1.0
     typedoc: ^0.22.10
     typescript: ^4.5.2
@@ -8113,12 +8113,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"snyk@npm:^1.785.0":
-  version: 1.785.0
-  resolution: "snyk@npm:1.785.0"
+"snyk@npm:^1.786.0":
+  version: 1.786.0
+  resolution: "snyk@npm:1.786.0"
   bin:
     snyk: bin/snyk
-  checksum: 36365176c27d763c07edb54c7a85d239f136c99142e8b5a3fa41085d850a6fc9d26d832f3645aa29a909ef927e16a5014dee755f79d35ffeb5fe0361a9830298
+  checksum: 5778766cfaa554b4c8f2a0249bb19fe573004257e8661ea02256dda6815aafb334717096c79a4e754ae11cbb7e0082dd564e0a7d8d85d56d3b306f2489f3b85f
   languageName: node
   linkType: hard
 
