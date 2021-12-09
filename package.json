@@ -19,7 +19,7 @@
     "prepare": "snyk protect"
   },
   "dependencies": {
-    "snyk": "^1.786.0"
+    "snyk": "^1.787.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
