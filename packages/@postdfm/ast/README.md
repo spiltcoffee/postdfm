@@ -8,7 +8,6 @@
 ![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg)
 ![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg)
 [![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
-![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)
 
 ## Table of Contents
 
