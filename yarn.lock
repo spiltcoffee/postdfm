@@ -723,15 +723,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/environment@npm:^27.4.2":
-  version: 27.4.2
-  resolution: "@jest/environment@npm:27.4.2"
+"@jest/environment@npm:^27.4.2, @jest/environment@npm:^27.4.4":
+  version: 27.4.4
+  resolution: "@jest/environment@npm:27.4.4"
   dependencies:
     "@jest/fake-timers": ^27.4.2
     "@jest/types": ^27.4.2
     "@types/node": "*"
     jest-mock: ^27.4.2
-  checksum: 12e02410180ea8f9a64b135a14d2be58729a5c425cb8d5ee1d2d7d3acb464348757e5efbd67530cfc4afeb33b32ee3af881c47244d3faded393c28d5773b1e88
+  checksum: 59296abb5d073b7a5f24faba6d39e716cbbba077b7477e944a46cfdc7a0624035e4c78c3cb8d27e0875ecb26a1526720be177a9e1aef0efed8e7ba8dd9fb4b6e
   languageName: node
   linkType: hard
 
@@ -749,14 +749,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/globals@npm:^27.4.2":
-  version: 27.4.2
-  resolution: "@jest/globals@npm:27.4.2"
+"@jest/globals@npm:^27.4.2, @jest/globals@npm:^27.4.4":
+  version: 27.4.4
+  resolution: "@jest/globals@npm:27.4.4"
   dependencies:
-    "@jest/environment": ^27.4.2
+    "@jest/environment": ^27.4.4
     "@jest/types": ^27.4.2
     expect: ^27.4.2
-  checksum: acb6fbe3351fc16793be9220d81201921c752ecf0862dd86dc7233576cd81481348395dcb1dd061fd45a7e5edb28301766ce8538108b0efd4015ab63882e99d5
+  checksum: b43d8290fbd09148961877cc859c4e23e4c7cb44c161d540fd7ab8f9dc490cf787dc346c308d7df9d23429461754156b78b36bc14b78823f51c3869106e2e0c6
   languageName: node
   linkType: hard
 
@@ -1267,7 +1267,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@postdfm/plugin@workspace:packages/@postdfm/plugin"
   dependencies:
-    "@jest/globals": ^27.4.2
+    "@jest/globals": ^27.4.4
     "@postdfm/ast": ^8.0.2
     cross-env: ^7.0.3
     jest: ^27.4.3
