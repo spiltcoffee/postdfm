@@ -3,12 +3,9 @@
 > Process over Delphi Forms (.dfm) files via an AST.
 >
 > Inspired by the excellent PostCSS tool, motivated by my rage at the Delphi IDE.
-
-![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)
-![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg)
-![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg)
-[![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
-[![Known Vulnerabilities](https://snyk.io/test/github/spiltcoffee/postdfm/badge.svg?targetFile=packages/postdfm/package.json)](https://snyk.io/test/github/spiltcoffee/postdfm?targetFile=packages/postdfm/package.json)
+> [![npm](https://img.shields.io/npm/v/postdfm.svg?label=npm)](https://www.npm
+> js.com/package/postdfm)
+> ![Continuous Integration](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-integration.yml/badge.svg) > ![Continuous Deployment](https://github.com/spiltcoffee/postdfm/actions/workflows/continuous-deployment.yml/badge.svg) > [![Codecov branch](https://img.shields.io/codecov/c/gh/spiltcoffee/postdfm/main.svg)](https://codecov.io)
 
 ## Table of Contents
 

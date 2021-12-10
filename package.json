@@ -15,11 +15,7 @@
     "test": "yarn foreach run test",
     "docs": "yarn foreach run docs",
     "release": "semantic-release",
-    "postinstall": "husky install",
-    "prepare": "snyk protect"
-  },
-  "dependencies": {
-    "snyk": "^1.787.0"
+    "postinstall": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

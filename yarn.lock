@@ -7159,7 +7159,6 @@ __metadata:
     lint-staged: ^12.1.2
     prettier: ^2.5.1
     semantic-release: ^18.0.1
-    snyk: ^1.787.0
     ts-jest: ^27.1.1
     typedoc: ^0.22.10
     typescript: ^4.5.2
@@ -7929,15 +7928,6 @@ __metadata:
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
   checksum: b5167a7142c1da704c0e3af85c402002b597081dd9575031a90b4f229ca5678e9a36e8a374f1814c8156a725d17008ae3bde63b92f9cfd132526379e580bec8b
-  languageName: node
-  linkType: hard
-
-"snyk@npm:^1.787.0":
-  version: 1.787.0
-  resolution: "snyk@npm:1.787.0"
-  bin:
-    snyk: bin/snyk
-  checksum: 6fdcdbb6e71fb1fdab543a0dee85a1c4c8aff67a6793bed779a5c2e323e11f59e907c09d47ac51ed521f174d773959581a1c668aa4112db99989cf2d6c908ee0
   languageName: node
   linkType: hard
 
