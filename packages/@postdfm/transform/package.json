@@ -1,6 +1,6 @@
 {
   "name": "@postdfm/transform",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "description": "Iterates a Delphi Form Abstract Syntax Tree, allowing modification via Hooks",
   "type": "module",
   "exports": {
@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/spiltcoffee/postdfm#readme",
   "dependencies": {
-    "@postdfm/ast": "^8.0.1",
-    "@postdfm/plugin": "^8.0.1"
+    "@postdfm/ast": "^8.0.2",
+    "@postdfm/plugin": "^8.0.2"
   },
   "files": [
     "/dist",
