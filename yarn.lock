@@ -391,9 +391,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "@commitlint/cli@npm:16.0.1"
+"@commitlint/cli@npm:^16.0.2":
+  version: 16.0.2
+  resolution: "@commitlint/cli@npm:16.0.2"
   dependencies:
     "@commitlint/format": ^16.0.0
     "@commitlint/lint": ^16.0.0
@@ -406,7 +406,7 @@ __metadata:
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: a4ec182911a6a26cd4e5ad878089075ca96c417aac538b6bb42a4e7fd9c96e1c73ef4c9034c153f017ce28bf1c2ca837f403034e6462910f4c51a383aba3d5ee
+  checksum: 20760e0f8d54cfffad8a3c24ab4052b815d4545e2237f6b2c54a9a9a1190bf69adcff49b22ba665ae5e3b758b17b7a9dfb162d49d8b3926a756f60a314edd5e3
   languageName: node
   linkType: hard
 
@@ -2722,15 +2722,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commitlint@npm:^16.0.1":
-  version: 16.0.1
-  resolution: "commitlint@npm:16.0.1"
+"commitlint@npm:^16.0.2":
+  version: 16.0.2
+  resolution: "commitlint@npm:16.0.2"
   dependencies:
-    "@commitlint/cli": ^16.0.1
+    "@commitlint/cli": ^16.0.2
     "@commitlint/types": ^16.0.0
   bin:
     commitlint: cli.js
-  checksum: 79b7a1e73bd53c469489414f45502ba1fefc62bfb2e240daed10920381d324601b3c59cfb1cdc93c9d7d42f546d301692f03c4866c9801377f75ed3b304c0d8d
+  checksum: 58eac4843cd211b510433e25b6e08a0b7ae05e4ef4f182424f2fa4d1f3ddcf930c3cdc59399d8a69f64092fc07fdae7206f432ebbe9f07393c70840b9fbee8f5
   languageName: node
   linkType: hard
 
@@ -7169,7 +7169,7 @@ __metadata:
     "@types/node": ^17.0.8
     "@typescript-eslint/eslint-plugin": ^5.9.0
     "@typescript-eslint/parser": ^5.9.0
-    commitlint: ^16.0.1
+    commitlint: ^16.0.2
     cz-conventional-changelog: ^3.3.0
     enhanced-resolve: ^5.8.3
     eslint: ^8.6.0
