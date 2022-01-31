@@ -1221,11 +1221,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@postdfm/ast2dfm@^8.0.2, @postdfm/ast2dfm@workspace:packages/@postdfm/ast2dfm":
+"@postdfm/ast2dfm@^8.0.3, @postdfm/ast2dfm@workspace:packages/@postdfm/ast2dfm":
   version: 0.0.0-use.local
   resolution: "@postdfm/ast2dfm@workspace:packages/@postdfm/ast2dfm"
   dependencies:
-    "@postdfm/ast": ^8.0.2
+    "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.4.7
     typedoc: ^0.22.11
@@ -1233,7 +1233,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/ast@^8.0.2, @postdfm/ast@workspace:packages/@postdfm/ast":
+"@postdfm/ast@^8.0.3, @postdfm/ast@workspace:packages/@postdfm/ast":
   version: 0.0.0-use.local
   resolution: "@postdfm/ast@workspace:packages/@postdfm/ast"
   dependencies:
@@ -1244,11 +1244,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/dfm2ast@^8.0.2, @postdfm/dfm2ast@workspace:packages/@postdfm/dfm2ast":
+"@postdfm/dfm2ast@^8.0.3, @postdfm/dfm2ast@workspace:packages/@postdfm/dfm2ast":
   version: 0.0.0-use.local
   resolution: "@postdfm/dfm2ast@workspace:packages/@postdfm/dfm2ast"
   dependencies:
-    "@postdfm/ast": ^8.0.2
+    "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.4.7
     nearley: ^2.20.1
@@ -1258,12 +1258,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/plugin@^8.0.2, @postdfm/plugin@workspace:packages/@postdfm/plugin":
+"@postdfm/plugin@^8.0.3, @postdfm/plugin@workspace:packages/@postdfm/plugin":
   version: 0.0.0-use.local
   resolution: "@postdfm/plugin@workspace:packages/@postdfm/plugin"
   dependencies:
     "@jest/globals": ^27.4.2
-    "@postdfm/ast": ^8.0.2
+    "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.4.7
     tapable: ^2.2.1
@@ -1272,12 +1272,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@postdfm/transform@^8.0.2, @postdfm/transform@workspace:packages/@postdfm/transform":
+"@postdfm/transform@^8.0.3, @postdfm/transform@workspace:packages/@postdfm/transform":
   version: 0.0.0-use.local
   resolution: "@postdfm/transform@workspace:packages/@postdfm/transform"
   dependencies:
-    "@postdfm/ast": ^8.0.2
-    "@postdfm/plugin": ^8.0.2
+    "@postdfm/ast": ^8.0.3
+    "@postdfm/plugin": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.4.7
     typedoc: ^0.22.11
@@ -3503,9 +3503,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.7.0":
-  version: 8.7.0
-  resolution: "eslint@npm:8.7.0"
+"eslint@npm:^8.8.0":
+  version: 8.8.0
+  resolution: "eslint@npm:8.8.0"
   dependencies:
     "@eslint/eslintrc": ^1.0.5
     "@humanwhocodes/config-array": ^0.9.2
@@ -3544,7 +3544,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 1c80375a48b0fe3ccae3c6354323e4f0e92e970f23abc5b9705b90b7aef514b69ebd0a63e74962d30789986c91fa41c0e25cd2f98f19e9e2a2d36aafdfc9ccc9
+  checksum: 41a7e85bf84cf9f2d758ef3e8d08020a39a2836703728b59535684681349bd021c2c6e24174462b844a914870d707d2151e0371198899d957b444de91adaa435
   languageName: node
   linkType: hard
 
@@ -7154,7 +7154,7 @@ __metadata:
     commitlint: ^16.1.0
     cz-conventional-changelog: ^3.3.0
     enhanced-resolve: ^5.8.3
-    eslint: ^8.7.0
+    eslint: ^8.8.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-jest: ^26.0.0
     eslint-plugin-node: ^11.1.0
@@ -7174,10 +7174,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "postdfm@workspace:packages/postdfm"
   dependencies:
-    "@postdfm/ast2dfm": ^8.0.2
-    "@postdfm/dfm2ast": ^8.0.2
-    "@postdfm/plugin": ^8.0.2
-    "@postdfm/transform": ^8.0.2
+    "@postdfm/ast2dfm": ^8.0.3
+    "@postdfm/dfm2ast": ^8.0.3
+    "@postdfm/plugin": ^8.0.3
+    "@postdfm/transform": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.4.7
     typedoc: ^0.22.11
