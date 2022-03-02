@@ -14,7 +14,7 @@ jobs:
     name: sans sourcemaps
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # only need 16 here as none of the steps below test the actual output
       - name: setup node.js 16
@@ -41,7 +41,7 @@ jobs:
       matrix:
         node-version: [14, 16]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: setup node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3.0.0
