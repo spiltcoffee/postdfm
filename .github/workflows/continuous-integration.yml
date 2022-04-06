@@ -70,37 +70,37 @@ jobs:
             packages/@postdfm/transform/results/jest/report.xml
 
       - name: upload postdfm code coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           flags: postdfm
           file: packages/postdfm/results/lcov/coverage.info
 
       - name: upload @postdfm/ast code coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           flags: "@postdfm/ast"
           file: packages/@postdfm/ast/results/lcov/coverage.info
 
       - name: upload @postdfm/ast2dfm code coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           flags: "@postdfm/ast2dfm"
           file: packages/@postdfm/ast2dfm/results/lcov/coverage.info
 
       - name: upload @postdfm/dfm2ast code coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           flags: "@postdfm/dfm2ast"
           file: packages/@postdfm/dfm2ast/results/lcov/coverage.info
 
       - name: upload @postdfm/plugin code coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           flags: "@postdfm/plugin"
           file: packages/@postdfm/plugin/results/lcov/coverage.info
 
       - name: upload @postdfm/transform code coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           flags: "@postdfm/transform"
           file: packages/@postdfm/transform/results/lcov/coverage.info
