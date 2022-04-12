@@ -32,7 +32,7 @@ jobs:
 
         # unlike with ci, we only want the latest version to deploy with
       - name: setup node.js 16
-        uses: actions/setup-node@v3.0.0
+        uses: actions/setup-node@v3.1.1
         with:
           node-version: 16
           cache: yarn
