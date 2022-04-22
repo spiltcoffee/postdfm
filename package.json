@@ -31,7 +31,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "commitlint": "^16.2.3",
     "cz-conventional-changelog": "^3.3.0",
-    "enhanced-resolve": "^5.9.2",
+    "enhanced-resolve": "^5.9.3",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^26.1.3",
