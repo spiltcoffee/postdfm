@@ -34,7 +34,7 @@
     "@jest/globals": "^28.0.0",
     "cross-env": "^7.0.3",
     "jest": "^27.5.1",
-    "typedoc": "^0.22.15",
+    "typedoc": "^0.22.16",
     "typescript": "^4.6.4"
   },
   "files": [
