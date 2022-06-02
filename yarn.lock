@@ -1371,7 +1371,7 @@ __metadata:
     "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -1382,7 +1382,7 @@ __metadata:
   dependencies:
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -1396,7 +1396,7 @@ __metadata:
     jest: ^27.5.1
     nearley: ^2.20.1
     prettier: ^2.6.2
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -1410,7 +1410,7 @@ __metadata:
     cross-env: ^7.0.3
     jest: ^27.5.1
     tapable: ^2.2.1
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -1423,7 +1423,7 @@ __metadata:
     "@postdfm/plugin": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -7591,7 +7591,7 @@ __metadata:
     prettier: ^2.6.2
     semantic-release: ^19.0.2
     ts-jest: ^27.1.4
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -7606,7 +7606,7 @@ __metadata:
     "@postdfm/transform": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.16
+    typedoc: ^0.22.17
     typescript: ^4.7.2
   languageName: unknown
   linkType: soft
@@ -9175,9 +9175,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.22.16":
-  version: 0.22.16
-  resolution: "typedoc@npm:0.22.16"
+"typedoc@npm:^0.22.17":
+  version: 0.22.17
+  resolution: "typedoc@npm:0.22.17"
   dependencies:
     glob: ^8.0.3
     lunr: ^2.3.9
@@ -9188,7 +9188,7 @@ __metadata:
     typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x || 4.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: f19530bfa60149ab5fe1d90d42b45721d92f169281f051fc508515f26281edb22d4e62072dd83bb12b12f8c59b6b25ca2ccc8752a34232e2f4069bf13258595d
+  checksum: 3a2f492477989855fa43afc0ebfb84dca819436ec5c868ca175cb02485c6347c04dbb2d11669a8be04fc6860a8f3d29d124300b5718ba17174622ace29a0276a
   languageName: node
   linkType: hard
 
