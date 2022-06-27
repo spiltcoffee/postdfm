@@ -1371,7 +1371,7 @@ __metadata:
     "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -1382,7 +1382,7 @@ __metadata:
   dependencies:
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -1396,7 +1396,7 @@ __metadata:
     jest: ^27.5.1
     nearley: ^2.20.1
     prettier: ^2.7.1
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -1410,7 +1410,7 @@ __metadata:
     cross-env: ^7.0.3
     jest: ^27.5.1
     tapable: ^2.2.1
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -1423,7 +1423,7 @@ __metadata:
     "@postdfm/plugin": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -4311,7 +4311,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:*, glob@npm:^8.0.3":
+"glob@npm:*":
   version: 8.0.3
   resolution: "glob@npm:8.0.3"
   dependencies:
@@ -7591,7 +7591,7 @@ __metadata:
     prettier: ^2.7.1
     semantic-release: ^19.0.3
     ts-jest: ^27.1.4
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -7606,7 +7606,7 @@ __metadata:
     "@postdfm/transform": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.22.17
+    typedoc: ^0.23.1
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -9175,20 +9175,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.22.17":
-  version: 0.22.17
-  resolution: "typedoc@npm:0.22.17"
+"typedoc@npm:^0.23.1":
+  version: 0.23.1
+  resolution: "typedoc@npm:0.23.1"
   dependencies:
-    glob: ^8.0.3
     lunr: ^2.3.9
     marked: ^4.0.16
     minimatch: ^5.1.0
     shiki: ^0.10.1
   peerDependencies:
-    typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x || 4.7.x
+    typescript: 4.6.x || 4.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 3a2f492477989855fa43afc0ebfb84dca819436ec5c868ca175cb02485c6347c04dbb2d11669a8be04fc6860a8f3d29d124300b5718ba17174622ace29a0276a
+  checksum: 8622847ffff85b4ca2fa4d95e7507aafe50b155fe37d7f3f9b2721f7a80effecbca4dda682f9f81bdf1ac230cefd6e6127715398146fc00205042f25da19373a
   languageName: node
   linkType: hard
 
