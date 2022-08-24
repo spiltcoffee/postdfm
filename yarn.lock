@@ -7634,7 +7634,7 @@ __metadata:
     jest-junit: ^14.0.0
     lint-staged: ^13.0.3
     prettier: ^2.7.1
-    semantic-release: ^19.0.4
+    semantic-release: ^19.0.5
     ts-jest: ^27.1.4
     typedoc: ^0.23.10
     typescript: ^4.7.4
@@ -8237,9 +8237,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:^19.0.4":
-  version: 19.0.4
-  resolution: "semantic-release@npm:19.0.4"
+"semantic-release@npm:^19.0.5":
+  version: 19.0.5
+  resolution: "semantic-release@npm:19.0.5"
   dependencies:
     "@semantic-release/commit-analyzer": ^9.0.2
     "@semantic-release/error": ^3.0.0
@@ -8268,10 +8268,10 @@ __metadata:
     semver: ^7.3.2
     semver-diff: ^3.1.1
     signale: ^1.2.1
-    yargs: ^17.0.0
+    yargs: ^16.2.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 46bc947a464ca9eb609731febc30b5868721209a7f97251279db10154a715d0523cc9dceb24206d08080f41036ce43a76f64b77073674a7dea5e268d7731616f
+  checksum: e72d7e039ca062a322128da185797fe4e3e23ab8b3dba1e906aaff654cd292c60bbb91776570815cac982d37550a84cfb5e3e13194ecc168ac51f866d7a07584
   languageName: node
   linkType: hard
 
