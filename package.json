@@ -32,7 +32,7 @@
     "commitlint": "^17.1.1",
     "cz-conventional-changelog": "^3.3.0",
     "enhanced-resolve": "^5.10.0",
-    "eslint": "^8.22.0",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^26.8.7",
     "eslint-plugin-node": "^11.1.0",
