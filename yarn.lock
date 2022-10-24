@@ -1760,7 +1760,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.11.3":
+"@types/node@npm:*":
   version: 18.11.3
   resolution: "@types/node@npm:18.11.3"
   checksum: 3a2a9142d891a90a195c296149bf64a69cc0abcc42f543be911ab22b2e0ead85ff077f90af92f0f13f6e3e5e72501469200fd753dfd1101825d4646a89d3ee47
@@ -1771,6 +1771,13 @@ __metadata:
   version: 14.18.26
   resolution: "@types/node@npm:14.18.26"
   checksum: c6ac3f9d4f6f77c0fa5ac17757779ad4d9835abfe3af5708b7552597cb5c7c1103e83499ccaf767a1cfa70040990bcf3f58761c547051dc8d5077f3c419091b1
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.4":
+  version: 18.11.4
+  resolution: "@types/node@npm:18.11.4"
+  checksum: 1de782b4eef4a5115396ae62137f248390ee5d1d9e9eeb49599714554cce1328af43da31bc28e7bab5a0ef859538a584a907b26163a59b42bc87b8317dc00bb8
   languageName: node
   linkType: hard
 
@@ -7660,7 +7667,7 @@ __metadata:
     "@semantic-release/release-notes-generator": ^10.0.3
     "@types/jest": ^27.5.0
     "@types/nearley": ^2.11.2
-    "@types/node": ^18.11.3
+    "@types/node": ^18.11.4
     "@typescript-eslint/eslint-plugin": ^5.40.1
     "@typescript-eslint/parser": ^5.40.1
     commitlint: ^17.1.2
