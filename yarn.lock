@@ -3550,13 +3550,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.11.0":
-  version: 5.11.0
-  resolution: "enhanced-resolve@npm:5.11.0"
+"enhanced-resolve@npm:^5.12.0":
+  version: 5.12.0
+  resolution: "enhanced-resolve@npm:5.12.0"
   dependencies:
-    graceful-fs: ^4.2.9
+    graceful-fs: ^4.2.4
     tapable: ^2.2.0
-  checksum: ed5169b49adc0bc89b3532f2fae6abd01e8f3bdb9c3b60194a7ead386c9e307727aab5efe756183dda9ad05f0d301e8994e818da6b987dd223392ced2d3f6aff
+  checksum: bf3f787facaf4ce3439bef59d148646344e372bef5557f0d37ea8aa02c51f50a925cd1f07b8d338f18992c29f544ec235a8c64bcdb56030196c48832a5494174
   languageName: node
   linkType: hard
 
@@ -7742,7 +7742,7 @@ __metadata:
     "@typescript-eslint/parser": ^5.44.0
     commitlint: ^17.3.0
     cz-conventional-changelog: ^3.3.0
-    enhanced-resolve: ^5.11.0
+    enhanced-resolve: ^5.12.0
     eslint: ^8.28.0
     eslint-config-prettier: ^8.5.0
     eslint-plugin-jest: ^27.1.5
