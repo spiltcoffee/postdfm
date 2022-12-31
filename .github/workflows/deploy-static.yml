@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   workflow_run:
     workflows: ["Continuous Integration"]
-    branches: [main, beta]
+    branches: [main]
     types:
       - completed
 
@@ -25,20 +25,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        
+
       - uses: actions/setup-node@v3.5.1
         with:
-          node-version: current
+          node-version: 16
           cache: yarn
-          
+
       - run: yarn install --immutable
       - run: yarn docs
-        
+      - run: mkdir dist && mv docs dist/
+
       - uses: actions/configure-pages@v2
-        
+
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: "docs"
-          
+          path: "dist"
+
       - uses: actions/deploy-pages@v1
         id: deployment
