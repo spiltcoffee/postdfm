@@ -1659,7 +1659,7 @@ __metadata:
     "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1670,7 +1670,7 @@ __metadata:
   dependencies:
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1684,7 +1684,7 @@ __metadata:
     jest: ^27.5.1
     nearley: ^2.20.1
     prettier: ^2.8.4
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1698,7 +1698,7 @@ __metadata:
     cross-env: ^7.0.3
     jest: ^27.5.1
     tapable: ^2.2.1
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1711,7 +1711,7 @@ __metadata:
     "@postdfm/plugin": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -7185,12 +7185,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^6.1.6":
-  version: 6.1.9
-  resolution: "minimatch@npm:6.1.9"
+"minimatch@npm:^7.1.3":
+  version: 7.2.0
+  resolution: "minimatch@npm:7.2.0"
   dependencies:
     brace-expansion: ^2.0.1
-  checksum: 50de1c6e4d1cafcad8a5d9822d5e70ab5db983791912d4934f25cdec6448815ce5f24fd2d1a0b97751f17be0dd017a6bfa74e891f0dbe203aacd24905adc9a69
+  checksum: f3c66f60e097fb9e1550a1b6ce5d8588d3cdfdb22c1bde9a293bd99e7a01833be2b975795299b50b9456542b239b2f0ba5edba71728ec644e5ca14d09d0cf620
   languageName: node
   linkType: hard
 
@@ -8313,7 +8313,7 @@ __metadata:
     prettier: ^2.8.4
     semantic-release: ^20.1.0
     ts-jest: ^27.1.4
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -8328,7 +8328,7 @@ __metadata:
     "@postdfm/transform": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.23.25
+    typedoc: ^0.23.26
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -9961,19 +9961,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.23.25":
-  version: 0.23.25
-  resolution: "typedoc@npm:0.23.25"
+"typedoc@npm:^0.23.26":
+  version: 0.23.26
+  resolution: "typedoc@npm:0.23.26"
   dependencies:
     lunr: ^2.3.9
     marked: ^4.2.12
-    minimatch: ^6.1.6
+    minimatch: ^7.1.3
     shiki: ^0.14.1
   peerDependencies:
     typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x
   bin:
     typedoc: bin/typedoc
-  checksum: 2089d6da0293e63f6d3fac9460e9427fb6bfd56ddf669f2f13bef9435aa69ca7e72a8754e8951788db69432356e419c48b811105c8a74a47cab1f92a0bdad75b
+  checksum: 09dbd221b5bd27a7f6c593a6aa7e4efc3c46f20761e109a76bf0ed7239011cca1261357094710c01472582060d75a7558aab5bf5b78db3aff7c52188d146ee65
   languageName: node
   linkType: hard
 
