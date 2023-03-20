@@ -42,5 +42,5 @@ jobs:
         with:
           path: "dist"
 
-      - uses: actions/deploy-pages@v1
+      - uses: actions/deploy-pages@v2
         id: deployment
