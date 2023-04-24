@@ -1845,7 +1845,7 @@ __metadata:
     "@postdfm/ast": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1856,7 +1856,7 @@ __metadata:
   dependencies:
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1870,7 +1870,7 @@ __metadata:
     jest: ^27.5.1
     nearley: ^2.20.1
     prettier: ^2.8.7
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1884,7 +1884,7 @@ __metadata:
     cross-env: ^7.0.3
     jest: ^27.5.1
     tapable: ^2.2.1
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -1897,7 +1897,7 @@ __metadata:
     "@postdfm/plugin": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -8527,7 +8527,7 @@ __metadata:
     prettier: ^2.8.7
     semantic-release: ^21.0.1
     ts-jest: ^27.1.4
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -8542,7 +8542,7 @@ __metadata:
     "@postdfm/transform": ^8.0.3
     cross-env: ^7.0.3
     jest: ^27.5.1
-    typedoc: ^0.24.4
+    typedoc: ^0.24.6
     typescript: ^4.9.5
   languageName: unknown
   linkType: soft
@@ -10151,9 +10151,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:^0.24.4":
-  version: 0.24.4
-  resolution: "typedoc@npm:0.24.4"
+"typedoc@npm:^0.24.6":
+  version: 0.24.6
+  resolution: "typedoc@npm:0.24.6"
   dependencies:
     lunr: ^2.3.9
     marked: ^4.3.0
@@ -10163,7 +10163,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x
   bin:
     typedoc: bin/typedoc
-  checksum: c6762aff2b40eb574fc348c82921471fa1c1dc8a83adc284457aab30ea61768770be469f424340ab646944472653290578fd8e6308d55ec2e611577472067dae
+  checksum: 3911ef6a7736ce6655a4b22fabc5be6df8812412e209d730fd168bfa7797847897f05fed797bc16558f11ce647b20746453748ff8afe85b1375c3efe2d7b57df
   languageName: node
   linkType: hard
 
