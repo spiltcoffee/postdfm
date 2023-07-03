@@ -29,7 +29,7 @@
     "@types/node": "^20.3.3",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.59.11",
-    "commitlint": "^17.6.5",
+    "commitlint": "^17.6.6",
     "cz-conventional-changelog": "^3.3.0",
     "enhanced-resolve": "^5.15.0",
     "eslint": "^8.44.0",
