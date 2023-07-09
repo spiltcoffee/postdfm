@@ -11,7 +11,7 @@ describe("transform", () => {
     const transformer = new Transformer([]);
 
     expect(() => transformer.transform(ast)).toThrow(
-      "Cannot generically transform astType broken"
+      "Cannot generically transform astType broken",
     );
   });
 

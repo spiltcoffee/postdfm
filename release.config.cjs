@@ -33,7 +33,7 @@ module.exports = {
         assets: pkgs.map(({ name }) => ({
           path: path.resolve(
             tarballDir,
-            `${name.replace("@", "").replace("/", "-")}-*.tgz`
+            `${name.replace("@", "").replace("/", "-")}-*.tgz`,
           ),
           label: name,
         })),

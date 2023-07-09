@@ -22,7 +22,7 @@ function parse(dfm: string): Root {
     throw new Error(
       `Ambiguous Grammar: ${parser.results.length} Results Found\n\n` +
         "  This probably isn't your fault. Please consider raising an " +
-        "issue with a reproducable case at github.com/spiltcoffee/postdfm"
+        "issue with a reproducable case at github.com/spiltcoffee/postdfm",
     );
   }
 

@@ -11,7 +11,7 @@ describe("creating FormObjects", () => {
     const objectNode = new AST.DObject(
       AST.ObjectKind.Inherited,
       "MyForm",
-      "TMyForm"
+      "TMyForm",
     );
 
     const node = new AST.Root(objectNode);

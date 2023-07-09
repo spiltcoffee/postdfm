@@ -41,17 +41,17 @@ export class Hooks {
 
     this[AST.ASTType.ControlString] = new SyncHook(
       ["ast"],
-      AST.ASTType.ControlString
+      AST.ASTType.ControlString,
     );
 
     this[AST.ASTType.LiteralString] = new SyncHook(
       ["ast"],
-      AST.ASTType.LiteralString
+      AST.ASTType.LiteralString,
     );
 
     this[AST.ASTType.BinaryString] = new SyncHook(
       ["ast"],
-      AST.ASTType.BinaryString
+      AST.ASTType.BinaryString,
     );
 
     this[AST.ASTType.Integer] = new SyncHook(["ast"], AST.ASTType.Integer);
@@ -70,24 +70,24 @@ export class Hooks {
 
     this[AST.ASTType.Identifier] = new SyncHook(
       ["ast"],
-      AST.ASTType.Identifier
+      AST.ASTType.Identifier,
     );
 
     this[AST.ASTType.Item] = new SyncHook(["ast"], AST.ASTType.Item);
 
     this[AST.ASTType.VariantList] = new SyncHook(
       ["ast"],
-      AST.ASTType.VariantList
+      AST.ASTType.VariantList,
     );
 
     this[AST.ASTType.BinaryStringList] = new SyncHook(
       ["ast"],
-      AST.ASTType.BinaryStringList
+      AST.ASTType.BinaryStringList,
     );
 
     this[AST.ASTType.IdentifierList] = new SyncHook(
       ["ast"],
-      AST.ASTType.IdentifierList
+      AST.ASTType.IdentifierList,
     );
 
     this[AST.ASTType.ItemList] = new SyncHook(["ast"], AST.ASTType.ItemList);
@@ -101,47 +101,47 @@ export class Hooks {
     this.after = {
       [AST.ASTType.String]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.String
+        AFTER_PREFIX + AST.ASTType.String,
       ),
 
       [AST.ASTType.Item]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.Item
+        AFTER_PREFIX + AST.ASTType.Item,
       ),
 
       [AST.ASTType.VariantList]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.VariantList
+        AFTER_PREFIX + AST.ASTType.VariantList,
       ),
 
       [AST.ASTType.BinaryStringList]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.BinaryStringList
+        AFTER_PREFIX + AST.ASTType.BinaryStringList,
       ),
 
       [AST.ASTType.IdentifierList]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.IdentifierList
+        AFTER_PREFIX + AST.ASTType.IdentifierList,
       ),
 
       [AST.ASTType.ItemList]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.ItemList
+        AFTER_PREFIX + AST.ASTType.ItemList,
       ),
 
       [AST.ASTType.Property]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.Property
+        AFTER_PREFIX + AST.ASTType.Property,
       ),
 
       [AST.ASTType.Object]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.Object
+        AFTER_PREFIX + AST.ASTType.Object,
       ),
 
       [AST.ASTType.Root]: new SyncHook(
         ["ast"],
-        AFTER_PREFIX + AST.ASTType.Root
+        AFTER_PREFIX + AST.ASTType.Root,
       ),
     };
 

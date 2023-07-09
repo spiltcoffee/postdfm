@@ -5,7 +5,7 @@ import { stringify } from "@postdfm/ast2dfm";
 
 const parseFixturesPath = new URL(
   "../../../../../test/fixtures/parse/",
-  import.meta.url
+  import.meta.url,
 );
 
 describe("dfm2ast", () => {
@@ -18,9 +18,9 @@ describe("dfm2ast", () => {
         expect(
           stringify(
             JSON.parse(
-              readFileSync(new URL("./ast.json", fixturePath), "utf8")
-            ) as Root
-          )
+              readFileSync(new URL("./ast.json", fixturePath), "utf8"),
+            ) as Root,
+          ),
         ).toEqual(readFileSync(new URL("./form.dfm", fixturePath), "ascii"));
       });
     });

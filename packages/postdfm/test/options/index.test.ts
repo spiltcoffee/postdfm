@@ -51,7 +51,7 @@ describe("postdfm", () => {
       expect(() => postdfmSync({ stringifier, plugins })).not.toThrow();
 
       await expect(
-        postdfm({ parser, stringifier, plugins })
+        postdfm({ parser, stringifier, plugins }),
       ).resolves.not.toThrow();
       expect(() => postdfmSync({ parser, stringifier, plugins })).not.toThrow();
     });
@@ -68,7 +68,7 @@ describe("postdfm", () => {
       await expect(postdfm({ parser, plugins })).resolves.not.toThrow();
       await expect(postdfm({ stringifier, plugins })).resolves.not.toThrow();
       await expect(
-        postdfm({ parser, stringifier, plugins })
+        postdfm({ parser, stringifier, plugins }),
       ).resolves.not.toThrow();
     });
 
@@ -82,45 +82,45 @@ describe("postdfm", () => {
       const pluginSync = [NoopPlugin, "hello", "world"];
 
       await expect(
-        postdfm({ parser } as unknown as RunnerOptions)
+        postdfm({ parser } as unknown as RunnerOptions),
       ).rejects.toThrow(
-        /parser must be a function, or \(only if async\) a string/
+        /parser must be a function, or \(only if async\) a string/,
       );
 
       expect(() =>
-        postdfmSync({ parser: parserSync } as unknown as RunnerOptionsSync)
+        postdfmSync({ parser: parserSync } as unknown as RunnerOptionsSync),
       ).toThrow(/parser must be a function, or \(only if async\) a string/);
 
       await expect(
-        postdfm({ stringifier } as unknown as RunnerOptions)
+        postdfm({ stringifier } as unknown as RunnerOptions),
       ).rejects.toThrow(
-        /stringifier must be a function, or \(only if async\) a string/
+        /stringifier must be a function, or \(only if async\) a string/,
       );
 
       expect(() =>
         postdfmSync({
           stringifier: stringifierSync,
-        } as unknown as RunnerOptionsSync)
+        } as unknown as RunnerOptionsSync),
       ).toThrow(
-        /stringifier must be a function, or \(only if async\) a string/
+        /stringifier must be a function, or \(only if async\) a string/,
       );
 
       await expect(
-        postdfm({ plugins: plugin1 } as unknown as RunnerOptions)
+        postdfm({ plugins: plugin1 } as unknown as RunnerOptions),
       ).rejects.toThrow(
-        /plugins must be an array of functions\/objects, or \(only if async\) strings/
+        /plugins must be an array of functions\/objects, or \(only if async\) strings/,
       );
 
       await expect(
-        postdfm({ plugins: plugin2 } as unknown as RunnerOptions)
+        postdfm({ plugins: plugin2 } as unknown as RunnerOptions),
       ).rejects.toThrow(
-        /plugins must be an array of functions\/objects, or \(only if async\) strings/
+        /plugins must be an array of functions\/objects, or \(only if async\) strings/,
       );
 
       expect(() =>
-        postdfmSync({ plugins: pluginSync } as unknown as RunnerOptionsSync)
+        postdfmSync({ plugins: pluginSync } as unknown as RunnerOptionsSync),
       ).toThrow(
-        /plugins must be an array of functions\/objects, or \(only if async\) strings/
+        /plugins must be an array of functions\/objects, or \(only if async\) strings/,
       );
     });
   });

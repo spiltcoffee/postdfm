@@ -579,7 +579,7 @@ const grammar: Grammar = {
           type,
           order,
           undefined,
-          children
+          children,
         );
         node.raws = {
           ...(defRaws || {}),
@@ -626,7 +626,7 @@ const grammar: Grammar = {
           type,
           order,
           properties,
-          children
+          children,
         );
         node.raws = {
           ...(defRaws || {}),

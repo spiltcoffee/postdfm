@@ -10,7 +10,7 @@ describe("creating Items", () => {
   test("Item", () => {
     const propertyNode = new AST.Property(
       "Font.Name",
-      new AST.StringValue([new AST.LiteralString("sans-serif")])
+      new AST.StringValue([new AST.LiteralString("sans-serif")]),
     );
     const node = new AST.Item([propertyNode]);
 

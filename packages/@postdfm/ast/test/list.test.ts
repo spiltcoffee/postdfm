@@ -16,7 +16,7 @@ describe("creating Lists", () => {
     ]);
 
     expect(node.values).toContainEqual(
-      new AST.StringValue([new AST.LiteralString("world")])
+      new AST.StringValue([new AST.LiteralString("world")]),
     );
 
     expect(node.values).toContainEqual(new AST.IntegerValue(255));
@@ -65,7 +65,7 @@ describe("creating Lists", () => {
     const itemNode2 = new AST.Item([
       new AST.Property(
         "Font.Name",
-        new AST.StringValue([new AST.LiteralString("sans-serif")])
+        new AST.StringValue([new AST.LiteralString("sans-serif")]),
       ),
     ]);
     const node = new AST.ItemList([itemNode1, itemNode2]);

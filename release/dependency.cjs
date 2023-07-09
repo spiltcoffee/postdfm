@@ -22,7 +22,7 @@ async function prepare(pluginConfig, { nextRelease: { version }, logger }) {
 
           return dependencies;
         },
-        {}
+        {},
       );
     }
 
@@ -32,7 +32,7 @@ async function prepare(pluginConfig, { nextRelease: { version }, logger }) {
 
     await fs.writeFileSync(
       pkgJsonPath,
-      JSON.stringify(pkgJson, null, 2) + "\n"
+      JSON.stringify(pkgJson, null, 2) + "\n",
     );
   }
 }
