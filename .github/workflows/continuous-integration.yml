@@ -16,11 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # only need 16 here as none of the steps below test the actual output
-      - name: setup node.js 16
+      # only need latest here as none of the steps below test the actual output
+      - name: setup node.js
         uses: actions/setup-node@v3.7.0
         with:
-          node-version: 16
+          node-version: latest
           cache: yarn
 
       - run: yarn install --immutable
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14, 16]
+        node-version: [16, 18, 20]
     steps:
       - uses: actions/checkout@v3
 
