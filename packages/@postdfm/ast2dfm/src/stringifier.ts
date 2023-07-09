@@ -45,7 +45,7 @@ export default class Stringifier {
     return this.print(
       raws.before,
       ast.value.map((str) => this.stringify(str)).join(""),
-      raws.after
+      raws.after,
     );
   }
 
@@ -55,7 +55,7 @@ export default class Stringifier {
       raws.before,
       "#",
       `${ast.value.charCodeAt(0)}`,
-      raws.after
+      raws.after,
     );
   }
 
@@ -66,7 +66,7 @@ export default class Stringifier {
       "'",
       ast.value.replace(/'/g, "''"),
       "'",
-      raws.after
+      raws.after,
     );
   }
 
@@ -92,7 +92,7 @@ export default class Stringifier {
       ast.value.integer,
       ast.value.fraction ? `.${ast.value.fraction}` : "",
       ast.value.exponent ? `e${ast.value.exponent}` : "",
-      raws.after
+      raws.after,
     );
   }
 
@@ -104,7 +104,7 @@ export default class Stringifier {
       ast.value.fraction ? `.${ast.value.fraction}` : "",
       ast.value.exponent ? `e${ast.value.exponent}` : "",
       "s",
-      raws.after
+      raws.after,
     );
   }
 
@@ -116,7 +116,7 @@ export default class Stringifier {
       ast.value.fraction ? `.${ast.value.fraction}` : "",
       ast.value.exponent ? `e${ast.value.exponent}` : "",
       "c",
-      raws.after
+      raws.after,
     );
   }
 
@@ -128,7 +128,7 @@ export default class Stringifier {
       ast.value.fraction ? `.${ast.value.fraction}` : "",
       ast.value.exponent ? `e${ast.value.exponent}` : "",
       "d",
-      raws.after
+      raws.after,
     );
   }
 
@@ -151,7 +151,7 @@ export default class Stringifier {
       ast.properties.map((property) => this.printProperty(property)).join(""),
       raws.beforeEnd,
       "end",
-      raws.after
+      raws.after,
     );
   }
 
@@ -164,7 +164,7 @@ export default class Stringifier {
       ast.values.map((variant) => this.stringify(variant)).join(""),
       raws.beforeClose,
       ")",
-      raws.after
+      raws.after,
     );
   }
 
@@ -179,7 +179,7 @@ export default class Stringifier {
         .join(""),
       raws.beforeClose,
       "}",
-      raws.after
+      raws.after,
     );
   }
 
@@ -194,7 +194,7 @@ export default class Stringifier {
         .join(","),
       raws.beforeClose,
       "]",
-      raws.after
+      raws.after,
     );
   }
 
@@ -207,7 +207,7 @@ export default class Stringifier {
       ast.values.map((item) => this.printItem(item)).join(""),
       raws.beforeClose,
       ">",
-      raws.after
+      raws.after,
     );
   }
 
@@ -220,7 +220,7 @@ export default class Stringifier {
       "=",
       raws.beforeValue,
       this.stringify(ast.value),
-      raws.after
+      raws.after,
     );
   }
 
@@ -242,7 +242,7 @@ export default class Stringifier {
             raws.beforeOrder,
             `${ast.order}`,
             raws.afterOrder,
-            "]"
+            "]",
           )
         : "",
       ast.properties && ast.properties.length
@@ -250,18 +250,18 @@ export default class Stringifier {
             raws.beforeProperties,
             ast.properties
               .map((property) => this.printProperty(property))
-              .join("")
+              .join(""),
           )
         : "",
       ast.children && ast.children.length
         ? this.print(
             raws.beforeChildren,
-            ast.children.map((child) => this.printObject(child)).join("")
+            ast.children.map((child) => this.printObject(child)).join(""),
           )
         : "",
       raws.beforeEnd,
       "end",
-      raws.after
+      raws.after,
     );
   }
 
@@ -270,7 +270,7 @@ export default class Stringifier {
     return this.print(
       raws.before,
       ast.child ? this.printObject(ast.child) : "",
-      raws.after
+      raws.after,
     );
   }
 

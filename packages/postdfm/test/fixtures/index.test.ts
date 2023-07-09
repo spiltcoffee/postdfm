@@ -6,12 +6,12 @@ import { postdfm, postdfmSync } from "postdfm";
 
 const parseFixturesPath = new URL(
   "../../../../test/fixtures/parse/",
-  import.meta.url
+  import.meta.url,
 );
 
 const transformFixturesPath = new URL(
   "../../../../test/fixtures/transform/",
-  import.meta.url
+  import.meta.url,
 );
 
 class NoopPlugin extends Plugin {
@@ -54,7 +54,7 @@ describe("postdfm", () => {
       const cisForm = readFileSync(new URL("./cis.dfm", fixturePath), "ascii");
       const transForm = readFileSync(
         new URL("./trans.dfm", fixturePath),
-        "ascii"
+        "ascii",
       );
 
       const pluginFile = fileURLToPath(new URL("./plugin.js", fixturePath));

@@ -130,7 +130,7 @@ export class Transformer {
   private transformBinaryStringList(ast: AST.BinaryStringList): void {
     this.hooks[AST.ASTType.BinaryStringList].call(ast);
     ast.values.forEach((binaryString) =>
-      this.transformBinaryString(binaryString)
+      this.transformBinaryString(binaryString),
     );
     this.hooks.after[AST.ASTType.BinaryStringList].call(ast);
   }

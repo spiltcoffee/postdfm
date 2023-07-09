@@ -7,7 +7,7 @@ import { Transformer } from "@postdfm/transform";
 
 const transformFixturesPath = new URL(
   "../../../../../test/fixtures/transform/",
-  import.meta.url
+  import.meta.url,
 );
 
 interface ReferencedPlugin {
@@ -22,11 +22,11 @@ describe("transform", () => {
         const fixturePath = new URL(`./${fixture}/`, transformFixturesPath);
 
         const cisAst = JSON.parse(
-          readFileSync(new URL("./cis.json", fixturePath), "utf-8")
+          readFileSync(new URL("./cis.json", fixturePath), "utf-8"),
         ) as ASTNode;
 
         const transAst = JSON.parse(
-          readFileSync(new URL("./trans.json", fixturePath), "utf-8")
+          readFileSync(new URL("./trans.json", fixturePath), "utf-8"),
         ) as ASTNode;
 
         const plugins = [

@@ -10,13 +10,13 @@ describe("postdfm", () => {
 
       test("without `from`", () => {
         expect(() => postdfmSync().processSync(dfm)).toThrow(
-          /Unexpected End Of Input/
+          /Unexpected End Of Input/,
         );
       });
 
       test("with `from`", () => {
         expect(() =>
-          postdfmSync().processSync(dfm, { from: file.toString() })
+          postdfmSync().processSync(dfm, { from: file.toString() }),
         ).toThrow(/unexpectedEnd.dfm: Unexpected End Of Input/);
       });
     });
@@ -27,13 +27,13 @@ describe("postdfm", () => {
 
       test("without `from`", () => {
         expect(() => postdfmSync().processSync(dfm)).toThrow(
-          /Syntax error at line 3 col 1/
+          /Syntax error at line 3 col 1/,
         );
       });
 
       test("with `from`", () => {
         expect(() =>
-          postdfmSync().processSync(dfm, { from: file.toString() })
+          postdfmSync().processSync(dfm, { from: file.toString() }),
         ).toThrow(/invalidProperty.dfm: Syntax error at line 3 col 1/);
       });
     });

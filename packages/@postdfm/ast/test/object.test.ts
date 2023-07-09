@@ -26,7 +26,7 @@ describe("creating FormObjects", () => {
   test("FormObject with properties", () => {
     const propertyNode = new AST.Property(
       "Font.Name",
-      new AST.StringValue([new AST.LiteralString("sans-serif")])
+      new AST.StringValue([new AST.LiteralString("sans-serif")]),
     );
 
     const node = new AST.DObject(
@@ -34,7 +34,7 @@ describe("creating FormObjects", () => {
       "MyForm",
       "TMyForm",
       undefined,
-      [propertyNode]
+      [propertyNode],
     );
 
     expect(node.kind).toBe(AST.ObjectKind.Object);
@@ -54,7 +54,7 @@ describe("creating FormObjects", () => {
       "TMyForm",
       undefined,
       undefined,
-      [childNode]
+      [childNode],
     );
 
     expect(node.kind).toBe(AST.ObjectKind.Object);
@@ -68,7 +68,7 @@ describe("creating FormObjects", () => {
   test("FormObject with a bit of everything", () => {
     const propertyNode = new AST.Property(
       "Font.Name",
-      new AST.StringValue([new AST.LiteralString("sans-serif")])
+      new AST.StringValue([new AST.LiteralString("sans-serif")]),
     );
 
     const childNode = new AST.DObject(AST.ObjectKind.Object, "MyEdit", "TEdit");
@@ -79,7 +79,7 @@ describe("creating FormObjects", () => {
       "TMyForm",
       0,
       [propertyNode],
-      [childNode]
+      [childNode],
     );
 
     expect(node.kind).toBe(AST.ObjectKind.Object);

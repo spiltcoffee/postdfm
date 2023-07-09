@@ -46,7 +46,7 @@ export class Runner {
 
   public processSync(
     dfm: string,
-    processingOptions?: ProcessingOptions
+    processingOptions?: ProcessingOptions,
   ): string {
     let ast: Root;
     try {
@@ -56,7 +56,7 @@ export class Runner {
         throw new Error(
           `Error in ${processingOptions.from}: ${
             (<{ message: string }>error).message
-          }`
+          }`,
         );
       } else {
         throw error;
@@ -70,7 +70,7 @@ export class Runner {
           ast as string
         })\n\n` +
           "  This probably isn't your fault. Please consider raising an " +
-          "issue with a reproducable case at github.com/spiltcoffee/postdfm"
+          "issue with a reproducable case at github.com/spiltcoffee/postdfm",
       );
     }
 
@@ -81,10 +81,10 @@ export class Runner {
 
   public async process(
     dfm: string,
-    processingOptions?: ProcessingOptions
+    processingOptions?: ProcessingOptions,
   ): Promise<string> {
     return new Promise((resolve): void =>
-      resolve(this.processSync(dfm, processingOptions))
+      resolve(this.processSync(dfm, processingOptions)),
     );
   }
 }
@@ -102,7 +102,7 @@ export function postdfmSync(options?: RunnerOptionsSync): Runner {
         internalOptions.parser = options.parser;
       } else {
         throw new Error(
-          "parser must be a function, or (only if async) a string"
+          "parser must be a function, or (only if async) a string",
         );
       }
     }
@@ -112,7 +112,7 @@ export function postdfmSync(options?: RunnerOptionsSync): Runner {
         internalOptions.stringifier = options.stringifier;
       } else {
         throw new Error(
-          "stringifier must be a function, or (only if async) a string"
+          "stringifier must be a function, or (only if async) a string",
         );
       }
     }
@@ -120,7 +120,7 @@ export function postdfmSync(options?: RunnerOptionsSync): Runner {
     if (options.plugins) {
       if (!Array.isArray(options.plugins)) {
         throw new Error(
-          "plugins must be an array of functions/objects, or (only if async) strings"
+          "plugins must be an array of functions/objects, or (only if async) strings",
         );
       }
 
@@ -132,7 +132,7 @@ export function postdfmSync(options?: RunnerOptionsSync): Runner {
           internalPlugin = plugin;
         } else {
           throw new Error(
-            "plugins must be an array of functions/objects, or (only if async) strings"
+            "plugins must be an array of functions/objects, or (only if async) strings",
           );
         }
 

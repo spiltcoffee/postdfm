@@ -30,7 +30,7 @@ export class DObject extends ASTNode<ObjectRaws> {
     type: string,
     order?: number,
     properties?: Property[],
-    children?: DObject[]
+    children?: DObject[],
   ) {
     super(ASTType.Object);
     this.kind = kind;

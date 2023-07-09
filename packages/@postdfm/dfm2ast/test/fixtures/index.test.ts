@@ -5,7 +5,7 @@ import { parse } from "@postdfm/dfm2ast";
 
 const parseFixturesPath = new URL(
   "../../../../../test/fixtures/parse/",
-  import.meta.url
+  import.meta.url,
 );
 
 describe("dfm2ast", () => {
@@ -15,10 +15,10 @@ describe("dfm2ast", () => {
       const fixturePath = new URL(`./${fixture}/`, parseFixturesPath);
       const formFile = readFileSync(
         new URL("./form.dfm", fixturePath),
-        "ascii"
+        "ascii",
       );
       const astJson = JSON.parse(
-        readFileSync(new URL("./ast.json", fixturePath), "utf-8")
+        readFileSync(new URL("./ast.json", fixturePath), "utf-8"),
       ) as ASTNode;
 
       test(`${fixture}`, () => {
