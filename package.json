@@ -28,7 +28,7 @@
     "@types/nearley": "^2.11.2",
     "@types/node": "^20.4.1",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "commitlint": "^17.6.6",
     "cz-conventional-changelog": "^3.3.0",
     "enhanced-resolve": "^5.15.0",
