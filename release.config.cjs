@@ -65,7 +65,11 @@ module.exports = {
       "@semantic-release/git",
       {
         assets: [
-          ["packages/**/package.json", "!**/node_modules/**/package.json"],
+          [
+            "yarn.lock",
+            "packages/**/package.json",
+            "!**/node_modules/**/package.json",
+          ],
         ],
       },
     ],
