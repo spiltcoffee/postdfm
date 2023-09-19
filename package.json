@@ -27,7 +27,7 @@
     "@types/jest": "^27.5.0",
     "@types/nearley": "^2.11.2",
     "@types/node": "^20.6.2",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.0",
     "commitlint": "^17.7.1",
     "cz-conventional-changelog": "^3.3.0",
