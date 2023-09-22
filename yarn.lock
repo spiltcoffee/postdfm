@@ -1908,7 +1908,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@semantic-release/commit-analyzer@npm:^11.0.0, @semantic-release/commit-analyzer@npm:^11.0.0-beta.3":
+"@semantic-release/commit-analyzer@npm:^11.0.0":
   version: 11.0.0
   resolution: "@semantic-release/commit-analyzer@npm:11.0.0"
   dependencies:
@@ -2006,7 +2006,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/release-notes-generator@npm:^12.0.0, @semantic-release/release-notes-generator@npm:^12.0.0-beta.2":
+"@semantic-release/release-notes-generator@npm:^12.0.0":
   version: 12.0.0
   resolution: "@semantic-release/release-notes-generator@npm:12.0.0"
   dependencies:
@@ -8723,7 +8723,7 @@ __metadata:
     jest-junit: ^16.0.0
     lint-staged: ^14.0.1
     prettier: ^3.0.3
-    semantic-release: ^22.0.0
+    semantic-release: ^22.0.1
     ts-jest: ^27.1.4
     typedoc: ^0.25.1
     typescript: ^4.9.5
@@ -9327,15 +9327,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:^22.0.0":
-  version: 22.0.0
-  resolution: "semantic-release@npm:22.0.0"
+"semantic-release@npm:^22.0.1":
+  version: 22.0.1
+  resolution: "semantic-release@npm:22.0.1"
   dependencies:
-    "@semantic-release/commit-analyzer": ^11.0.0-beta.3
+    "@semantic-release/commit-analyzer": ^11.0.0
     "@semantic-release/error": ^4.0.0
     "@semantic-release/github": ^9.0.0
     "@semantic-release/npm": ^11.0.0
-    "@semantic-release/release-notes-generator": ^12.0.0-beta.2
+    "@semantic-release/release-notes-generator": ^12.0.0
     aggregate-error: ^5.0.0
     cosmiconfig: ^8.0.0
     debug: ^4.0.0
@@ -9361,7 +9361,7 @@ __metadata:
     yargs: ^17.5.1
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: bebb261eda691715f3368d5052557a5e82300477ae247a98e13391fbaca42380b2c15a9ac1164f4c0250a1810ab011a4c3155b260d3025369680e67f88b53f95
+  checksum: 2475af9ca2aca02d7efcf0c086b507a2126a79f08baeb2887f346575db1b34b17f27e749e7e3e2085dd6a56def4c159023be40a2b0f9af3b1fefb2d3cd7f0a70
   languageName: node
   linkType: hard
 
