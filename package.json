@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
-    "@commitlint/config-conventional": "^18.0.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "@semantic-release/commit-analyzer": "^11.0.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^11.0.0",
