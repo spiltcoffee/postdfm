@@ -1,0 +1,15 @@
+diff --git a/lib/verify-auth.js b/lib/verify-auth.js
+index 99e138e98190cf2545937c9d18e426b3ac4aa53d..de24f616060af9f307ce757f79a12664ea9961b2 100644
+--- a/lib/verify-auth.js
++++ b/lib/verify-auth.js
+@@ -26,8 +26,8 @@ export default async function (npmrc, pkg, context) {
+       whoamiResult.stdout.pipe(stdout, { end: false });
+       whoamiResult.stderr.pipe(stderr, { end: false });
+       await whoamiResult;
+-    } catch {
+-      throw new AggregateError([getError("EINVALIDNPMTOKEN", { registry })]);
++    } catch (error) {
++      throw new AggregateError([getError("EINVALIDNPMTOKEN", { registry }), error]);
+     }
+   }
+ }
