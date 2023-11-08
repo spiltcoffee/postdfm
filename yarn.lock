@@ -2341,10 +2341,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/nearley@npm:^2.11.4":
-  version: 2.11.4
-  resolution: "@types/nearley@npm:2.11.4"
-  checksum: 8178dda5361b8f44f180cc5c9e74e8cfc48471be9451de0d922d0aa0e0e38bbbd1ffc66ad96fd147dbf7b513126d63bb3b9e45b4f953fbd30fc10b8481ed5cd0
+"@types/nearley@npm:^2.11.5":
+  version: 2.11.5
+  resolution: "@types/nearley@npm:2.11.5"
+  checksum: 3a875522a2845187cd681d6c407d90dea8ef8d4a13e3dbe3e11c3024f7683dfe86d879c61329830f0c54ad8e45e3d4a2ff0dba720163efa8cbe129b172660113
   languageName: node
   linkType: hard
 
@@ -8789,7 +8789,7 @@ __metadata:
     "@semantic-release/npm": ^11.0.1
     "@semantic-release/release-notes-generator": ^12.1.0
     "@types/jest": ^27.5.0
-    "@types/nearley": ^2.11.4
+    "@types/nearley": ^2.11.5
     "@types/node": ^20.8.10
     "@typescript-eslint/eslint-plugin": ^6.10.0
     "@typescript-eslint/parser": ^6.10.0
