@@ -30,7 +30,7 @@
   "dependencies": {
     "@postdfm/ast": "^9.0.0",
     "nearley": "^2.20.1",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.1"
   },
   "files": [
     "/dist",
