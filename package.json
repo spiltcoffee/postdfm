@@ -18,7 +18,7 @@
     "postinstall": "husky install"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.5",
+    "@babel/core": "^7.23.6",
     "@commitlint/config-conventional": "^18.4.3",
     "@semantic-release/commit-analyzer": "^11.1.0",
     "@semantic-release/git": "^10.0.1",
