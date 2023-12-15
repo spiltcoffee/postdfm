@@ -58,7 +58,7 @@ jobs:
         run: 'git add . && git diff-index --quiet HEAD || (git reset --quiet && echo "Error: changed files" && git status --porcelain && exit 1)'
 
       - name: upload test results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test results
           path: |
