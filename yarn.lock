@@ -2056,30 +2056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:11.0.0":
-  version: 11.0.0
-  resolution: "@semantic-release/npm@npm:11.0.0"
-  dependencies:
-    "@semantic-release/error": ^4.0.0
-    aggregate-error: ^5.0.0
-    execa: ^8.0.0
-    fs-extra: ^11.0.0
-    lodash-es: ^4.17.21
-    nerf-dart: ^1.0.0
-    normalize-url: ^8.0.0
-    npm: ^10.0.0
-    rc: ^1.2.8
-    read-pkg: ^8.0.0
-    registry-auth-token: ^5.0.0
-    semver: ^7.1.2
-    tempy: ^3.0.0
-  peerDependencies:
-    semantic-release: ">=20.1.0"
-  checksum: 6b46b47607c4f7f0cce9782fbb0c8ece7f1fd219c769bdf74436a5ecba5ad54daf160c7a1041bf8793c70c950e4aeae8592f3548d5b1f95f8350feb8ee7a4bf1
-  languageName: node
-  linkType: hard
-
-"@semantic-release/npm@npm:^11.0.2":
+"@semantic-release/npm@npm:^11.0.0, @semantic-release/npm@npm:^11.0.2":
   version: 11.0.2
   resolution: "@semantic-release/npm@npm:11.0.2"
   dependencies:
@@ -2099,29 +2076,6 @@ __metadata:
   peerDependencies:
     semantic-release: ">=20.1.0"
   checksum: 88a27ad6756d78041793ff3d5729a15211b5cfdd336248ec332518936f7cccf9b5518d246e992a34281a3fa8176c8113ee95e986b5b8e71ae49d21b17dde7f4c
-  languageName: node
-  linkType: hard
-
-"@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.0#./.yarn/patches/@semantic-release-npm-npm-11.0.0-d769971ffe.patch::locator=postdfm-root%40workspace%3A.":
-  version: 11.0.0
-  resolution: "@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.0#./.yarn/patches/@semantic-release-npm-npm-11.0.0-d769971ffe.patch::version=11.0.0&hash=de70b4&locator=postdfm-root%40workspace%3A."
-  dependencies:
-    "@semantic-release/error": ^4.0.0
-    aggregate-error: ^5.0.0
-    execa: ^8.0.0
-    fs-extra: ^11.0.0
-    lodash-es: ^4.17.21
-    nerf-dart: ^1.0.0
-    normalize-url: ^8.0.0
-    npm: ^10.0.0
-    rc: ^1.2.8
-    read-pkg: ^8.0.0
-    registry-auth-token: ^5.0.0
-    semver: ^7.1.2
-    tempy: ^3.0.0
-  peerDependencies:
-    semantic-release: ">=20.1.0"
-  checksum: 885153b27e455ba2e43105b1e1eac90ea8cb1d764d3400d21ba8f07ccbf49bcbaf4b461711b7adf1e2534b26ba9c2af2fbf2d288f9dca69df0f8df6e4e37a6ec
   languageName: node
   linkType: hard
 
