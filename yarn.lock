@@ -2056,7 +2056,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@semantic-release/npm@npm:^11.0.0, @semantic-release/npm@npm:^11.0.2":
+"@semantic-release/npm@npm:11.0.2":
   version: 11.0.2
   resolution: "@semantic-release/npm@npm:11.0.2"
   dependencies:
@@ -2076,6 +2076,29 @@ __metadata:
   peerDependencies:
     semantic-release: ">=20.1.0"
   checksum: 88a27ad6756d78041793ff3d5729a15211b5cfdd336248ec332518936f7cccf9b5518d246e992a34281a3fa8176c8113ee95e986b5b8e71ae49d21b17dde7f4c
+  languageName: node
+  linkType: hard
+
+"@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch::locator=postdfm-root%40workspace%3A.":
+  version: 11.0.2
+  resolution: "@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch::version=11.0.2&hash=9c88d0&locator=postdfm-root%40workspace%3A."
+  dependencies:
+    "@semantic-release/error": ^4.0.0
+    aggregate-error: ^5.0.0
+    execa: ^8.0.0
+    fs-extra: ^11.0.0
+    lodash-es: ^4.17.21
+    nerf-dart: ^1.0.0
+    normalize-url: ^8.0.0
+    npm: ^10.0.0
+    rc: ^1.2.8
+    read-pkg: ^9.0.0
+    registry-auth-token: ^5.0.0
+    semver: ^7.1.2
+    tempy: ^3.0.0
+  peerDependencies:
+    semantic-release: ">=20.1.0"
+  checksum: 6534405d64503c0859dc2be5cc89375bcedc5a75a3e61f25ead47545b2390e7f1abb512fdd701adb3525ffc9e639986fa3469da0c67717283c4942cba0ad5af3
   languageName: node
   linkType: hard
 
