@@ -1,5 +1,5 @@
 diff --git a/lib/verify-auth.js b/lib/verify-auth.js
-index 99e138e98190cf2545937c9d18e426b3ac4aa53d..7205197ea88eefc65cf94ff9c830f75364851de5 100644
+index 99e138e98190cf2545937c9d18e426b3ac4aa53d..8233673edd2da07eaafc0e35454af279bd4767ee 100644
 --- a/lib/verify-auth.js
 +++ b/lib/verify-auth.js
 @@ -1,4 +1,4 @@
@@ -8,14 +8,12 @@ index 99e138e98190cf2545937c9d18e426b3ac4aa53d..7205197ea88eefc65cf94ff9c830f753
  import normalizeUrl from "normalize-url";
  import AggregateError from "aggregate-error";
  import getError from "./get-error.js";
-@@ -16,6 +16,11 @@ export default async function (npmrc, pkg, context) {
+@@ -16,6 +16,9 @@ export default async function (npmrc, pkg, context) {
  
    await setNpmrcAuth(npmrc, registry, context);
  
-+  const echo = $`echo $NPM_TOKEN`
-+  console.log(echo.stdout);
-+  const cat = $`cat ${npmrc}`
-+  console.log(cat.stdout);
++  $({stdio: 'inherit', verbose: true})`echo $NPM_TOKEN`
++  $({stdio: 'inherit', verbose: true})`cat ${npmrc}`
 +
    if (normalizeUrl(registry) === normalizeUrl(DEFAULT_NPM_REGISTRY)) {
      try {
