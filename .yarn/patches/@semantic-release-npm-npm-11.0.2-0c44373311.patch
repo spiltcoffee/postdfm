@@ -12,7 +12,7 @@ index 6e92d0801b42e6b57fa508b87b374d1706639fc9..d519a27d551dd32e4fe6b32a746eef5e
        npmrc,
        `${currentConfig ? `${currentConfig}\n` : ""}${nerfDart(registry)}:_authToken = \${NPM_TOKEN}`
 diff --git a/lib/verify-auth.js b/lib/verify-auth.js
-index 99e138e98190cf2545937c9d18e426b3ac4aa53d..8233673edd2da07eaafc0e35454af279bd4767ee 100644
+index 99e138e98190cf2545937c9d18e426b3ac4aa53d..e5a4d7d2598ac2207d83cdb64f5b250cab26101d 100644
 --- a/lib/verify-auth.js
 +++ b/lib/verify-auth.js
 @@ -1,4 +1,4 @@
@@ -21,12 +21,14 @@ index 99e138e98190cf2545937c9d18e426b3ac4aa53d..8233673edd2da07eaafc0e35454af279
  import normalizeUrl from "normalize-url";
  import AggregateError from "aggregate-error";
  import getError from "./get-error.js";
-@@ -16,6 +16,9 @@ export default async function (npmrc, pkg, context) {
+@@ -16,6 +16,11 @@ export default async function (npmrc, pkg, context) {
  
    await setNpmrcAuth(npmrc, registry, context);
  
-+  $({stdio: 'inherit', verbose: true})`echo $NPM_TOKEN`
++  console.log("pre logging")
++  $({stdio: 'inherit', verbose: true})`echo \$NPM_TOKEN`
 +  $({stdio: 'inherit', verbose: true})`cat ${npmrc}`
++  console.log("post logging")
 +
    if (normalizeUrl(registry) === normalizeUrl(DEFAULT_NPM_REGISTRY)) {
      try {
