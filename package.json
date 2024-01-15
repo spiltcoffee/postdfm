@@ -70,9 +70,7 @@
   },
   "snyk": true,
   "resolutions": {
-    "npm/chalk": "^4.0.0",
-    "@semantic-release/npm@^11.0.2": "patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch",
-    "@semantic-release/npm@^11.0.0": "patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch"
+    "npm/chalk": "^4.0.0"
   },
   "packageManager": "yarn@3.6.1"
 }
