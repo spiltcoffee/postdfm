@@ -2081,7 +2081,7 @@ __metadata:
 
 "@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch::locator=postdfm-root%40workspace%3A.":
   version: 11.0.2
-  resolution: "@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch::version=11.0.2&hash=b03563&locator=postdfm-root%40workspace%3A."
+  resolution: "@semantic-release/npm@patch:@semantic-release/npm@npm%3A11.0.2#./.yarn/patches/@semantic-release-npm-npm-11.0.2-0c44373311.patch::version=11.0.2&hash=0b34fb&locator=postdfm-root%40workspace%3A."
   dependencies:
     "@semantic-release/error": ^4.0.0
     aggregate-error: ^5.0.0
@@ -2098,7 +2098,7 @@ __metadata:
     tempy: ^3.0.0
   peerDependencies:
     semantic-release: ">=20.1.0"
-  checksum: ff2c7d71cae8aab0bc42468d578c0b66ff42c0295a27e90635810f6ebf6d2a1246776bda19bb9d9590122c5ad77bcbb7562cb3b2597759795eccb98e11f0b85b
+  checksum: 81b42d6b6c934a37b8679c7257b6395452ce31a1f0d3856edc8ab52386b921292fa5f48d9c5eab491c9a25d617e3b6d60d450d2ca900513b0b4fe4bffcb7a0fb
   languageName: node
   linkType: hard
 
