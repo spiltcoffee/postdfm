@@ -36,7 +36,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jest": "^27.6.3",
     "eslint-plugin-node": "^11.1.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.1",
     "jest": "^27.5.1",
     "jest-junit": "^16.0.0",
     "lint-staged": "^15.2.0",
