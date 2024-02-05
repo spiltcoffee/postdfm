@@ -1953,7 +1953,7 @@ __metadata:
     cross-env: ^7.0.3
     jest: ^27.5.1
     nearley: ^2.20.1
-    prettier: ^3.2.2
+    prettier: ^3.2.5
     typedoc: ^0.25.7
     typescript: ^4.9.5
   languageName: unknown
@@ -8941,7 +8941,7 @@ __metadata:
     jest: ^27.5.1
     jest-junit: ^16.0.0
     lint-staged: ^15.2.1
-    prettier: ^3.2.2
+    prettier: ^3.2.5
     semantic-release: ^23.0.0
     ts-jest: ^27.1.4
     typedoc: ^0.25.7
@@ -8978,12 +8978,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "prettier@npm:3.2.2"
+"prettier@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "prettier@npm:3.2.5"
   bin:
     prettier: bin/prettier.cjs
-  checksum: b416e1e4b26c351403343ebe461feda631c0eee5c3cf316c711204a08f3c639f38a8f9177c75e98a690998ff82e8ddc80c6bc027fb4ef6cedb6a4db035b4fe9a
+  checksum: 2ee4e1417572372afb7a13bb446b34f20f1bf1747db77cf6ccaf57a9be005f2f15c40f903d41a6b79eec3f57fff14d32a20fb6dee1f126da48908926fe43c311
   languageName: node
   linkType: hard
 
