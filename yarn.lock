@@ -7606,12 +7606,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:^11.0.0":
-  version: 11.1.1
-  resolution: "marked@npm:11.1.1"
+"marked@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "marked@npm:12.0.0"
   bin:
     marked: bin/marked.js
-  checksum: e30e16bf1d2c6627fff4369ffef73a1fbec629c5d18be76fc1f9c36f3df96499845bb7785f73313d06082b4562307e4f314f35eaa24ac737c176234b4bf24982
+  checksum: 973e803debf7eca946213cd583792c2968ecab1b6698653604272d5406f9f07375a4865a7a28633a7200c8a4682761f8d866198fb36c10c686e3bda3a9b36fc9
   languageName: node
   linkType: hard
 
@@ -8987,7 +8987,7 @@ __metadata:
     jest-junit: ^16.0.0
     lint-staged: ^15.2.2
     prettier: ^3.2.5
-    semantic-release: ^23.0.1
+    semantic-release: ^23.0.2
     ts-jest: ^27.1.4
     typedoc: ^0.25.7
     typescript: ^4.9.5
@@ -9605,9 +9605,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:^23.0.1":
-  version: 23.0.1
-  resolution: "semantic-release@npm:23.0.1"
+"semantic-release@npm:^23.0.2":
+  version: 23.0.2
+  resolution: "semantic-release@npm:23.0.2"
   dependencies:
     "@semantic-release/commit-analyzer": ^11.0.0
     "@semantic-release/error": ^4.0.0
@@ -9627,7 +9627,7 @@ __metadata:
     hosted-git-info: ^7.0.0
     import-from-esm: ^1.3.1
     lodash-es: ^4.17.21
-    marked: ^11.0.0
+    marked: ^12.0.0
     marked-terminal: ^7.0.0
     micromatch: ^4.0.2
     p-each-series: ^3.0.0
@@ -9640,7 +9640,7 @@ __metadata:
     yargs: ^17.5.1
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 03263cdbe8604c4209c84879610c21cca625a867318221eaeee9ffbd28293bc748b92796a04e5ec8b21c85ecd9c788c253c6c4b6c1824b66eb45499cd5ec4832
+  checksum: a5864946f7d9b4f8f76267b8026e896cdac96395cb8bcb81747e905e0abbf0d84b7f60b5ca09d1052b5be35237a240f3480f94e59cb9ef3bfa7cfda47f220dd8
   languageName: node
   linkType: hard
 
